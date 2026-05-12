@@ -1,0 +1,40 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+
+	"site_name": "Language Patterns",
+	"site_tagline": "Recurring patterns across languages, space, and time.",
+
+	"nav_patterns": "Patterns",
+	"nav_pathways": "Pathways",
+	"nav_atlas": "Atlas",
+
+	"footer_text": "Language Patterns — PoC. Cross-linguistic typology and diachrony. Seed data is illustrative; sources to be added.",
+
+	"home_eyebrow": "Typological & diachronic database",
+	"home_title": "Explore how languages share, differ, and change.",
+	"home_subtitle": "Language Patterns documents recurring strategies, pathways, and cycles across the world's languages — from how unrelated languages express “there is” to how negation rebuilds itself over centuries.",
+
+	"section_strategies": "Strategies",
+	"section_geographic_distribution": "Geographic distribution",
+	"section_geographic_distribution_hint": "Each dot is one attested language, coloured by the strategy it uses. Click a dot for the surface form.",
+	"section_language_comparison": "Language comparison",
+	"section_paradigm_grid": "Paradigm grid",
+	"section_examples": "Examples",
+	"section_examples_hint": "Toggle between Natural / Literal / Gloss to see how each language conceptualises the same idea.",
+	"section_related_patterns": "Related patterns",
+	"section_references": "References",
+	"section_stages": "Stages",
+	"section_cycle": "The cycle",
+	"section_comparative_timeline": "Comparative historical timeline",
+
+	"example_natural": "Natural",
+	"example_literal": "Literal",
+	"example_gloss": "Gloss",
+
+	"label_pattern": "Pattern",
+	"label_pathway": "Pathway",
+	"label_view": "View",
+	"label_language": "Language",
+
+	"language_switcher_label": "Change interface language"
+}

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+
+	"site_name": "言語パターン",
+	"site_tagline": "言語・空間・時間を超えて繰り返されるパターン。",
+
+	"nav_patterns": "パターン",
+	"nav_pathways": "経路",
+	"nav_atlas": "アトラス",
+
+	"footer_text": "Language Patterns — 試作版。通言語的類型論と歴史言語学。例示用のデータ。出典は順次追加。",
+
+	"home_eyebrow": "類型論・通時的データベース",
+	"home_title": "言語がどう共有し、異なり、変化するかを探る。",
+	"home_subtitle": "Language Patterns は、世界の諸言語に繰り返し現れる方略・経路・循環を記録する。互いに無関係な言語がどう「ある」を表すか、否定が何世紀をかけてどう作り直されるか、まで。",
+
+	"section_strategies": "方略",
+	"section_geographic_distribution": "地理的分布",
+	"section_geographic_distribution_hint": "各ドットは一つの言語で、採用している方略によって色分けされている。ドットをクリックすると表層形が表示される。",
+	"section_language_comparison": "言語比較",
+	"section_paradigm_grid": "パラダイム表",
+	"section_examples": "例文",
+	"section_examples_hint": "「自然訳 / 直訳 / グロス」を切り替えて、同じ意味を各言語がどう構成するかを見比べる。",
+	"section_related_patterns": "関連パターン",
+	"section_references": "参考文献",
+	"section_stages": "段階",
+	"section_cycle": "循環",
+	"section_comparative_timeline": "比較歴史タイムライン",
+
+	"example_natural": "自然訳",
+	"example_literal": "直訳",
+	"example_gloss": "グロス",
+
+	"label_pattern": "パターン",
+	"label_pathway": "経路",
+	"label_view": "表示",
+	"label_language": "言語",
+
+	"language_switcher_label": "表示言語を切り替える"
+}
