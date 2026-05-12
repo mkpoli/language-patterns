@@ -128,6 +128,24 @@ export const sources: Record<string, Source> = {
 		url: 'https://langsci-press.org/catalog/book/335',
 		type: 'book'
 	},
+	'croft-1991': {
+		id: 'croft-1991',
+		authors: ['Croft, William'],
+		year: 1991,
+		title: 'The evolution of negation',
+		container: 'Journal of Linguistics',
+		pages: '27(1): 1–27',
+		doi: '10.1017/S0022226700012391',
+		type: 'article'
+	},
+	'miestamo-2005': {
+		id: 'miestamo-2005',
+		authors: ['Miestamo, Matti'],
+		year: 2005,
+		title: 'Standard Negation: The Negation of Declarative Verbal Main Clauses in a Typological Perspective',
+		publisher: 'Mouton de Gruyter',
+		type: 'book'
+	},
 	'haspelmath-1997': {
 		id: 'haspelmath-1997',
 		authors: ['Haspelmath, Martin'],
@@ -135,6 +153,28 @@ export const sources: Record<string, Source> = {
 		title: 'Indefinite Pronouns',
 		publisher: 'Oxford University Press',
 		type: 'book'
+	},
+	'kratzer-shimoyama-2002': {
+		id: 'kratzer-shimoyama-2002',
+		authors: ['Kratzer, Angelika', 'Shimoyama, Junko'],
+		year: 2002,
+		title: 'Indeterminate pronouns: The view from Japanese',
+		container: 'Proceedings of the Third Tokyo Conference on Psycholinguistics',
+		editors: ['Otsu, Yukio'],
+		publisher: 'Hituzi Syobo, Tokyo',
+		pages: '1–25',
+		type: 'chapter'
+	},
+	'giannakidou-2011': {
+		id: 'giannakidou-2011',
+		authors: ['Giannakidou, Anastasia'],
+		year: 2011,
+		title: 'Negative and positive polarity items: Variation, licensing, and compositionality',
+		container: 'Semantics: An International Handbook of Natural Language Meaning',
+		editors: ['von Heusinger, Klaus', 'Maienborn, Claudia', 'Portner, Paul'],
+		publisher: 'De Gruyter Mouton',
+		pages: '1660–1712',
+		type: 'chapter'
 	},
 
 	// ─── Grammaticalization & typology ─────────────────────────────────────────
