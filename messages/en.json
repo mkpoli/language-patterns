@@ -37,5 +37,10 @@
 	"label_view": "View",
 	"label_language": "Language",
 
-	"language_switcher_label": "Change interface language"
+	"language_switcher_label": "Change interface language",
+
+	"sister_sites_heading": "Sister sites",
+	"p_graveyard_title": "The Graveyard of /p/",
+	"p_graveyard_description": "A sound-change pathway catalogue tracking the disappearance of /p/ across the world's languages.",
+	"p_graveyard_cta": "p.languagepatterns.org →"
 }

@@ -37,5 +37,10 @@
 	"label_view": "表示",
 	"label_language": "言語",
 
-	"language_switcher_label": "表示言語を切り替える"
+	"language_switcher_label": "表示言語を切り替える",
+
+	"sister_sites_heading": "姉妹サイト",
+	"p_graveyard_title": "/p/ の墓場",
+	"p_graveyard_description": "世界の諸言語における /p/ の消失と変遷を追う音変化経路カタログ。",
+	"p_graveyard_cta": "p.languagepatterns.org →"
 }
