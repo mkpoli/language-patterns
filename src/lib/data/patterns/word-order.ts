@@ -311,7 +311,81 @@ export const wordOrder: Pattern = {
 		{ language: 'naq', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
 		{ language: 'ktz', strategy: 'svo', expression: 'SVO', confidence: 'medium' },
 		// South American
-		{ language: 'guc', strategy: 'sov', expression: 'SOV', confidence: 'medium', note: 'Arawakan; SOV documented in modern grammars' }
+		{ language: 'guc', strategy: 'sov', expression: 'SOV', confidence: 'medium', note: 'Arawakan; SOV documented in modern grammars' },
+
+		// ─── Batch 2: latest language additions ──────────────────────────────
+		// Romance minors (SVO)
+		{ language: 'frp', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'wa', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'pms', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'lij', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'lmo', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'co', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'ast', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'rgn', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'ext', strategy: 'svo', expression: 'SVO', confidence: 'medium' },
+		{ language: 'cbk', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'pap', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		// Historical Germanic / Romance / Celtic
+		{ language: 'ang', strategy: 'free', expression: 'free / mixed OV-VO', confidence: 'high', note: 'Old English; OV and VO both attested, V2 features in matrix clauses' },
+		{ language: 'enm', strategy: 'svo', expression: 'SVO', confidence: 'high', note: 'shifts to fixed SVO during the Middle English period' },
+		{ language: 'fro', strategy: 'svo', expression: 'V2 / SVO', confidence: 'high', note: 'Old French is V2; modern French has lost it' },
+		{ language: 'cy_old', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		// Historical Semitic & Indo-European
+		{ language: 'gez', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		{ language: 'har', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'dat', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		{ language: 'aeq', strategy: 'free', expression: 'free', confidence: 'low', note: 'minimal corpus' },
+		{ language: 'xpu', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'phn', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'sux', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'isolate; verb-final' },
+		{ language: 'elx', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		{ language: 'hit', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'Anatolian IE; verb-final' },
+		{ language: 'hbo2', strategy: 'free', expression: 'free / VSO-leaning', confidence: 'medium', note: 'Old Egyptian VSO; later stages drift' },
+		// Indo-Aryan + Koreanic small
+		{ language: 'pa2', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'jje', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		// Mesoamerican / Mixe-Zoque / Uto-Aztecan / Chibchan
+		{ language: 'mtv', strategy: 'vos', expression: 'VOS', confidence: 'medium', note: 'Mixe-Zoquean generally V-initial' },
+		{ language: 'zoc', strategy: 'vos', expression: 'VOS', confidence: 'medium' },
+		{ language: 'tar', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'bzd', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'cuk', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'kog', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'chl', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		{ language: 'guu', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		// Pacific NW
+		{ language: 'hur', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		{ language: 'squ', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		{ language: 'kwk', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		{ language: 'tsi', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'nez', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
+		{ language: 'wlk', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		// Australian + Papuan
+		{ language: 'mwf', strategy: 'free', expression: 'free', confidence: 'medium' },
+		{ language: 'tiw', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
+		{ language: 'gup', strategy: 'free', expression: 'free', confidence: 'medium' },
+		{ language: 'yim', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
+		{ language: 'yle', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		// Click languages
+		{ language: 'nmn', strategy: 'svo', expression: 'SVO', confidence: 'medium' },
+		// More African
+		{ language: 'dik', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'teo', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'zna', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
+		// Constructed
+		{ language: 'io', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'vo', strategy: 'svo', expression: 'SVO', confidence: 'high' },
+		{ language: 'jbo', strategy: 'free', expression: 'free (SVO-like but operator-driven)', confidence: 'high', note: 'predicate-argument logical structure; gismu order is flexible via prenex' },
+		{ language: 'tlh', strategy: 'ovs', expression: 'OVS', confidence: 'high', note: 'Marc Okrand deliberately picked OVS as a typological rarity' },
+		{ language: 'qya', strategy: 'svo', expression: 'SVO', confidence: 'medium', note: 'Tolkien Quenya is broadly SVO with poetic flexibility' },
+		// Sign languages — vary by language, but most are topic-comment (often glossed as SOV or topic-OV)
+		{ language: 'ase', strategy: 'free', expression: 'topic–comment (often SVO or OSV)', confidence: 'medium', note: 'topic-prominent; analysis depends on theoretical framework' },
+		{ language: 'bfi', strategy: 'free', expression: 'topic–comment', confidence: 'medium' },
+		{ language: 'jsl', strategy: 'sov', expression: 'SOV', confidence: 'medium', note: 'tends toward verb-final, like spoken Japanese' },
+		{ language: 'csn', strategy: 'free', expression: 'topic–comment', confidence: 'low' },
+		{ language: 'fsl', strategy: 'free', expression: 'topic–comment', confidence: 'low' },
+		{ language: 'nzs', strategy: 'free', expression: 'topic–comment', confidence: 'low' }
 	],
 	examples: [
 		{
