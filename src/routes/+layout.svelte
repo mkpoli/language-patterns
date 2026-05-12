@@ -51,5 +51,11 @@
 	<footer class="flex flex-col gap-1 border-t border-[color:var(--color-rule)] py-6 text-xs text-[color:var(--color-ink-soft)]">
 		<div>{m.footer_text()}</div>
 		<div>{@html m.footer_license_html()}</div>
+		<div>
+			{m.sister_sites_heading()}:
+			<a href="https://p.languagepatterns.org" target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">
+				{m.p_graveyard_title()}
+			</a>
+		</div>
 	</footer>
 </div>
