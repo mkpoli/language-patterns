@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Example } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
+	import { m } from '$lib/paraglide/messages.js';
 	import CitationMark from './CitationMark.svelte';
 
 	interface Props {
@@ -12,7 +13,7 @@
 
 	const lang = $derived(getLanguage(example.language));
 	const headlineLabel = $derived(
-		mode === 'natural' ? 'Natural' : mode === 'literal' ? 'Literal' : 'Gloss'
+		mode === 'natural' ? m.example_natural() : mode === 'literal' ? m.example_literal() : m.example_gloss()
 	);
 	const headlineText = $derived(
 		mode === 'natural'
@@ -22,11 +23,11 @@
 				: (example.gloss ?? '— no gloss provided —')
 	);
 
-	const modes: { id: Mode; label: string }[] = [
-		{ id: 'natural', label: 'Natural' },
-		{ id: 'literal', label: 'Literal' },
-		{ id: 'gloss', label: 'Gloss' }
-	];
+	const modes = $derived([
+		{ id: 'natural' as Mode, label: m.example_natural() },
+		{ id: 'literal' as Mode, label: m.example_literal() },
+		{ id: 'gloss' as Mode, label: m.example_gloss() }
+	]);
 </script>
 
 <article class="rounded-2xl border border-[color:var(--color-rule)] bg-white p-5">

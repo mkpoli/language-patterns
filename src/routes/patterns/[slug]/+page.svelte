@@ -7,6 +7,7 @@
 	import ParadigmGrid from '$lib/components/ParadigmGrid.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 
@@ -81,7 +82,7 @@
 	</header>
 
 	<section>
-		<h2 class="mb-4 font-serif text-2xl">Strategies</h2>
+		<h2 class="mb-4 font-serif text-2xl">{m.section_strategies()}</h2>
 		<div class="grid gap-4 lg:grid-cols-2">
 			{#each pattern.strategies as strategy (strategy.id)}
 				<StrategyCard {strategy} attestations={pattern.attestations ?? []} />
@@ -91,22 +92,22 @@
 
 	{#if pattern.attestations?.length}
 		<section>
-			<h2 class="mb-1 font-serif text-2xl">Geographic distribution</h2>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_geographic_distribution()}</h2>
 			<p class="mb-4 text-sm text-[color:var(--color-ink-soft)]">
-				Each dot is one attested language, coloured by the strategy it uses. Click a dot for the surface form.
+				{m.section_geographic_distribution_hint()}
 			</p>
 			<PatternMap attestations={pattern.attestations} strategies={pattern.strategies} />
 		</section>
 
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">Language comparison</h2>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_language_comparison()}</h2>
 			<ComparisonTable {pattern} />
 		</section>
 	{/if}
 
 	{#if pattern.paradigm}
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">{pattern.paradigm.title ?? 'Paradigm grid'}</h2>
+			<h2 class="mb-4 font-serif text-2xl">{pattern.paradigm.title ?? m.section_paradigm_grid()}</h2>
 			<ParadigmGrid paradigm={pattern.paradigm} strategies={pattern.strategies} />
 		</section>
 	{/if}
@@ -114,9 +115,9 @@
 	<section>
 		<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
 			<div>
-				<h2 class="font-serif text-2xl">Examples</h2>
+				<h2 class="font-serif text-2xl">{m.section_examples()}</h2>
 				<p class="text-sm text-[color:var(--color-ink-soft)]">
-					Toggle between Natural / Literal / Gloss to see how each language conceptualises the same idea.
+					{m.section_examples_hint()}
 				</p>
 			</div>
 
@@ -249,7 +250,7 @@
 
 	{#if pattern.related.length}
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">Related patterns</h2>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_related_patterns()}</h2>
 			<ul class="flex flex-wrap gap-2">
 				{#each pattern.related as rel (rel.slug)}
 					<li>

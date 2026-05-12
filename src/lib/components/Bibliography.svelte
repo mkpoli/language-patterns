@@ -1,12 +1,13 @@
 <script lang="ts">
 	import type { Citation } from '$lib/types';
 	import { getSource } from '$lib/data/sources';
+	import { m } from '$lib/paraglide/messages.js';
 
 	interface Props {
 		citations: Citation[];
 		title?: string;
 	}
-	let { citations, title = 'References' }: Props = $props();
+	let { citations, title = m.section_references() }: Props = $props();
 
 	const items = $derived.by(() => {
 		const seen = new Set<string>();

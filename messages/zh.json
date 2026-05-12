@@ -1,0 +1,40 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+
+	"site_name": "语言模式",
+	"site_tagline": "跨语言、空间与时间的反复模式。",
+
+	"nav_patterns": "模式",
+	"nav_pathways": "演化路径",
+	"nav_atlas": "图谱",
+
+	"footer_text": "Language Patterns — 概念验证版。跨语言类型学与历时语言学。示例数据仅作展示，来源将陆续补充。",
+
+	"home_eyebrow": "类型学与历时语言学数据库",
+	"home_title": "看世界各语言如何共享、差异、变化。",
+	"home_subtitle": "Language Patterns 记录世界各语言反复出现的策略、路径与循环——从互不相关的语言如何表达「有」，到否定词如何在数百年间不断重建。",
+
+	"section_strategies": "策略",
+	"section_geographic_distribution": "地理分布",
+	"section_geographic_distribution_hint": "每个圆点代表一个已记录的语言，颜色对应它所采用的策略。点击任意圆点可查看其具体形式。",
+	"section_language_comparison": "语言对比",
+	"section_paradigm_grid": "范式表",
+	"section_examples": "例句",
+	"section_examples_hint": "在「自然 / 直译 / 注释」之间切换，对比同一概念在各语言中的不同表达方式。",
+	"section_related_patterns": "相关模式",
+	"section_references": "参考文献",
+	"section_stages": "阶段",
+	"section_cycle": "循环",
+	"section_comparative_timeline": "历史比较时间轴",
+
+	"example_natural": "自然",
+	"example_literal": "直译",
+	"example_gloss": "注释",
+
+	"label_pattern": "模式",
+	"label_pathway": "路径",
+	"label_view": "视图",
+	"label_language": "语言",
+
+	"language_switcher_label": "切换界面语言"
+}
