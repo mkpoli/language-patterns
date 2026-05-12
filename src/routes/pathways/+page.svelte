@@ -28,24 +28,14 @@
 			kind="pathway"
 		/>
 	{/each}
-</section>
 
-<section class="mt-12 border-t border-[color:var(--color-rule)] pt-8">
-	<h2 class="mb-4 font-serif text-2xl">{m.sister_sites_heading()}</h2>
-	<a
+	<QuestionCard
+		question="How does /p/ disappear?"
+		title={m.p_graveyard_title()}
+		summary={m.p_graveyard_description()}
 		href="https://p.languagepatterns.org"
-		target="_blank"
-		rel="noopener"
-		class="group flex flex-col gap-3 rounded-2xl border border-dashed border-[color:var(--color-rule)] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[oklch(70%_0.05_260)] hover:shadow-md sm:max-w-md"
-	>
-		<div class="flex items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
-			<span class="rounded-full bg-[oklch(94%_0.04_15)] px-2 py-0.5">Sound change · external</span>
-		</div>
-		<h3 class="font-serif text-2xl leading-tight">{m.p_graveyard_title()}</h3>
-		<p class="text-sm text-[color:var(--color-ink-soft)]">{m.p_graveyard_description()}</p>
-		<div class="mt-auto flex items-center justify-between pt-2 text-sm">
-			<span class="font-mono text-xs">{m.p_graveyard_cta()}</span>
-			<span class="transition group-hover:translate-x-1">↗</span>
-		</div>
-	</a>
+		category={['Sound change']}
+		kind="pathway"
+		external
+	/>
 </section>
