@@ -8,11 +8,15 @@
 		"build": "wrangler types --check && vite build",
 		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js --port 4173",
 		"prepare": "svelte-kit sync || echo ''",
-		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "rm -rf .svelte-kit/cloudflare && wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"gen": "wrangler types"
+		"gen": "wrangler types",
+		"deploy": "bun run build && wrangler deploy",
+		"deploy:dry": "wrangler deploy --dry-run",
+		"tail": "wrangler tail",
+		"versions": "wrangler versions list"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.4",
