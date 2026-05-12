@@ -248,6 +248,28 @@ export const sources: Record<string, Source> = {
 		pages: '461–509',
 		type: 'chapter'
 	},
+	'dryer-2013-svo': {
+		id: 'dryer-2013-svo',
+		authors: ['Dryer, Matthew S.'],
+		year: 2013,
+		title: 'Order of Subject, Object and Verb',
+		container: 'WALS Online (v2020.4), Chapter 81',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/81',
+		type: 'chapter'
+	},
+	'dryer-2013-adposition': {
+		id: 'dryer-2013-adposition',
+		authors: ['Dryer, Matthew S.'],
+		year: 2013,
+		title: 'Order of Adposition and Noun Phrase',
+		container: 'WALS Online (v2020.4), Chapter 85',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/85',
+		type: 'chapter'
+	},
 	'dryer-haspelmath-2013': {
 		id: 'dryer-haspelmath-2013',
 		authors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
