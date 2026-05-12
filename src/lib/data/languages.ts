@@ -428,7 +428,87 @@ export const languages: Record<string, Language> = {
 	// ─── Sign languages (illustrative) ────────────────────────────────────────
 	ase: { code: 'ase', name: 'American Sign Language', family: 'Sign language', lat: 38.91, lng: -77.0, locationNote: 'Washington, DC (Gallaudet)' },
 	bfi: { code: 'bfi', name: 'British Sign Language', family: 'Sign language', lat: 51.5, lng: -0.12, locationNote: 'London' },
-	jsl: { code: 'jsl', name: 'Japanese Sign Language', family: 'Sign language', lat: 35.7, lng: 139.7, locationNote: 'Tokyo' }
+	jsl: { code: 'jsl', name: 'Japanese Sign Language', family: 'Sign language', lat: 35.7, lng: 139.7, locationNote: 'Tokyo' },
+	csn: { code: 'csn', name: 'Chinese Sign Language', family: 'Sign language', lat: 39.9, lng: 116.4, locationNote: 'Beijing' },
+	fsl: { code: 'fsl', name: 'French Sign Language', family: 'Sign language', lat: 48.85, lng: 2.35, locationNote: 'Paris' },
+	nzs: { code: 'nzs', name: 'New Zealand Sign Language', family: 'Sign language', lat: -41.3, lng: 174.78, locationNote: 'Wellington' },
+
+	// ─── More constructed ─────────────────────────────────────────────────────
+	io: { code: 'io', name: 'Ido', family: 'Constructed (a posteriori, Esperanto offshoot)', lat: 48.85, lng: 2.35, locationNote: 'Paris (Délégation pour l’adoption d’une langue auxiliaire)' },
+	vo: { code: 'vo', name: 'Volapük', family: 'Constructed (a posteriori)', lat: 49.45, lng: 8.85, locationNote: 'Litzelstetten / Konstanz (Schleyer)' },
+	jbo: { code: 'jbo', name: 'Lojban', family: 'Constructed (logical / a priori)', lat: 38.91, lng: -77.0, locationNote: 'LLG (Washington, DC)' },
+	tlh: { code: 'tlh', name: 'Klingon', endonym: 'tlhIngan Hol', family: 'Constructed (fictional)', lat: 34.05, lng: -118.24, locationNote: 'Marc Okrand (Los Angeles)' },
+	qya: { code: 'qya', name: 'Quenya', family: 'Constructed (fictional, Tolkien)', lat: 52.04, lng: -0.76, locationNote: 'Oxford (Tolkien)' },
+
+	// ─── More South & Mesoamerican ────────────────────────────────────────────
+	chl: { code: 'chl', name: 'Cha’palaa', family: 'Barbacoan', lat: 0.85, lng: -78.93, locationNote: 'northern Ecuadorian coast' },
+	bzd: { code: 'bzd', name: 'Bribri', family: 'Chibchan', lat: 9.49, lng: -83.06, locationNote: 'Talamanca, Costa Rica' },
+	cuk: { code: 'cuk', name: 'Kuna (Guna)', family: 'Chibchan', lat: 9.36, lng: -78.81, locationNote: 'Guna Yala, Panama' },
+	kog: { code: 'kog', name: 'Kogi', family: 'Chibchan', lat: 11.0, lng: -73.95, locationNote: 'Sierra Nevada de Santa Marta' },
+	guu: { code: 'guu', name: 'Yanomamö', family: 'Yanomaman', lat: 2.0, lng: -64.0, locationNote: 'upper Orinoco (Venezuela / Brazil)' },
+	mtv: { code: 'mtv', name: 'Mixe (Ayuujk)', family: 'Mixe-Zoquean', lat: 16.93, lng: -95.84, locationNote: 'Sierra Mixe, Oaxaca' },
+	zoc: { code: 'zoc', name: 'Zoque', family: 'Mixe-Zoquean', lat: 17.0, lng: -93.5, locationNote: 'Chiapas' },
+	tar: { code: 'tar', name: 'Tarahumara (Rarámuri)', family: 'Uto-Aztecan', lat: 27.85, lng: -107.62, locationNote: 'Sierra Tarahumara, Chihuahua' },
+	pap: { code: 'pap', name: 'Papiamento', family: 'Portuguese-/Spanish-based creole', lat: 12.11, lng: -68.94, locationNote: 'Willemstad, Curaçao' },
+
+	// ─── More Pacific NW / Salish / Wakashan ─────────────────────────────────
+	hur: { code: 'hur', name: 'Halkomelem', family: 'Salishan', lat: 49.27, lng: -123.12, locationNote: 'Fraser valley, BC' },
+	squ: { code: 'squ', name: 'Squamish', family: 'Salishan', lat: 49.71, lng: -123.16, locationNote: 'Sḵwx̱wú7mesh, BC' },
+	kwk: { code: 'kwk', name: 'Kwak’wala', family: 'Wakashan', lat: 50.73, lng: -127.49, locationNote: 'northern Vancouver Island' },
+	tsi: { code: 'tsi', name: 'Tsimshian', family: 'Tsimshianic', lat: 54.31, lng: -130.32, locationNote: 'Prince Rupert' },
+	nez: { code: 'nez', name: 'Nez Perce', endonym: 'Nimiipuutímt', family: 'Sahaptian', lat: 46.4, lng: -116.99, locationNote: 'Lapwai, ID' },
+
+	// ─── More Australian ──────────────────────────────────────────────────────
+	mwf: { code: 'mwf', name: 'Murrinh-Patha', family: 'Southern Daly', lat: -14.27, lng: 129.55, locationNote: 'Wadeye, NT' },
+	tiw: { code: 'tiw', name: 'Tiwi', family: 'Tiwian (isolate-like)', lat: -11.42, lng: 130.62, locationNote: 'Tiwi Islands' },
+	gup: { code: 'gup', name: 'Gupapuyngu', family: 'Pama-Nyungan › Yolŋu', lat: -12.4, lng: 136.7, locationNote: 'Arnhem Land' },
+	wlk: { code: 'wlk', name: 'Wailaki', family: 'Athabaskan (California)', lat: 40.0, lng: -123.4, locationNote: 'Round Valley, CA' },
+
+	// ─── More Trans-New Guinea / Papua ───────────────────────────────────────
+	yim: { code: 'yim', name: 'Yimas', family: 'Lower Sepik', lat: -4.6, lng: 143.5, locationNote: 'lower Sepik river' },
+	yle: { code: 'yle', name: 'Yelî Dnye', family: 'Yele (isolate)', lat: -11.4, lng: 154.2, locationNote: 'Rossel Island, PNG' },
+
+	// ─── More click / KhoeKhoe ───────────────────────────────────────────────
+	nmn: { code: 'nmn', name: '!Xóõ (Taa)', family: 'Tuu (with clicks)', lat: -23.0, lng: 21.5, locationNote: 'Kalahari (Botswana / Namibia)' },
+
+	// ─── More small European / minority ───────────────────────────────────────
+	frp: { code: 'frp', name: 'Franco-Provençal (Arpitan)', family: 'Indo-European › Romance', lat: 45.75, lng: 4.85, locationNote: 'Lyon / Aosta Valley' },
+	wa: { code: 'wa', name: 'Walloon', endonym: 'walon', family: 'Indo-European › Romance', lat: 50.41, lng: 4.44, locationNote: 'Namur' },
+	rgn: { code: 'rgn', name: 'Romagnol', family: 'Indo-European › Romance', lat: 44.42, lng: 12.2, locationNote: 'Ravenna' },
+	pms: { code: 'pms', name: 'Piedmontese', endonym: 'piemontèis', family: 'Indo-European › Romance', lat: 45.07, lng: 7.69, locationNote: 'Turin' },
+	lij: { code: 'lij', name: 'Ligurian', endonym: 'zeneise', family: 'Indo-European › Romance', lat: 44.41, lng: 8.93, locationNote: 'Genoa' },
+	lmo: { code: 'lmo', name: 'Lombard', endonym: 'lumbaart', family: 'Indo-European › Romance', lat: 45.46, lng: 9.19, locationNote: 'Milan' },
+	co: { code: 'co', name: 'Corsican', endonym: 'corsu', family: 'Indo-European › Romance', lat: 42.04, lng: 9.01, locationNote: 'Corsica' },
+	ast: { code: 'ast', name: 'Asturian', endonym: 'asturianu', family: 'Indo-European › Romance', lat: 43.36, lng: -5.85, locationNote: 'Oviedo' },
+	ext: { code: 'ext', name: 'Extremaduran', family: 'Indo-European › Romance', lat: 39.47, lng: -6.37, locationNote: 'Cáceres' },
+	cbk: { code: 'cbk', name: 'Chavacano', family: 'Spanish-based creole', lat: 6.91, lng: 122.07, locationNote: 'Zamboanga' },
+
+	// ─── More Cushitic / Ethio-Semitic ───────────────────────────────────────
+	gez: { code: 'gez', name: 'Geʽez', endonym: 'ግዕዝ', family: 'Afro-Asiatic › Semitic (liturgical)', lat: 14.13, lng: 38.72, locationNote: 'Aksum (historical)' },
+	har: { code: 'har', name: 'Harari', family: 'Afro-Asiatic › Semitic', lat: 9.31, lng: 42.13, locationNote: 'Harar' },
+	dat: { code: 'dat', name: 'Dahalo', family: 'Afro-Asiatic › Cushitic (with clicks)', lat: -2.0, lng: 41.0, locationNote: 'coastal Kenya' },
+
+	// ─── More Nilo-Saharan ────────────────────────────────────────────────────
+	dik: { code: 'dik', name: 'Karamojong', family: 'Nilo-Saharan › Eastern Nilotic', lat: 2.66, lng: 34.57, locationNote: 'Karamoja, Uganda' },
+	teo: { code: 'teo', name: 'Teso', family: 'Nilo-Saharan › Eastern Nilotic', lat: 1.74, lng: 33.62, locationNote: 'eastern Uganda' },
+	zna: { code: 'zna', name: 'Zaghawa', family: 'Nilo-Saharan › Saharan', lat: 14.78, lng: 22.65, locationNote: 'Ennedi / Darfur' },
+
+	// ─── Additional isolates / small families ────────────────────────────────
+	aeq: { code: 'aeq', name: 'Aequian', family: 'Indo-European (historical Italic-adjacent)', lat: 41.95, lng: 13.42, locationNote: 'central Italy (ancient)' },
+	xpu: { code: 'xpu', name: 'Punic', family: 'Afro-Asiatic › Semitic (historical Phoenician)', lat: 36.85, lng: 10.32, locationNote: 'Carthage (historical)' },
+	phn: { code: 'phn', name: 'Phoenician', family: 'Afro-Asiatic › Semitic (historical)', lat: 33.27, lng: 35.21, locationNote: 'Tyre (historical Levant)' },
+	sux: { code: 'sux', name: 'Sumerian', family: 'isolate (historical)', lat: 30.96, lng: 46.1, locationNote: 'Ur / Lower Mesopotamia (historical)' },
+	elx: { code: 'elx', name: 'Elamite', family: 'isolate (historical)', lat: 32.16, lng: 48.25, locationNote: 'Susa (historical)' },
+	hit: { code: 'hit', name: 'Hittite', family: 'Indo-European › Anatolian (historical)', lat: 39.95, lng: 33.95, locationNote: 'Hattusa, central Anatolia' },
+	hbo2: { code: 'hbo2', name: 'Old Egyptian', family: 'Afro-Asiatic › Egyptian (historical)', lat: 30.04, lng: 31.24, locationNote: 'Egypt (Old Kingdom)' },
+
+	// ─── Misc additions ───────────────────────────────────────────────────────
+	pa2: { code: 'pa2', name: 'Saraiki', family: 'Indo-European › Indo-Aryan', lat: 30.2, lng: 71.46, locationNote: 'Multan' },
+	jje: { code: 'jje', name: 'Jeju', endonym: '제주말', family: 'Koreanic', lat: 33.49, lng: 126.5, locationNote: 'Jeju Island' },
+	cy_old: { code: 'cy_old', name: 'Old Welsh', family: 'Indo-European › Celtic (historical)', lat: 52.4, lng: -3.5, locationNote: 'medieval Wales' },
+	enm: { code: 'enm', name: 'Middle English', family: 'Indo-European › Germanic (historical)', lat: 51.5, lng: -0.12, locationNote: 'London (Middle English period)' },
+	ang: { code: 'ang', name: 'Old English', endonym: 'Englisċ', family: 'Indo-European › Germanic (historical)', lat: 51.75, lng: -1.26, locationNote: 'Wessex (historical)' },
+	fro: { code: 'fro', name: 'Old French', family: 'Indo-European › Romance (historical)', lat: 48.85, lng: 2.35, locationNote: 'Île-de-France (medieval)' }
 };
 
 export function getLanguage(code: string): Language {
