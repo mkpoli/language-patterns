@@ -46,7 +46,8 @@ export const nonPossession: Pattern = {
 		{ language: 'de', strategy: 'negative-determiner', expression: 'Ich habe kein Geld', confidence: 'high', sources: [{ source: 'haspelmath-1997' }] },
 		{ language: 'ja', strategy: 'existential-absence', expression: 'お金がない', confidence: 'high', note: 'money-NOM not.exist', sources: [{ source: 'veselinova-hamari-2022' }] },
 		{ language: 'tr', strategy: 'possessed-absence', expression: 'Param yok', confidence: 'high', note: 'money.POSS.1SG absent', sources: [{ source: 'stassen-2009' }] },
-		{ language: 'ru', strategy: 'existential-absence', expression: 'У меня нет денег', confidence: 'high', note: 'at me NEG.EXIST money.GEN', sources: [{ source: 'stassen-2009' }, { source: 'veselinova-hamari-2022' }] }
+		{ language: 'ru', strategy: 'existential-absence', expression: 'У меня нет денег', confidence: 'high', note: 'at me NEG.EXIST money.GEN', sources: [{ source: 'stassen-2009' }, { source: 'veselinova-hamari-2022' }] },
+		{ language: 'ain', strategy: 'existential-absence', expression: 'icen isam', confidence: 'high', note: 'icen “money”; isam is the dedicated negative existential verb (cf. an / oka in Existence)', sources: [{ source: 'tamura-2000' }] }
 	],
 	examples: [
 		{
@@ -78,6 +79,15 @@ export const nonPossession: Pattern = {
 			gloss: '1SG have.1SG no money',
 			literal: 'I have no money.',
 			natural: 'I don’t have money.'
+		},
+		{
+			language: 'ain',
+			original: 'Icen isam.',
+			transliteration: 'イチェン イサㇺ',
+			gloss: 'money NEG.EXIST',
+			literal: 'Money does-not-exist.',
+			natural: 'I don’t have money.',
+			sources: [{ source: 'tamura-2000' }]
 		}
 	],
 	related: [
