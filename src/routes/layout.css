@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans:
+		'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+	--font-serif: 'Source Serif Pro', 'Georgia', serif;
+	--font-mono: 'JetBrains Mono', 'Menlo', ui-monospace, monospace;
+
+	--color-paper: oklch(98.5% 0.005 95);
+	--color-ink: oklch(22% 0.02 260);
+	--color-ink-soft: oklch(45% 0.02 260);
+	--color-rule: oklch(90% 0.01 260);
+
+	/* Strategy palette — matches the soft pastel feel of the design refs */
+	--color-sky-band: oklch(78% 0.08 230);
+	--color-sky-soft: oklch(94% 0.04 230);
+	--color-amber-band: oklch(82% 0.12 75);
+	--color-amber-soft: oklch(95% 0.05 75);
+	--color-emerald-band: oklch(78% 0.1 155);
+	--color-emerald-soft: oklch(94% 0.04 155);
+	--color-violet-band: oklch(75% 0.09 295);
+	--color-violet-soft: oklch(94% 0.04 295);
+	--color-rose-band: oklch(80% 0.09 15);
+	--color-rose-soft: oklch(95% 0.04 15);
+	--color-slate-band: oklch(70% 0.02 260);
+	--color-slate-soft: oklch(93% 0.01 260);
+}
+
+html {
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	font-feature-settings: 'ss01', 'cv11';
+}
+
+body {
+	min-height: 100vh;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Striped fill for "declining" timeline bands */
+.band-striped {
+	background-image: repeating-linear-gradient(
+		135deg,
+		currentColor 0,
+		currentColor 4px,
+		transparent 4px,
+		transparent 9px
+	);
+	opacity: 0.45;
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /atlas
+
+Sitemap: https://languagepatterns.org/sitemap.xml
