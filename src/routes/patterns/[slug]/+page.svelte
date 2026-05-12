@@ -5,6 +5,7 @@
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import PolarityContrastTable from '$lib/components/PolarityContrastTable.svelte';
 	import ParadigmGrid from '$lib/components/ParadigmGrid.svelte';
+	import PatternMap from '$lib/components/PatternMap.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
@@ -89,6 +90,14 @@
 	</section>
 
 	{#if pattern.attestations?.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">Geographic distribution</h2>
+			<p class="mb-4 text-sm text-[color:var(--color-ink-soft)]">
+				Each dot is one attested language, coloured by the strategy it uses. Click a dot for the surface form.
+			</p>
+			<PatternMap attestations={pattern.attestations} strategies={pattern.strategies} />
+		</section>
+
 		<section>
 			<h2 class="mb-4 font-serif text-2xl">Language comparison</h2>
 			<ComparisonTable {pattern} />

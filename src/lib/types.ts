@@ -7,6 +7,9 @@ export interface Language {
 	name: string;
 	endonym?: string;
 	family: string;
+	lat?: number;
+	lng?: number;
+	locationNote?: string;
 }
 
 export interface Strategy {
