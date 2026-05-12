@@ -12,6 +12,7 @@
 	const strategyById = $derived(
 		new Map(pattern.strategies.map((s) => [s.id, s]))
 	);
+	const attestations = $derived(pattern.attestations ?? []);
 </script>
 
 <div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-white">
@@ -25,7 +26,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each pattern.attestations as att, i (i)}
+			{#each attestations as att, i (i)}
 				{@const lang = getLanguage(att.language)}
 				{@const strategy = strategyById.get(att.strategy)}
 				{@const tokens = strategy ? strategyColor(strategy.color) : undefined}

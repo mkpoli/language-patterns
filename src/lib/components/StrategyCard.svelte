@@ -5,9 +5,9 @@
 
 	interface Props {
 		strategy: Strategy;
-		attestations: Attestation[];
+		attestations?: Attestation[];
 	}
-	let { strategy, attestations }: Props = $props();
+	let { strategy, attestations = [] }: Props = $props();
 
 	const tokens = $derived(strategyColor(strategy.color));
 	const langs = $derived(attestations.filter((a) => a.strategy === strategy.id));

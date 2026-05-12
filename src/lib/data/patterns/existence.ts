@@ -611,6 +611,262 @@ export const existence: Pattern = {
 				'Plural subject of a universal kind. Exposes number agreement on the existential predicate: English is→are, Italian c’è→ci sono, Latin est→sunt, Welsh stays at 3SG mae, and — most strikingly — Ainu uses a different existential verb entirely (an for singular, oka for plural). Finnish stays 3SG on but the noun goes into the partitive plural ihmisiä.'
 		}
 	],
+	polarity: {
+		title: 'Polarity: from “there is” to “there is no”',
+		summary:
+			'Negating existence — “there is no X” — is its own typological domain. Some languages just stack a sentential negator on top of the affirmative existential (English there is → there isn’t, French il y a → il n’y a pas). Others recruit a wholly different lexical item for negative existence — a *suppletive* negative existential — which is the typologically interesting case (Russian есть/нет, Turkish var/yok, Hebrew יש/אין, Korean 있다/없다, Welsh mae/does, Hungarian van/nincs, Ainu an/isam). A third pattern uses a negator that only attaches to this construction and effectively fuses with the existential (Mandarin 有 → 没有, Swahili kuna → hakuna). Suppletive negative existentials are the seed of Veselinova’s *Negative Existential Cycle* — the diachronic process by which they expand into general clause negation.',
+		contrasts: [
+			// SUPPLETIVE — typologically the most striking
+			{ language: 'ru', affirmative: 'есть', negative: 'нет', relation: 'suppletive', note: 'нет < ne yest’ (fused); negated noun goes into the genitive', sources: [{ source: 'veselinova-hamari-2022' }, { source: 'veselinova-2014' }] },
+			{ language: 'tr', affirmative: 'var', negative: 'yok', relation: 'suppletive', note: 'invariant pair; canonical case study', sources: [{ source: 'veselinova-2014' }] },
+			{ language: 'he', affirmative: 'יש yesh', negative: 'אין ein', relation: 'suppletive', note: 'invariant particles; both head their own clause', sources: [{ source: 'stassen-2009' }] },
+			{ language: 'ko', affirmative: '있다 itda', negative: '없다 eopda', relation: 'suppletive', note: 'distinct verb stems; both inflect normally' },
+			{ language: 'cy', affirmative: 'mae', negative: 'does (dim)', relation: 'suppletive', note: 'does is a dedicated negative existential form of bod', sources: [{ source: 'willis-lucas-breitbarth-2013' }] },
+			{ language: 'hu', affirmative: 'van', negative: 'nincs', relation: 'suppletive', note: 'nincs fuses nem + van; PL nincsenek', sources: [{ source: 'veselinova-2014' }] },
+			{ language: 'ain', affirmative: 'an / oka', negative: 'isam', relation: 'suppletive', note: 'isam “not exist, be absent” is a dedicated negative existential verb', sources: [{ source: 'tamura-2000' }, { source: 'bugaeva-2012' }] },
+			{ language: 'ja', affirmative: 'ある / いる', negative: 'ない / いない', relation: 'suppletive', note: 'aru ↔ nai is suppletive (distinct root); iru → inai is regular -nai negation', sources: [{ source: 'clark-1978' }] },
+
+			// COMPOUND — dedicated/fused negator
+			{ language: 'zh', affirmative: '有 yǒu', negative: '没有 méi yǒu', relation: 'compound', note: '没 is the dedicated negator for 有 (and for past); ordinary 不 never combines with 有' },
+			{ language: 'sw', affirmative: 'kuna', negative: 'hakuna', relation: 'compound', note: 'ha- (negative class 17 prefix) + kuna; lexicalised in greetings like hakuna matata' },
+
+			// SAME FORM + NEGATOR
+			{ language: 'en', affirmative: 'there is', negative: 'there is no / isn’t', relation: 'same-with-negator', note: 'no (determiner) or not (clausal); both yield negative existence' },
+			{ language: 'fr', affirmative: 'il y a', negative: 'il n’y a pas (de)', relation: 'same-with-negator', note: 'bipartite ne … pas; pas often dropped in speech (see Jespersen’s Cycle)', sources: [{ source: 'mosegaard-hansen-2013' }] },
+			{ language: 'es', affirmative: 'hay', negative: 'no hay', relation: 'same-with-negator' },
+			{ language: 'it', affirmative: 'c’è / ci sono', negative: 'non c’è / non ci sono', relation: 'same-with-negator' },
+			{ language: 'de', affirmative: 'es gibt', negative: 'es gibt kein / nicht', relation: 'same-with-negator', note: 'kein (negative determiner) is the unmarked option for indefinite nouns' },
+			{ language: 'sv', affirmative: 'det finns', negative: 'det finns inte / inget', relation: 'same-with-negator' },
+			{ language: 'la', affirmative: 'est', negative: 'nōn est', relation: 'same-with-negator' },
+			{ language: 'ar', affirmative: 'هناك hunāka / يوجد', negative: 'ليس هناك laysa hunāka / لا يوجد lā yūjad', relation: 'same-with-negator', note: 'laysa is the standard nominal negator; lā yūjad uses the verbal lā' },
+			{ language: 'hi', affirmative: 'है hai', negative: 'नहीं है nahī̃ hai', relation: 'same-with-negator' },
+			{ language: 'vi', affirmative: 'có', negative: 'không có', relation: 'same-with-negator', note: 'không “not” precedes có' },
+			{ language: 'fi', affirmative: 'on (+ partitive)', negative: 'ei ole (+ partitive)', relation: 'same-with-negator', note: 'negative auxiliary ei; subject is partitive under negation' },
+			{ language: 'eu', affirmative: 'dago', negative: 'ez dago (+ partitive)', relation: 'same-with-negator', note: 'partitive -ik appears on the existence-predicated noun under negation' },
+			{ language: 'mi', affirmative: 'he X kei/i …', negative: 'kāhore he X', relation: 'same-with-negator', note: 'clausal negator kāhore precedes the existential predication' },
+			{ language: 'id', affirmative: 'ada', negative: 'tidak ada / tak ada', relation: 'same-with-negator' }
+		],
+		examples: [
+			{
+				language: 'en',
+				original: 'There is no water in the river.',
+				gloss: 'EXPL be.3SG NEG.DET water in DEF river',
+				literal: 'There is no water in the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'fr',
+				original: 'Il n’y a pas d’eau dans la rivière.',
+				gloss: '3SG.EXPL NEG LOC has NEG PART.SG water in DEF river',
+				literal: 'It has-not there of water in the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'es',
+				original: 'No hay agua en el río.',
+				gloss: 'NEG have.EXIST water in DEF river',
+				literal: 'Not has water in the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'it',
+				original: 'Non c’è acqua nel fiume.',
+				gloss: 'NEG LOC=be.3SG water in.DEF river',
+				literal: 'Not there-is water in-the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'de',
+				original: 'Es gibt kein Wasser im Fluss.',
+				gloss: '3SG.EXPL give.3SG NEG.DET water in.DEF river',
+				literal: 'It gives no water in-the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'sv',
+				original: 'Det finns inget vatten i floden.',
+				gloss: '3SG.EXPL be.found.PRS NEG.DET water in river.DEF',
+				literal: 'It is-found no water in the-river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'zh',
+				original: '河里没有水。',
+				transliteration: 'hé lǐ méi yǒu shuǐ.',
+				gloss: 'river inside NEG have water',
+				literal: 'River-inside not has water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'ja',
+				original: '川に水がない。',
+				transliteration: 'kawa ni mizu ga nai.',
+				gloss: 'river LOC water NOM not.exist.INAN',
+				literal: 'At river, water does-not-exist.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'ko',
+				original: '강에 물이 없다.',
+				transliteration: 'gang-e mul-i eopda.',
+				gloss: 'river-LOC water-NOM not.exist',
+				literal: 'At river, water not-exists.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'tr',
+				original: 'Nehirde su yok.',
+				gloss: 'river.LOC water NEG.EXIST',
+				literal: 'At-river, water not-exists.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'ru',
+				original: 'В реке нет воды.',
+				transliteration: 'V reke net vody.',
+				gloss: 'in river.LOC NEG.EXIST water.GEN',
+				literal: 'In the river, not of-water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate',
+				sources: [{ source: 'veselinova-2014' }]
+			},
+			{
+				language: 'he',
+				original: 'אין מים בנהר.',
+				transliteration: 'ein mayim ba-nahar.',
+				gloss: 'NEG.EXIST water in.DEF-river',
+				literal: 'Not-is water in-the-river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'ar',
+				original: 'لا يوجد ماء في النهر.',
+				transliteration: 'lā yūjad māʔun fī n-nahr.',
+				gloss: 'NEG be.found.3SG water in DEF-river',
+				literal: 'Not is-found water in the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'vi',
+				original: 'Không có nước trong sông.',
+				gloss: 'NEG have water in river',
+				literal: 'Not have water in river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'hi',
+				original: 'नदी में पानी नहीं है।',
+				transliteration: 'nadī mẽ pānī nahī̃ hai.',
+				gloss: 'river LOC water NEG be.3SG',
+				literal: 'In river, water not is.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'hu',
+				original: 'A folyóban nincs víz.',
+				gloss: 'DEF river.INE NEG.EXIST.3SG water.NOM',
+				literal: 'In the river, not-is water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate',
+				sources: [{ source: 'veselinova-2014' }]
+			},
+			{
+				language: 'fi',
+				original: 'Joessa ei ole vettä.',
+				gloss: 'river.INE NEG.3SG be.CONNEG water.PART',
+				literal: 'In-river not is of-water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'eu',
+				original: 'Ibaian ez dago urik.',
+				gloss: 'river.INE NEG be.3SG.LOC water.PART',
+				literal: 'In river, not is of-water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'cy',
+				original: 'Does dim dŵr yn yr afon.',
+				gloss: 'NEG.EXIST any water in DEF river',
+				literal: 'Not-is any water in the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'la',
+				original: 'In flumine aqua nōn est.',
+				gloss: 'in river.ABL water.NOM NEG be.3SG.PRS',
+				literal: 'In river, water not is.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'sw',
+				original: 'Mtoni hakuna maji.',
+				gloss: 'river.LOC NEG.CL17.LOC-with water',
+				literal: 'At-river, not-there-with water.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'ain',
+				original: 'Pet or ta wakka isam.',
+				transliteration: 'ペッ オッタ ワッカ イサㇺ',
+				gloss: 'river place LOC water not.exist',
+				literal: 'At river-place, water does-not-exist.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate',
+				sources: [{ source: 'tamura-2000' }]
+			},
+			{
+				language: 'mi',
+				original: 'Kāhore he wai i te awa.',
+				gloss: 'NEG INDEF water at DEF river',
+				literal: 'None a water at the river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			},
+			{
+				language: 'id',
+				original: 'Tidak ada air di sungai.',
+				gloss: 'NEG EXIST water at river',
+				literal: 'Not exist water at river.',
+				natural: 'There is no water in the river.',
+				set: 'inanimate'
+			}
+		],
+		exampleSets: [
+			{
+				id: 'inanimate',
+				label: 'Inanimate',
+				title: '“There is no water in the river.”',
+				description:
+					'Negating the inanimate-set test sentence. Watch where the negator sits — and where it disappears entirely into a dedicated lexical item.'
+			}
+		],
+		sources: [
+			{ source: 'veselinova-hamari-2022' },
+			{ source: 'veselinova-2014' },
+			{ source: 'croft-1991' },
+			{ source: 'miestamo-2005' }
+		]
+	},
 	related: [
 		{ kind: 'pattern', slug: 'possession', label: 'Possession' },
 		{ kind: 'pattern', slug: 'non-possession', label: 'Non-possession' },

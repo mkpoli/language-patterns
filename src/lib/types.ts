@@ -64,6 +64,49 @@ export interface Attestation {
 	sources?: Citation[];
 }
 
+export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';
+
+export interface PolarityContrast {
+	language: LanguageCode;
+	affirmative: string;
+	negative: string;
+	relation: PolarityRelation;
+	note?: string;
+	sources?: Citation[];
+}
+
+export interface PolaritySection {
+	title?: string;
+	summary: string;
+	contrasts: PolarityContrast[];
+	examples?: Example[];
+	exampleSets?: ExampleSet[];
+	sources?: Citation[];
+}
+
+export interface ParadigmAxis {
+	id: string;
+	label: string;
+	description?: string;
+}
+
+export interface ParadigmCell {
+	language: LanguageCode;
+	axis: string;
+	form: string;
+	strategy?: string;
+	note?: string;
+	sources?: Citation[];
+}
+
+export interface ParadigmSection {
+	title?: string;
+	summary?: string;
+	axes: ParadigmAxis[];
+	cells: ParadigmCell[];
+	sources?: Citation[];
+}
+
 export interface Pattern {
 	slug: string;
 	title: string;
@@ -72,9 +115,11 @@ export interface Pattern {
 	summary: string;
 	category: string[];
 	strategies: Strategy[];
-	attestations: Attestation[];
+	attestations?: Attestation[];
 	examples: Example[];
 	exampleSets?: ExampleSet[];
+	paradigm?: ParadigmSection;
+	polarity?: PolaritySection;
 	related: { kind: 'pattern' | 'pathway'; slug: string; label: string }[];
 	sources?: Citation[];
 }
