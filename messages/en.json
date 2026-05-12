@@ -9,6 +9,7 @@
 	"nav_atlas": "Atlas",
 
 	"footer_text": "Language Patterns — PoC. Cross-linguistic typology and diachrony. Seed data is illustrative; sources to be added.",
+	"footer_license_html": "Content licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>. Attribute as “Language Patterns (languagepatterns.org)”.",
 
 	"home_eyebrow": "Typological & diachronic database",
 	"home_title": "Explore how languages share, differ, and change.",
