@@ -64,4 +64,6 @@ bun run deploy   # build + wrangler deploy
 
 ## License
 
-To be decided. Until then, please ask before reusing the data.
+Content — pattern descriptions, comparison tables, example sentences, paradigm grids, timelines, bibliographic references — is licensed under [**CC BY-SA 4.0 International**](https://creativecommons.org/licenses/by-sa/4.0/). Attribute as *"Language Patterns (languagepatterns.org), CC BY-SA 4.0"*; share derivatives under the same license. See [`LICENSE`](./LICENSE) for the full text.
+
+The application source code is not yet under a separate code license. If you'd like to reuse the SvelteKit components or build setup, open an issue first.

@@ -9,6 +9,7 @@
 	"nav_atlas": "アトラス",
 
 	"footer_text": "Language Patterns — 試作版。通言語的類型論と歴史言語学。例示用のデータ。出典は順次追加。",
+	"footer_license_html": "コンテンツは <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.ja\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> の下で利用可能です。出典は「Language Patterns (languagepatterns.org)」と表記してください。",
 
 	"home_eyebrow": "類型論・通時的データベース",
 	"home_title": "言語がどう共有し、異なり、変化するかを探る。",

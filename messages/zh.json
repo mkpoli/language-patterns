@@ -9,6 +9,7 @@
 	"nav_atlas": "图谱",
 
 	"footer_text": "Language Patterns — 概念验证版。跨语言类型学与历时语言学。示例数据仅作展示，来源将陆续补充。",
+	"footer_license_html": "内容采用 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> 协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
 
 	"home_eyebrow": "类型学与历时语言学数据库",
 	"home_title": "看世界各语言如何共享、差异、变化。",

@@ -20,6 +20,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" />
 	<meta name="theme-color" content="#fafaf5" />
 	<meta name="format-detection" content="telephone=no" />
 	{@html `<script type="application/ld+json">${JSON.stringify(orgJsonLd)}<\/script>`}
@@ -56,7 +57,8 @@
 
 	<main class="flex-1 py-10">{@render children()}</main>
 
-	<footer class="border-t border-[color:var(--color-rule)] py-6 text-xs text-[color:var(--color-ink-soft)]">
-		{m.footer_text()}
+	<footer class="flex flex-col gap-1 border-t border-[color:var(--color-rule)] py-6 text-xs text-[color:var(--color-ink-soft)]">
+		<div>{m.footer_text()}</div>
+		<div>{@html m.footer_license_html()}</div>
 	</footer>
 </div>
