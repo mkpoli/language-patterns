@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
 	import { SITE_URL, SITE_DESCRIPTION } from '$lib/seo';
 	import { m } from '$lib/paraglide/messages.js';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
@@ -19,7 +18,11 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/manifest.webmanifest" />
 	<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" />
 	<meta name="theme-color" content="#fafaf5" />
 	<meta name="format-detection" content="telephone=no" />
@@ -29,19 +32,7 @@
 <div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6">
 	<header class="flex flex-wrap items-center justify-between gap-3 border-b border-[color:var(--color-rule)] py-4">
 		<a href="/" class="flex items-center gap-3">
-			<svg viewBox="0 0 40 40" class="h-8 w-8" aria-hidden="true">
-				<circle cx="20" cy="20" r="18" fill="oklch(94% 0.04 230)" />
-				<path
-					d="M10 22 Q15 12 20 22 T 30 22"
-					fill="none"
-					stroke="oklch(45% 0.1 230)"
-					stroke-width="2"
-					stroke-linecap="round"
-				/>
-				<circle cx="14" cy="24" r="2" fill="oklch(75% 0.1 75)" />
-				<circle cx="20" cy="20" r="2" fill="oklch(75% 0.1 155)" />
-				<circle cx="26" cy="24" r="2" fill="oklch(70% 0.1 295)" />
-			</svg>
+			<img src="/icon-192.png" alt="" aria-hidden="true" width="40" height="40" class="h-10 w-10" />
 			<div>
 				<div class="font-serif text-lg font-semibold leading-tight">{m.site_name()}</div>
 				<div class="text-xs text-[color:var(--color-ink-soft)]">{m.site_tagline()}</div>
