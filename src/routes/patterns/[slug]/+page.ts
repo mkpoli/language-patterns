@@ -16,6 +16,7 @@ export function entries() {
 		{ slug: 'possession' },
 		{ slug: 'non-possession' },
 		{ slug: 'indefinites' },
-		{ slug: 'word-order' }
+		{ slug: 'word-order' },
+		{ slug: 'adposition-order' }
 	];
 }
