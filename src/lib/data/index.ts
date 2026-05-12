@@ -3,11 +3,12 @@ import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
 import { indefinites } from './patterns/indefinites';
+import { wordOrder } from './patterns/word-order';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 
 export { languages, getLanguage } from './languages';
 
-export const patterns: Pattern[] = [existence, possession, nonPossession, indefinites];
+export const patterns: Pattern[] = [existence, possession, nonPossession, indefinites, wordOrder];
 export const pathways: Pathway[] = [jespersensCycle];
 
 const patternBySlug = new Map(patterns.map((p) => [p.slug, p]));

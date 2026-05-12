@@ -11,5 +11,11 @@ export const load: PageLoad = ({ params }) => {
 export const prerender = true;
 
 export function entries() {
-	return [{ slug: 'existence' }, { slug: 'possession' }, { slug: 'non-possession' }, { slug: 'indefinites' }];
+	return [
+		{ slug: 'existence' },
+		{ slug: 'possession' },
+		{ slug: 'non-possession' },
+		{ slug: 'indefinites' },
+		{ slug: 'word-order' }
+	];
 }
