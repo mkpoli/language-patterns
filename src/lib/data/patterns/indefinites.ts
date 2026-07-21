@@ -6,7 +6,7 @@ export const indefinites: Pattern = {
 	shortTitle: 'someone, anyone, no one, everyone',
 	question: 'How do languages build the paradigm of someone, anyone, no one, and everyone?',
 	summary:
-		'Across languages, the words for *someone*, *anyone (under negation)*, *anyone (free choice)*, *no one*, and *everyone* are rarely five unrelated items. Far more often they are built from a small set of recurring ingredients: an interrogative base (*who?*) combined with a tiny suffix or particle — “also/even”, “every”, “some”, “any” — that flips it into one or another quantifier reading. Japanese 誰も, 誰でも, 誰か; Mandarin 誰也, 誰都; Korean 누구도, 누구나, 누군가; Russian кто-то, кто-нибудь, никто all show variants of this “interrogative + small particle” construction. English took a different road and lexicalised the series outright (some-/any-/no-/every-). The grid below is the heart of the pattern: read across a row to see one language’s paradigm, read down a column to see how the same function gets built in radically different ways.',
+		'The words for someone, anyone, no one, and everyone are usually one interrogative base (who?) plus a small particle — “also”, “every”, “some”, “any” — that flips it into the right reading.',
 	category: ['Meaning & Expression', 'Negation & Polarity', 'Grammar & Morphosyntax'],
 	strategies: [
 		{

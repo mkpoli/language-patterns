@@ -4,10 +4,10 @@ export const hearWordsToObey: Pathway = {
 	slug: 'hear-words-to-obey',
 	title: 'From hearing words to obedience',
 	shortTitle: 'HEAR WORDS → OBEY',
-	question: 'Listening to someone’s words can extend to heeding and obeying the speaker.',
+	question: 'How does “listen” come to mean “obey”?',
 	kind: 'shift',
 	summary:
-		'Verbs of hearing and listening repeatedly acquire the meaning of obeying. One shape keeps words or a voice as the object of HEAR or LISTEN, so that compliance is described as attending to another person’s speech, as in Mandarin tīnghuà, Japanese iu koto o kiku, Ainu u-itak-nu, and Biblical Hebrew šāmaʿ bə-qōl. The change also enters the lexicon: Latin oboedīre, formed from ob- and audīre “to hear,” stands behind French obéir, Italian obbedire, Spanish and Portuguese obedecer, Catalan obeir, and English obey; German gehorchen continues a prefixed form of hören, Russian and Ukrainian attach a reflexive to “listen,” and Greek hypakoúō, Akkadian šemû, and Egyptian sḏm each pair hearing with obedience inside their own corpora. Most of the evidence is synchronic polysemy or a fixed expression. The Romance, English, and German lines shown on the timeline are historically documented.',
+		'Verbs of hearing repeatedly grow the sense of obeying — Mandarin tīnghuà, Japanese iu koto o kiku (“to listen to what is said”), and Latin oboedīre on audīre “to hear”, behind French obéir and English obey.',
 	stages: [
 		{
 			id: 'auditory-reception',
@@ -122,21 +122,35 @@ export const hearWordsToObey: Pathway = {
 		{
 			language: 'ja',
 			set: 'phrase',
-			original: 'この子は親の言うことをよく聞く',
-			transliteration: 'kono ko wa oya no iu koto o yoku kiku',
-			gloss: 'this child TOP parent GEN say thing ACC well hear',
-			literal: 'this child listens well to what the parents say',
-			natural: 'this child obeys the parents',
+			original: '言うことを聞く',
+			transliteration: 'iu koto o kiku',
+			gloss: 'say-NMLZ-ACC hear',
+			literal: 'hear what (someone) says',
+			natural: 'obey; do as one is told',
+			illustration: {
+				original: 'この子は親の言うことをよく聞く',
+				transliteration: 'kono ko wa oya no iu koto o yoku kiku',
+				gloss: 'this child TOP parent GEN say-NMLZ-ACC well hear',
+				literal: 'this child listens well to what the parents say',
+				natural: 'this child obeys the parents well'
+			},
 			sources: [{ source: 'shogakukan-progressive-kiku' }]
 		},
 		{
 			language: 'ko',
 			set: 'phrase',
-			original: '시시는 의심하지 않고 어머니의 말을 들었다',
-			transliteration: 'Sissi-neun uisimhaji anko eomeoni-ui mal-eul deureotda',
-			gloss: 'Cissie-TOP doubt.NEG and mother-GEN word-ACC hear.PST',
-			literal: 'Cissie heard her mother’s words without doubting',
-			natural: 'Cissie obeyed her mother without question',
+			original: '말을 듣다',
+			transliteration: 'mal-eul deutda',
+			gloss: 'word-ACC hear',
+			literal: 'listen to (someone’s) words',
+			natural: 'obey; heed',
+			illustration: {
+				original: '시시는 의심하지 않고 어머니의 말을 들었다',
+				transliteration: 'Sissi-neun uisimhaji anko eomeoni-ui mal-eul deureotda',
+				gloss: 'Cissie-TOP doubt.NEG and mother-GEN word-ACC hear.PST',
+				literal: 'Cissie heard her mother’s words without doubting',
+				natural: 'Cissie obeyed her mother without question'
+			},
 			sources: [{ source: 'collins-korean-obey' }]
 		},
 		{
@@ -170,11 +184,18 @@ export const hearWordsToObey: Pathway = {
 		{
 			language: 'hbo',
 			set: 'phrase',
-			original: 'וַיִּשְׁמַע יְהוָה בְּקוֹל אֵלִיָּהוּ',
-			transliteration: 'wayyišmaʿ YHWH bə-qōl ʾĒliyyāhū',
-			gloss: 'and.hear YHWH in-voice Elijah',
-			literal: 'YHWH listened to the voice of Elijah',
-			natural: 'YHWH obeyed Elijah',
+			original: 'שָׁמַע בְּקוֹל',
+			transliteration: 'šāmaʿ bə-qōl',
+			gloss: 'hear in-voice',
+			literal: 'hear the voice of',
+			natural: 'obey, comply with',
+			illustration: {
+				original: 'וַיִּשְׁמַע יְהוָה בְּקוֹל אֵלִיָּהוּ',
+				transliteration: 'wayyišmaʿ YHWH bə-qōl ʾĒliyyāhū',
+				gloss: 'and.hear YHWH in-voice Elijah',
+				literal: 'YHWH listened to the voice of Elijah',
+				natural: 'YHWH obeyed Elijah (1 Kings 17:22)'
+			},
 			sources: [{ source: 'leal-glanz-2022', locator: 'pp. 203–226; 1 Kings 17:22' }]
 		},
 		{
