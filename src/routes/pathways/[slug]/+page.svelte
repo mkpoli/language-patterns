@@ -2,6 +2,7 @@
 	import StageCard from '$lib/components/StageCard.svelte';
 	import CycleDiagram from '$lib/components/CycleDiagram.svelte';
 	import HistoricalTimeline from '$lib/components/HistoricalTimeline.svelte';
+	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
@@ -10,10 +11,28 @@
 	let { data } = $props();
 	const pathway = $derived(data.pathway);
 
+	let selectedSet: string | null = $state(null);
+	const activeSet = $derived(selectedSet ?? pathway.exampleSets?.[0]?.id ?? '');
+	const activeSetMeta = $derived(pathway.exampleSets?.find((s) => s.id === activeSet));
+	const activeSetExamples = $derived((pathway.examples ?? []).filter((e) => e.set === activeSet));
+	const ungroupedExamples = $derived((pathway.examples ?? []).filter((e) => !e.set));
+
+	const timelineStartYear = $derived.by(() => {
+		if (!pathway.bands.length) return 1000;
+		const min = Math.min(...pathway.bands.map((b) => b.uncertaintyStart ?? b.start));
+		return Math.floor((min - 50) / 200) * 200;
+	});
+	const timelineEndYear = $derived.by(() => {
+		if (!pathway.bands.length) return 2000;
+		const max = Math.max(...pathway.bands.map((b) => b.uncertaintyEnd ?? b.end));
+		return Math.ceil((max + 50) / 200) * 200;
+	});
+
 	const allCitations = $derived([
 		...(pathway.sources ?? []),
 		...pathway.stages.flatMap((s) => s.sources ?? []),
-		...pathway.bands.flatMap((b) => b.sources ?? [])
+		...pathway.bands.flatMap((b) => b.sources ?? []),
+		...(pathway.examples ?? []).flatMap((e) => e.sources ?? [])
 	]);
 
 	const jsonLd = $derived({
@@ -32,7 +51,12 @@
 		about: ['historical linguistics', 'grammaticalization', pathway.kind],
 		citation: (pathway.sources ?? []).map((c) => {
 			const s = getSource(c.source);
-			return { '@type': 'CreativeWork', name: s.title, author: s.authors.join('; '), datePublished: String(s.year) };
+			return {
+				'@type': 'CreativeWork',
+				name: s.title,
+				author: s.authors.join('; '),
+				datePublished: String(s.year)
+			};
 		})
 	});
 </script>
@@ -42,22 +66,33 @@
 	description={pathway.summary}
 	path={`/pathways/${pathway.slug}`}
 	type="article"
-	keywords={[pathway.title, pathway.shortTitle, 'historical linguistics', 'language change', 'grammaticalization']}
+	keywords={[
+		pathway.title,
+		pathway.shortTitle,
+		'historical linguistics',
+		'language change',
+		'grammaticalization'
+	]}
 	{jsonLd}
 />
 
 <article class="flex flex-col gap-10">
 	<header class="flex flex-col gap-3">
-		<div class="flex items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
+		<div
+			class="flex items-center gap-2 text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
+		>
 			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">Pathway</span>
 			<span>· {pathway.kind}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
-		<p class="text-lg italic text-[color:var(--color-ink-soft)]">{pathway.question}</p>
+		<p class="text-lg text-[color:var(--color-ink-soft)] italic">{pathway.question}</p>
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 	</header>
 
-	<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
+	<section
+		class:grid={pathway.kind === 'cycle'}
+		class="gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start"
+	>
 		<div>
 			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
@@ -66,19 +101,95 @@
 				{/each}
 			</div>
 		</div>
-		<div>
-			<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
-			<CycleDiagram stages={pathway.stages} />
-		</div>
+		{#if pathway.kind === 'cycle'}
+			<div>
+				<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
+				<CycleDiagram stages={pathway.stages} />
+			</div>
+		{/if}
 	</section>
 
-	<section>
-		<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
-		<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-			How expressions overlap, compete, and replace one another across languages. Hover any band for the full date range and note.
-		</p>
-		<HistoricalTimeline {pathway} />
-	</section>
+	{#if pathway.examples?.length}
+		<section>
+			<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+				<div>
+					<h2 class="font-serif text-2xl">Cross-linguistic evidence</h2>
+					<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+						Each expression retains hearing or listening in its structure while conventionally
+						expressing attention, compliance, or obedience.
+					</p>
+				</div>
+
+				{#if pathway.exampleSets?.length && pathway.exampleSets.length > 1}
+					<div
+						role="tablist"
+						aria-label="Example set"
+						class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[oklch(96%_0.005_260)] p-1 text-sm"
+					>
+						{#each pathway.exampleSets as set (set.id)}
+							{@const count = (pathway.examples ?? []).filter((e) => e.set === set.id).length}
+							<button
+								type="button"
+								role="tab"
+								aria-selected={activeSet === set.id}
+								onclick={() => (selectedSet = set.id)}
+								class="rounded-full px-3 py-1.5 transition"
+								class:bg-white={activeSet === set.id}
+								class:shadow-sm={activeSet === set.id}
+								class:font-medium={activeSet === set.id}
+								class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
+							>
+								{set.label ?? set.id}
+								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{count}</span>
+							</button>
+						{/each}
+					</div>
+				{/if}
+			</div>
+
+			{#if pathway.exampleSets?.length}
+				{#if activeSetMeta}
+					<div class="mb-4 border-l-2 border-[color:var(--color-rule)] pl-3">
+						<h3 class="font-serif text-lg">{activeSetMeta.title}</h3>
+						{#if activeSetMeta.description}
+							<p class="text-sm text-[color:var(--color-ink-soft)]">{activeSetMeta.description}</p>
+						{/if}
+					</div>
+				{/if}
+
+				<div role="tabpanel" class="grid gap-4 lg:grid-cols-2">
+					{#each activeSetExamples as example, i (`${activeSet}-${i}`)}
+						<ExampleGloss {example} />
+					{/each}
+				</div>
+
+				{#if ungroupedExamples.length}
+					<div class="mt-6 grid gap-4 lg:grid-cols-2">
+						{#each ungroupedExamples as example, i (i)}
+							<ExampleGloss {example} />
+						{/each}
+					</div>
+				{/if}
+			{:else}
+				<div class="grid gap-4 lg:grid-cols-2">
+					{#each pathway.examples as example, i (`${example.language}-${i}`)}
+						<ExampleGloss {example} />
+					{/each}
+				</div>
+			{/if}
+		</section>
+	{/if}
+
+	{#if pathway.bands.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				How expressions overlap, compete, and replace one another across languages. Hover any band
+				for the full date range and note.
+			</p>
+			<HistoricalTimeline {pathway} startYear={timelineStartYear} endYear={timelineEndYear} />
+		</section>
+	{/if}
 
 	<Bibliography citations={allCitations} />
 
