@@ -84,7 +84,7 @@ Pattern and pathway pages are prerendered via `entries()`.
 
 ```
 bun run dev      # vite dev on :5173
-bun run check    # wrangler types --check + svelte-kit sync + svelte-check
+bun run check    # paraglide compile + svelte-kit sync + svelte-check
 bun run build    # production build into .svelte-kit/cloudflare
 bun run preview  # wrangler dev against the built worker on :4173
 bun run gen      # regenerate worker-configuration.d.ts from wrangler.jsonc
