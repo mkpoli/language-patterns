@@ -7,6 +7,9 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
+	import StageFlow from '$lib/components/StageFlow.svelte';
+	import PatternMap from '$lib/components/PatternMap.svelte';
+	import { getLanguage } from '$lib/data/languages';
 
 	let { data } = $props();
 	const pathway = $derived(data.pathway);
@@ -26,6 +29,47 @@
 		if (!pathway.bands.length) return 2000;
 		const max = Math.max(...pathway.bands.map((b) => b.uncertaintyEnd ?? b.end));
 		return Math.ceil((max + 50) / 200) * 200;
+	});
+
+	const mapMarkers = $derived.by(() => {
+		interface Bucket {
+			code: string;
+			expressions: string[];
+			groups: Set<string>;
+		}
+		const byCode = new Map<string, Bucket>();
+		for (const e of pathway.examples ?? []) {
+			const lang = getLanguage(e.language);
+			if (lang.lat == null || lang.lng == null) continue;
+			let bucket = byCode.get(e.language);
+			if (!bucket) {
+				bucket = { code: e.language, expressions: [], groups: new Set() };
+				byCode.set(e.language, bucket);
+			}
+			bucket.expressions.push(e.original);
+			if (e.set) bucket.groups.add(e.set);
+		}
+		return [...byCode.values()].map((b) => {
+			const phrase = b.groups.has('phrase');
+			const lexeme = b.groups.has('lexeme');
+			const color: 'emerald' | 'violet' | 'slate' =
+				phrase && lexeme ? 'slate' : lexeme ? 'violet' : 'emerald';
+			const note =
+				phrase && lexeme
+					? 'Hearing words or a voice · Hearing verbs meaning obey'
+					: lexeme
+						? 'Hearing verbs meaning obey'
+						: 'Hearing words or a voice';
+			return { code: b.code, expression: b.expressions.join('  ·  '), note, color };
+		});
+	});
+
+	const mapLegend = $derived.by(() => {
+		const groups = new Set((pathway.examples ?? []).map((e) => e.set).filter(Boolean));
+		const items: { label: string; color: 'emerald' | 'violet' }[] = [];
+		if (groups.has('phrase')) items.push({ label: 'Hearing words or a voice', color: 'emerald' });
+		if (groups.has('lexeme')) items.push({ label: 'Hearing verbs meaning obey', color: 'violet' });
+		return items;
 	});
 
 	const allCitations = $derived([
@@ -89,25 +133,27 @@
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 	</header>
 
-	<section
-		class:grid={pathway.kind === 'cycle'}
-		class="gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start"
-	>
-		<div>
-			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
-			<div class="grid gap-4 sm:grid-cols-2">
-				{#each pathway.stages as stage (stage.id)}
-					<StageCard {stage} {pathway} />
-				{/each}
+	{#if pathway.kind === 'cycle'}
+		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
+			<div>
+				<h2 class="mb-4 font-serif text-2xl">Stages</h2>
+				<div class="grid gap-4 sm:grid-cols-2">
+					{#each pathway.stages as stage (stage.id)}
+						<StageCard {stage} {pathway} />
+					{/each}
+				</div>
 			</div>
-		</div>
-		{#if pathway.kind === 'cycle'}
 			<div>
 				<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
 				<CycleDiagram stages={pathway.stages} />
 			</div>
-		{/if}
-	</section>
+		</section>
+	{:else}
+		<section>
+			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
+			<StageFlow stages={pathway.stages} {pathway} />
+		</section>
+	{/if}
 
 	{#if pathway.examples?.length}
 		<section>
@@ -140,7 +186,9 @@
 								class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
 							>
 								{set.label ?? set.id}
-								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{count}</span>
+								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]"
+									>{count}</span
+								>
 							</button>
 						{/each}
 					</div>
@@ -177,6 +225,18 @@
 					{/each}
 				</div>
 			{/if}
+		</section>
+	{/if}
+
+	{#if mapMarkers.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">Where these are found</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				The phrase constructions and the lexicalized hearing verbs span several language families
+				and regions. Each marker is one attested language; open it for the expression recorded
+				there.
+			</p>
+			<PatternMap markers={mapMarkers} legend={mapLegend} />
 		</section>
 	{/if}
 
