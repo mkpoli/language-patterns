@@ -7,7 +7,7 @@ export const jespersensCycle: Pathway = {
 	question: 'How does negation rebuild itself over time?',
 	kind: 'cycle',
 	summary:
-		'A recurrent diachronic pattern: a simple preverbal negator weakens, gets reinforced by an extra element (often a minimizer like “step” or “thing”), the reinforcement is reanalysed as the real negator, the old marker fades, and the new negator may itself start weakening — restarting the cycle.',
+		'A preverbal negator weakens and is reinforced by an extra element, often a minimizer like “step” or “thing”. The reinforcer is reanalysed as the negator itself, then weakens in turn, and the cycle starts again.',
 	stages: [
 		{
 			id: 'stage-1',

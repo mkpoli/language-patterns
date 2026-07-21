@@ -6,7 +6,7 @@ export const existence: Pattern = {
 	shortTitle: 'There is…',
 	question: 'How do languages say “there is”?',
 	summary:
-		'Languages reach for a small set of recurring strategies to assert that something exists: a copula (BE), a possession verb (HAVE), a dedicated existential predicate (EXIST), or a locative frame (“at the place, X is”). To make the comparison robust, we use three deliberately universal test sentences — inanimate (“there is water in the river”), animate singular (“there is a dog in the house”), and animate plural (“there are people in the village”). Together they expose splits by animacy (Japanese ある↔いる, German es gibt↔sein, Swahili kuna↔yuko), by number (English is↔are, Italian c’è↔ci sono, Latin est↔sunt, Ainu an↔oka), and by case (Finnish partitive on mass / nominative on countable / partitive on existential plural).',
+		'Languages assert existence with a copula (BE), a possession verb (HAVE), a dedicated existential predicate, or a locative frame. The choice often splits by animacy and by number.',
 	category: ['Meaning & Expression', 'Possession & Existence'],
 	strategies: [
 		{

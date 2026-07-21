@@ -16,7 +16,7 @@ export const adpositionOrder: Pattern = {
 	shortTitle: 'On the table / table on',
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
-		'Languages line up two ways here. Verb-final languages put the adposition after the noun (postpositions): English *on the table* ↔ Japanese *tēburu no ue ni* — “table’s top at.” Verb-initial and SVO languages put it before (prepositions). The correlation is one of the most robust word-order universals in typology (Greenberg 1963; Dryer 1992) — but there are pointed exceptions. Mande languages (Bambara, Mandinka) are SOV but lean prepositional. Finnish and Hungarian are SVO-leaning but stay postpositional from their Uralic inheritance. A few languages use *inpositions* (the marker goes inside the NP — rare but attested), and a handful — Tagalog, classical Hawaiian — have such a thin adpositional inventory that the question barely applies.',
+		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). It is a correlation with real exceptions, not an absolute rule: Finnish and Bambara go against it.',
 	category: ['Word Order', 'Grammar & Morphosyntax'],
 	strategies: [
 		{ id: 'pre', label: 'Prepositions', schematic: '[PREP] [NP]', description: 'The adposition precedes the noun phrase. Strongly associated with VO order — Romance, Germanic, Sinitic, Bantu, Celtic, modern Semitic.', color: 'sky' },
