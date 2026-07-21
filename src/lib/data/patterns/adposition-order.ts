@@ -16,7 +16,7 @@ export const adpositionOrder: Pattern = {
 	shortTitle: 'On the table / table on',
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
-		'Whether the adposition goes before or after the noun tracks verb–object order — after in OV languages (Japanese tēburu no ue ni), before in VO (English on the table). A robust universal with pointed exceptions like Finnish and Bambara.',
+		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). It is a correlation with real exceptions, not an absolute rule: Finnish and Bambara go against it.',
 	category: ['Word Order', 'Grammar & Morphosyntax'],
 	strategies: [
 		{ id: 'pre', label: 'Prepositions', schematic: '[PREP] [NP]', description: 'The adposition precedes the noun phrase. Strongly associated with VO order — Romance, Germanic, Sinitic, Bantu, Celtic, modern Semitic.', color: 'sky' },

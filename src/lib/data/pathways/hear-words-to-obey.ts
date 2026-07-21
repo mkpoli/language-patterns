@@ -7,7 +7,7 @@ export const hearWordsToObey: Pathway = {
 	question: 'How does “listen” come to mean “obey”?',
 	kind: 'shift',
 	summary:
-		'Verbs of hearing repeatedly grow the sense of obeying — Mandarin tīnghuà, Japanese iu koto o kiku (“to listen to what is said”), and Latin oboedīre on audīre “to hear”, behind French obéir and English obey.',
+		'Verbs of hearing and listening repeatedly grow a sense of obeying. The pattern recurs from Mandarin tīnghuà and Japanese iu koto o kiku to Latin oboedīre, built on audīre “to hear”, behind French obéir and English obey.',
 	stages: [
 		{
 			id: 'auditory-reception',

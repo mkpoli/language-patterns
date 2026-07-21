@@ -6,7 +6,7 @@ export const indefinites: Pattern = {
 	shortTitle: 'someone, anyone, no one, everyone',
 	question: 'How do languages build the paradigm of someone, anyone, no one, and everyone?',
 	summary:
-		'The words for someone, anyone, no one, and everyone are usually one interrogative base (who?) plus a small particle — “also”, “every”, “some”, “any” — that flips it into the right reading.',
+		'Most often these words share one interrogative base (who?) plus a small particle — “also”, “every”, “some”, “any” — that sets the reading. A few languages, English among them, lexicalise the series instead.',
 	category: ['Meaning & Expression', 'Negation & Polarity', 'Grammar & Morphosyntax'],
 	strategies: [
 		{

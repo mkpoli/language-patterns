@@ -7,7 +7,7 @@ export const jespersensCycle: Pathway = {
 	question: 'How does negation rebuild itself over time?',
 	kind: 'cycle',
 	summary:
-		'A preverbal negator weakens, gets reinforced by an extra element — often a minimizer like “step” or “thing” — and the reinforcer is reanalysed as the negator itself, until it too weakens and the cycle restarts.',
+		'A preverbal negator weakens and is reinforced by an extra element, often a minimizer like “step” or “thing”. The reinforcer is reanalysed as the negator itself, then weakens in turn, and the cycle starts again.',
 	stages: [
 		{
 			id: 'stage-1',
