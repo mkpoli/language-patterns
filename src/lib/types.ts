@@ -47,6 +47,14 @@ export interface ExampleSet {
 	description?: string;
 }
 
+export interface ExampleIllustration {
+	original: string;
+	transliteration?: string;
+	gloss?: string;
+	literal?: string;
+	natural?: string;
+}
+
 export interface Example {
 	language: LanguageCode;
 	original: string;
@@ -55,6 +63,7 @@ export interface Example {
 	literal: string;
 	natural: string;
 	set?: string;
+	illustration?: ExampleIllustration;
 	sources?: Citation[];
 }
 

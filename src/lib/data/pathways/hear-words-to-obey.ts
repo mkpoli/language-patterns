@@ -275,7 +275,8 @@ export const hearWordsToObey: Pathway = {
 			set: 'lexeme',
 			original: 'gehorchen',
 			gloss: 'GE-hear.INF',
-			literal: 'to hear toward (Middle High German gehorchen, Old High German gihōren, a prefixed form of hören)',
+			literal:
+				'to hear toward (Middle High German gehorchen, Old High German gihōren, a prefixed form of hören)',
 			natural: 'to obey',
 			sources: [{ source: 'dwds-gehorchen' }]
 		},
