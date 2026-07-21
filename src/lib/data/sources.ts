@@ -339,6 +339,144 @@ export const sources: Record<string, Source> = {
 		url: 'https://digitalcommons.andrews.edu/auss/vol59/iss2/2/',
 		type: 'article'
 	},
+	'lewis-short-oboedio': {
+		id: 'lewis-short-oboedio',
+		authors: ['Lewis, Charlton T.', 'Short, Charles'],
+		year: 1879,
+		title: 'A Latin Dictionary: ŏboedĭo',
+		url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0059:entry=oboedio',
+		type: 'book'
+	},
+	'cnrtl-obeir': {
+		id: 'cnrtl-obeir',
+		authors: ['CNRS'],
+		year: 'n.d.',
+		title: 'Centre National de Ressources Textuelles et Lexicales: obéir',
+		url: 'https://www.cnrtl.fr/definition/obéir',
+		type: 'url'
+	},
+	'treccani-obbedire': {
+		id: 'treccani-obbedire',
+		authors: ['Istituto della Enciclopedia Italiana'],
+		year: 'n.d.',
+		title: 'Vocabolario Treccani online: obbedire',
+		url: 'https://www.treccani.it/vocabolario/obbedire/',
+		type: 'url'
+	},
+	'rae-obedecer': {
+		id: 'rae-obedecer',
+		authors: ['Real Academia Española'],
+		year: 'n.d.',
+		title: 'Diccionario de la lengua española: obedecer',
+		url: 'https://dle.rae.es/obedecer',
+		type: 'url'
+	},
+	'priberam-obedecer': {
+		id: 'priberam-obedecer',
+		authors: ['Priberam Informática'],
+		year: 'n.d.',
+		title: 'Dicionário Priberam da Língua Portuguesa: obedecer',
+		url: 'https://dicionario.priberam.org/obedecer',
+		type: 'url'
+	},
+	'wiktionary-obeir': {
+		id: 'wiktionary-obeir',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: obeir',
+		url: 'https://en.wiktionary.org/wiki/obeir',
+		type: 'url'
+	},
+	'wiktionary-obey': {
+		id: 'wiktionary-obey',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: obey',
+		url: 'https://en.wiktionary.org/wiki/obey',
+		type: 'url'
+	},
+	'dexonline-asculta': {
+		id: 'dexonline-asculta',
+		authors: ['Asociația dexonline'],
+		year: 'n.d.',
+		title: 'Dicționarul explicativ al limbii române: asculta',
+		url: 'https://dexonline.ro/definitie/asculta',
+		type: 'url'
+	},
+	'wiktionary-asculta': {
+		id: 'wiktionary-asculta',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: asculta',
+		url: 'https://en.wiktionary.org/wiki/asculta',
+		type: 'url'
+	},
+	'dwds-gehorchen': {
+		id: 'dwds-gehorchen',
+		authors: ['Berlin-Brandenburg Academy of Sciences and Humanities'],
+		year: 'n.d.',
+		title: 'DWDS – Digitales Wörterbuch der deutschen Sprache: gehorchen',
+		url: 'https://www.dwds.de/wb/gehorchen',
+		type: 'url'
+	},
+	'dwds-gehorsam': {
+		id: 'dwds-gehorsam',
+		authors: ['Berlin-Brandenburg Academy of Sciences and Humanities'],
+		year: 'n.d.',
+		title: 'DWDS – Digitales Wörterbuch der deutschen Sprache: gehorsam',
+		url: 'https://www.dwds.de/wb/gehorsam',
+		type: 'url'
+	},
+	'wiktionary-slushatsya': {
+		id: 'wiktionary-slushatsya',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Викисловарь: слушаться',
+		url: 'https://ru.wiktionary.org/wiki/слушаться',
+		type: 'url'
+	},
+	'sum11-slukhatysja': {
+		id: 'sum11-slukhatysja',
+		authors: ['Bilodid, I. K.'],
+		year: 1978,
+		title: 'Slovnyk ukraïnsʹkoï movy v 11 tomakh, vol. 9: слухатися',
+		publisher: 'Naukova Dumka, Kyiv',
+		url: 'http://sum.in.ua/s/slukhatysja',
+		type: 'book'
+	},
+	'wiktionary-hypakouo': {
+		id: 'wiktionary-hypakouo',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ὑπακούω',
+		url: 'https://en.wiktionary.org/wiki/ὑπακούω',
+		type: 'url'
+	},
+	'cad-semu': {
+		id: 'cad-semu',
+		authors: ['The Oriental Institute of the University of Chicago'],
+		year: '1956–2010',
+		title: 'The Assyrian Dictionary of the Oriental Institute of the University of Chicago (CAD), vol. Š/2: s.v. šemû',
+		pages: '256–285',
+		url: 'https://isac.uchicago.edu/research/publications/assyrian-dictionary-oriental-institute-university-chicago-cad',
+		type: 'book'
+	},
+	'wiktionary-sdm': {
+		id: 'wiktionary-sdm',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: sḏm',
+		url: 'https://en.wiktionary.org/wiki/sḏm',
+		type: 'url'
+	},
+	'erman-grapow-1931': {
+		id: 'erman-grapow-1931',
+		authors: ['Erman, Adolf', 'Grapow, Hermann'],
+		year: '1926–1961',
+		title: 'Wörterbuch der ägyptischen Sprache, vol. 4: s.v. sḏm',
+		publisher: 'Akademie-Verlag, Berlin',
+		type: 'book'
+	},
 	'dryer-2013-svo': {
 		id: 'dryer-2013-svo',
 		authors: ['Dryer, Matthew S.'],

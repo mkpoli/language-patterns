@@ -194,6 +194,7 @@ export const languages: Record<string, Language> = {
 	ti: { code: 'ti', name: 'Tigrinya', endonym: 'ትግርኛ', family: 'Afro-Asiatic › Semitic', lat: 15.32, lng: 38.93, locationNote: 'Asmara' },
 	ber: { code: 'ber', name: 'Tamazight (Berber)', endonym: 'ⵜⴰⵎⴰⵣⵉⵖⵜ', family: 'Afro-Asiatic › Berber', lat: 31.79, lng: -7.09, locationNote: 'Atlas region' },
 	cop: { code: 'cop', name: 'Coptic', endonym: 'ⲙⲉⲧⲣⲉⲙⲛ̀ⲭⲏⲙⲓ', family: 'Afro-Asiatic › Egyptian (historical / liturgical)', lat: 30.04, lng: 31.24, locationNote: 'late-antique Egypt' },
+	egy: { code: 'egy', name: 'Egyptian (Ancient)', family: 'Afro-Asiatic › Egyptian (historical)', lat: 25.72, lng: 32.61, locationNote: 'Nile Valley (Middle Kingdom)' },
 	ha: { code: 'ha', name: 'Hausa', endonym: 'Harshen Hausa', family: 'Afro-Asiatic › Chadic', lat: 12.0, lng: 8.52, locationNote: 'Kano' },
 	so: { code: 'so', name: 'Somali', endonym: 'af Soomaali', family: 'Afro-Asiatic › Cushitic', lat: 2.05, lng: 45.32, locationNote: 'Mogadishu' },
 	om: { code: 'om', name: 'Oromo', endonym: 'afaan Oromoo', family: 'Afro-Asiatic › Cushitic', lat: 8.55, lng: 39.27, locationNote: 'Adama' },

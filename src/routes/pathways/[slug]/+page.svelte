@@ -11,6 +11,23 @@
 	let { data } = $props();
 	const pathway = $derived(data.pathway);
 
+	let selectedSet: string | null = $state(null);
+	const activeSet = $derived(selectedSet ?? pathway.exampleSets?.[0]?.id ?? '');
+	const activeSetMeta = $derived(pathway.exampleSets?.find((s) => s.id === activeSet));
+	const activeSetExamples = $derived((pathway.examples ?? []).filter((e) => e.set === activeSet));
+	const ungroupedExamples = $derived((pathway.examples ?? []).filter((e) => !e.set));
+
+	const timelineStartYear = $derived.by(() => {
+		if (!pathway.bands.length) return 1000;
+		const min = Math.min(...pathway.bands.map((b) => b.uncertaintyStart ?? b.start));
+		return Math.floor((min - 50) / 200) * 200;
+	});
+	const timelineEndYear = $derived.by(() => {
+		if (!pathway.bands.length) return 2000;
+		const max = Math.max(...pathway.bands.map((b) => b.uncertaintyEnd ?? b.end));
+		return Math.ceil((max + 50) / 200) * 200;
+	});
+
 	const allCitations = $derived([
 		...(pathway.sources ?? []),
 		...pathway.stages.flatMap((s) => s.sources ?? []),
@@ -94,16 +111,72 @@
 
 	{#if pathway.examples?.length}
 		<section>
-			<h2 class="mb-1 font-serif text-2xl">Cross-linguistic evidence</h2>
-			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-				Each expression retains audible words or a voice in its literal structure while
-				conventionally expressing attention, compliance, or obedience.
-			</p>
-			<div class="grid gap-4 lg:grid-cols-2">
-				{#each pathway.examples as example, i (`${example.language}-${i}`)}
-					<ExampleGloss {example} />
-				{/each}
+			<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+				<div>
+					<h2 class="font-serif text-2xl">Cross-linguistic evidence</h2>
+					<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+						Each expression retains hearing or listening in its structure while conventionally
+						expressing attention, compliance, or obedience.
+					</p>
+				</div>
+
+				{#if pathway.exampleSets?.length && pathway.exampleSets.length > 1}
+					<div
+						role="tablist"
+						aria-label="Example set"
+						class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[oklch(96%_0.005_260)] p-1 text-sm"
+					>
+						{#each pathway.exampleSets as set (set.id)}
+							{@const count = (pathway.examples ?? []).filter((e) => e.set === set.id).length}
+							<button
+								type="button"
+								role="tab"
+								aria-selected={activeSet === set.id}
+								onclick={() => (selectedSet = set.id)}
+								class="rounded-full px-3 py-1.5 transition"
+								class:bg-white={activeSet === set.id}
+								class:shadow-sm={activeSet === set.id}
+								class:font-medium={activeSet === set.id}
+								class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
+							>
+								{set.label ?? set.id}
+								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{count}</span>
+							</button>
+						{/each}
+					</div>
+				{/if}
 			</div>
+
+			{#if pathway.exampleSets?.length}
+				{#if activeSetMeta}
+					<div class="mb-4 border-l-2 border-[color:var(--color-rule)] pl-3">
+						<h3 class="font-serif text-lg">{activeSetMeta.title}</h3>
+						{#if activeSetMeta.description}
+							<p class="text-sm text-[color:var(--color-ink-soft)]">{activeSetMeta.description}</p>
+						{/if}
+					</div>
+				{/if}
+
+				<div role="tabpanel" class="grid gap-4 lg:grid-cols-2">
+					{#each activeSetExamples as example, i (`${activeSet}-${i}`)}
+						<ExampleGloss {example} />
+					{/each}
+				</div>
+
+				{#if ungroupedExamples.length}
+					<div class="mt-6 grid gap-4 lg:grid-cols-2">
+						{#each ungroupedExamples as example, i (i)}
+							<ExampleGloss {example} />
+						{/each}
+					</div>
+				{/if}
+			{:else}
+				<div class="grid gap-4 lg:grid-cols-2">
+					{#each pathway.examples as example, i (`${example.language}-${i}`)}
+						<ExampleGloss {example} />
+					{/each}
+				</div>
+			{/if}
 		</section>
 	{/if}
 
@@ -114,7 +187,7 @@
 				How expressions overlap, compete, and replace one another across languages. Hover any band
 				for the full date range and note.
 			</p>
-			<HistoricalTimeline {pathway} />
+			<HistoricalTimeline {pathway} startYear={timelineStartYear} endYear={timelineEndYear} />
 		</section>
 	{/if}
 

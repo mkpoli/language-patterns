@@ -161,6 +161,7 @@ export interface Pathway {
 	stages: Stage[];
 	bands: TimelineBand[];
 	examples?: Example[];
+	exampleSets?: ExampleSet[];
 	related: { kind: 'pattern' | 'pathway'; slug: string; label: string }[];
 	sources?: Citation[];
 }
