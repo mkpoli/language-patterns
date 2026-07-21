@@ -2,6 +2,7 @@
 	import StageCard from '$lib/components/StageCard.svelte';
 	import CycleDiagram from '$lib/components/CycleDiagram.svelte';
 	import HistoricalTimeline from '$lib/components/HistoricalTimeline.svelte';
+	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
@@ -13,7 +14,8 @@
 	const allCitations = $derived([
 		...(pathway.sources ?? []),
 		...pathway.stages.flatMap((s) => s.sources ?? []),
-		...pathway.bands.flatMap((b) => b.sources ?? [])
+		...pathway.bands.flatMap((b) => b.sources ?? []),
+		...(pathway.examples ?? []).flatMap((e) => e.sources ?? [])
 	]);
 
 	const jsonLd = $derived({
@@ -32,7 +34,12 @@
 		about: ['historical linguistics', 'grammaticalization', pathway.kind],
 		citation: (pathway.sources ?? []).map((c) => {
 			const s = getSource(c.source);
-			return { '@type': 'CreativeWork', name: s.title, author: s.authors.join('; '), datePublished: String(s.year) };
+			return {
+				'@type': 'CreativeWork',
+				name: s.title,
+				author: s.authors.join('; '),
+				datePublished: String(s.year)
+			};
 		})
 	});
 </script>
@@ -42,22 +49,33 @@
 	description={pathway.summary}
 	path={`/pathways/${pathway.slug}`}
 	type="article"
-	keywords={[pathway.title, pathway.shortTitle, 'historical linguistics', 'language change', 'grammaticalization']}
+	keywords={[
+		pathway.title,
+		pathway.shortTitle,
+		'historical linguistics',
+		'language change',
+		'grammaticalization'
+	]}
 	{jsonLd}
 />
 
 <article class="flex flex-col gap-10">
 	<header class="flex flex-col gap-3">
-		<div class="flex items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
+		<div
+			class="flex items-center gap-2 text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
+		>
 			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">Pathway</span>
 			<span>· {pathway.kind}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
-		<p class="text-lg italic text-[color:var(--color-ink-soft)]">{pathway.question}</p>
+		<p class="text-lg text-[color:var(--color-ink-soft)] italic">{pathway.question}</p>
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 	</header>
 
-	<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
+	<section
+		class:grid={pathway.kind === 'cycle'}
+		class="gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start"
+	>
 		<div>
 			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
@@ -66,19 +84,39 @@
 				{/each}
 			</div>
 		</div>
-		<div>
-			<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
-			<CycleDiagram stages={pathway.stages} />
-		</div>
+		{#if pathway.kind === 'cycle'}
+			<div>
+				<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
+				<CycleDiagram stages={pathway.stages} />
+			</div>
+		{/if}
 	</section>
 
-	<section>
-		<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
-		<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-			How expressions overlap, compete, and replace one another across languages. Hover any band for the full date range and note.
-		</p>
-		<HistoricalTimeline {pathway} />
-	</section>
+	{#if pathway.examples?.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">Cross-linguistic evidence</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				Each expression retains audible words or a voice in its literal structure while
+				conventionally expressing attention, compliance, or obedience.
+			</p>
+			<div class="grid gap-4 lg:grid-cols-2">
+				{#each pathway.examples as example, i (`${example.language}-${i}`)}
+					<ExampleGloss {example} />
+				{/each}
+			</div>
+		</section>
+	{/if}
+
+	{#if pathway.bands.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				How expressions overlap, compete, and replace one another across languages. Hover any band
+				for the full date range and note.
+			</p>
+			<HistoricalTimeline {pathway} />
+		</section>
+	{/if}
 
 	<Bibliography citations={allCitations} />
 

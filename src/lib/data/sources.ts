@@ -104,7 +104,8 @@ export const sources: Record<string, Source> = {
 		id: 'willis-lucas-breitbarth-2013',
 		authors: ['Willis, David', 'Lucas, Christopher', 'Breitbarth, Anne'],
 		year: 2013,
-		title: 'The History of Negation in the Languages of Europe and the Mediterranean, Volume 1: Case Studies',
+		title:
+			'The History of Negation in the Languages of Europe and the Mediterranean, Volume 1: Case Studies',
 		publisher: 'Oxford University Press',
 		type: 'book'
 	},
@@ -142,7 +143,8 @@ export const sources: Record<string, Source> = {
 		id: 'miestamo-2005',
 		authors: ['Miestamo, Matti'],
 		year: 2005,
-		title: 'Standard Negation: The Negation of Declarative Verbal Main Clauses in a Typological Perspective',
+		title:
+			'Standard Negation: The Negation of Declarative Verbal Main Clauses in a Typological Perspective',
 		publisher: 'Mouton de Gruyter',
 		type: 'book'
 	},
@@ -247,6 +249,95 @@ export const sources: Record<string, Source> = {
 		publisher: 'Routledge',
 		pages: '461–509',
 		type: 'chapter'
+	},
+	'tamura-1996': {
+		id: 'tamura-1996',
+		authors: ['Tamura, Suzuko'],
+		year: 1996,
+		title: 'Ainu-go Saru Hōgen Jiten [Dictionary of the Saru Dialect of Ainu]',
+		publisher: 'Sōfūkan, Tokyo',
+		type: 'book'
+	},
+	'bugaeva-2016': {
+		id: 'bugaeva-2016',
+		authors: ['Bugaeva, Anna'],
+		year: 2016,
+		title: 'On the innovative nature of Sakhalin Ainu: Focusing on nominalization',
+		container: 'Studia Orientalia Electronica 117',
+		pages: '95–117',
+		url: 'https://journal.fi/store/article/view/59475',
+		type: 'article'
+	},
+	'bugaeva-kobayashi-2022': {
+		id: 'bugaeva-kobayashi-2022',
+		authors: ['Bugaeva, Anna', 'Kobayashi, Miki'],
+		year: 2022,
+		title: 'Verbal valency',
+		container: 'Handbook of the Ainu Language',
+		editors: ['Bugaeva, Anna'],
+		publisher: 'De Gruyter Mouton',
+		pages: '497–544',
+		type: 'chapter'
+	},
+	'moe-taiwan-2021-tinghua': {
+		id: 'moe-taiwan-2021-tinghua',
+		authors: ['Ministry of Education, Republic of China (Taiwan)'],
+		year: 2021,
+		title: 'Chongbian Guoyu Cidian Xiudingben: 聽話 tīnghuà',
+		url: 'https://dict.revised.moe.edu.tw/dictView.jsp?ID=53714&la=0&powerMode=0',
+		type: 'url'
+	},
+	'shogakukan-progressive-kiku': {
+		id: 'shogakukan-progressive-kiku',
+		authors: ['Shogakukan'],
+		year: 'n.d.',
+		title: 'Progressive Japanese–English Dictionary, 4th ed.: 聞く・聴く',
+		url: 'https://kotobank.jp/jeword/聞く・聴く',
+		type: 'url'
+	},
+	'collins-korean-obey': {
+		id: 'collins-korean-obey',
+		authors: ['HarperCollins Publishers'],
+		year: 2021,
+		title: 'Collins English–Korean Dictionary: obey',
+		url: 'https://www.collinsdictionary.com/dictionary/english-korean/obey',
+		type: 'url'
+	},
+	'cambridge-turkish-obey': {
+		id: 'cambridge-turkish-obey',
+		authors: ['Cambridge University Press'],
+		year: 'n.d.',
+		title: 'Cambridge English–Turkish Dictionary: obey',
+		url: 'https://dictionary.cambridge.org/dictionary/english-turkish/obey',
+		type: 'url'
+	},
+	'dehkhoda-harf-shenavi': {
+		id: 'dehkhoda-harf-shenavi',
+		authors: ['Dehkhoda, Ali-Akbar'],
+		year: '1931–1973',
+		title: 'Loghatnāme-ye Dehkhodā: حرف‌شنوی harf-šenavi',
+		url: 'https://lamtakam.com/dictionaries/dehkhoda/250904/حرف+شنوی+',
+		type: 'url'
+	},
+	'tran-2022-vietnamese': {
+		id: 'tran-2022-vietnamese',
+		authors: ['Tran, Tri C.'],
+		year: 2022,
+		title: 'Reading & Writing Vietnamese: A Workbook for Self-Study',
+		publisher: 'Tuttle Publishing',
+		url: 'https://www.tuttlepublishing.com/japan/reading-and-writing-vietnamese',
+		type: 'book'
+	},
+	'leal-glanz-2022': {
+		id: 'leal-glanz-2022',
+		authors: ['Glanz, Oliver', 'Leal, Jonatas'],
+		year: 2022,
+		title:
+			'“God’s obedience”: A linguistic and narrative exploration of the Hebrew idiom in 1 Kings 17:22 and its theological implications',
+		container: 'Andrews University Seminary Studies 59(2)',
+		pages: '203–226',
+		url: 'https://digitalcommons.andrews.edu/auss/vol59/iss2/2/',
+		type: 'article'
 	},
 	'dryer-2013-svo': {
 		id: 'dryer-2013-svo',
