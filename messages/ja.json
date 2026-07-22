@@ -27,10 +27,16 @@
 	"section_stages": "段階",
 	"section_cycle": "循環",
 	"section_comparative_timeline": "比較歴史タイムライン",
+	"section_comparative_timeline_hint": "各言語で表現がどう重なり、競合し、置き換わるかを示す。帯にカーソルを合わせると期間と注記が表示される。",
+	"section_crosslinguistic_evidence": "通言語的証拠",
+	"section_geographic_distribution_hint_sets": "各マーカーは一つの言語で、所属する例セットによって色分けされている。マーカーを開くとその言語の表現が表示される。",
+	"legend_several_sets": "複数セット",
+	"legend_ungrouped": "未分類",
 
 	"example_natural": "自然訳",
 	"example_literal": "直訳",
 	"example_gloss": "グロス",
+	"example_in_context": "用例",
 
 	"label_pattern": "パターン",
 	"label_pathway": "経路",

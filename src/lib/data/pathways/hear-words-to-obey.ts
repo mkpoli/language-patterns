@@ -8,6 +8,8 @@ export const hearWordsToObey: Pathway = {
 	kind: 'shift',
 	summary:
 		'Verbs of hearing and listening repeatedly grow a sense of obeying. The pattern recurs from Mandarin tīnghuà and Japanese iu koto o kiku to Latin oboedīre, built on audīre “to hear”, behind French obéir and English obey.',
+	evidenceNote:
+		'Each expression retains hearing or listening in its structure while conventionally expressing attention, compliance, or obedience.',
 	stages: [
 		{
 			id: 'auditory-reception',
@@ -124,13 +126,13 @@ export const hearWordsToObey: Pathway = {
 			set: 'phrase',
 			original: '言うことを聞く',
 			transliteration: 'iu koto o kiku',
-			gloss: 'say-NMLZ-ACC hear',
+			gloss: 'say thing ACC hear',
 			literal: 'hear what (someone) says',
 			natural: 'obey; do as one is told',
 			illustration: {
 				original: 'この子は親の言うことをよく聞く',
 				transliteration: 'kono ko wa oya no iu koto o yoku kiku',
-				gloss: 'this child TOP parent GEN say-NMLZ-ACC well hear',
+				gloss: 'this child TOP parent GEN say thing ACC well hear',
 				literal: 'this child listens well to what the parents say',
 				natural: 'this child obeys the parents well'
 			},
@@ -146,8 +148,8 @@ export const hearWordsToObey: Pathway = {
 			natural: 'obey; heed',
 			illustration: {
 				original: '시시는 의심하지 않고 어머니의 말을 들었다',
-				transliteration: 'Sissi-neun uisimhaji anko eomeoni-ui mal-eul deureotda',
-				gloss: 'Cissie-TOP doubt.NEG and mother-GEN word-ACC hear.PST',
+				transliteration: 'Sissi-neun uisimha-ji anh-ko eomeoni-ui mal-eul deul-eoss-da',
+				gloss: 'Cissie-TOP doubt-CONN NEG-and mother-GEN word-ACC hear-PST-DECL',
 				literal: 'Cissie heard her mother’s words without doubting',
 				natural: 'Cissie obeyed her mother without question'
 			},
@@ -193,8 +195,8 @@ export const hearWordsToObey: Pathway = {
 				original: 'וַיִּשְׁמַע יְהוָה בְּקוֹל אֵלִיָּהוּ',
 				transliteration: 'wayyišmaʿ YHWH bə-qōl ʾĒliyyāhū',
 				gloss: 'and.hear YHWH in-voice Elijah',
-				literal: 'YHWH listened to the voice of Elijah',
-				natural: 'YHWH obeyed Elijah (1 Kings 17:22)'
+				literal: 'YHWH listened to the voice of Elijah (1 Kings 17:22)',
+				natural: 'YHWH heeded Elijah — read as “obeyed” by Glanz & Leal'
 			},
 			sources: [{ source: 'leal-glanz-2022', locator: 'pp. 203–226; 1 Kings 17:22' }]
 		},
@@ -275,7 +277,8 @@ export const hearWordsToObey: Pathway = {
 			set: 'lexeme',
 			original: 'gehorchen',
 			gloss: 'GE-hear.INF',
-			literal: 'to hear toward (Middle High German gehorchen, Old High German gihōren, a prefixed form of hören)',
+			literal:
+				'to hear toward (Middle High German gehorchen, Old High German gihōren, a prefixed form of hören)',
 			natural: 'to obey',
 			sources: [{ source: 'dwds-gehorchen' }]
 		},

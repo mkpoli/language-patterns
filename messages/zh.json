@@ -27,10 +27,16 @@
 	"section_stages": "阶段",
 	"section_cycle": "循环",
 	"section_comparative_timeline": "历史比较时间轴",
+	"section_comparative_timeline_hint": "展示各语言中表达如何重叠、竞争与更替。悬停色带可查看完整时间范围与注记。",
+	"section_crosslinguistic_evidence": "跨语言证据",
+	"section_geographic_distribution_hint_sets": "每个标记代表一个已记录的语言，颜色对应其例句组；点开可查看该语言的表达。",
+	"legend_several_sets": "多个例句组",
+	"legend_ungrouped": "未分组",
 
 	"example_natural": "自然",
 	"example_literal": "直译",
 	"example_gloss": "注释",
+	"example_in_context": "用例",
 
 	"label_pattern": "模式",
 	"label_pathway": "路径",

@@ -27,10 +27,16 @@
 	"section_stages": "Stages",
 	"section_cycle": "The cycle",
 	"section_comparative_timeline": "Comparative historical timeline",
+	"section_comparative_timeline_hint": "How expressions overlap, compete, and replace one another across languages. Hover any band for the full date range and note.",
+	"section_crosslinguistic_evidence": "Cross-linguistic evidence",
+	"section_geographic_distribution_hint_sets": "Each marker is one attested language, coloured by its evidence set; open it for the expression recorded there.",
+	"legend_several_sets": "Several sets",
+	"legend_ungrouped": "Ungrouped",
 
 	"example_natural": "Natural",
 	"example_literal": "Literal",
 	"example_gloss": "Gloss",
+	"example_in_context": "In context",
 
 	"label_pattern": "Pattern",
 	"label_pathway": "Pathway",

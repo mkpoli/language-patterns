@@ -7,6 +7,10 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
+	import StageFlow from '$lib/components/StageFlow.svelte';
+	import PatternMap from '$lib/components/PatternMap.svelte';
+	import { getLanguage } from '$lib/data/languages';
+	import { m } from '$lib/paraglide/messages.js';
 
 	let { data } = $props();
 	const pathway = $derived(data.pathway);
@@ -26,6 +30,72 @@
 		if (!pathway.bands.length) return 2000;
 		const max = Math.max(...pathway.bands.map((b) => b.uncertaintyEnd ?? b.end));
 		return Math.ceil((max + 50) / 200) * 200;
+	});
+
+	// One color per example set, assigned in exampleSets declaration order.
+	// Slate is reserved for languages attested in more than one set (or none).
+	const SET_PALETTE = ['emerald', 'violet', 'sky', 'amber', 'rose'] as const;
+	type SetColor = (typeof SET_PALETTE)[number] | 'slate';
+
+	const setColorById = $derived.by(() => {
+		const map = new Map<string, SetColor>();
+		(pathway.exampleSets ?? []).forEach((s, i) => {
+			map.set(s.id, SET_PALETTE[i % SET_PALETTE.length]);
+		});
+		return map;
+	});
+
+	const setLabelById = $derived(
+		new Map((pathway.exampleSets ?? []).map((s) => [s.id, s.label ?? s.id]))
+	);
+
+	const mapMarkers = $derived.by(() => {
+		interface Bucket {
+			code: string;
+			expressions: string[];
+			groups: Set<string>;
+		}
+		const byCode = new Map<string, Bucket>();
+		for (const e of pathway.examples ?? []) {
+			const lang = getLanguage(e.language);
+			if (lang.lat == null || lang.lng == null) continue;
+			let bucket = byCode.get(e.language);
+			if (!bucket) {
+				bucket = { code: e.language, expressions: [], groups: new Set() };
+				byCode.set(e.language, bucket);
+			}
+			bucket.expressions.push(e.original);
+			if (e.set) bucket.groups.add(e.set);
+		}
+		return [...byCode.values()].map((b) => {
+			const setIds = [...b.groups];
+			const color: SetColor =
+				setIds.length === 1 ? (setColorById.get(setIds[0]) ?? 'slate') : 'slate';
+			const note = setIds.length
+				? setIds.map((id) => setLabelById.get(id) ?? id).join(' · ')
+				: undefined;
+			return { code: b.code, expression: b.expressions.join('  ·  '), note, color };
+		});
+	});
+
+	const mapLegend = $derived.by(() => {
+		const usedSets = new Set(
+			(pathway.examples ?? []).map((e) => e.set).filter((s): s is string => Boolean(s))
+		);
+		const items: { label: string; color: SetColor }[] = [];
+		for (const s of pathway.exampleSets ?? []) {
+			if (usedSets.has(s.id)) {
+				items.push({ label: s.label ?? s.id, color: setColorById.get(s.id) ?? 'slate' });
+			}
+		}
+		if (mapMarkers.some((mk) => mk.color === 'slate')) {
+			const anyMultiSet = mapMarkers.some((mk) => mk.color === 'slate' && mk.note);
+			items.push({
+				label: anyMultiSet ? m.legend_several_sets() : m.legend_ungrouped(),
+				color: 'slate'
+			});
+		}
+		return items;
 	});
 
 	const allCitations = $derived([
@@ -81,7 +151,7 @@
 		<div
 			class="flex items-center gap-2 text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
 		>
-			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">Pathway</span>
+			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">{m.label_pathway()}</span>
 			<span>· {pathway.kind}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
@@ -89,35 +159,38 @@
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 	</header>
 
-	<section
-		class:grid={pathway.kind === 'cycle'}
-		class="gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start"
-	>
-		<div>
-			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
-			<div class="grid gap-4 sm:grid-cols-2">
-				{#each pathway.stages as stage (stage.id)}
-					<StageCard {stage} {pathway} />
-				{/each}
-			</div>
-		</div>
-		{#if pathway.kind === 'cycle'}
+	{#if pathway.kind === 'cycle'}
+		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
 			<div>
-				<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
+				<h2 class="mb-4 font-serif text-2xl">{m.section_stages()}</h2>
+				<div class="grid gap-4 sm:grid-cols-2">
+					{#each pathway.stages as stage (stage.id)}
+						<StageCard {stage} {pathway} />
+					{/each}
+				</div>
+			</div>
+			<div>
+				<h2 class="mb-4 font-serif text-2xl">{m.section_cycle()}</h2>
 				<CycleDiagram stages={pathway.stages} />
 			</div>
-		{/if}
-	</section>
+		</section>
+	{:else}
+		<section>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_stages()}</h2>
+			<StageFlow stages={pathway.stages} {pathway} />
+		</section>
+	{/if}
 
 	{#if pathway.examples?.length}
 		<section>
 			<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
 				<div>
-					<h2 class="font-serif text-2xl">Cross-linguistic evidence</h2>
-					<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-						Each expression retains hearing or listening in its structure while conventionally
-						expressing attention, compliance, or obedience.
-					</p>
+					<h2 class="font-serif text-2xl">{m.section_crosslinguistic_evidence()}</h2>
+					{#if pathway.evidenceNote}
+						<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+							{pathway.evidenceNote}
+						</p>
+					{/if}
 				</div>
 
 				{#if pathway.exampleSets?.length && pathway.exampleSets.length > 1}
@@ -140,7 +213,9 @@
 								class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
 							>
 								{set.label ?? set.id}
-								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{count}</span>
+								<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]"
+									>{count}</span
+								>
 							</button>
 						{/each}
 					</div>
@@ -180,12 +255,21 @@
 		</section>
 	{/if}
 
+	{#if mapMarkers.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_geographic_distribution()}</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				{m.section_geographic_distribution_hint_sets()}
+			</p>
+			<PatternMap markers={mapMarkers} legend={mapLegend} />
+		</section>
+	{/if}
+
 	{#if pathway.bands.length}
 		<section>
-			<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_comparative_timeline()}</h2>
 			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-				How expressions overlap, compete, and replace one another across languages. Hover any band
-				for the full date range and note.
+				{m.section_comparative_timeline_hint()}
 			</p>
 			<HistoricalTimeline {pathway} startYear={timelineStartYear} endYear={timelineEndYear} />
 		</section>
@@ -195,7 +279,7 @@
 
 	{#if pathway.related.length}
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">Related patterns</h2>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_related_patterns()}</h2>
 			<ul class="flex flex-wrap gap-2">
 				{#each pathway.related as rel (rel.slug)}
 					<li>
