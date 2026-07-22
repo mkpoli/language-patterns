@@ -31,6 +31,23 @@
 		return Math.ceil((max + 50) / 200) * 200;
 	});
 
+	// One color per example set, assigned in exampleSets declaration order.
+	// Slate is reserved for languages attested in more than one set (or none).
+	const SET_PALETTE = ['emerald', 'violet', 'sky', 'amber', 'rose'] as const;
+	type SetColor = (typeof SET_PALETTE)[number] | 'slate';
+
+	const setColorById = $derived.by(() => {
+		const map = new Map<string, SetColor>();
+		(pathway.exampleSets ?? []).forEach((s, i) => {
+			map.set(s.id, SET_PALETTE[i % SET_PALETTE.length]);
+		});
+		return map;
+	});
+
+	const setLabelById = $derived(
+		new Map((pathway.exampleSets ?? []).map((s) => [s.id, s.label ?? s.id]))
+	);
+
 	const mapMarkers = $derived.by(() => {
 		interface Bucket {
 			code: string;
@@ -50,25 +67,29 @@
 			if (e.set) bucket.groups.add(e.set);
 		}
 		return [...byCode.values()].map((b) => {
-			const phrase = b.groups.has('phrase');
-			const lexeme = b.groups.has('lexeme');
-			const color: 'emerald' | 'violet' | 'slate' =
-				phrase && lexeme ? 'slate' : lexeme ? 'violet' : 'emerald';
-			const note =
-				phrase && lexeme
-					? 'Hearing words or a voice · Hearing verbs meaning obey'
-					: lexeme
-						? 'Hearing verbs meaning obey'
-						: 'Hearing words or a voice';
+			const setIds = [...b.groups];
+			const color: SetColor =
+				setIds.length === 1 ? (setColorById.get(setIds[0]) ?? 'slate') : 'slate';
+			const note = setIds.length
+				? setIds.map((id) => setLabelById.get(id) ?? id).join(' · ')
+				: undefined;
 			return { code: b.code, expression: b.expressions.join('  ·  '), note, color };
 		});
 	});
 
 	const mapLegend = $derived.by(() => {
-		const groups = new Set((pathway.examples ?? []).map((e) => e.set).filter(Boolean));
-		const items: { label: string; color: 'emerald' | 'violet' }[] = [];
-		if (groups.has('phrase')) items.push({ label: 'Hearing words or a voice', color: 'emerald' });
-		if (groups.has('lexeme')) items.push({ label: 'Hearing verbs meaning obey', color: 'violet' });
+		const usedSets = new Set(
+			(pathway.examples ?? []).map((e) => e.set).filter((s): s is string => Boolean(s))
+		);
+		const items: { label: string; color: SetColor }[] = [];
+		for (const s of pathway.exampleSets ?? []) {
+			if (usedSets.has(s.id)) {
+				items.push({ label: s.label ?? s.id, color: setColorById.get(s.id) ?? 'slate' });
+			}
+		}
+		if (mapMarkers.some((mk) => mk.color === 'slate')) {
+			items.push({ label: 'Several sets', color: 'slate' });
+		}
 		return items;
 	});
 
@@ -232,9 +253,8 @@
 		<section>
 			<h2 class="mb-1 font-serif text-2xl">Where these are found</h2>
 			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-				The phrase constructions and the lexicalized hearing verbs span several language families
-				and regions. Each marker is one attested language; open it for the expression recorded
-				there.
+				Each marker is one attested language, coloured by its evidence set; open it for the
+				expression recorded there.
 			</p>
 			<PatternMap markers={mapMarkers} legend={mapLegend} />
 		</section>

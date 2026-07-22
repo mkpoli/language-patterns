@@ -67,29 +67,31 @@
 							<span class="text-[color:var(--color-ink-soft)]"> ({src.year}).</span>
 						</div>
 						<div class="font-serif text-[15px] leading-snug italic">{src.title}.</div>
-						<div class="text-[color:var(--color-ink-soft)]">
-							{#if src.editors?.length}In {src.editors.join('; ')} (eds.),
-							{/if}
-							{#if src.container}<span>{src.container}.</span>{/if}
-							{#if src.publisher}<span> {src.publisher}.</span>{/if}
-							{#if src.pages}<span> {src.pages}.</span>{/if}
-							{#if src.url}
-								<a
-									class="break-all underline decoration-[color:var(--color-rule)] underline-offset-2 hover:decoration-[color:var(--color-ink)]"
-									href={src.url}
-									target="_blank"
-									rel="noopener noreferrer">{src.url}</a
-								>
-							{/if}
-							{#if src.doi}
-								<a
-									class="underline decoration-[color:var(--color-rule)] underline-offset-2 hover:decoration-[color:var(--color-ink)]"
-									href={`https://doi.org/${src.doi}`}
-									target="_blank"
-									rel="noopener noreferrer">doi:{src.doi}</a
-								>
-							{/if}
-						</div>
+						{#if src.editors?.length || src.container || src.publisher || src.pages || src.url || src.doi}
+							<div class="text-[color:var(--color-ink-soft)]">
+								{#if src.editors?.length}In {src.editors.join('; ')} (eds.),
+								{/if}
+								{#if src.container}<span>{src.container}.</span>{/if}
+								{#if src.publisher}<span> {src.publisher}.</span>{/if}
+								{#if src.pages}<span> {src.pages}.</span>{/if}
+								{#if src.url}
+									<a
+										class="break-all underline decoration-[color:var(--color-rule)] underline-offset-2 hover:decoration-[color:var(--color-ink)]"
+										href={src.url}
+										target="_blank"
+										rel="noopener noreferrer">{src.url}</a
+									>
+								{/if}
+								{#if src.doi}
+									<a
+										class="underline decoration-[color:var(--color-rule)] underline-offset-2 hover:decoration-[color:var(--color-ink)]"
+										href={`https://doi.org/${src.doi}`}
+										target="_blank"
+										rel="noopener noreferrer">doi:{src.doi}</a
+									>
+								{/if}
+							</div>
+						{/if}
 					</div>
 				</li>
 			{/each}

@@ -32,6 +32,26 @@
 		{ id: 'literal' as Mode, label: m.example_literal() },
 		{ id: 'gloss' as Mode, label: m.example_gloss() }
 	]);
+
+	const illustrationRows = $derived(
+		example.illustration
+			? [
+					{
+						label: m.example_natural(),
+						text: example.illustration.natural,
+						mono: false,
+						soft: false
+					},
+					{
+						label: m.example_literal(),
+						text: example.illustration.literal,
+						mono: false,
+						soft: true
+					},
+					{ label: m.example_gloss(), text: example.illustration.gloss, mono: true, soft: true }
+				].filter((r) => r.text)
+			: []
+	);
 </script>
 
 <article class="rounded-2xl border border-[color:var(--color-rule)] bg-white p-5">
@@ -76,7 +96,7 @@
 			<div
 				class="mb-1.5 font-mono text-[10px] tracking-[0.12em] text-[color:var(--color-ink-soft)] uppercase"
 			>
-				In context
+				{m.example_in_context()}
 			</div>
 			<p class="font-serif text-base leading-snug">{example.illustration.original}</p>
 			{#if example.illustration.transliteration}
@@ -85,30 +105,20 @@
 				</p>
 			{/if}
 			<dl class="mt-2 grid grid-cols-[max-content_1fr] gap-x-3 gap-y-0.5 text-xs">
-				{#if example.illustration.natural}
+				{#each illustrationRows as row (row.label)}
 					<dt
 						class="font-mono text-[10px] tracking-wide text-[color:var(--color-ink-soft)] uppercase"
 					>
-						means
+						{row.label}
 					</dt>
-					<dd class="font-medium">{example.illustration.natural}</dd>
-				{/if}
-				{#if example.illustration.literal}
-					<dt
-						class="font-mono text-[10px] tracking-wide text-[color:var(--color-ink-soft)] uppercase"
+					<dd
+						class:font-medium={!row.soft}
+						class:font-mono={row.mono}
+						class:text-[color:var(--color-ink-soft)]={row.soft}
 					>
-						lit.
-					</dt>
-					<dd class="text-[color:var(--color-ink-soft)]">{example.illustration.literal}</dd>
-				{/if}
-				{#if example.illustration.gloss}
-					<dt
-						class="font-mono text-[10px] tracking-wide text-[color:var(--color-ink-soft)] uppercase"
-					>
-						gloss
-					</dt>
-					<dd class="font-mono text-[color:var(--color-ink-soft)]">{example.illustration.gloss}</dd>
-				{/if}
+						{row.text}
+					</dd>
+				{/each}
 			</dl>
 		</div>
 	{/if}

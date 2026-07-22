@@ -16,19 +16,59 @@ export const adpositionOrder: Pattern = {
 	shortTitle: 'On the table / table on',
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
-		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). It is a correlation with real exceptions, not an absolute rule: Finnish and Bambara go against it.',
+		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). Exceptions recur across families: Persian, Tajik, and the Mande languages combine OV order with prepositions, while Finnish keeps its Uralic postpositions.',
 	category: ['Word Order', 'Grammar & Morphosyntax'],
 	strategies: [
-		{ id: 'pre', label: 'Prepositions', schematic: '[PREP] [NP]', description: 'The adposition precedes the noun phrase. Strongly associated with VO order — Romance, Germanic, Sinitic, Bantu, Celtic, modern Semitic.', color: 'sky' },
-		{ id: 'post', label: 'Postpositions', schematic: '[NP] [POST]', description: 'The adposition follows the noun phrase. Strongly associated with OV order — Japonic, Koreanic, Turkic, Mongolic, Indo-Aryan, Iranian, Dravidian, Uralic.', color: 'amber' },
-		{ id: 'in', label: 'Inpositions / circumpositions', schematic: '[NP-1] P [NP-2] / P-NP-P', description: 'The marker is inside the noun phrase, or wraps it on both sides. Rare. Hungarian and Khmer show partial cases.', color: 'emerald' },
-		{ id: 'none', label: 'No (or few) adpositions', schematic: '[NP] case / particle', description: 'Spatial relations are expressed by case marking, possessor-headed locative nouns, or verb serialisation rather than dedicated adpositions.', color: 'slate' }
+		{
+			id: 'pre',
+			label: 'Prepositions',
+			schematic: '[PREP] [NP]',
+			description:
+				'The adposition precedes the noun phrase. Strongly associated with VO order — Romance, Germanic, Sinitic, Bantu, Celtic, modern Semitic.',
+			color: 'sky'
+		},
+		{
+			id: 'post',
+			label: 'Postpositions',
+			schematic: '[NP] [POST]',
+			description:
+				'The adposition follows the noun phrase. Strongly associated with OV order — Japonic, Koreanic, Turkic, Mongolic, Indo-Aryan, Iranian, Dravidian, Uralic.',
+			color: 'amber'
+		},
+		{
+			id: 'in',
+			label: 'Inpositions / circumpositions',
+			schematic: '[NP-1] P [NP-2] / P-NP-P',
+			description:
+				'The marker is inside the noun phrase, or wraps it on both sides. Rare. Hungarian and Khmer show partial cases.',
+			color: 'emerald'
+		},
+		{
+			id: 'none',
+			label: 'No (or few) adpositions',
+			schematic: '[NP] case / particle',
+			description:
+				'Spatial relations are expressed by case marking, possessor-headed locative nouns, or verb serialisation rather than dedicated adpositions.',
+			color: 'slate'
+		}
 	],
 	attestations: [
 		// ─── Postpositions (OV / Uralic / Mande caveat) ───────────────────────
-		{ language: 'ja', strategy: 'post', expression: 'postpositions', confidence: 'high', sources: [{ source: 'dryer-2013-adposition' }] },
+		{
+			language: 'ja',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			sources: [{ source: 'dryer-2013-adposition' }]
+		},
 		{ language: 'ko', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'ain', strategy: 'post', expression: 'postpositions', confidence: 'high', sources: [{ source: 'tamura-2000' }] },
+		{
+			language: 'ain',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			sources: [{ source: 'tamura-2000' }]
+		},
 		{ language: 'tr', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'az', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'tk', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -42,7 +82,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'bua', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'mnc', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'evn', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'hi', strategy: 'post', expression: 'postpositions', confidence: 'high', note: 'inflectional + secondary postpositions ke, se, mein…' },
+		{
+			language: 'hi',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			note: 'inflectional + secondary postpositions ke, se, mein…'
+		},
 		{ language: 'ur', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'bn', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'pa', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -60,10 +106,33 @@ export const adpositionOrder: Pattern = {
 		{ language: 'awa', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'mag', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'ks', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'fa', strategy: 'pre', expression: 'prepositions', confidence: 'high', note: 'Persian is SOV but prepositional — celebrated typological exception (with one postpositional accusative marker -rā)' },
-		{ language: 'tg', strategy: 'pre', expression: 'prepositions', confidence: 'high', note: 'like Persian, prepositional despite SOV order' },
-		{ language: 'ps', strategy: 'post', expression: 'mostly postpositions / circumpositions', confidence: 'high', note: 'Pashto has circumpositions: pə … kə "in"' },
-		{ language: 'ku', strategy: 'post', expression: 'mostly postpositions / circumpositions', confidence: 'medium' },
+		{
+			language: 'fa',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'high',
+			note: 'Persian is SOV but prepositional — celebrated typological exception (with one postpositional accusative marker -rā)'
+		},
+		{
+			language: 'tg',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'high',
+			note: 'like Persian, prepositional despite SOV order'
+		},
+		{
+			language: 'ps',
+			strategy: 'post',
+			expression: 'mostly postpositions / circumpositions',
+			confidence: 'high',
+			note: 'Pashto has circumpositions: pə … kə "in"'
+		},
+		{
+			language: 'ku',
+			strategy: 'post',
+			expression: 'mostly postpositions / circumpositions',
+			confidence: 'medium'
+		},
 		{ language: 'ckb', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'ta', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'te', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -77,7 +146,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'mni', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'lus', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'eu', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'fi', strategy: 'post', expression: 'postpositions', confidence: 'high', note: 'extensive case marking + postpositions; a handful of prepositions exist' },
+		{
+			language: 'fi',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			note: 'extensive case marking + postpositions; a handful of prepositions exist'
+		},
 		{ language: 'et', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'hu', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'se', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
@@ -90,15 +165,31 @@ export const adpositionOrder: Pattern = {
 		{ language: 'yrk', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'nio', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'sel', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
-		{ language: 'iu', strategy: 'post', expression: 'postpositions / case suffixes', confidence: 'high' },
-		{ language: 'kl', strategy: 'post', expression: 'postpositions / case suffixes', confidence: 'high' },
+		{
+			language: 'iu',
+			strategy: 'post',
+			expression: 'postpositions / case suffixes',
+			confidence: 'high'
+		},
+		{
+			language: 'kl',
+			strategy: 'post',
+			expression: 'postpositions / case suffixes',
+			confidence: 'high'
+		},
 		{ language: 'nv', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'apw', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'den', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'qu', strategy: 'post', expression: 'postpositions / case', confidence: 'high' },
 		{ language: 'ay', strategy: 'post', expression: 'postpositions / case', confidence: 'high' },
 		{ language: 'gn', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'am', strategy: 'post', expression: 'mostly postpositions / circumpositions', confidence: 'high', note: 'Ethiosemitic verb-final convergence' },
+		{
+			language: 'am',
+			strategy: 'post',
+			expression: 'mostly postpositions / circumpositions',
+			confidence: 'high',
+			note: 'Ethiosemitic verb-final convergence'
+		},
 		{ language: 'ti', strategy: 'post', expression: 'mostly postpositions', confidence: 'high' },
 		{ language: 'so', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'om', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -113,7 +204,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'ce', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'inh', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'kbd', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'akk', strategy: 'post', expression: 'postpositions', confidence: 'high', note: 'OV order + postpositions (areal Sumerian contact)' },
+		{
+			language: 'akk',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			note: 'OV order + postpositions (areal Sumerian contact)'
+		},
 		{ language: 'ket', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'ckt', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'niv', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -121,21 +218,39 @@ export const adpositionOrder: Pattern = {
 		{ language: 'yux', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'eve', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'gld', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'sat', strategy: 'post', expression: 'postpositions', confidence: 'high', note: 'Munda OV' },
+		{
+			language: 'sat',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'high',
+			note: 'Munda OV'
+		},
 		{ language: 'kal', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'lkt', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'hop', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'chr', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'cak', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		// Mande: OV but prepositional — typological surprise
-		{ language: 'bm', strategy: 'pre', expression: 'prepositions / no postpositions', confidence: 'high', note: 'Mande is famously OV-but-prepositional — a classic typological exception to Greenberg' },
+		{
+			language: 'bm',
+			strategy: 'pre',
+			expression: 'prepositions / no postpositions',
+			confidence: 'high',
+			note: 'Mande is famously OV-but-prepositional — a classic typological exception to Greenberg'
+		},
 		{ language: 'dyu', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'snk', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'mnk', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 
 		// ─── Prepositions (VO) ────────────────────────────────────────────────
 		{ language: 'en', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'de', strategy: 'pre', expression: 'mostly prepositions; some postpositions', confidence: 'high', note: 'e.g. der Sache wegen "for the matter\'s sake" is postpositional' },
+		{
+			language: 'de',
+			strategy: 'pre',
+			expression: 'mostly prepositions; some postpositions',
+			confidence: 'high',
+			note: 'e.g. der Sache wegen "for the matter\'s sake" is postpositional'
+		},
 		{ language: 'nl', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'sv', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'da', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
@@ -168,8 +283,20 @@ export const adpositionOrder: Pattern = {
 		{ language: 'sr', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'hr', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'sl', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'cy', strategy: 'pre', expression: 'prepositions', confidence: 'high', note: 'inflected prepositions (gennyf, gennyt…)' },
-		{ language: 'ga', strategy: 'pre', expression: 'prepositions', confidence: 'high', note: 'famously rich inflected-preposition paradigm' },
+		{
+			language: 'cy',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'high',
+			note: 'inflected prepositions (gennyf, gennyt…)'
+		},
+		{
+			language: 'ga',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'high',
+			note: 'famously rich inflected-preposition paradigm'
+		},
 		{ language: 'gd', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'br', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'kw', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
@@ -195,7 +322,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'lg', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'ln', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Sinitic — prepositional (more accurately "coverbs")
-		{ language: 'zh', strategy: 'pre', expression: 'prepositions (coverbs)', confidence: 'high', note: '“coverbs” like 在, 到, 給 — historically verbs that grammaticalised into prepositions' },
+		{
+			language: 'zh',
+			strategy: 'pre',
+			expression: 'prepositions (coverbs)',
+			confidence: 'high',
+			note: '“coverbs” like 在, 到, 給 — historically verbs that grammaticalised into prepositions'
+		},
 		{ language: 'yue', strategy: 'pre', expression: 'prepositions (coverbs)', confidence: 'high' },
 		// Tai-Kadai
 		{ language: 'th', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
@@ -226,7 +359,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'ht', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'jam', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Australian
-		{ language: 'wbp', strategy: 'none', expression: 'case marking only', confidence: 'high', note: 'spatial relations conveyed by case suffixes; minimal adpositional inventory' },
+		{
+			language: 'wbp',
+			strategy: 'none',
+			expression: 'case marking only',
+			confidence: 'high',
+			note: 'spatial relations conveyed by case suffixes; minimal adpositional inventory'
+		},
 		{ language: 'dbl', strategy: 'none', expression: 'case marking only', confidence: 'high' },
 		{ language: 'pjt', strategy: 'none', expression: 'case marking only', confidence: 'high' },
 
@@ -263,7 +402,13 @@ export const adpositionOrder: Pattern = {
 		{ language: 'mai', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'awa', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'mag', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'rmn', strategy: 'pre', expression: 'prepositions', confidence: 'medium', note: 'Romani has shifted to prepositions under Balkan / European contact, unlike most Indo-Aryan' },
+		{
+			language: 'rmn',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'medium',
+			note: 'Romani has shifted to prepositions under Balkan / European contact, unlike most Indo-Aryan'
+		},
 		{ language: 'zza', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'pa2', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'jje', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -331,9 +476,24 @@ export const adpositionOrder: Pattern = {
 		{ language: 'chl', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'hix', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'mic', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
-		{ language: 'cr', strategy: 'none', expression: 'no adpositions; relator nouns + cases', confidence: 'medium' },
-		{ language: 'oj', strategy: 'none', expression: 'no adpositions; relator nouns + cases', confidence: 'medium' },
-		{ language: 'moh', strategy: 'none', expression: 'relator-noun strategy', confidence: 'medium' },
+		{
+			language: 'cr',
+			strategy: 'none',
+			expression: 'no adpositions; relator nouns + cases',
+			confidence: 'medium'
+		},
+		{
+			language: 'oj',
+			strategy: 'none',
+			expression: 'no adpositions; relator nouns + cases',
+			confidence: 'medium'
+		},
+		{
+			language: 'moh',
+			strategy: 'none',
+			expression: 'relator-noun strategy',
+			confidence: 'medium'
+		},
 		{ language: 'pap', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'ht', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'jam', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
@@ -343,21 +503,50 @@ export const adpositionOrder: Pattern = {
 		{ language: 'mfe', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'bi', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'pis', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'ho', strategy: 'post', expression: 'postpositions', confidence: 'medium', note: 'inherited from the Motu substrate' },
+		{
+			language: 'ho',
+			strategy: 'post',
+			expression: 'postpositions',
+			confidence: 'medium',
+			note: 'inherited from the Motu substrate'
+		},
 		{ language: 'cbk', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'tok', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'ia', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'io', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'vo', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'jbo', strategy: 'pre', expression: 'prepositions (sumtcita)', confidence: 'high' },
-		{ language: 'tlh', strategy: 'post', expression: 'postpositions / locative suffixes', confidence: 'high', note: 'no separate adpositions; Type 5 suffixes on nouns mark location, source, beneficiary' },
-		{ language: 'qya', strategy: 'post', expression: 'mostly postpositions / case suffixes', confidence: 'medium' },
+		{
+			language: 'tlh',
+			strategy: 'post',
+			expression: 'postpositions / locative suffixes',
+			confidence: 'high',
+			note: 'no separate adpositions; Type 5 suffixes on nouns mark location, source, beneficiary'
+		},
+		{
+			language: 'qya',
+			strategy: 'post',
+			expression: 'mostly postpositions / case suffixes',
+			confidence: 'medium'
+		},
 		{ language: 'eo', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Historical
 		{ language: 'sux', strategy: 'post', expression: 'postpositions / case', confidence: 'high' },
-		{ language: 'akk', strategy: 'pre', expression: 'mostly prepositions; some postpositions', confidence: 'medium', note: 'Semitic-typical prepositions despite OV order' },
+		{
+			language: 'akk',
+			strategy: 'pre',
+			expression: 'mostly prepositions; some postpositions',
+			confidence: 'medium',
+			note: 'Semitic-typical prepositions despite OV order'
+		},
 		{ language: 'hit', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'ang', strategy: 'pre', expression: 'prepositions', confidence: 'high', note: 'Old English already prepositional (PIE drift completed)' },
+		{
+			language: 'ang',
+			strategy: 'pre',
+			expression: 'prepositions',
+			confidence: 'high',
+			note: 'Old English already prepositional (PIE drift completed)'
+		},
 		{ language: 'enm', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'fro', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'cy_old', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
