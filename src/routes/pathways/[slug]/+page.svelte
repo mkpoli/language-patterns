@@ -10,6 +10,7 @@
 	import StageFlow from '$lib/components/StageFlow.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import { getLanguage } from '$lib/data/languages';
+	import { m } from '$lib/paraglide/messages.js';
 
 	let { data } = $props();
 	const pathway = $derived(data.pathway);
@@ -88,7 +89,11 @@
 			}
 		}
 		if (mapMarkers.some((mk) => mk.color === 'slate')) {
-			items.push({ label: 'Several sets', color: 'slate' });
+			const anyMultiSet = mapMarkers.some((mk) => mk.color === 'slate' && mk.note);
+			items.push({
+				label: anyMultiSet ? m.legend_several_sets() : m.legend_ungrouped(),
+				color: 'slate'
+			});
 		}
 		return items;
 	});
@@ -146,7 +151,7 @@
 		<div
 			class="flex items-center gap-2 text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
 		>
-			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">Pathway</span>
+			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">{m.label_pathway()}</span>
 			<span>· {pathway.kind}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
@@ -157,7 +162,7 @@
 	{#if pathway.kind === 'cycle'}
 		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
 			<div>
-				<h2 class="mb-4 font-serif text-2xl">Stages</h2>
+				<h2 class="mb-4 font-serif text-2xl">{m.section_stages()}</h2>
 				<div class="grid gap-4 sm:grid-cols-2">
 					{#each pathway.stages as stage (stage.id)}
 						<StageCard {stage} {pathway} />
@@ -165,13 +170,13 @@
 				</div>
 			</div>
 			<div>
-				<h2 class="mb-4 font-serif text-2xl">The cycle</h2>
+				<h2 class="mb-4 font-serif text-2xl">{m.section_cycle()}</h2>
 				<CycleDiagram stages={pathway.stages} />
 			</div>
 		</section>
 	{:else}
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">Stages</h2>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_stages()}</h2>
 			<StageFlow stages={pathway.stages} {pathway} />
 		</section>
 	{/if}
@@ -180,11 +185,12 @@
 		<section>
 			<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
 				<div>
-					<h2 class="font-serif text-2xl">Cross-linguistic evidence</h2>
-					<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-						Each expression retains hearing or listening in its structure while conventionally
-						expressing attention, compliance, or obedience.
-					</p>
+					<h2 class="font-serif text-2xl">{m.section_crosslinguistic_evidence()}</h2>
+					{#if pathway.evidenceNote}
+						<p class="max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+							{pathway.evidenceNote}
+						</p>
+					{/if}
 				</div>
 
 				{#if pathway.exampleSets?.length && pathway.exampleSets.length > 1}
@@ -251,10 +257,9 @@
 
 	{#if mapMarkers.length}
 		<section>
-			<h2 class="mb-1 font-serif text-2xl">Where these are found</h2>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_geographic_distribution()}</h2>
 			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-				Each marker is one attested language, coloured by its evidence set; open it for the
-				expression recorded there.
+				{m.section_geographic_distribution_hint_sets()}
 			</p>
 			<PatternMap markers={mapMarkers} legend={mapLegend} />
 		</section>
@@ -262,10 +267,9 @@
 
 	{#if pathway.bands.length}
 		<section>
-			<h2 class="mb-1 font-serif text-2xl">Comparative historical timeline</h2>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_comparative_timeline()}</h2>
 			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
-				How expressions overlap, compete, and replace one another across languages. Hover any band
-				for the full date range and note.
+				{m.section_comparative_timeline_hint()}
 			</p>
 			<HistoricalTimeline {pathway} startYear={timelineStartYear} endYear={timelineEndYear} />
 		</section>
@@ -275,7 +279,7 @@
 
 	{#if pathway.related.length}
 		<section>
-			<h2 class="mb-4 font-serif text-2xl">Related patterns</h2>
+			<h2 class="mb-4 font-serif text-2xl">{m.section_related_patterns()}</h2>
 			<ul class="flex flex-wrap gap-2">
 				{#each pathway.related as rel (rel.slug)}
 					<li>

@@ -167,6 +167,7 @@ export interface Pathway {
 	question: string;
 	kind: 'cycle' | 'pathway' | 'shift';
 	summary: string;
+	evidenceNote?: string;
 	stages: Stage[];
 	bands: TimelineBand[];
 	examples?: Example[];

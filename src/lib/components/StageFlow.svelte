@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Language, Pathway, Stage } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
+	import CitationMark from './CitationMark.svelte';
 
 	interface Props {
 		stages: Stage[];
@@ -72,6 +73,11 @@
 							{lang.name}
 						</span>
 					{/each}
+				</div>
+			{/if}
+			{#if stage.sources?.length}
+				<div class="border-t border-[color:var(--color-rule)] pt-2">
+					<CitationMark citations={stage.sources} />
 				</div>
 			{/if}
 		</li>

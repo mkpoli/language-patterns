@@ -97,12 +97,57 @@
 		);
 	}
 
+	let mapInstance: import('maplibre-gl').Map | null = $state.raw(null);
+	let markerHandles: import('maplibre-gl').Marker[] = [];
+	let maplibreModule: typeof import('maplibre-gl') | null = null;
+
+	function syncMarkers() {
+		const maplibregl = maplibreModule;
+		const map = mapInstance;
+		if (!maplibregl || !map) return;
+
+		for (const h of markerHandles) h.remove();
+		markerHandles = [];
+
+		for (const p of points) {
+			const lang = getLanguage(p.code);
+			const tokens = p.color ? strategyColor(p.color) : null;
+			const el = document.createElement('div');
+			el.setAttribute('aria-label', lang.name);
+			el.style.width = '16px';
+			el.style.height = '16px';
+			el.style.borderRadius = '999px';
+			el.style.boxShadow = '0 1px 4px oklch(0% 0 0 / 0.25)';
+			el.style.border = '2px solid white';
+			el.style.background = tokens?.band ?? 'oklch(70% 0.03 260)';
+			el.style.cursor = 'pointer';
+
+			const popupHtml = `
+				<div style="font-family: var(--font-sans); min-width: 180px;">
+					<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
+					<div style="font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(lang.family)}</div>
+					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
+					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
+					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(p.note)}</div>` : ''}
+				</div>
+			`;
+			const popup = new maplibregl.Popup({ offset: 14, closeButton: false }).setHTML(popupHtml);
+
+			markerHandles.push(
+				new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map)
+			);
+		}
+	}
+
 	onMount(async () => {
 		if (!container) return;
+		let disposed = false;
 
 		// CSS — static-imported so it's bundled
 		await import('maplibre-gl/dist/maplibre-gl.css');
 		const maplibregl = await import('maplibre-gl');
+		if (disposed || !container) return;
+		maplibreModule = maplibregl;
 
 		const map = new maplibregl.Map({
 			container,
@@ -118,38 +163,25 @@
 		map.scrollZoom.disable();
 
 		map.once('load', () => {
-			for (const p of points) {
-				const lang = getLanguage(p.code);
-				const tokens = p.color ? strategyColor(p.color) : null;
-				const el = document.createElement('div');
-				el.setAttribute('aria-label', lang.name);
-				el.style.width = '16px';
-				el.style.height = '16px';
-				el.style.borderRadius = '999px';
-				el.style.boxShadow = '0 1px 4px oklch(0% 0 0 / 0.25)';
-				el.style.border = '2px solid white';
-				el.style.background = tokens?.band ?? 'oklch(70% 0.03 260)';
-				el.style.cursor = 'pointer';
-
-				const popupHtml = `
-					<div style="font-family: var(--font-sans); min-width: 180px;">
-						<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
-						<div style="font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(lang.family)}</div>
-						<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
-						${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
-						${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(p.note)}</div>` : ''}
-					</div>
-				`;
-				const popup = new maplibregl.Popup({ offset: 14, closeButton: false }).setHTML(popupHtml);
-
-				new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).setPopup(popup).addTo(map);
-			}
+			mapInstance = map;
 		});
 
-		cleanup = () => map.remove();
+		cleanup = () => {
+			disposed = true;
+			mapInstance = null;
+			markerHandles = [];
+			map.remove();
+		};
 	});
 
 	onDestroy(() => cleanup?.());
+
+	// Redraws markers whenever the data props change (client-side navigation
+	// reuses this component across pattern/pathway pages).
+	$effect(() => {
+		void points;
+		syncMarkers();
+	});
 </script>
 
 <div class="flex flex-col gap-3">
@@ -163,7 +195,7 @@
 	<!-- Legend -->
 	{#if legendItems.length}
 		<div class="flex flex-wrap gap-2 text-xs">
-			{#each legendItems as item (item.label)}
+			{#each legendItems as item, i (`${item.color}-${i}`)}
 				{@const tokens = strategyColor(item.color)}
 				<span
 					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-white px-2 py-1"
