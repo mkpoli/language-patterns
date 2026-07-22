@@ -3,8 +3,9 @@ import type { Pattern } from '$lib/types';
 // WALS Chapter 85 (Dryer 2013). Adposition order correlates strongly with
 // verb-object order (Greenberg 1963; Dryer 1992): OV → postpositions,
 // VO → prepositions. The exceptions are typologically interesting —
-// e.g. Mande languages are OV but prepositional (or have neither);
-// Finnish, Estonian, and most Uralic are SVO-leaning but postpositional.
+// e.g. Persian and Tajik are SOV but prepositional; Finnish, Estonian,
+// and most Uralic are SVO-leaning but postpositional. Mande (S-AUX-O-V-X)
+// is postpositional per WALS 85A despite occasional claims otherwise.
 //
 // TODO: cross-check confidence levels for low-resource entries against
 // Dryer 2013 directly; add an "inpositions" example sentence (Khmer
@@ -16,7 +17,7 @@ export const adpositionOrder: Pattern = {
 	shortTitle: 'On the table / table on',
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
-		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). Exceptions recur across families: Persian, Tajik, and the Mande languages combine OV order with prepositions, while Finnish keeps its Uralic postpositions.',
+		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). Exceptions recur across families: Persian and Tajik combine OV order with prepositions, while SVO-leaning Finnish keeps its Uralic postpositions.',
 	category: ['Word Order', 'Grammar & Morphosyntax'],
 	strategies: [
 		{
@@ -204,13 +205,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'ce', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'inh', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'kbd', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{
-			language: 'akk',
-			strategy: 'post',
-			expression: 'postpositions',
-			confidence: 'high',
-			note: 'OV order + postpositions (areal Sumerian contact)'
-		},
 		{ language: 'ket', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'ckt', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'niv', strategy: 'post', expression: 'postpositions', confidence: 'high' },
@@ -230,17 +224,18 @@ export const adpositionOrder: Pattern = {
 		{ language: 'hop', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'chr', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'cak', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
-		// Mande: OV but prepositional — typological surprise
+		// Mande: S-AUX-O-V-X order with postpositions (WALS 85A: Bambara = Postpositions)
 		{
 			language: 'bm',
-			strategy: 'pre',
-			expression: 'prepositions / no postpositions',
+			strategy: 'post',
+			expression: 'postpositions',
 			confidence: 'high',
-			note: 'Mande is famously OV-but-prepositional — a classic typological exception to Greenberg'
+			note: 'lá, kɔ́nɔ etc. follow the noun; obliques follow the verb in the S-AUX-O-V-X template',
+			sources: [{ source: 'dryer-2013-adposition' }]
 		},
-		{ language: 'dyu', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
-		{ language: 'snk', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
-		{ language: 'mnk', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
+		{ language: 'dyu', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
+		{ language: 'snk', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
+		{ language: 'mnk', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 
 		// ─── Prepositions (VO) ────────────────────────────────────────────────
 		{ language: 'en', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
