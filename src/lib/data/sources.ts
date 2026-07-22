@@ -379,6 +379,78 @@ export const sources: Record<string, Source> = {
 		url: 'https://dicionario.priberam.org/obedecer',
 		type: 'url'
 	},
+	'lsj-hypakouo': {
+		id: 'lsj-hypakouo',
+		authors: ['Liddell, Henry George', 'Scott, Robert', 'Jones, Henry Stuart'],
+		year: 1940,
+		title: 'A Greek–English Lexicon: ὑπακούω',
+		url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0057:entry=u(pakou/w',
+		type: 'book'
+	},
+	'bosworth-toller-hiersumian': {
+		id: 'bosworth-toller-hiersumian',
+		authors: ['Bosworth, Joseph', 'Toller, T. Northcote'],
+		year: 1898,
+		title: 'An Anglo-Saxon Dictionary: hýrsumian',
+		url: 'https://bosworthtoller.com/search?q=hyrsumian',
+		type: 'book'
+	},
+	'wiktionary-hieran': {
+		id: 'wiktionary-hieran',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: hīeran',
+		url: 'https://en.wiktionary.org/wiki/hieran',
+		type: 'url'
+	},
+	'wiktionary-hlytha': {
+		id: 'wiktionary-hlytha',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: hlýða',
+		url: 'https://en.wiktionary.org/wiki/hlýða',
+		type: 'url'
+	},
+	'wiktionary-lyda': {
+		id: 'wiktionary-lyda',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: lyda',
+		url: 'https://en.wiktionary.org/wiki/lyda',
+		type: 'url'
+	},
+	'wiktionary-gehoorzamen': {
+		id: 'wiktionary-gehoorzamen',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: gehoorzamen',
+		url: 'https://en.wiktionary.org/wiki/gehoorzamen',
+		type: 'url'
+	},
+	'wiktionary-tingming': {
+		id: 'wiktionary-tingming',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 聽命',
+		url: 'https://en.wiktionary.org/wiki/聽命',
+		type: 'url'
+	},
+	'wiktionary-shushrusha': {
+		id: 'wiktionary-shushrusha',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: शुश्रूषा',
+		url: 'https://en.wiktionary.org/wiki/शुश्रूषा',
+		type: 'url'
+	},
+	'wiktionary-sotm': {
+		id: 'wiktionary-sotm',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ⲥⲱⲧⲙ',
+		url: 'https://en.wiktionary.org/wiki/ⲥⲱⲧⲙ',
+		type: 'url'
+	},
 	'wiktionary-obeir': {
 		id: 'wiktionary-obeir',
 		authors: ['Wiktionary contributors'],
@@ -456,7 +528,8 @@ export const sources: Record<string, Source> = {
 		id: 'cad-semu',
 		authors: ['The Oriental Institute of the University of Chicago'],
 		year: '1956–2010',
-		title: 'The Assyrian Dictionary of the Oriental Institute of the University of Chicago (CAD), vol. Š/2: s.v. šemû',
+		title:
+			'The Assyrian Dictionary of the Oriental Institute of the University of Chicago (CAD), vol. Š/2: s.v. šemû',
 		pages: '256–285',
 		url: 'https://isac.uchicago.edu/research/publications/assyrian-dictionary-oriental-institute-university-chicago-cad',
 		type: 'book'
