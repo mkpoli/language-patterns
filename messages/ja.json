@@ -32,6 +32,7 @@
 	"section_geographic_distribution_hint_sets": "各マーカーは一つの言語で、所属する例セットによって色分けされている。マーカーを開くとその言語の表現が表示される。",
 	"legend_several_sets": "複数セット",
 	"legend_ungrouped": "未分類",
+	"stage_documented_in": "タイムライン掲載",
 
 	"example_natural": "自然訳",
 	"example_literal": "直訳",

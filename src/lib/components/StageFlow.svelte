@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Language, Pathway, Stage } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
+	import { m } from '$lib/paraglide/messages.js';
 	import CitationMark from './CitationMark.svelte';
 
 	interface Props {
@@ -65,14 +66,21 @@
 			</code>
 			<p class="text-sm text-[color:var(--color-ink-soft)]">{stage.description}</p>
 			{#if languagesAt(stage).length}
-				<div class="mt-auto flex flex-wrap gap-1.5 pt-2">
-					{#each languagesAt(stage) as lang (lang.code)}
-						<span
-							class="inline-flex items-center rounded-full border border-[color:var(--color-rule)] px-2 py-0.5 text-xs"
-						>
-							{lang.name}
-						</span>
-					{/each}
+				<div class="mt-auto pt-2">
+					<div
+						class="mb-1.5 font-mono text-[10px] tracking-[0.12em] text-[color:var(--color-ink-soft)] uppercase"
+					>
+						{m.stage_documented_in()}
+					</div>
+					<div class="flex flex-wrap gap-1.5">
+						{#each languagesAt(stage) as lang (lang.code)}
+							<span
+								class="inline-flex items-center rounded-full border border-[color:var(--color-rule)] px-2 py-0.5 text-xs"
+							>
+								{lang.name}
+							</span>
+						{/each}
+					</div>
 				</div>
 			{/if}
 			{#if stage.sources?.length}

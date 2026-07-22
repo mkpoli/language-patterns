@@ -79,6 +79,90 @@ export const hearWordsToObey: Pathway = {
 			uncertaintyStart: 800,
 			note: 'Middle High German gehorchen, from Old High German gihōren, a prefixed form of hōren “to hear.”',
 			sources: [{ source: 'dwds-gehorchen' }]
+		},
+		{
+			language: 'grc',
+			form: 'ὑπακούω',
+			stageId: 'attentive-uptake',
+			start: -750,
+			end: -450,
+			status: 'dominant',
+			note: 'In Homer, “hearken, give ear to, answer a call” (Il. 8.4, Od. 4.283) — attentive response, on ἀκούω “to hear.”',
+			sources: [{ source: 'lsj-hypakouo' }]
+		},
+		{
+			language: 'grc',
+			form: 'ὑπακούω “obey”',
+			stageId: 'compliant-action',
+			start: -450,
+			end: 600,
+			status: 'dominant',
+			note: 'From Herodotus (3.101) and Thucydides (1.29) on, the standard prose verb for “obey, submit”; Modern Greek υπακούω continues it.',
+			sources: [{ source: 'lsj-hypakouo' }]
+		},
+		{
+			language: 'ang',
+			form: 'hīeran (+ dative)',
+			stageId: 'compliant-action',
+			start: 750,
+			end: 1100,
+			status: 'dominant',
+			note: 'Old English hīeran with the dative meant “obey, belong to”; the derivatives hīersum “obedient” and hīersumian “to obey” are built on “hear.” Replaced after 1066 by French-derived obey.',
+			sources: [{ source: 'wiktionary-hieran' }, { source: 'bosworth-toller-hiersumian' }]
+		},
+		{
+			language: 'sv',
+			form: 'hlýða → lyda',
+			stageId: 'compliant-action',
+			start: 1225,
+			end: 2000,
+			status: 'dominant',
+			uncertaintyStart: 900,
+			note: 'Old Norse hlýða “listen; obey” (Proto-Germanic *hliuþijaną, PIE *ḱlew- “hear”) continues as Swedish lyda, Danish lyde, Icelandic hlýða — all now primarily “obey.”',
+			sources: [{ source: 'wiktionary-hlytha' }, { source: 'wiktionary-lyda' }]
+		},
+		{
+			language: 'zh',
+			form: '聽 “heed, obey” · 聽命',
+			stageId: 'compliant-action',
+			start: -500,
+			end: 2000,
+			status: 'dominant',
+			uncertaintyStart: -770,
+			note: 'Classical Chinese 聽 “listen” takes the reading “heed, obey” in compounds like 聽命 “obey orders”; colloquial 听话 continues the same move with an overt “words” object.',
+			sources: [{ source: 'wiktionary-tingming' }, { source: 'moe-taiwan-2021-tinghua' }]
+		},
+		{
+			language: 'egy',
+			form: 'sḏm → ⲥⲱⲧⲙ',
+			stageId: 'compliant-action',
+			start: -2000,
+			end: 1000,
+			status: 'dominant',
+			uncertaintyStart: -2400,
+			note: 'Egyptian sḏm “hear; obey (someone)” runs through Demotic stm into Coptic ⲥⲱⲧⲙ, whose noun means both “hearing” and “obedience.”',
+			sources: [{ source: 'wiktionary-sdm' }, { source: 'wiktionary-sotm' }]
+		},
+		{
+			language: 'akk',
+			form: 'šemû',
+			stageId: 'compliant-action',
+			start: -1900,
+			end: -500,
+			status: 'dominant',
+			uncertaintyStart: -2300,
+			note: '“To hear; to listen; to obey a word or command” throughout the corpus (CAD Š/2).',
+			sources: [{ source: 'cad-semu' }]
+		},
+		{
+			language: 'hbo',
+			form: 'šāmaʿ bə-qōl',
+			stageId: 'compliant-action',
+			start: -1000,
+			end: -150,
+			status: 'dominant',
+			note: '“Hear the voice of” as the Biblical Hebrew idiom for obeying, across the Hebrew Bible.',
+			sources: [{ source: 'leal-glanz-2022' }]
 		}
 	],
 	exampleSets: [
@@ -336,6 +420,84 @@ export const hearWordsToObey: Pathway = {
 			literal: 'to hear, to listen (with n, to someone)',
 			natural: 'to hear; to obey someone',
 			sources: [{ source: 'wiktionary-sdm' }, { source: 'erman-grapow-1931' }]
+		},
+		{
+			language: 'cop',
+			set: 'lexeme',
+			original: 'ⲥⲱⲧⲙ',
+			transliteration: 'sōtm',
+			gloss: 'hear',
+			literal: 'to hear, to listen (from Egyptian sḏm via Demotic stm)',
+			natural: 'to hear; as a noun, hearing or obedience',
+			sources: [{ source: 'wiktionary-sotm' }]
+		},
+		{
+			language: 'ang',
+			set: 'lexeme',
+			original: 'hīeran',
+			gloss: 'hear.INF',
+			literal: 'to hear; with the dative, to listen with assent',
+			natural: 'to obey; to belong to',
+			illustration: {
+				original: 'hīersumian',
+				gloss: 'hear-some-VBZ.INF',
+				literal: 'to be “hearsome” toward (derivative of hīeran, like gehorsam beside gehorchen)',
+				natural: 'to obey, to serve'
+			},
+			sources: [{ source: 'wiktionary-hieran' }, { source: 'bosworth-toller-hiersumian' }]
+		},
+		{
+			language: 'is',
+			set: 'lexeme',
+			original: 'hlýða',
+			gloss: 'listen.INF',
+			literal: 'to listen (Old Norse hlýða, Proto-Germanic *hliuþijaną, from PIE *ḱlew- “hear”)',
+			natural: 'to obey',
+			sources: [{ source: 'wiktionary-hlytha' }]
+		},
+		{
+			language: 'sv',
+			set: 'lexeme',
+			original: 'lyda',
+			gloss: 'obey.INF',
+			literal: 'to listen (from Old Norse hlýða “listen; obey”)',
+			natural: 'to obey',
+			illustration: {
+				original: 'en god hund lyder sin husbondes röst',
+				gloss: 'a good dog obeys its master:GEN voice',
+				literal: 'a good dog heeds its master’s voice',
+				natural: 'a good dog obeys its master'
+			},
+			sources: [{ source: 'wiktionary-lyda' }]
+		},
+		{
+			language: 'nl',
+			set: 'lexeme',
+			original: 'gehoorzamen',
+			gloss: 'GE-hear-some-VBZ.INF',
+			literal: 'to be “hearsome” (built on gehoor “hearing”, from horen “to hear”)',
+			natural: 'to obey',
+			sources: [{ source: 'wiktionary-gehoorzamen' }]
+		},
+		{
+			language: 'zh',
+			set: 'lexeme',
+			original: '聽命 / 听命',
+			transliteration: 'tīngmìng',
+			gloss: 'listen-command',
+			literal: 'listen to commands',
+			natural: 'to obey orders; to be at someone’s command',
+			sources: [{ source: 'wiktionary-tingming' }]
+		},
+		{
+			language: 'sa',
+			set: 'lexeme',
+			original: 'शुश्रूषा',
+			transliteration: 'śuśrūṣā',
+			gloss: 'hear.DESID-NMLZ',
+			literal: 'the desire to hear (desiderative of श्रु śru “to hear”)',
+			natural: 'obedience; dutiful service; reverence',
+			sources: [{ source: 'wiktionary-shushrusha' }]
 		}
 	],
 	related: [],
@@ -364,8 +526,17 @@ export const hearWordsToObey: Pathway = {
 		{ source: 'wiktionary-slushatsya' },
 		{ source: 'sum11-slukhatysja' },
 		{ source: 'wiktionary-hypakouo' },
+		{ source: 'lsj-hypakouo' },
 		{ source: 'cad-semu' },
 		{ source: 'wiktionary-sdm' },
-		{ source: 'erman-grapow-1931' }
+		{ source: 'erman-grapow-1931' },
+		{ source: 'wiktionary-sotm' },
+		{ source: 'wiktionary-hieran' },
+		{ source: 'bosworth-toller-hiersumian' },
+		{ source: 'wiktionary-hlytha' },
+		{ source: 'wiktionary-lyda' },
+		{ source: 'wiktionary-gehoorzamen' },
+		{ source: 'wiktionary-tingming' },
+		{ source: 'wiktionary-shushrusha' }
 	]
 };

@@ -32,6 +32,7 @@
 	"section_geographic_distribution_hint_sets": "每个标记代表一个已记录的语言，颜色对应其例句组；点开可查看该语言的表达。",
 	"legend_several_sets": "多个例句组",
 	"legend_ungrouped": "未分组",
+	"stage_documented_in": "时间轴收录",
 
 	"example_natural": "自然",
 	"example_literal": "直译",
