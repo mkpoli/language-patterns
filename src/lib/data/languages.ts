@@ -345,6 +345,7 @@ export const languages: Record<string, Language> = {
 	ch: { code: 'ch', name: 'Chamorro', family: 'Austronesian › Sunda-Sulawesi', lat: 13.46, lng: 144.74, locationNote: 'Hagåtña, Guam' },
 	yap: { code: 'yap', name: 'Yapese', family: 'Austronesian › Oceanic', lat: 9.51, lng: 138.13, locationNote: 'Yap' },
 	chk: { code: 'chk', name: 'Chuukese', family: 'Austronesian › Oceanic', lat: 7.45, lng: 151.86, locationNote: 'Weno, Chuuk' },
+	omb: { code: 'omb', name: 'Ambae (North-East)', family: 'Austronesian › Oceanic', lat: -15.37, lng: 167.83, locationNote: 'Ambae, Vanuatu' },
 	pon: { code: 'pon', name: 'Pohnpeian', family: 'Austronesian › Oceanic', lat: 6.96, lng: 158.21, locationNote: 'Kolonia, Pohnpei' },
 	gil: { code: 'gil', name: 'Gilbertese (Kiribati)', endonym: 'taetae ni Kiribati', family: 'Austronesian › Oceanic', lat: 1.33, lng: 173.04, locationNote: 'Tarawa' },
 	niu: { code: 'niu', name: 'Niuean', family: 'Austronesian › Polynesian', lat: -19.05, lng: -169.92, locationNote: 'Alofi' },

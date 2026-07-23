@@ -56,12 +56,12 @@ export const seeToTry: Pathway = {
 			end: 2000,
 			status: 'dominant',
 			uncertaintyStart: 800,
-			note: 'Auxiliary 見る after the -te form, “do and see → try doing”; classical dictionaries cite the use from Heian texts such as Taketori Monogatari. Henderson notes a softening effect in polite imperatives.',
+			note: 'Auxiliary 見る after the -te form, “do and see → try doing”; classical dictionaries cite the use from Heian texts such as Taketori Monogatari. The action is presupposed to be carried out — 食べてみた entails eating happened — where English “tried to eat” does not. Henderson notes a softening effect in polite imperatives.',
 			sources: [
 				{ source: 'weblio-kobun-miru' },
 				{ source: 'wiktionary-miru' },
 				{ source: 'henderson-2011', locator: 'p. 286' },
-				{ source: 'voinov-2013', locator: 'p. 67, ex. 15' }
+				{ source: 'voinov-2013', locator: 'p. 67, ex. 15 and fn. 3' }
 			]
 		},
 		{
@@ -80,13 +80,23 @@ export const seeToTry: Pathway = {
 		},
 		{
 			language: 'zh',
+			form: 'V看 “find out”',
+			stageId: 'do-and-see',
+			start: 950,
+			end: 1900,
+			status: 'dominant',
+			note: 'Post-verbal intransitive 看 with the sense “find out” appears in the Zutangji 祖堂集 (952): 你試説看 “try saying it and find out”. Cheng identifies this as the environment where 看 later grammaticalized.',
+			sources: [{ source: 'cheng-2012' }]
+		},
+		{
+			language: 'zh',
 			form: 'V(V)看 · 試試看',
 			stageId: 'attemptive-auxiliary',
 			start: 1900,
 			end: 2000,
 			status: 'dominant',
-			note: '看 after a (typically reduplicated) verb marks a trial: 試試看 “give it a try”, 嘗嘗看 “taste and see”. Shown from its modern documentation.',
-			sources: [{ source: 'wiktionary-kan' }]
+			note: '看 after a (typically reduplicated) verb marks a trial: 試試看 “give it a try”, 嘗嘗看 “taste and see”. Cheng dates the fully attemptive V-看看 reading to Modern Chinese.',
+			sources: [{ source: 'wiktionary-kan' }, { source: 'cheng-2012' }]
 		},
 		{
 			language: 'chg',
@@ -210,11 +220,31 @@ export const seeToTry: Pathway = {
 			language: 'mnc',
 			form: '-me tuwa-',
 			stageId: 'attemptive-auxiliary',
-			start: 1650,
+			start: 1600,
 			end: 1900,
-			status: 'approximate',
-			note: 'tuwambi “see, look” as an auxiliary after the -me converb means “try, try out”, within the span of the written Manchu corpus.',
-			sources: [{ source: 'wiktionary-tuwambi' }]
+			status: 'dominant',
+			note: 'tuwambi “see, look” as an auxiliary after the -me converb means “try, try out”; already in the seventeenth-century Old Manchu Chronicles: solho han de elcin takūrame tuwambi “they tried sending an emissary to the Korean khan”.',
+			sources: [{ source: 'wiktionary-tuwambi' }, { source: 'ulman-2025', locator: 'ex. 79' }]
+		},
+		{
+			language: 'uz',
+			form: '-(i)b koʻr-',
+			stageId: 'attemptive-auxiliary',
+			start: 1900,
+			end: 2000,
+			status: 'dominant',
+			note: 'yeb koʻr “eat and see → try eating”; koʻrmoq “see” after the -(i)b converb (Johanson 2012:760, cited in the ComPLETE overview).',
+			sources: [{ source: 'vanhove-bisang-2021' }]
+		},
+		{
+			language: 'ta',
+			form: 'V-AVP பார்',
+			stageId: 'attemptive-auxiliary',
+			start: 1900,
+			end: 2000,
+			status: 'dominant',
+			note: 'பார் pār “see” after the past participle means “try V-ing” — சாப்பிட்டுப் பார் cāppiṭṭup pār “taste, lit. try eating”; after the infinitive, “try to V” (Schiffman 1999:194–195).',
+			sources: [{ source: 'schiffman-1999', locator: 'pp. 194–195, §7.9.1' }]
 		},
 		{
 			language: 'ee',
@@ -228,6 +258,16 @@ export const seeToTry: Pathway = {
 				{ source: 'ameka-2008', locator: 'p. 169' },
 				{ source: 'voinov-2013', locator: 'p. 70, exx. 23–24' }
 			]
+		},
+		{
+			language: 'ain',
+			form: 'V wa inkar / nukar',
+			stageId: 'do-and-see',
+			start: 1898,
+			end: 2000,
+			status: 'dominant',
+			note: 'A clause-chained “see” verb after wa “and”: kar wa inkar “do and look”, glossed 「〜をしてみる」 in Kanazawa (1898); Tamura records pákari wa nukar 「計ってみなさい」. Both inkar “look” and nukar “see (it)” serve, and the visual sense stays transparent.',
+			sources: [{ source: 'kanazawa-1898' }, { source: 'tamura-1996', locator: 's.v. pákari' }]
 		},
 		{
 			language: 'th',
@@ -408,6 +448,32 @@ export const seeToTry: Pathway = {
 			]
 		},
 		{
+			language: 'uz',
+			set: 'converb-aux',
+			original: 'yeb koʻr',
+			gloss: 'eat-CVB see.IMV',
+			literal: 'eat and see',
+			natural: 'try eating',
+			sources: [{ source: 'vanhove-bisang-2021' }]
+		},
+		{
+			language: 'ta',
+			set: 'converb-aux',
+			original: 'சாப்பிட்டுப் பார்',
+			transliteration: 'cāppiṭṭup pār',
+			gloss: 'eat-AVP see.IMV',
+			literal: 'eat and see',
+			natural: 'taste it; try eating',
+			illustration: {
+				original: 'குழந்தை நடக்கப் பார்த்தது',
+				transliteration: 'korande nadakka paattadu',
+				gloss: 'child walk-INF see-PST-3SG.N',
+				literal: 'the child saw to walking',
+				natural: 'the child tried to walk'
+			},
+			sources: [{ source: 'schiffman-1999', locator: 'pp. 194–195, §7.9.1' }]
+		},
+		{
 			language: 'mnc',
 			set: 'converb-aux',
 			original: 'ᡨᡠᠸᠠᠮᠪᡳ',
@@ -415,7 +481,32 @@ export const seeToTry: Pathway = {
 			gloss: '(V-CVB) see-NPST',
 			literal: 'do and see',
 			natural: 'try, try out',
-			sources: [{ source: 'wiktionary-tuwambi' }]
+			illustration: {
+				original: 'ᠰᠣᠯᡥᠣ ᡥᠠᠨ ᡩᡝ ᡝᠯᠴᡳᠨ ᡨᠠᡴᡡᡵᠠᠮᡝ ᡨᡠᠸᠠᠮᠪᡳ',
+				transliteration: 'solho han de elcin takūra-me tuwa-mbi',
+				gloss: 'Korea khan ALL emissary send-CVB see-NPST',
+				literal: 'they send an emissary to the Korean khan and see (Old Manchu Chronicles, 17th c.)',
+				natural: 'they tried sending an emissary to the Korean khan'
+			},
+			sources: [{ source: 'wiktionary-tuwambi' }, { source: 'ulman-2025', locator: 'ex. 79' }]
+		},
+		{
+			language: 'ain',
+			set: 'converb-aux',
+			original: 'kar wa inkar',
+			gloss: 'do and look',
+			literal: 'do it and look',
+			natural: 'try doing it (〜をしてみる)',
+			illustration: {
+				original: 'henpak conpa an ya pákari wa nukar',
+				gloss: 'how.many measure exist Q measure and see',
+				literal: 'measure how many shō there are and see',
+				natural: 'try measuring how much there is (計ってみなさい)'
+			},
+			sources: [
+				{ source: 'kanazawa-1898', locator: '動作 46#14' },
+				{ source: 'tamura-1996', locator: 's.v. pákari' }
+			]
 		},
 		{
 			language: 'zh',
@@ -530,6 +621,21 @@ export const seeToTry: Pathway = {
 			]
 		},
 		{
+			language: 'omb',
+			set: 'serial',
+			original: 'Nikki vi=ni geni lehi na qeta',
+			gloss: 'Nikki 3SG.IRR=IRR eat see ACC taro',
+			literal: 'Nikki will eat-see the taro',
+			natural: 'Nikki will taste (try) the taro',
+			illustration: {
+				original: 'geni lehi / geni rongo',
+				gloss: 'eat see / eat feel',
+				literal: 'the conative slot admits either lehi “see” or rongo “feel, sense”',
+				natural: 'taste, test, try'
+			},
+			sources: [{ source: 'hyslop-2001', locator: 'p. 289, §10.5.4, ex. 53' }]
+		},
+		{
 			language: 'en',
 			set: 'serial',
 			original: 'See if you can do this today.',
@@ -598,6 +704,13 @@ export const seeToTry: Pathway = {
 		{ source: 'foley-1986' },
 		{ source: 'coupe-2007' },
 		{ source: 'ameka-2008' },
+		{ source: 'cheng-2012' },
+		{ source: 'schiffman-1999' },
+		{ source: 'hyslop-2001' },
+		{ source: 'ulman-2025' },
+		{ source: 'vanhove-bisang-2021' },
+		{ source: 'kanazawa-1898' },
+		{ source: 'tamura-1996' },
 		{ source: 'weblio-kobun-miru' },
 		{ source: 'wiktionary-miru' },
 		{ source: 'wiktionary-boda' },

@@ -718,6 +718,59 @@ export const sources: Record<string, Source> = {
 		pages: '135–194',
 		type: 'chapter'
 	},
+	'cheng-2012': {
+		id: 'cheng-2012',
+		authors: ['Cheng, Yi-Yang'],
+		year: 2012,
+		title:
+			'Verbal reduplication and grammaticalization: A study of Mandarin VV-kan and V-kankan constructions',
+		container: 'Proceedings of the 38th Annual Meeting of the Berkeley Linguistics Society',
+		pages: '63 ff.',
+		doi: '10.3765/bls.v38i0.3321',
+		type: 'article'
+	},
+	'schiffman-1999': {
+		id: 'schiffman-1999',
+		authors: ['Schiffman, Harold F.'],
+		year: 1999,
+		title: 'A Reference Grammar of Spoken Tamil',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'hyslop-2001': {
+		id: 'hyslop-2001',
+		authors: ['Hyslop, Catriona'],
+		year: 2001,
+		title: 'The Lolovoli Dialect of the North-East Ambae Language, Vanuatu',
+		container: 'Pacific Linguistics 515',
+		publisher: 'Research School of Pacific and Asian Studies, ANU',
+		type: 'book'
+	},
+	'ulman-2025': {
+		id: 'ulman-2025',
+		authors: ['Ulman, Vít'],
+		year: 2025,
+		title: 'Altajské jazyky jako jazykový areál [Altaic languages as a linguistic area]',
+		publisher: 'Dissertation, Charles University, Prague',
+		url: 'https://dspace.cuni.cz/handle/20.500.11956/204313',
+		type: 'url'
+	},
+	'vanhove-bisang-2021': {
+		id: 'vanhove-bisang-2021',
+		authors: ['Vanhove, Martine', 'Bisang, Walter'],
+		year: 2021,
+		title: 'Complex Predicates in Languages: Emergence, Typology, Evolution (ComPLETE) — project description',
+		url: 'https://complete.huma-num.fr/data/ANR-DFG_2021_ComPLETE_Project_Main.pdf',
+		type: 'url'
+	},
+	'kanazawa-1898': {
+		id: 'kanazawa-1898',
+		authors: ['金澤 庄三郎'],
+		year: 1898,
+		title: 'あいぬ語会話字典 (NINJAL Topical Dictionary of Conversational Ainu)',
+		url: 'https://ainu.ninjal.ac.jp/topic/',
+		type: 'url'
+	},
 	'weblio-kobun-miru': {
 		id: 'weblio-kobun-miru',
 		authors: ['Weblio 古語辞典'],
