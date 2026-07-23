@@ -718,6 +718,15 @@ export const sources: Record<string, Source> = {
 		pages: '135–194',
 		type: 'chapter'
 	},
+	datsemshift: {
+		id: 'datsemshift',
+		authors: ['Zalizniak, Anna', 'et al.'],
+		year: '2000–2026',
+		title: 'Database of Semantic Shifts (DatSemShift 3.0)',
+		publisher: 'Institute of Linguistics, Russian Academy of Sciences',
+		url: 'https://datsemshift.ru',
+		type: 'dataset'
+	},
 	'cheng-2012': {
 		id: 'cheng-2012',
 		authors: ['Cheng, Yi-Yang'],

@@ -9,7 +9,7 @@ export const seeToTry: Pathway = {
 	summary:
 		'Verbs of seeing repeatedly become markers of attempting. Japanese 食べてみる “eat and see”, Korean 먹어 보다, Mandarin 試試看, and the Turkic converb + kör- constructions all say “do it and see” for “try doing it”; Voinov (2013) traces the co-lexification across Eurasia, New Guinea, India, and West Africa.',
 	evidenceNote:
-		'The shift is documented almost exclusively inside multiverb constructions — a converb, infinitive, or serial verb followed by SEE — where the perception verb first means “observe the outcome” and then bleaches into an attemptive auxiliary. In several languages the auxiliary further softens commands into polite requests.',
+		'The shift is documented almost exclusively inside multiverb constructions — a converb, infinitive, or serial verb followed by SEE — where the perception verb first means “observe the outcome” and then bleaches into an attemptive auxiliary. In several languages the auxiliary further softens commands into polite requests. The Database of Semantic Shifts catalogues it as shift 36 (see → try), with realizations from Adyghe, Chamalal, Croatian, Japanese, Karaim, Meadow Mari, Mongolian, Serbian, and Tuvan — all Eurasian, against 243 worldwide realizations for its sibling hear → obey (shift 34).',
 	stages: [
 		{
 			id: 'visual-perception',
@@ -170,7 +170,7 @@ export const seeToTry: Pathway = {
 			start: 1900,
 			end: 2000,
 			status: 'dominant',
-			note: 'bar-a kür “please go” (Ganiev 1998:199); the attemptive reading appears in texts, e.g. libretto jaz-ïp kür-mə-gən “one who has not tried writing a libretto”.',
+			note: 'The dictionary records only the polite-directive sense: bar-a kür “please go” (Ganiev 1998:199). The attemptive reading surfaces in texts — libretto jaz-ïp kür-mə-gən “one who has not tried writing a libretto” (from Musa Dzhalil) — so the softener and the attemptive coexist even where lexicographers missed the latter.',
 			sources: [
 				{ source: 'ganiev-1998', locator: 'p. 199' },
 				{ source: 'voinov-2013', locator: 'p. 66, exx. 10–11' }
@@ -183,7 +183,7 @@ export const seeToTry: Pathway = {
 			start: 1900,
 			end: 2000,
 			status: 'dominant',
-			note: 'haqlan-a kür “please be careful”, more literally “try to be careful” (Uraksin 1996:318).',
+			note: 'The dictionary gives haqlan-a kür as “please be careful” (Uraksin 1996:318); Voinov reports native-writer confirmation of the more literal reading “try to be careful”, so the polite directive still carries the attemptive underneath.',
 			sources: [
 				{ source: 'uraksin-1996', locator: 'p. 318' },
 				{ source: 'voinov-2013', locator: 'p. 66, ex. 9' }
@@ -300,7 +300,7 @@ export const seeToTry: Pathway = {
 			label: 'Softened directives',
 			title: 'Attemptive SEE as a politeness hedge',
 			description:
-				'Framing a command as an attempt stops short of assuming the hearer can comply, and the directive reads as a polite request.'
+				'A felicitous request presupposes that the hearer is able to comply (Searle 1975). English hedges that presupposition by questioning ability — “can you close the window?” is politer than “close the window” — while these languages hedge it with the attemptive: framing the command as an attempt leaves the hearer a face-saving way out if the action turns out to be beyond them (Voinov 2013:64–65, drawing on Brown & Levinson 1987). Tuvan dictionaries list this polite-directive reading as the primary sense of the kör auxiliary; for Tatar and Bashkir it is the only sense the dictionaries record, with the attemptive reading confirmed from texts and native writers.'
 		}
 	],
 	examples: [
@@ -689,6 +689,7 @@ export const seeToTry: Pathway = {
 	],
 	sources: [
 		{ source: 'voinov-2013' },
+		{ source: 'datsemshift', locator: 'shift 36' },
 		{ source: 'anderson-2004' },
 		{ source: 'tenishev-1968' },
 		{ source: 'eckmann-1966' },
