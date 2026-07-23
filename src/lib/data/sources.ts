@@ -580,6 +580,199 @@ export const sources: Record<string, Source> = {
 		publisher: 'Max Planck Institute for Evolutionary Anthropology',
 		url: 'https://wals.info',
 		type: 'dataset'
+	},
+
+	// ─── SEE → TRY (attemptive modality) ───────────────────────────────────────
+	'voinov-2013': {
+		id: 'voinov-2013',
+		authors: ['Voinov, Vitaly'],
+		year: 2013,
+		title:
+			'‘Seeing’ is ‘trying’: The relation of visual perception to attemptive modality in the world’s languages',
+		container: 'Language and Cognition',
+		pages: '5(1): 61–80',
+		doi: '10.1515/langcog-2013-0003',
+		type: 'article'
+	},
+	'anderson-2004': {
+		id: 'anderson-2004',
+		authors: ['Anderson, Gregory D. S.'],
+		year: 2004,
+		title: 'Auxiliary verb constructions in Altai-Sayan Turkic',
+		publisher: 'Harrassowitz',
+		type: 'book'
+	},
+	'tenishev-1968': {
+		id: 'tenishev-1968',
+		authors: ['Tenišev, Edhem R. (ed.)'],
+		year: 1968,
+		title: 'Tuvinsko-russkij slovarʹ [Tuvan-Russian dictionary]',
+		publisher: 'Sovetskaja ėnciklopedija',
+		type: 'book'
+	},
+	'eckmann-1966': {
+		id: 'eckmann-1966',
+		authors: ['Eckmann, János'],
+		year: 1966,
+		title: 'Chagatay manual',
+		publisher: 'Indiana University',
+		type: 'book'
+	},
+	'baskakov-1958': {
+		id: 'baskakov-1958',
+		authors: ['Baskakov, Nikolaj A. (ed.)'],
+		year: 1958,
+		title: 'Karakalpaksko-russkij slovarʹ [Karakalpak-Russian dictionary]',
+		publisher: 'GIINS',
+		type: 'book'
+	},
+	'judakhin-1965': {
+		id: 'judakhin-1965',
+		authors: ['Judakhin, Konstantin K.'],
+		year: 1965,
+		title: 'Kirgizsko-russkij slovarʹ [Kyrgyz-Russian dictionary]',
+		publisher: 'Sovetskaja ėnciklopedija',
+		type: 'book'
+	},
+	'sleptsov-1972': {
+		id: 'sleptsov-1972',
+		authors: ['Sleptsov, Petr A. (ed.)'],
+		year: 1972,
+		title: 'Jakutsko-russkij slovarʹ [Yakut-Russian dictionary]',
+		publisher: 'Sovetskaja ėnciklopedija',
+		type: 'book'
+	},
+	'ganiev-1998': {
+		id: 'ganiev-1998',
+		authors: ['Ganiev, Fuat A. (ed.)'],
+		year: 1998,
+		title: 'Tatarsko-russkij slovarʹ [Tatar-Russian dictionary]',
+		publisher: 'Tatarskoe knižnoe izdatelʹstvo',
+		type: 'book'
+	},
+	'uraksin-1996': {
+		id: 'uraksin-1996',
+		authors: ['Uraksin, Zinnur G. (ed.)'],
+		year: 1996,
+		title: 'Baškirsko-russkij slovarʹ [Bashkir-Russian dictionary]',
+		publisher: 'Digora',
+		type: 'book'
+	},
+	'hangin-1986': {
+		id: 'hangin-1986',
+		authors: ['Hangin, Gombojab'],
+		year: 1986,
+		title: 'A modern Mongolian-English dictionary',
+		publisher: 'Indiana University',
+		type: 'book'
+	},
+	'muniev-1977': {
+		id: 'muniev-1977',
+		authors: ['Muniev, Bembe D. (ed.)'],
+		year: 1977,
+		title: 'Kalmytsko-russkij slovarʹ [Kalmyk-Russian dictionary]',
+		publisher: 'Russkij jazyk',
+		type: 'book'
+	},
+	'lee-1993': {
+		id: 'lee-1993',
+		authors: ['Lee, Keedong'],
+		year: 1993,
+		title: 'A Korean grammar on semantic-pragmatic principles',
+		publisher: 'Hankwuk Munhwasa (Korea Press)',
+		type: 'book'
+	},
+	'henderson-2011': {
+		id: 'henderson-2011',
+		authors: ['Henderson, Harold G.'],
+		year: '2011 [1945]',
+		title: 'Handbook of Japanese grammar',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'foley-1986': {
+		id: 'foley-1986',
+		authors: ['Foley, William A.'],
+		year: 1986,
+		title: 'The Papuan languages of New Guinea',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'coupe-2007': {
+		id: 'coupe-2007',
+		authors: ['Coupe, Alexander R.'],
+		year: 2007,
+		title: 'A grammar of Mongsen Ao',
+		container: 'Mouton Grammar Series 39',
+		publisher: 'Mouton de Gruyter',
+		type: 'book'
+	},
+	'ameka-2008': {
+		id: 'ameka-2008',
+		authors: ['Ameka, Felix K.'],
+		year: 2008,
+		title: 'Aspect and modality in Ewe: A survey',
+		container: 'Aspect and modality in Kwa languages',
+		editors: ['Ameka, Felix K.', 'Kropp Dakubu, Mary Esther'],
+		publisher: 'John Benjamins',
+		pages: '135–194',
+		type: 'chapter'
+	},
+	'weblio-kobun-miru': {
+		id: 'weblio-kobun-miru',
+		authors: ['Weblio 古語辞典'],
+		year: 'n.d.',
+		title: '学研全訳古語辞典: 見る（補助動詞用法、竹取物語ほか）',
+		url: 'https://kobun.weblio.jp/content/見る',
+		type: 'url'
+	},
+	'wiktionary-miru': {
+		id: 'wiktionary-miru',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 見る',
+		url: 'https://en.wiktionary.org/wiki/見る',
+		type: 'url'
+	},
+	'wiktionary-boda': {
+		id: 'wiktionary-boda',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 보다',
+		url: 'https://en.wiktionary.org/wiki/보다',
+		type: 'url'
+	},
+	'wiktionary-kan': {
+		id: 'wiktionary-kan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 看',
+		url: 'https://en.wiktionary.org/wiki/看',
+		type: 'url'
+	},
+	'wiktionary-duu': {
+		id: 'wiktionary-duu',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ดู',
+		url: 'https://en.wiktionary.org/wiki/ดู',
+		type: 'url'
+	},
+	'wiktionary-uzekh': {
+		id: 'wiktionary-uzekh',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: үзэх',
+		url: 'https://en.wiktionary.org/wiki/үзэх',
+		type: 'url'
+	},
+	'wiktionary-tuwambi': {
+		id: 'wiktionary-tuwambi',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ᡨᡠᠸᠠᠮᠪᡳ (tuwambi)',
+		url: 'https://en.wiktionary.org/wiki/ᡨᡠᠸᠠᠮᠪᡳ',
+		type: 'url'
 	}
 };
 

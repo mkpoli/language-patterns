@@ -500,7 +500,13 @@ export const hearWordsToObey: Pathway = {
 			sources: [{ source: 'wiktionary-shushrusha' }]
 		}
 	],
-	related: [],
+	related: [
+		{
+			kind: 'pathway',
+			slug: 'see-to-try',
+			label: 'From seeing to trying — another perception verb turned modal/social'
+		}
+	],
 	sources: [
 		{ source: 'tamura-1996' },
 		{ source: 'bugaeva-2016' },

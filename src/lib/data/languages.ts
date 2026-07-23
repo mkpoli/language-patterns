@@ -114,6 +114,9 @@ export const languages: Record<string, Language> = {
 	ba: { code: 'ba', name: 'Bashkir', endonym: 'башҡортса', family: 'Turkic › Kipchak', lat: 54.74, lng: 55.97, locationNote: 'Ufa' },
 	cv: { code: 'cv', name: 'Chuvash', endonym: 'чӑвашла', family: 'Turkic › Oghur', lat: 56.13, lng: 47.27, locationNote: 'Cheboksary' },
 	sah: { code: 'sah', name: 'Sakha (Yakut)', endonym: 'саха тыла', family: 'Turkic › Siberian', lat: 62.04, lng: 129.74, locationNote: 'Yakutsk' },
+	tyv: { code: 'tyv', name: 'Tuvan', endonym: 'тыва дыл', family: 'Turkic › Siberian', lat: 51.72, lng: 94.44, locationNote: 'Kyzyl' },
+	kaa: { code: 'kaa', name: 'Karakalpak', endonym: 'qaraqalpaq tili', family: 'Turkic › Kipchak', lat: 42.46, lng: 59.61, locationNote: 'Nukus' },
+	chg: { code: 'chg', name: 'Chagatay', family: 'Turkic › Karluk (historical)', lat: 39.65, lng: 66.96, locationNote: 'Samarkand (Timurid literary sphere)' },
 
 	// ─── Mongolic, Tungusic ────────────────────────────────────────────────────
 	mn: { code: 'mn', name: 'Mongolian (Khalkha)', endonym: 'монгол хэл', family: 'Mongolic', lat: 47.89, lng: 106.91, locationNote: 'Ulaanbaatar' },
@@ -267,6 +270,9 @@ export const languages: Record<string, Language> = {
 	// ─── Papuan / Trans-New Guinea / creoles ──────────────────────────────────
 	tpi: { code: 'tpi', name: 'Tok Pisin', family: 'English-based creole (Pacific)', lat: -9.45, lng: 147.18, locationNote: 'Port Moresby' },
 	kal: { code: 'kal', name: 'Kalam', family: 'Trans-New Guinea › Kalam-Kobon', lat: -5.5, lng: 144.5, locationNote: 'PNG highlands' },
+	cns: { code: 'cns', name: 'Asmat (Central)', family: 'Trans-New Guinea › Asmat-Kamoro', lat: -5.5, lng: 138.4, locationNote: 'Agats, south Papua' },
+	bbb: { code: 'bbb', name: 'Barai', family: 'Koiarian', lat: -9.0, lng: 148.1, locationNote: 'Oro Province, PNG' },
+	yee: { code: 'yee', name: 'Yimas', family: 'Lower Sepik', lat: -4.67, lng: 143.55, locationNote: 'Yimas village, East Sepik' },
 
 	// ─── Caucasian (Kartvelian, NE Caucasian, NW Caucasian) ───────────────────
 	ka: { code: 'ka', name: 'Georgian', endonym: 'ქართული', family: 'Kartvelian', lat: 41.72, lng: 44.79, locationNote: 'Tbilisi' },
@@ -329,6 +335,7 @@ export const languages: Record<string, Language> = {
 	ksw: { code: 'ksw', name: 'S’gaw Karen', family: 'Sino-Tibetan › Karenic', lat: 17.15, lng: 97.99, locationNote: 'Kayin State' },
 	lhu: { code: 'lhu', name: 'Lahu', family: 'Sino-Tibetan › Loloish', lat: 22.5, lng: 99.9, locationNote: 'southern Yunnan / northern Thailand' },
 	lus: { code: 'lus', name: 'Mizo', endonym: 'Mizo ṭawng', family: 'Sino-Tibetan › Kuki-Chin', lat: 23.73, lng: 92.72, locationNote: 'Aizawl' },
+	njo: { code: 'njo', name: 'Ao (Mongsen)', family: 'Sino-Tibetan › Kuki-Chin-Naga', lat: 26.32, lng: 94.52, locationNote: 'Mokokchung, Nagaland' },
 	naq2: { code: 'naq2', name: 'Naxi', endonym: 'Nakhi', family: 'Sino-Tibetan › Loloish', lat: 26.87, lng: 100.23, locationNote: 'Lijiang' },
 
 	// ─── More Austronesian ────────────────────────────────────────────────────
