@@ -290,8 +290,8 @@
 							{shift.schematic}
 						</a>
 						<span class="ml-1 text-xs text-[color:var(--color-ink-soft)]">
-							{#if shift.realizations}{shift.realizations}×{/if}
-							{#if shift.status === 'proposed'}(proposed){/if}
+							{#if shift.realizations != null}{shift.realizations}×{/if}
+							{#if shift.status === 'proposed'}({m.status_proposed()}){/if}
 						</span>
 						{#if shift.note}
 							<p class="mt-1 text-xs text-[color:var(--color-ink-soft)]">{shift.note}</p>
