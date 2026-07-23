@@ -680,6 +680,71 @@ export const seeToTry: Pathway = {
 			]
 		}
 	],
+	neighboringShifts: [
+		{
+			schematic: 'SEE → HAVE EXPERIENCE',
+			realizations: 9,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift992',
+			note: 'English, Russian, Spanish, Turkic gör-, Akkadian amāru. Voinov treats see = experience as the bridge that lets attempted actions count as things one “sees”.'
+		},
+		{
+			schematic: 'TASTE ↔ TRY',
+			realizations: 28,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift4',
+			note: 'Bidirectional: English try, German probieren, Russian пробовать, Japanese 試す. A second perception-to-attemptive route beside SEE.'
+		},
+		{
+			schematic: 'SEARCH → TRY',
+			realizations: 21,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift9',
+			note: 'Ancient Greek ζητέω, French chercher, Italian cercare, Vietnamese tìm.'
+		},
+		{
+			schematic: 'TOUCH ↔ TRY',
+			realizations: 1,
+			status: 'proposed',
+			url: 'https://datsemshift.ru/shift3773',
+			note: 'French tâter.'
+		},
+		{
+			schematic: 'SEE → UNDERSTAND',
+			realizations: 28,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift746',
+			note: 'English see, French voir, Russian видеть, Turkic gör-. The cognitive branch of the same source verb.'
+		},
+		{
+			schematic: 'SEE → KNOW',
+			realizations: 16,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift1069',
+			note: 'Ancient Greek εἶδον/οἶδα, Latin vidēre beside Icelandic vita, Polynesian kite/ʔite.'
+		},
+		{
+			schematic: 'SEE → FIND',
+			realizations: 21,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift2017',
+			note: 'Akkadian amāru, Swahili -ona, Maori kite. “Find out” is the reading Mandarin post-verbal 看 shows in the Zutangji.'
+		},
+		{
+			schematic: 'SEE → MEET',
+			realizations: 24,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift747',
+			note: 'Russian видеться, Turkish görmek, Korean 보다 — the social branch.'
+		},
+		{
+			schematic: 'SEE → OBEY',
+			realizations: 1,
+			status: 'proposed',
+			url: 'https://datsemshift.ru/shift10124',
+			note: 'Old Turkic kör- — the same verb behind the Turkic attemptive, heading toward the target of HEAR → OBEY.'
+		}
+	],
 	related: [
 		{
 			kind: 'pathway',

@@ -196,6 +196,24 @@ export const hearWordsToObey: Pathway = {
 			]
 		},
 		{
+			language: 'naq',
+			set: 'phrase',
+			original: 'ǁnâuǃāgu',
+			gloss: 'hear-RECP',
+			literal: 'hear one another',
+			natural: 'reach consensus; agree',
+			illustration: {
+				original: 'ǁnâu',
+				gloss: 'hear',
+				literal: 'to hear',
+				natural: 'the base verb; with the reciprocal -gu, mutual hearing becomes agreement — the same composition as Ainu u-itak-nu'
+			},
+			sources: [
+				{ source: 'haacke-eiseb-2002', locator: 'p. 288' },
+				{ source: 'datsemshift', locator: 'shift 9117' }
+			]
+		},
+		{
 			language: 'zh',
 			set: 'phrase',
 			original: '聽話 / 听话',
@@ -500,6 +518,29 @@ export const hearWordsToObey: Pathway = {
 			sources: [{ source: 'wiktionary-shushrusha' }]
 		}
 	],
+	neighboringShifts: [
+		{
+			schematic: 'HEAR → AGREE',
+			realizations: 1,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift9117',
+			note: 'Khoekhoe ǁnâuǃāgu “hear one another” → “consensus” — reciprocal hearing as agreement, the same composition as Ainu u-itak-nu.'
+		},
+		{
+			schematic: 'SEE → OBEY',
+			realizations: 1,
+			status: 'proposed',
+			url: 'https://datsemshift.ru/shift10124',
+			note: 'Old Turkic kör- “see”: a visual verb reaching the same target as the hearing verbs here.'
+		},
+		{
+			schematic: 'SEE → HEAR',
+			realizations: 9,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift953',
+			note: 'Ancient Greek δέρκομαι, Latin vidēre, Old Turkic kör-, Australian languages — the perception modalities themselves interchange.'
+		}
+	],
 	related: [
 		{
 			kind: 'pathway',
@@ -509,6 +550,7 @@ export const hearWordsToObey: Pathway = {
 	],
 	sources: [
 		{ source: 'datsemshift', locator: 'shift 34' },
+		{ source: 'haacke-eiseb-2002' },
 		{ source: 'tamura-1996' },
 		{ source: 'bugaeva-2016' },
 		{ source: 'bugaeva-kobayashi-2022' },

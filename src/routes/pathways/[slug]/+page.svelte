@@ -275,6 +275,33 @@
 		</section>
 	{/if}
 
+	{#if pathway.neighboringShifts?.length}
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_neighboring_shifts()}</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				{m.section_neighboring_shifts_hint()}
+			</p>
+			<ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+				{#each pathway.neighboringShifts as shift (shift.url)}
+					<li
+						class="rounded-lg border border-[color:var(--color-rule)] bg-white px-3 py-2 text-sm"
+					>
+						<a href={shift.url} class="font-mono font-medium hover:underline">
+							{shift.schematic}
+						</a>
+						<span class="ml-1 text-xs text-[color:var(--color-ink-soft)]">
+							{#if shift.realizations}{shift.realizations}×{/if}
+							{#if shift.status === 'proposed'}(proposed){/if}
+						</span>
+						{#if shift.note}
+							<p class="mt-1 text-xs text-[color:var(--color-ink-soft)]">{shift.note}</p>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
+
 	<Bibliography citations={allCitations} />
 
 	{#if pathway.related.length}

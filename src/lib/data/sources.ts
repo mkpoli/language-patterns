@@ -718,6 +718,14 @@ export const sources: Record<string, Source> = {
 		pages: '135–194',
 		type: 'chapter'
 	},
+	'haacke-eiseb-2002': {
+		id: 'haacke-eiseb-2002',
+		authors: ['Haacke, Wilfrid H. G.', 'Eiseb, Eliphas'],
+		year: 2002,
+		title: 'A Khoekhoegowab Dictionary with an English-Khoekhoegowab Index',
+		publisher: 'Gamsberg Macmillan',
+		type: 'book'
+	},
 	datsemshift: {
 		id: 'datsemshift',
 		authors: ['Zalizniak, Anna', 'et al.'],
