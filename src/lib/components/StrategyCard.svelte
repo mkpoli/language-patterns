@@ -20,7 +20,7 @@
 >
 	<header class="flex items-baseline justify-between gap-3">
 		<h3 class="text-lg font-semibold" style:color={tokens.textOn}>{strategy.label}</h3>
-		<code class="rounded bg-white/60 px-2 py-1 font-mono text-xs text-[color:var(--color-ink)]">
+		<code class="rounded bg-[color:var(--color-on-band)]/60 px-2 py-1 font-mono text-xs text-[color:var(--color-ink)]">
 			{strategy.schematic}
 		</code>
 	</header>
@@ -32,7 +32,7 @@
 			{#each langs as att (att.language)}
 				{@const lang = getLanguage(att.language)}
 				<span
-					class="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/80 px-2 py-0.5 text-xs"
+					class="inline-flex items-center gap-1 rounded-full border border-[color:var(--color-on-band)]/70 bg-[color:var(--color-on-band)]/80 px-2 py-0.5 text-xs"
 					title={att.expression}
 				>
 					<span class="font-medium">{lang.name}</span>

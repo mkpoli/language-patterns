@@ -8,12 +8,12 @@ export interface StrategyColorTokens {
 }
 
 const tokens: Record<Strategy['color'], StrategyColorTokens> = {
-	sky:     { band: 'var(--color-sky-band)',     soft: 'var(--color-sky-soft)',     border: 'oklch(70% 0.1 230)',  textOn: 'oklch(25% 0.05 230)' },
-	amber:   { band: 'var(--color-amber-band)',   soft: 'var(--color-amber-soft)',   border: 'oklch(75% 0.13 75)',  textOn: 'oklch(30% 0.08 75)' },
-	emerald: { band: 'var(--color-emerald-band)', soft: 'var(--color-emerald-soft)', border: 'oklch(70% 0.11 155)', textOn: 'oklch(25% 0.06 155)' },
-	violet:  { band: 'var(--color-violet-band)',  soft: 'var(--color-violet-soft)',  border: 'oklch(68% 0.1 295)',  textOn: 'oklch(28% 0.06 295)' },
-	rose:    { band: 'var(--color-rose-band)',    soft: 'var(--color-rose-soft)',    border: 'oklch(73% 0.1 15)',   textOn: 'oklch(28% 0.06 15)' },
-	slate:   { band: 'var(--color-slate-band)',   soft: 'var(--color-slate-soft)',   border: 'oklch(60% 0.03 260)', textOn: 'oklch(25% 0.02 260)' }
+	sky:     { band: 'var(--color-sky-band)',     soft: 'var(--color-sky-soft)',     border: 'var(--color-sky-border)',     textOn: 'var(--color-sky-text)' },
+	amber:   { band: 'var(--color-amber-band)',   soft: 'var(--color-amber-soft)',   border: 'var(--color-amber-border)',   textOn: 'var(--color-amber-text)' },
+	emerald: { band: 'var(--color-emerald-band)', soft: 'var(--color-emerald-soft)', border: 'var(--color-emerald-border)', textOn: 'var(--color-emerald-text)' },
+	violet:  { band: 'var(--color-violet-band)',  soft: 'var(--color-violet-soft)',  border: 'var(--color-violet-border)',  textOn: 'var(--color-violet-text)' },
+	rose:    { band: 'var(--color-rose-band)',    soft: 'var(--color-rose-soft)',    border: 'var(--color-rose-border)',    textOn: 'var(--color-rose-text)' },
+	slate:   { band: 'var(--color-slate-band)',   soft: 'var(--color-slate-soft)',   border: 'var(--color-slate-border)',   textOn: 'var(--color-slate-text)' }
 };
 
 export function strategyColor(color: Strategy['color']): StrategyColorTokens {

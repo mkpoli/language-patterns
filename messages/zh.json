@@ -46,6 +46,10 @@
 
 	"language_switcher_label": "切换界面语言",
 
+	"theme_toggle_auto": "主题：跟随系统（点击切换为浅色）",
+	"theme_toggle_light": "主题：浅色（点击切换为深色）",
+	"theme_toggle_dark": "主题：深色（点击切换为跟随系统）",
+
 	"sister_sites_heading": "姊妹站点",
 	"p_graveyard_title": "/p/ 之墓",
 	"p_graveyard_description": "记录辅音 /p/ 在世界各语言中消失与演化的音变路径合集。",

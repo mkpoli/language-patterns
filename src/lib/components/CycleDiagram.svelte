@@ -26,7 +26,7 @@
 	<svg viewBox={`0 0 ${size} ${size}`} class="h-auto w-full max-w-md">
 		<defs>
 			<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-				<path d="M 0 0 L 10 5 L 0 10 z" fill="oklch(50% 0.05 260)" />
+				<path d="M 0 0 L 10 5 L 0 10 z" fill="var(--color-ink-faint)" />
 			</marker>
 		</defs>
 
@@ -45,7 +45,7 @@
 			<path
 				d={`M ${p.x} ${p.y} Q ${cx} ${cy} ${next.x} ${next.y}`}
 				fill="none"
-				stroke="oklch(75% 0.03 260)"
+				stroke="var(--color-rule)"
 				stroke-width="1.5"
 				marker-end="url(#arrow)"
 			/>
@@ -54,7 +54,7 @@
 		<!-- Stage nodes -->
 		{#each points as p (p.stage.id)}
 			<g>
-				<circle cx={p.x} cy={p.y} r="34" fill="white" stroke="oklch(70% 0.05 260)" stroke-width="1.5" />
+				<circle cx={p.x} cy={p.y} r="34" fill="var(--color-surface)" stroke="var(--color-ink-faint)" stroke-width="1.5" />
 				<text x={p.x} y={p.y - 4} text-anchor="middle" class="fill-[color:var(--color-ink-soft)] text-xs font-mono">
 					Stage {p.stage.number}
 				</text>

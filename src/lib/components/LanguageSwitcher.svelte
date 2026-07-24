@@ -16,12 +16,12 @@
 	const current = $derived(getLocale());
 </script>
 
-<div role="group" aria-label={m.language_switcher_label()} class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-white p-0.5 text-xs">
+<div role="group" aria-label={m.language_switcher_label()} class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-0.5 text-xs">
 	{#each locales as locale (locale)}
 		<button
 			type="button"
 			class="rounded-full px-2 py-1 transition"
-			class:bg-[oklch(94%_0.04_230)]={current === locale}
+			class:bg-[color:var(--color-sky-soft)]={current === locale}
 			class:font-medium={current === locale}
 			class:text-[color:var(--color-ink-soft)]={current !== locale}
 			aria-pressed={current === locale}

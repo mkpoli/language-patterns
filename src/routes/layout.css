@@ -6,24 +6,55 @@
 	--font-serif: 'Source Serif Pro', 'Georgia', serif;
 	--font-mono: 'JetBrains Mono', 'Menlo', ui-monospace, monospace;
 
-	--color-paper: oklch(98.5% 0.005 95);
-	--color-ink: oklch(22% 0.02 260);
-	--color-ink-soft: oklch(45% 0.02 260);
-	--color-rule: oklch(90% 0.01 260);
+	/* Each token carries its light and dark value via light-dark(); which one
+	   renders is governed solely by color-scheme on :root below. */
+	--color-paper: light-dark(oklch(98.5% 0.005 95), oklch(20% 0.015 260));
+	--color-surface: light-dark(oklch(100% 0 0), oklch(25% 0.015 260));
+	--color-surface-sunken: light-dark(oklch(96% 0.005 260), oklch(22% 0.01 260));
+	--color-ink: light-dark(oklch(22% 0.02 260), oklch(90% 0.01 260));
+	--color-ink-soft: light-dark(oklch(45% 0.02 260), oklch(68% 0.015 260));
+	--color-ink-faint: light-dark(oklch(55% 0.02 260), oklch(55% 0.015 260));
+	--color-rule: light-dark(oklch(90% 0.01 260), oklch(34% 0.015 260));
+	--color-accent: light-dark(oklch(70% 0.1 230), oklch(72% 0.1 230));
+	--color-on-band: oklch(100% 0 0);
+	--color-shadow: light-dark(oklch(0% 0 0 / 0.08), oklch(0% 0 0 / 0.4));
 
-	/* Strategy palette — matches the soft pastel feel of the design refs */
-	--color-sky-band: oklch(78% 0.08 230);
-	--color-sky-soft: oklch(94% 0.04 230);
-	--color-amber-band: oklch(82% 0.12 75);
-	--color-amber-soft: oklch(95% 0.05 75);
-	--color-emerald-band: oklch(78% 0.1 155);
-	--color-emerald-soft: oklch(94% 0.04 155);
-	--color-violet-band: oklch(75% 0.09 295);
-	--color-violet-soft: oklch(94% 0.04 295);
-	--color-rose-band: oklch(80% 0.09 15);
-	--color-rose-soft: oklch(95% 0.04 15);
-	--color-slate-band: oklch(70% 0.02 260);
-	--color-slate-soft: oklch(93% 0.01 260);
+	/* Strategy palette — soft pastels in light, deepened same-hue bands in dark */
+	--color-sky-band: light-dark(oklch(78% 0.08 230), oklch(58% 0.1 230));
+	--color-sky-soft: light-dark(oklch(94% 0.04 230), oklch(30% 0.05 230));
+	--color-sky-border: light-dark(oklch(70% 0.1 230), oklch(52% 0.1 230));
+	--color-sky-text: light-dark(oklch(25% 0.05 230), oklch(88% 0.05 230));
+	--color-amber-band: light-dark(oklch(82% 0.12 75), oklch(60% 0.1 75));
+	--color-amber-soft: light-dark(oklch(95% 0.05 75), oklch(30% 0.05 75));
+	--color-amber-border: light-dark(oklch(75% 0.13 75), oklch(56% 0.11 75));
+	--color-amber-text: light-dark(oklch(30% 0.08 75), oklch(88% 0.06 75));
+	--color-emerald-band: light-dark(oklch(78% 0.1 155), oklch(58% 0.09 155));
+	--color-emerald-soft: light-dark(oklch(94% 0.04 155), oklch(30% 0.04 155));
+	--color-emerald-border: light-dark(oklch(70% 0.11 155), oklch(53% 0.09 155));
+	--color-emerald-text: light-dark(oklch(25% 0.06 155), oklch(88% 0.05 155));
+	--color-violet-band: light-dark(oklch(75% 0.09 295), oklch(58% 0.09 295));
+	--color-violet-soft: light-dark(oklch(94% 0.04 295), oklch(30% 0.05 295));
+	--color-violet-border: light-dark(oklch(68% 0.1 295), oklch(53% 0.09 295));
+	--color-violet-text: light-dark(oklch(28% 0.06 295), oklch(88% 0.05 295));
+	--color-rose-band: light-dark(oklch(80% 0.09 15), oklch(60% 0.09 15));
+	--color-rose-soft: light-dark(oklch(95% 0.04 15), oklch(31% 0.05 15));
+	--color-rose-border: light-dark(oklch(73% 0.1 15), oklch(55% 0.1 15));
+	--color-rose-text: light-dark(oklch(28% 0.06 15), oklch(88% 0.05 15));
+	--color-slate-band: light-dark(oklch(70% 0.02 260), oklch(52% 0.02 260));
+	--color-slate-soft: light-dark(oklch(93% 0.01 260), oklch(30% 0.01 260));
+	--color-slate-border: light-dark(oklch(60% 0.03 260), oklch(46% 0.02 260));
+	--color-slate-text: light-dark(oklch(25% 0.02 260), oklch(85% 0.01 260));
+}
+
+/* Theme selection: auto follows the system; the data-theme attribute pins it. */
+:root {
+	color-scheme: light dark;
+}
+:root[data-theme='light'] {
+	color-scheme: light;
+}
+:root[data-theme='dark'] {
+	color-scheme: dark;
 }
 
 html {

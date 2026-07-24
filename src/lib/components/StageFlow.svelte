@@ -51,7 +51,7 @@
 			</li>
 		{/if}
 		<li
-			class="group flex flex-1 flex-col gap-2.5 rounded-2xl border border-[color:var(--color-rule)] bg-white p-5 transition duration-200 hover:-translate-y-0.5 hover:border-[oklch(80%_0.02_260)] hover:shadow-[0_6px_20px_oklch(0%_0_0/0.05)]"
+			class="group flex flex-1 flex-col gap-2.5 rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-[color:var(--color-accent)] hover:shadow-[0_6px_20px_var(--color-shadow)]"
 		>
 			<div class="flex items-center gap-3">
 				<span
@@ -61,7 +61,7 @@
 				</span>
 				<h3 class="font-serif text-xl leading-tight">{stage.label}</h3>
 			</div>
-			<code class="self-start rounded bg-[oklch(96%_0.005_260)] px-2 py-1 font-mono text-xs">
+			<code class="self-start rounded bg-[color:var(--color-surface-sunken)] px-2 py-1 font-mono text-xs">
 				{stage.schematic}
 			</code>
 			<p class="text-sm text-[color:var(--color-ink-soft)]">{stage.description}</p>
