@@ -160,6 +160,14 @@ export interface TimelineBand {
 	sources?: Citation[];
 }
 
+export interface NeighboringShift {
+	schematic: string;
+	realizations?: number;
+	status: 'accepted' | 'proposed';
+	url: string;
+	note?: string;
+}
+
 export interface Pathway {
 	slug: string;
 	title: string;
@@ -172,6 +180,7 @@ export interface Pathway {
 	bands: TimelineBand[];
 	examples?: Example[];
 	exampleSets?: ExampleSet[];
+	neighboringShifts?: NeighboringShift[];
 	related: { kind: 'pattern' | 'pathway'; slug: string; label: string }[];
 	sources?: Citation[];
 }

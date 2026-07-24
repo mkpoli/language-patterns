@@ -718,6 +718,40 @@ export const sources: Record<string, Source> = {
 		pages: '135–194',
 		type: 'chapter'
 	},
+	'haacke-eiseb-2002': {
+		id: 'haacke-eiseb-2002',
+		authors: ['Haacke, Wilfrid H. G.', 'Eiseb, Eliphas'],
+		year: 2002,
+		title: 'A Khoekhoegowab Dictionary with an English-Khoekhoegowab Index',
+		publisher: 'Gamsberg Macmillan',
+		type: 'book'
+	},
+	datsemshift: {
+		id: 'datsemshift',
+		authors: [
+			'Zalizniak, Anna',
+			'Bulakh, Maria',
+			'Ganenkov, Dmitry',
+			'Gruntov, Ilya',
+			'Kaprielova, Viktoria',
+			'Kondratieva, Violetta',
+			'Maisak, Timur',
+			'Mikhailova, Tatiana',
+			'Orlova, Maria',
+			'Russo, Maksim',
+			'Rykov, Elisei',
+			'Smirnitskaya, Anna',
+			'Bobrik-Fremke, Marina',
+			'Dereza, Oksana',
+			'Bibaeva, Maria',
+			'Voronov, Mikhail'
+		],
+		year: '2000–2026',
+		title: 'Database of Semantic Shifts (DatSemShift 3.0)',
+		publisher: 'Institute of Linguistics, Russian Academy of Sciences',
+		url: 'https://datsemshift.ru',
+		type: 'dataset'
+	},
 	'cheng-2012': {
 		id: 'cheng-2012',
 		authors: ['Cheng, Yi-Yang'],

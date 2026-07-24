@@ -9,7 +9,7 @@ export const hearWordsToObey: Pathway = {
 	summary:
 		'Verbs of hearing and listening repeatedly grow a sense of obeying. The pattern recurs from Mandarin tīnghuà and Japanese iu koto o kiku to Latin oboedīre, built on audīre “to hear”, behind French obéir and English obey.',
 	evidenceNote:
-		'Each expression retains hearing or listening in its structure while conventionally expressing attention, compliance, or obedience.',
+		'Each expression retains hearing or listening in its structure while conventionally expressing attention, compliance, or obedience. The Database of Semantic Shifts catalogues the change as shift 34 (hear/listen → obey) with 243 realizations across every macroarea, from Akkadian and Egyptian to Swahili and Hawaiian — among the most widely replicated semantic shifts on record.',
 	stages: [
 		{
 			id: 'auditory-reception',
@@ -193,6 +193,24 @@ export const hearWordsToObey: Pathway = {
 				{ source: 'tamura-1996', locator: 'p. 808, s.v. uitaknu' },
 				{ source: 'bugaeva-2016', locator: 'p. 103' },
 				{ source: 'bugaeva-kobayashi-2022', locator: '§4.2.1' }
+			]
+		},
+		{
+			language: 'naq',
+			set: 'phrase',
+			original: 'ǁnâuǃāgu',
+			gloss: 'hear-RECP',
+			literal: 'hear one another',
+			natural: 'reach consensus; agree',
+			illustration: {
+				original: 'ǁnâu',
+				gloss: 'hear',
+				literal: 'to hear',
+				natural: 'the base verb; with the reciprocal -gu, mutual hearing becomes agreement — the same composition as Ainu u-itak-nu'
+			},
+			sources: [
+				{ source: 'haacke-eiseb-2002', locator: 'p. 288' },
+				{ source: 'datsemshift', locator: 'shift 9117' }
 			]
 		},
 		{
@@ -500,6 +518,29 @@ export const hearWordsToObey: Pathway = {
 			sources: [{ source: 'wiktionary-shushrusha' }]
 		}
 	],
+	neighboringShifts: [
+		{
+			schematic: 'HEAR → AGREE',
+			realizations: 1,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift9117',
+			note: 'Khoekhoe ǁnâuǃāgu “hear one another” → “consensus” — reciprocal hearing as agreement, the same composition as Ainu u-itak-nu.'
+		},
+		{
+			schematic: 'SEE → OBEY',
+			realizations: 1,
+			status: 'proposed',
+			url: 'https://datsemshift.ru/shift10124',
+			note: 'Old Turkic kör- “see”: a visual verb reaching the same target as the hearing verbs here.'
+		},
+		{
+			schematic: 'SEE → HEAR',
+			realizations: 9,
+			status: 'accepted',
+			url: 'https://datsemshift.ru/shift953',
+			note: 'Ancient Greek δέρκομαι, Latin vidēre, Old Turkic kör-, Australian languages — the perception modalities themselves interchange.'
+		}
+	],
 	related: [
 		{
 			kind: 'pathway',
@@ -508,6 +549,8 @@ export const hearWordsToObey: Pathway = {
 		}
 	],
 	sources: [
+		{ source: 'datsemshift', locator: 'shift 34' },
+		{ source: 'haacke-eiseb-2002' },
 		{ source: 'tamura-1996' },
 		{ source: 'bugaeva-2016' },
 		{ source: 'bugaeva-kobayashi-2022' },
