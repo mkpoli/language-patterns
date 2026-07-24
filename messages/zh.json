@@ -37,6 +37,12 @@
 	"legend_ungrouped": "未分组",
 	"stage_documented_in": "时间轴收录",
 
+	"atlas_title": "反复出现的模式之地理分布",
+	"atlas_subtitle": "所有主题汇于一张地图。选择某个模式或路径，语言即按策略或证据集着色；也可以一次查看全部主题，此时标记大小表示该语言见于多少个主题。",
+	"atlas_filter_topics": "主题",
+	"atlas_all_topics": "全部主题",
+	"atlas_by_family": "按语系分布",
+
 	"example_natural": "自然",
 	"example_literal": "直译",
 	"example_gloss": "注释",
