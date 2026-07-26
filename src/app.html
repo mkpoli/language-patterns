@@ -17,7 +17,9 @@
 				try {
 					var t = localStorage.getItem('theme');
 					if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
-				} catch {}
+				} catch (e) {
+					// Unreadable storage means no stored preference; auto theme applies.
+				}
 			})();
 		</script>
 

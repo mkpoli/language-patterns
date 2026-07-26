@@ -22,18 +22,21 @@
 		} else {
 			document.documentElement.dataset.theme = nextMode;
 		}
-		// Persistence is best-effort — storage can be unavailable or throw.
 		try {
 			if (nextMode === 'auto') localStorage.removeItem('theme');
 			else localStorage.setItem('theme', nextMode);
-		} catch {}
+		} catch {
+			// Persistence is best-effort; the in-session theme is already applied.
+		}
 	}
 
 	onMount(() => {
 		try {
 			const stored = localStorage.getItem('theme');
 			if (stored === 'light' || stored === 'dark') mode = stored;
-		} catch {}
+		} catch {
+			// Unreadable storage means no stored preference; stay in auto mode.
+		}
 	});
 
 	function cycle() {
