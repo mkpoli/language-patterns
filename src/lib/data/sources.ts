@@ -13,6 +13,58 @@ export const sources: Record<string, Source> = {
 		pages: '85–126',
 		type: 'chapter'
 	},
+	'chung-ladusaw-2004': {
+		id: 'chung-ladusaw-2004',
+		authors: ['Chung, Sandra', 'Ladusaw, William A.'],
+		year: 2004,
+		title: 'Restriction and Saturation',
+		publisher: 'MIT Press',
+		type: 'book'
+	},
+	'creissels-2019': {
+		id: 'creissels-2019',
+		authors: ['Creissels, Denis'],
+		year: 2019,
+		title: 'Inverse-locational predication in typological perspective',
+		container: 'Italian Journal of Linguistics',
+		pages: '31(2): 37–106',
+		doi: '10.26346/1120-2726-138',
+		url: 'https://www.italian-journal-linguistics.com/app/uploads/2021/05/2_Creissels.pdf',
+		type: 'article'
+	},
+	'bentley-ciconte-cruschina-2015': {
+		id: 'bentley-ciconte-cruschina-2015',
+		authors: ['Bentley, Delia', 'Ciconte, Francesco Maria', 'Cruschina, Silvio'],
+		year: 2015,
+		title: 'Existentials and Locatives in Romance Dialects of Italy',
+		publisher: 'Oxford University Press',
+		type: 'book'
+	},
+	'sato-2008': {
+		id: 'sato-2008',
+		authors: ['Satō, Tomomi 佐藤知己'],
+		year: 2008,
+		title: 'アイヌ語文法の基礎 [Foundations of Ainu grammar]',
+		publisher: 'Daigaku Shorin 大学書林',
+		type: 'book'
+	},
+	'nakagawa-2024': {
+		id: 'nakagawa-2024',
+		authors: ['Nakagawa, Hiroshi 中川裕'],
+		year: 2024,
+		title: 'アイヌ語広文典 [Ainugo kōbunten: An extensive grammar of the Ainu language]',
+		publisher: 'Hakusuisha 白水社',
+		type: 'book'
+	},
+	'marten-2013': {
+		id: 'marten-2013',
+		authors: ['Marten, Lutz'],
+		year: 2013,
+		title: 'Structure and interpretation in Swahili existential constructions',
+		container: 'Rivista di Linguistica',
+		pages: '25(1): 45–73',
+		type: 'article'
+	},
 	'freeze-1992': {
 		id: 'freeze-1992',
 		authors: ['Freeze, Ray'],

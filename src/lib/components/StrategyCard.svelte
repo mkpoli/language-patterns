@@ -29,7 +29,7 @@
 
 	{#if langs.length}
 		<div class="flex flex-wrap gap-1.5 pt-2">
-			{#each langs as att (att.language)}
+			{#each langs as att (`${att.language}:${att.expression}`)}
 				{@const lang = getLanguage(att.language)}
 				<span
 					class="inline-flex items-center gap-1 rounded-full border border-[color:var(--color-surface)]/70 bg-[color:var(--color-surface)]/80 px-2 py-0.5 text-xs"

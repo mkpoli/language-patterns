@@ -6,76 +6,88 @@ export const existence: Pattern = {
 	shortTitle: 'There is…',
 	question: 'How do languages say “there is”?',
 	summary:
-		'Languages assert existence with a copula (BE), a possession verb (HAVE), a dedicated existential predicate, or a locative frame. The choice often splits by animacy and by number.',
+		'“The water is in the river” takes the water as given and tells you where it is. “There is water in the river” reverses that: the river is the setting and the water is the news. Saying that something exists therefore reuses the machinery for saying where it is, and languages differ in how much they change along the way — some leave the locational predicate untouched, some add a placeholder subject, some borrow the possessive verb, and some keep a predicate reserved for existence that no definite subject can take. The choice often splits by animacy and by number.',
 	category: ['Meaning & Expression', 'Possession & Existence'],
 	strategies: [
 		{
-			id: 'be',
-			label: 'BE strategy',
-			schematic: '([expletive]) [be] [X]',
+			id: 'general-locational',
+			label: 'Plain locational clause',
+			schematic: '[X] ([at LOC]) [be located]',
 			description:
-				'A copula or BE-verb carries the existential assertion, often with a dummy subject like English there or with a locative clitic like Italian ci.',
+				'The existential clause is the locational clause: leave the construction alone, make the subject indefinite, and it asserts existence. Japanese 本が机の上にある and Ainu pet or ta wakka an take a definite subject unchanged. Word order, case or agreement may still shift.',
+			color: 'violet'
+		},
+		{
+			id: 'copular-proform',
+			label: 'Copula with a proform',
+			schematic: '[there] [be] [X] ([at LOC])',
+			description:
+				'A placeholder fills the subject slot ahead of the copula. The copula itself still locates definite subjects elsewhere, but this construction does not: *there is the book.',
 			color: 'sky'
 		},
 		{
-			id: 'have',
-			label: 'HAVE strategy',
-			schematic: '([there]) [has] [X]',
+			id: 'possessive',
+			label: 'Possessive frame',
+			schematic: '([there]) [has / with] [X]',
 			description:
-				'A verb meaning HAVE is recruited as an existential predicate. Common in Romance and in Chinese 有.',
+				'The existential borrows the frame of a possessive clause, so the thing whose existence is asserted sits where an object would and controls no agreement — French il y a des livres, never *il y ont.',
 			color: 'amber'
 		},
 		{
-			id: 'exist',
-			label: 'EXIST strategy',
-			schematic: '[X] [exist / is found]',
+			id: 'specialized-existential',
+			label: 'Specialized existential',
+			schematic: '[X] [exist]',
 			description:
-				'A dedicated existential predicate or particle — sometimes a lexical verb meaning “be found / be present”, sometimes an invariant existential word.',
+				'A construction reserved for existence, which no definite subject can enter. Turkish kitap masada states location with no var at all; Hebrew drops yesh once the subject is definite.',
 			color: 'emerald'
 		},
 		{
-			id: 'locative',
-			label: 'Locative predicate',
-			schematic: '[at LOC] [X] [be / stay]',
+			id: 'nonverbal',
+			label: 'No verbal predicate',
+			schematic: '[there] / [a X] ([at LOC])',
 			description:
-				'Existence is framed as location: “at the place, X is.” Japanese ある/いる splits this by animacy; Bantu and Korean use dedicated locative copulas.',
-			color: 'violet'
+				'Existence is asserted with no verb at all — a bare indefinite nominal, which a locative phrase may follow.',
+			color: 'rose'
 		}
 	],
 	attestations: [
-		// BE
-		{ language: 'en', strategy: 'be', expression: 'there is / there are', confidence: 'high', sources: [{ source: 'mcnally-2011' }] },
-		{ language: 'it', strategy: 'be', expression: 'c’è / ci sono', confidence: 'high', note: 'locative clitic ci + essere “be”', sources: [{ source: 'freeze-1992' }] },
-		{ language: 'cy', strategy: 'be', expression: 'mae / oes', confidence: 'high', note: 'special existential forms of bod “be”' },
-		{ language: 'la', strategy: 'be', expression: 'est / sunt', confidence: 'high', note: 'plain copula esse, often clause-initial' },
+		// ─── Plain locational clause ──────────────────────────────────────────
+		{ language: 'ja', strategy: 'general-locational', expression: 'ある / いる', confidence: 'high', note: 'the same verbs head plain locational clauses with a definite subject (本は机の上にある), and both carry possession — 私に子供がいる. Animate いる against inanimate ある. いる continues an older verb “sit down, be seated”; ある continues an old existential root.', origin: { value: 'exist', evidence: 'established' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'], sources: [{ source: 'clark-1978' }] },
+		{ language: 'ko', strategy: 'general-locational', expression: '있다 itda', confidence: 'high', note: 'covers location, existence and possession alike, with one form for animate and inanimate. 계시다 is the honorific used of people whose status calls for it, not of animates generally. Suppletive negative 없다.', origin: { value: 'exist', evidence: 'established' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'ain', strategy: 'general-locational', expression: 'an (SG) / oka(y) (PL)', confidence: 'high', note: 'one predicate for existence and location. Strictly intransitive: the bare existential is [theme] an, and a location is an optional oblique (N or ta), never a second argument. Number suppletion rather than an animacy split; suppletive negative isam. Possession is mostly the transitive kor, but an also carries a BE-type possessive with affiliative-form inalienable nouns — a=yupi an “I have an elder brother”, a closed class rather than general possession.', origin: { value: 'exist', evidence: 'established' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'], sources: [{ source: 'tamura-2000' }, { source: 'bugaeva-2012' }, { source: 'sato-2008', locator: '3–4' }, { source: 'nakagawa-2024', locator: '146' }] },
+		{ language: 'fi', strategy: 'general-locational', expression: 'on', confidence: 'high', note: 'the copula olla; ground-first order carries the existential reading. An indefinite subject may take the partitive and then suppresses agreement, but singular count subjects can stay nominative — pihalla on poika “there is a boy in the yard”. The same on carries possession with an adessive possessor: minulla on kirja.', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'], sources: [{ source: 'freeze-1992' }] },
+		{ language: 'id', strategy: 'general-locational', expression: 'ada', confidence: 'high', note: 'also heads definite locational clauses — bukunya ada di meja “the book is on the table”. Continues Proto-Malayo-Polynesian *wada “be present, exist”.', origin: { value: 'exist', evidence: 'established' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'] },
+		{ language: 'eu', strategy: 'general-locational', expression: 'egon (dago / daude)', confidence: 'medium', note: 'egon is the stage-level locative copula, against izan for identity, and its lexical domain is “stay, remain” rather than a body posture. Trask records no accepted etymology for it, so the origin is a synchronic domain rather than a derivation. Western and central varieties select egon in existentials; eastern varieties use izan, and the ba- prefixed forms are a further pattern. Confidence is medium because a single row hides that variation.', origin: { value: 'stay', evidence: 'unknown' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'] },
+		{ language: 'sw', strategy: 'general-locational', expression: '-ko / -po / -mo', confidence: 'high', note: 'an agreeing locative copula built on the locative noun classes (16 pa-, 17 ku-, 18 mu-) and related to the locative referential concords. It states location — mbwa yuko nyumbani “the dog is at the house” — and existence alike: watu wapo “there are people”. The commoner existential is kuna.', origin: { value: 'locative', evidence: 'established' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'], sources: [{ source: 'marten-2013' }] },
+		{ language: 'de', strategy: 'general-locational', expression: 'sein (ist / sind)', confidence: 'high', note: 'the plain copula competes with es gibt — Im Haus ist ein Hund', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'] },
+		{ language: 'cy', strategy: 'general-locational', expression: 'mae', confidence: 'high', note: 'mae heads both clause types — mae’r ci yn y tŷ “the dog is in the house” against mae ci yn y tŷ “there is a dog in the house” — and the same form of bod carries possession: mae car gan Sioned.', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'la', strategy: 'general-locational', expression: 'est / sunt', confidence: 'high', note: 'plain copula esse; ground-first order carries the existential reading — in flumine aqua est. The dative of possession uses the same copula: est mihi liber “to me is a book”.', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'hi', strategy: 'general-locational', expression: 'है hai', confidence: 'high', note: 'the copula honā doubles as the existential predicate, and carries possession with a postpositional possessor — mere pās kitāb hai “near me a book is”', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'hu', strategy: 'general-locational', expression: 'van', confidence: 'high', note: 'van marks both location and existence. In the possessive clause the possessed noun carries the possessive suffix and the possessor may take dative marking — Marinak van egy kutyája.', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'ar', strategy: 'general-locational', expression: 'هناك hunāka', confidence: 'high', note: 'the locative deictic is itself the predicate, with no copula in the present. It heads a plain locational clause with a definite subject — al-kitābu hunāka “the book is there” — as well as the existential hunāka kitābun.', origin: { value: 'deictic', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'] },
+		{ language: 'ar', strategy: 'general-locational', expression: 'يوجد yūjad', confidence: 'high', note: 'passive of wajada “find”, so literally “is found”. It also takes definite subjects — yūjadu l-muʿallimu fī l-ġurfa “the teacher is in the room”.', origin: { value: 'find', evidence: 'transparent' }, proform: 'none', headAlsoLocates: true, syncretism: ['location', 'existence'] },
 
-		// HAVE
-		{ language: 'fr', strategy: 'have', expression: 'il y a', confidence: 'high', note: 'literally “it has there”', sources: [{ source: 'freeze-1992' }, { source: 'stassen-2009' }] },
-		{ language: 'es', strategy: 'have', expression: 'hay', confidence: 'high', note: 'fossilised ha + y (locative)', sources: [{ source: 'stassen-2009' }] },
-		{ language: 'zh', strategy: 'have', expression: '有 yǒu', confidence: 'high', sources: [{ source: 'heine-kuteva-2002', locator: 's.v. HAVE' }] },
+		// ─── Copula with a proform ────────────────────────────────────────────
+		{ language: 'en', strategy: 'copular-proform', expression: 'there is / there are', confidence: 'high', note: 'expletive there fills the subject slot and the coda is optional. The copula itself locates definite subjects freely — the book is on the table — but this construction cannot: *there is the book.', origin: { value: 'be', evidence: 'transparent' }, proform: 'expletive', headAlsoLocates: true, syncretism: ['location', 'existence'], sources: [{ source: 'mcnally-2011' }, { source: 'bentley-ciconte-cruschina-2015' }] },
+		{ language: 'it', strategy: 'copular-proform', expression: 'c’è / ci sono', confidence: 'high', note: 'the clitic ci plus essere “be”. ci is locative in origin, though in the existential many analyses treat it as a bleached expletive.', origin: { value: 'be', evidence: 'transparent' }, proform: 'locative', headAlsoLocates: true, syncretism: ['location', 'existence'], sources: [{ source: 'freeze-1992' }, { source: 'bentley-ciconte-cruschina-2015' }] },
 
-		// EXIST
-		{ language: 'de', strategy: 'exist', expression: 'es gibt', confidence: 'high', note: 'literally “it gives”', sources: [{ source: 'heine-kuteva-2002', locator: 's.v. GIVE > EXIST' }] },
-		{ language: 'sv', strategy: 'exist', expression: 'det finns', confidence: 'high', note: 'literally “it is found”, passive of finna' },
-		{ language: 'tr', strategy: 'exist', expression: 'var', confidence: 'high', note: 'invariant existential particle', sources: [{ source: 'stassen-2009' }] },
-		{ language: 'ru', strategy: 'exist', expression: 'есть / нет', confidence: 'high', note: 'zero copula in present, есть when emphatic; нет for negation', sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
-		{ language: 'he', strategy: 'exist', expression: 'יש yesh / אין ein', confidence: 'high', note: 'positive/negative existential particles, no inflection', sources: [{ source: 'veselinova-hamari-2022' }] },
-		{ language: 'id', strategy: 'exist', expression: 'ada', confidence: 'high' },
-		{ language: 'fi', strategy: 'exist', expression: 'on (+ partitive)', confidence: 'high', note: 'copula on with partitive case marks existence', sources: [{ source: 'freeze-1992' }] },
+		// ─── Possessive frame ─────────────────────────────────────────────────
+		{ language: 'fr', strategy: 'possessive', expression: 'il y a', confidence: 'high', note: 'expletive il, locative y, and avoir “have”, which is still the ordinary possessive verb. The pivot is an object and controls no agreement — il y a des livres, never *il y ont. avoir cannot locate a definite subject on its own.', origin: { value: 'have', evidence: 'transparent' }, proform: 'locative', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'freeze-1992' }, { source: 'stassen-2009' }] },
+		{ language: 'zh', strategy: 'possessive', expression: '有 yǒu', confidence: 'high', note: 'the ordinary possessive verb also predicates existence in the frame [place] 有 [pivot]. Plain location of a known entity takes 在 instead — 书在桌上.', origin: { value: 'have', evidence: 'transparent' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'heine-kuteva-2002', locator: 's.v. HAVE' }] },
+		{ language: 'vi', strategy: 'possessive', expression: 'có', confidence: 'medium', note: 'có “have, possess” serves as the existential predicate; plain location normally takes ở. Confidence is medium because có also occurs as an affirmative focus marker before ở, which muddies the test.', origin: { value: 'have', evidence: 'transparent' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence', 'possession'] },
+		{ language: 'sw', strategy: 'possessive', expression: 'kuna / pana / mna', confidence: 'high', note: 'locative class agreement (cl.17 ku-, cl.16 pa-, cl.18 m-) plus comitative -na “with”, the same -na that builds possession in nina “I have”. Marten calls these locative-possessive constructions; they cannot take a definite theme as an ordinary subject.', origin: { value: 'comitative', evidence: 'transparent' }, proform: 'locative', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'marten-2013' }] },
 
-		// LOCATIVE
-		{ language: 'ja', strategy: 'locative', expression: 'ある / いる', confidence: 'high', note: 'animate / inanimate split', sources: [{ source: 'clark-1978' }] },
-		{ language: 'ko', strategy: 'locative', expression: '있다 itda', confidence: 'high', note: 'one form for animate and inanimate; honorific 계시다 for animate' },
-		{ language: 'sw', strategy: 'locative', expression: 'ku-na / class-po', confidence: 'high', note: 'locative class concord; kuna “there-with”' },
-		{ language: 'ain', strategy: 'locative', expression: 'an (SG) / oka(y) (PL)', confidence: 'high', note: 'existential verb; clause shape [LOC] [theme] an. Number split rather than animacy.', sources: [{ source: 'tamura-2000' }, { source: 'bugaeva-2012' }] },
+		// ─── Specialized existential ──────────────────────────────────────────
+		{ language: 'cy', strategy: 'specialized-existential', expression: 'oes', confidence: 'high', note: 'the existential form of bod in present interrogatives, with does dim supplying the negative. It cannot take a definite subject — *oes y ci yn y tŷ, where the locational clause needs mae, or ydy in a question.', origin: { value: 'be', evidence: 'transparent' }, proform: 'none', headAlsoLocates: false, syncretism: ['location', 'existence', 'possession'] },
+		{ language: 'tr', strategy: 'specialized-existential', expression: 'var / yok', confidence: 'high', note: 'existential and possessive predicate, usually analysed as nominal predication; uninflected for person but takes copular morphology (var-dır, var-dı). Plain location uses no var — kitap masada. A location is typical but optional: Tanrı var “God exists”. Suppletive negative yok. Old Turkic bar “existence, wealth” is a noun, which is why the modern predicate takes copular rather than verbal morphology.', origin: { value: 'exist', evidence: 'established' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'stassen-2009' }] },
+		{ language: 'he', strategy: 'specialized-existential', expression: 'יש yesh / אין ein', confidence: 'high', note: 'invariant existential particles; a definite located subject drops yesh entirely. The deeper source is debated, so it is recorded as an existential element rather than assigned a lexical domain.', origin: { value: 'exist', evidence: 'unknown' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'veselinova-hamari-2022' }] },
+		{ language: 'ru', strategy: 'specialized-existential', expression: 'есть / нет', confidence: 'high', note: 'есть descends from the 3sg present of быть, but ordinary present locational clauses take zero and reject it — твой мобильник (*есть) на кухне — so есть is now reserved for existential and possessive assertion and does not agree. Negative нет takes a genitive pivot.', origin: { value: 'be', evidence: 'established' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence', 'possession'], sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
+		{ language: 'es', strategy: 'specialized-existential', expression: 'hay', confidence: 'high', note: 'from ha + y (< Latin ibi), but haber is no longer the ordinary possessive verb — that is tener — and the -y has fused, so synchronically hay is a single invariant impersonal existential rather than verb plus proform.', origin: { value: 'have', evidence: 'established' }, proform: 'none', headAlsoLocates: false, syncretism: ['existence'], sources: [{ source: 'stassen-2009' }] },
+		{ language: 'de', strategy: 'specialized-existential', expression: 'es gibt', confidence: 'high', note: 'literally “it gives”. It is not restricted to enduring existence — heute gibt es Pizza — and overlaps in use with sein.', origin: { value: 'give', evidence: 'transparent' }, proform: 'expletive', headAlsoLocates: false, syncretism: ['existence'], sources: [{ source: 'heine-kuteva-2002', locator: 's.v. GIVE > EXIST' }] },
+		{ language: 'sv', strategy: 'specialized-existential', expression: 'det finns', confidence: 'high', note: 'the expletive construction takes no definite pivot, though bare finnas does locate definite subjects — boken finns på biblioteket. finnas is related to finna “find” but is now a lexicalized verb “exist, be present” rather than a productive passive.', origin: { value: 'find', evidence: 'established' }, proform: 'expletive', headAlsoLocates: true, syncretism: ['location', 'existence'] },
 
-		// More language families
-		{ language: 'hi', strategy: 'be', expression: 'है hai', confidence: 'high', note: 'copula honā doubles as the existential predicate' },
-		{ language: 'ar', strategy: 'exist', expression: 'هناك hunāka / يوجد yūjad', confidence: 'high', note: 'MSA uses the locative deictic hunāka; some registers use the verb yūjad “is found”' },
-		{ language: 'vi', strategy: 'have', expression: 'có', confidence: 'high', note: 'có “have/possess” serves as the existential predicate' },
-		{ language: 'hu', strategy: 'be', expression: 'van', confidence: 'high', note: 'the copula van marks both location and existence; possessor adds suffix' },
-		{ language: 'eu', strategy: 'locative', expression: 'egon (dago / daude)', confidence: 'high', note: 'Basque has two copulas: izan (identity) vs egon (location/existence)' },
-		{ language: 'mi', strategy: 'locative', expression: 'he X kei/i …', confidence: 'high', note: 'no verbal copula; an indefinite NP plus a locative particle' }
+		// ─── No verbal predicate ──────────────────────────────────────────────
+		{ language: 'mi', strategy: 'nonverbal', expression: 'he X', confidence: 'medium', note: 'an affirmative existential can be he plus an indefinite nominal on its own — he kurī “there is a dog” — with no predicate head; he continues the Proto-Polynesian indefinite article. Whether kei/i in he kurī kei te kāinga are the predicate of that clause is contested, so this row covers only the bare nominal pattern.', origin: { value: 'article', evidence: 'established' }, proform: 'none', syncretism: ['existence'], sources: [{ source: 'chung-ladusaw-2004' }] }
 	],
 	examples: [
 		{
@@ -402,9 +414,9 @@ export const existence: Pattern = {
 		},
 		{
 			language: 'sw',
-			original: 'Mbwa yuko nyumbani.',
-			gloss: 'CL9.dog CL1.ANIM-LOC house.LOC',
-			literal: 'Dog (animate) is-at house.',
+			original: 'Kuna mbwa nyumbani.',
+			gloss: 'CL17.LOC-with CL9.dog house.LOC',
+			literal: 'There-with a dog at-house.',
 			natural: 'There is a dog in the house.',
 			set: 'animate'
 		},

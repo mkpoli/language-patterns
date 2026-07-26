@@ -67,6 +67,32 @@ export interface Example {
 	sources?: Citation[];
 }
 
+/**
+ * Where the predicate came from lexically. Kept apart from `strategy`, which
+ * classifies the synchronic construction: a form can be BE in origin and a
+ * specialized existential in current use (Russian есть), or HAVE in origin and
+ * no longer the ordinary possessive verb (Spanish hay, against tener).
+ */
+export type PredicateOrigin =
+	| 'be'
+	| 'exist'
+	| 'have'
+	| 'comitative'
+	| 'give'
+	| 'find'
+	| 'posture'
+	| 'stay'
+	| 'deictic'
+	| 'locative'
+	| 'article'
+	| 'opaque';
+
+/** How well the origin is established. `opaque` origins are usually `unknown`. */
+export type OriginEvidence = 'transparent' | 'established' | 'unknown';
+
+/** Functions that may share one predicate — the Clark/Stassen locational triad. */
+export type LocationalFunction = 'location' | 'existence' | 'possession';
+
 export interface Attestation {
 	language: LanguageCode;
 	strategy: string;
@@ -74,6 +100,27 @@ export interface Attestation {
 	confidence: Confidence;
 	note?: string;
 	sources?: Citation[];
+	/** Lexical origin of the predicate, with how securely it is known. */
+	origin?: { value: PredicateOrigin; evidence: OriginEvidence };
+	/** An expletive or locative element filling the subject slot: there, ci, y. */
+	proform?: 'none' | 'locative' | 'expletive';
+	/**
+	 * Which of location / existence / possession the predicate LEXEME covers,
+	 * across all its constructions — not what this one construction does. English
+	 * `be` therefore carries `location` even though `there is` takes no definite
+	 * subject, and French `avoir` carries `possession` even though `il y a` only
+	 * asserts existence. Tracking the lexeme keeps the field comparable across
+	 * rows; `strategy` already records what the construction does.
+	 */
+	syncretism?: LocationalFunction[];
+	/**
+	 * Whether the predicate HEAD can carry a plain locational clause with a
+	 * definite subject, independently of whether this existential CONSTRUCTION
+	 * can. English `be` can (`the book is on the table`) even though `there is`
+	 * cannot take `the book`; Turkish `var` cannot at all. `strategy` classifies
+	 * the construction, so this records the separate fact about the head.
+	 */
+	headAlsoLocates?: boolean;
 }
 
 export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';
