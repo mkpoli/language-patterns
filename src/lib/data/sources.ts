@@ -860,6 +860,16 @@ export const sources: Record<string, Source> = {
 		title: 'Wiktionary: ᡨᡠᠸᠠᠮᠪᡳ (tuwambi)',
 		url: 'https://en.wiktionary.org/wiki/ᡨᡠᠸᠠᠮᠪᡳ',
 		type: 'url'
+	},
+
+	// ─── Negative existential cycle ─────────────────────────────────────────────
+	'frellesvig-2010': {
+		id: 'frellesvig-2010',
+		authors: ['Frellesvig, Bjarke'],
+		year: 2010,
+		title: 'A History of the Japanese Language',
+		publisher: 'Cambridge University Press',
+		type: 'book'
 	}
 };
 

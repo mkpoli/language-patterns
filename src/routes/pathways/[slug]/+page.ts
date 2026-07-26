@@ -11,5 +11,10 @@ export const load: PageLoad = ({ params }) => {
 export const prerender = true;
 
 export function entries() {
-	return [{ slug: 'jespersens-cycle' }, { slug: 'hear-words-to-obey' }, { slug: 'see-to-try' }];
+	return [
+		{ slug: 'jespersens-cycle' },
+		{ slug: 'negative-existential-cycle' },
+		{ slug: 'hear-words-to-obey' },
+		{ slug: 'see-to-try' }
+	];
 }
