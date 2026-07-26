@@ -27,8 +27,9 @@ export const sources: Record<string, Source> = {
 		year: 2019,
 		title: 'Inverse-locational predication in typological perspective',
 		container: 'Italian Journal of Linguistics',
-		pages: '31(2)',
-		url: 'https://www.deniscreissels.fr/public/Creissels-InvLocPred.pdf',
+		pages: '31(2): 37–106',
+		doi: '10.26346/1120-2726-138',
+		url: 'https://www.italian-journal-linguistics.com/app/uploads/2021/05/2_Creissels.pdf',
 		type: 'article'
 	},
 	'bentley-ciconte-cruschina-2015': {
@@ -41,18 +42,18 @@ export const sources: Record<string, Source> = {
 	},
 	'sato-2008': {
 		id: 'sato-2008',
-		authors: ['Satō, Tomomi'],
+		authors: ['Satō, Tomomi 佐藤知己'],
 		year: 2008,
 		title: 'アイヌ語文法の基礎 [Foundations of Ainu grammar]',
-		publisher: '大学書林',
+		publisher: 'Daigaku Shorin 大学書林',
 		type: 'book'
 	},
 	'nakagawa-2024': {
 		id: 'nakagawa-2024',
-		authors: ['Nakagawa, Hiroshi'],
+		authors: ['Nakagawa, Hiroshi 中川裕'],
 		year: 2024,
-		title: 'アイヌ語文法の型 [The shape of Ainu grammar]',
-		publisher: '北海道大学出版会',
+		title: 'アイヌ語広文典 [Ainugo kōbunten: An extensive grammar of the Ainu language]',
+		publisher: 'Hakusuisha 白水社',
 		type: 'book'
 	},
 	'marten-2013': {
@@ -60,7 +61,7 @@ export const sources: Record<string, Source> = {
 		authors: ['Marten, Lutz'],
 		year: 2013,
 		title: 'Structure and interpretation in Swahili existential constructions',
-		container: 'Italian Journal of Linguistics',
+		container: 'Rivista di Linguistica',
 		pages: '25(1): 45–73',
 		type: 'article'
 	},
