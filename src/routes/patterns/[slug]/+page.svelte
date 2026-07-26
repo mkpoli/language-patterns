@@ -6,6 +6,7 @@
 	import PolarityContrastTable from '$lib/components/PolarityContrastTable.svelte';
 	import ParadigmGrid from '$lib/components/ParadigmGrid.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
+	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
@@ -98,6 +99,16 @@
 			</p>
 			<PatternMap attestations={pattern.attestations} strategies={pattern.strategies} />
 		</section>
+
+		{#if pattern.attestations.some((a) => a.syncretism?.length)}
+			<section>
+				<h2 class="mb-1 font-serif text-2xl">{m.section_shared_predicates()}</h2>
+				<p class="mb-4 text-sm text-[color:var(--color-ink-soft)]">
+					{m.section_shared_predicates_hint()}
+				</p>
+				<SyncretismVenn attestations={pattern.attestations} />
+			</section>
+		{/if}
 
 		<section>
 			<h2 class="mb-4 font-serif text-2xl">{m.section_language_comparison()}</h2>

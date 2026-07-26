@@ -18,6 +18,8 @@
 	"section_strategies": "方略",
 	"section_geographic_distribution": "地理的分布",
 	"section_geographic_distribution_hint": "各ドットは一つの言語で、採用している方略によって色分けされている。ドットをクリックすると表層形が表示される。",
+	"section_shared_predicates": "述語の共有",
+	"section_shared_predicates_hint": "一つの述語が三つの領域のうち複数をまかなう言語は多い。各言語は、その述語が表しうる範囲に対応する領域に置かれている。",
 	"section_language_comparison": "言語比較",
 	"section_paradigm_grid": "パラダイム表",
 	"section_examples": "例文",

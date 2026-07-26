@@ -18,6 +18,8 @@
 	"section_strategies": "Strategies",
 	"section_geographic_distribution": "Geographic distribution",
 	"section_geographic_distribution_hint": "Each dot is one attested language, coloured by the strategy it uses. Click a dot for the surface form.",
+	"section_shared_predicates": "Shared predicates",
+	"section_shared_predicates_hint": "Many languages use one predicate for more than one of these three. Each language sits in the region covering everything its predicate can express.",
 	"section_language_comparison": "Language comparison",
 	"section_paradigm_grid": "Paradigm grid",
 	"section_examples": "Examples",
