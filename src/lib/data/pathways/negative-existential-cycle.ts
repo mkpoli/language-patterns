@@ -7,45 +7,63 @@ export const negativeExistentialCycle: Pathway = {
 	question: 'How does a word for “there is no” turn into plain “not”?',
 	kind: 'cycle',
 	summary:
-		'A dedicated negative existential (“there is no X”) arises beside the ordinary negator, then spreads from existential sentences into verbal negation until it becomes the standard negator itself. Croft’s stages A → B → C describe the drift; several East Asian languages sit at different points along it.',
+		'A dedicated negative existential (“there is no X”) arises beside the ordinary negator, then spreads from existential sentences into verbal negation until it becomes the standard negator itself. Croft distinguishes six synchronic types — A, A~B, B, B~C, C, C~A — and the languages below sit at different points along the drift.',
 	evidenceNote:
-		'Stage assignments and dates are editorial summaries of the cited literature; band edges are approximate, and transitional stages overlap by design.',
+		'Stage assignments and dates are editorial summaries of the cited literature; band edges are approximate, and transitional stages overlap by design. The schematics show function, not word order or morphological attachment, which vary by language.',
 	stages: [
 		{
 			id: 'stage-a',
 			number: 1,
 			label: 'A — ordinary negation of the existential',
-			schematic: '[NEG] [EXIST]',
+			schematic: '[NEG] + [EXIST]',
 			description:
 				'Existence is denied with the standard negator plus the existential predicate, e.g. English “there is not”.',
 			sources: [{ source: 'croft-1991' }]
 		},
 		{
-			id: 'stage-b',
+			id: 'stage-ab',
 			number: 2,
+			label: 'A~B — special form in part of the paradigm',
+			schematic: '[NEG.EXIST] ~ [NEG] + [EXIST]',
+			description:
+				'A special negative existential exists but is restricted — Russian net only in the present tense, while past and future keep ordinary negation (ne bylo, ne budet).',
+			sources: [{ source: 'croft-1991' }]
+		},
+		{
+			id: 'stage-b',
+			number: 3,
 			label: 'B — special negative existential',
 			schematic: '[NEG.EXIST]',
 			description:
-				'A dedicated form expresses non-existence, suppletive with the affirmative existential — Turkish yok beside var, Russian net beside est’.',
+				'A dedicated form expresses non-existence throughout, suppletive with the affirmative existential — Turkish yok beside var.',
 			sources: [{ source: 'croft-1991' }]
 		},
 		{
 			id: 'stage-bc',
-			number: 3,
+			number: 4,
 			label: 'B~C — spread into verbal negation',
-			schematic: '[NEG.EXIST] [V]',
+			schematic: '[NEG.EXIST] + [V]',
 			description:
-				'The negative existential starts negating ordinary verbs, first in restricted contexts such as perfective or nominalized clauses.',
+				'The negative existential also negates ordinary verbs in part of the grammar — often particular aspects or nominalized clauses, as with Mandarin méi(you) in perfective contexts.',
 			sources: [{ source: 'croft-1991' }, { source: 'veselinova-2014' }]
 		},
 		{
 			id: 'stage-c',
-			number: 4,
-			label: 'C — new standard negator',
-			schematic: '[V]-[NEG.new]',
+			number: 5,
+			label: 'C — one form for both',
+			schematic: '[NEG(.EXIST)]',
 			description:
-				'The former negative existential is the ordinary negator. It may then acquire a new existential use, restarting the cycle.',
+				'The same form serves as the ordinary verbal negator and the negative existential, like Japanese -nai / nai.',
 			sources: [{ source: 'croft-1991' }]
+		},
+		{
+			id: 'stage-ca',
+			number: 6,
+			label: 'C~A — transparency restored',
+			schematic: '[NEG] + [EXIST]',
+			description:
+				'The now-general negator combines with the affirmative existential again, recreating a transparent negated existential — which is stage A, and the cycle can restart.',
+			sources: [{ source: 'croft-1991' }, { source: 'veselinova-2014' }]
 		}
 	],
 	bands: [
@@ -65,11 +83,11 @@ export const negativeExistentialCycle: Pathway = {
 			language: 'ja',
 			form: '-ない -nai (verbal)',
 			stageId: 'stage-bc',
-			start: 1400,
+			start: 1500,
 			end: 1750,
 			status: 'emerging',
-			uncertaintyStart: 1300,
-			note: 'Eastern Japanese generalizes adjectival -nai as the negator of verbs, competing with older -nu.',
+			uncertaintyStart: 1400,
+			note: 'Late Middle Japanese: Eastern varieties generalize adjectival -nai as the negator of verbs, competing with older -nu.',
 			sources: [{ source: 'frellesvig-2010' }]
 		},
 		{
@@ -79,7 +97,7 @@ export const negativeExistentialCycle: Pathway = {
 			start: 1750,
 			end: 2000,
 			status: 'dominant',
-			note: 'Modern standard: -nai negates verbs while nai remains the negative existential — one form covers both.',
+			note: 'Standard Japanese: -nai negates verbs and nai denies existence. The bound suffix and the free adjective stay syntactically distinct, animate existence uses iru → inai, and Western dialects keep -n / -nu.',
 			sources: [{ source: 'frellesvig-2010' }, { source: 'veselinova-2014' }]
 		},
 
@@ -88,37 +106,36 @@ export const negativeExistentialCycle: Pathway = {
 			language: 'zh',
 			form: '無 wú',
 			stageId: 'stage-b',
-			start: 500,
+			start: 200,
 			end: 1300,
-			status: 'dominant',
-			uncertaintyStart: 500,
-			note: 'Classical Chinese negative existential wú “there is no / have not”, beside general negator bù.',
-			sources: [{ source: 'veselinova-hamari-2022' }]
+			status: 'approximate',
+			note: 'Negative existential from Old Chinese onward (with prohibitive and volitional uses besides), alongside general bù and transparent bù yǒu.',
+			sources: [{ source: 'lam-2022' }]
 		},
 		{
 			language: 'zh',
 			form: '沒 méi',
-			stageId: 'stage-b',
-			start: 1200,
+			stageId: 'stage-bc',
+			start: 1250,
 			end: 2000,
 			status: 'dominant',
-			uncertaintyStart: 1000,
-			note: 'méi “sink, disappear” becomes the negative existential and negator of yǒu “have”.',
-			sources: [{ source: 'veselinova-hamari-2022' }]
+			uncertaintyStart: 1200,
+			note: 'Bare méi is documented as both negative existential and verbal negator from the 13th century. The character 沒 “sink” may be a phonetic loan; the semantic link is debated.',
+			sources: [{ source: 'lam-2022' }]
 		},
 		{
 			language: 'zh',
-			form: '沒(有) + V',
+			form: '沒有 méiyǒu + V',
 			stageId: 'stage-bc',
-			start: 1400,
+			start: 1750,
 			end: 2000,
 			status: 'dominant',
-			uncertaintyStart: 1300,
-			note: 'méi(you) negates perfective verbal predicates (“did not V”), splitting the negation system with bù.',
-			sources: [{ source: 'croft-1991' }, { source: 'veselinova-hamari-2022' }]
+			uncertaintyStart: 1600,
+			note: 'Full méiyǒu negating verbs appears centuries after bare méi (existential méiyǒu is Ming-period). The split with bù has since stayed stable — no drift toward a general stage C.',
+			sources: [{ source: 'lam-2022' }]
 		},
 
-		// Turkish — stable stage B across the attested record
+		// Turkish — essentially stage B across the attested record
 		{
 			language: 'tr',
 			form: 'yok',
@@ -126,31 +143,31 @@ export const negativeExistentialCycle: Pathway = {
 			start: 700,
 			end: 2000,
 			status: 'dominant',
-			note: 'Old Turkic yoq through modern yok: suppletive negative existential beside var, while verbs take -mA-. Stable stage B.',
+			note: 'Old Turkic yoq (beside bar, modern var) through modern yok, while verbs take -mE-. yok also negates nominalized clauses (gelen yok “nobody is coming”), a limited B~C-type extension.',
 			sources: [{ source: 'croft-1991' }, { source: 'veselinova-2014' }]
 		},
 
-		// Russian — net as a fused negative existential
+		// Russian — the textbook A~B split
 		{
 			language: 'ru',
-			form: 'не (есть)',
+			form: 'не + есть/было/будет',
 			stageId: 'stage-a',
 			start: 900,
-			end: 1400,
-			status: 'declining',
+			end: 2000,
+			status: 'dominant',
 			uncertaintyStart: 800,
-			note: 'Ordinary negator ne with the existential copula.',
+			note: 'Ordinary negation with the existential verb — still the only option in the past and future: ne bylo, ne budet.',
 			sources: [{ source: 'veselinova-2014' }]
 		},
 		{
 			language: 'ru',
-			form: 'нет / нету',
-			stageId: 'stage-b',
+			form: 'нет',
+			stageId: 'stage-ab',
 			start: 1300,
 			end: 2000,
 			status: 'dominant',
 			uncertaintyStart: 1200,
-			note: 'Fused net (from ne + (j)estĭ tu) takes over present-tense negated existence, with a genitive subject.',
+			note: 'Fused net (usually derived from ne + the existential verb, though the fusion’s details are debated) is the present-tense negative existential, taking the genitive of negation. Restricted to the present — the A~B split.',
 			sources: [{ source: 'veselinova-2014' }]
 		},
 
@@ -159,10 +176,11 @@ export const negativeExistentialCycle: Pathway = {
 			language: 'en',
 			form: 'there is not',
 			stageId: 'stage-a',
-			start: 900,
+			start: 1200,
 			end: 2000,
 			status: 'dominant',
-			note: 'English never develops a dedicated negative existential; the standard negator does the work throughout.',
+			uncertaintyStart: 1000,
+			note: 'Existential there develops over Old and Middle English; standard English keeps ordinary negation and never recruits a special negative existential.',
 			sources: [{ source: 'croft-1991' }]
 		}
 	],
@@ -186,26 +204,26 @@ export const negativeExistentialCycle: Pathway = {
 		{
 			language: 'ja',
 			original: '時間がない。',
-			transliteration: 'zikan-ga na-i',
-			gloss: 'time-NOM NEG.EXIST-NPST',
+			transliteration: 'jikan-ga nai',
+			gloss: 'time-NOM NEG.EXIST',
 			literal: 'Time does not exist.',
 			natural: 'There is no time.'
 		},
 		{
 			language: 'ja',
 			original: '行かない。',
-			transliteration: 'ik-ana-i',
-			gloss: 'go-NEG-NPST',
+			transliteration: 'ik-a-nai',
+			gloss: 'go-IRR-NEG',
 			literal: 'Go-not.',
-			natural: '(I) am not going.'
+			natural: '(I) don’t go / am not going.'
 		},
 		{
 			language: 'zh',
 			original: '他没有来。',
 			transliteration: 'tā méiyǒu lái',
-			gloss: '3SG NEG.EXIST come',
-			literal: 'He not-exist come.',
-			natural: 'He did not come.'
+			gloss: '3SG NEG.PFV come',
+			literal: 'He not-have come.',
+			natural: 'He didn’t come. / He hasn’t come.'
 		}
 	],
 	related: [
@@ -217,6 +235,7 @@ export const negativeExistentialCycle: Pathway = {
 		{ source: 'croft-1991' },
 		{ source: 'veselinova-2014' },
 		{ source: 'veselinova-hamari-2022' },
+		{ source: 'lam-2022' },
 		{ source: 'frellesvig-2010' }
 	]
 };

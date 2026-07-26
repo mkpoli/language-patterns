@@ -126,8 +126,20 @@ export const sources: Record<string, Source> = {
 		year: 2022,
 		title: 'The Negative Existential Cycle',
 		publisher: 'Language Science Press',
-		url: 'https://langsci-press.org/catalog/book/335',
+		url: 'https://langsci-press.org/catalog/book/307',
+		doi: '10.5281/zenodo.6306474',
 		type: 'book'
+	},
+	'lam-2022': {
+		id: 'lam-2022',
+		authors: ['Lam, Cherry Chit-Yu'],
+		year: 2022,
+		title: "Croft's Cycle in Mandarin and Cantonese throughout history and across varieties",
+		container: 'The Negative Existential Cycle',
+		editors: ['Veselinova, Ljuba N.', 'Hamari, Arja'],
+		publisher: 'Language Science Press',
+		doi: '10.5281/zenodo.7353615',
+		type: 'chapter'
 	},
 	'croft-1991': {
 		id: 'croft-1991',

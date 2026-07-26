@@ -69,6 +69,6 @@
 		</text>
 	</svg>
 	<figcaption class="text-xs text-[color:var(--color-ink-soft)]">
-		The new negator from stage 4 may itself weaken — restarting at stage 1.
+		The final stage feeds back into the first — the cycle can restart.
 	</figcaption>
 </figure>

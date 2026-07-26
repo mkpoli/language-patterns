@@ -197,6 +197,11 @@ export const jespersensCycle: Pathway = {
 		}
 	],
 	related: [
+		{
+			kind: 'pathway',
+			slug: 'negative-existential-cycle',
+			label: 'The Negative Existential Cycle'
+		},
 		{ kind: 'pattern', slug: 'non-possession', label: 'Non-possession' },
 		{ kind: 'pattern', slug: 'existence', label: 'Existence' }
 	],
