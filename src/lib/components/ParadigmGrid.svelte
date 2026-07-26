@@ -36,11 +36,11 @@
 		<p class="max-w-3xl text-base">{paradigm.summary}</p>
 	{/if}
 
-	<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-white">
+	<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]">
 		<table class="w-full text-sm">
-			<thead class="bg-[oklch(96%_0.005_260)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
+			<thead class="bg-[color:var(--color-surface-sunken)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 				<tr>
-					<th class="sticky left-0 z-10 bg-[oklch(96%_0.005_260)] px-4 py-3">Language</th>
+					<th class="sticky left-0 z-10 bg-[color:var(--color-surface-sunken)] px-4 py-3">Language</th>
 					{#each paradigm.axes as ax (ax.id)}
 						<th class="px-4 py-3">
 							<div class="font-medium text-[color:var(--color-ink)]">{ax.label}</div>
@@ -57,7 +57,7 @@
 				{#each languages as code (code)}
 					{@const lang = getLanguage(code)}
 					<tr class="border-t border-[color:var(--color-rule)] align-top">
-						<th scope="row" class="sticky left-0 z-10 bg-white px-4 py-3 text-left">
+						<th scope="row" class="sticky left-0 z-10 bg-[color:var(--color-surface)] px-4 py-3 text-left">
 							<div class="font-medium">{lang.name}</div>
 							<div class="text-xs font-normal text-[color:var(--color-ink-soft)]">{lang.family}</div>
 						</th>

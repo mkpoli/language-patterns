@@ -71,7 +71,7 @@
 <article class="flex flex-col gap-10">
 	<header class="flex flex-col gap-3">
 		<div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
-			<span class="rounded-full bg-[oklch(94%_0.04_230)] px-2 py-0.5">Pattern</span>
+			<span class="rounded-full bg-[color:var(--color-sky-soft)] px-2 py-0.5">Pattern</span>
 			{#each pattern.category as cat (cat)}
 				<span>· {cat}</span>
 			{/each}
@@ -125,7 +125,7 @@
 				<div
 					role="tablist"
 					aria-label="Example set"
-					class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[oklch(96%_0.005_260)] p-1 text-sm"
+					class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)] p-1 text-sm"
 				>
 					{#each pattern.exampleSets as set (set.id)}
 						{@const count = pattern.examples.filter((e) => e.set === set.id).length}
@@ -135,7 +135,7 @@
 							aria-selected={activeSet === set.id}
 							onclick={() => (selectedSet = set.id)}
 							class="rounded-full px-3 py-1.5 transition"
-							class:bg-white={activeSet === set.id}
+							class:bg-[color:var(--color-surface)]={activeSet === set.id}
 							class:shadow-sm={activeSet === set.id}
 							class:font-medium={activeSet === set.id}
 							class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
@@ -181,9 +181,9 @@
 	</section>
 
 	{#if pattern.polarity}
-		<section class="rounded-3xl border border-dashed border-[color:var(--color-rule)] bg-[oklch(99%_0.003_260)] p-6">
+		<section class="rounded-3xl border border-dashed border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-6">
 			<header class="mb-4 flex flex-wrap items-baseline gap-3">
-				<span class="rounded-full bg-[oklch(94%_0.04_15)] px-2 py-0.5 text-xs uppercase tracking-wide text-[oklch(28%_0.06_15)]">
+				<span class="rounded-full bg-[color:var(--color-rose-soft)] px-2 py-0.5 text-xs uppercase tracking-wide text-[color:var(--color-rose-text)]">
 					Polarity
 				</span>
 				<h2 class="font-serif text-2xl">{pattern.polarity.title ?? 'Polarity: positive ↔ negative'}</h2>
@@ -208,7 +208,7 @@
 							<div
 								role="tablist"
 								aria-label="Negative example set"
-								class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-white p-1 text-sm"
+								class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-1 text-sm"
 							>
 								{#each pattern.polarity.exampleSets as set (set.id)}
 									{@const count = (pattern.polarity?.examples ?? []).filter((e) => e.set === set.id).length}
@@ -218,7 +218,7 @@
 										aria-selected={activeNegSet === set.id}
 										onclick={() => (selectedNegSet = set.id)}
 										class="rounded-full px-3 py-1.5 transition"
-										class:bg-[oklch(96%_0.005_260)]={activeNegSet === set.id}
+										class:bg-[color:var(--color-surface-sunken)]={activeNegSet === set.id}
 										class:font-medium={activeNegSet === set.id}
 										class:text-[color:var(--color-ink-soft)]={activeNegSet !== set.id}
 									>
@@ -256,7 +256,7 @@
 					<li>
 						<a
 							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
-							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-white px-3 py-1.5 text-sm hover:border-[oklch(70%_0.05_260)]"
+							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
 								{rel.kind === 'pattern' ? 'Pattern' : 'Pathway'}

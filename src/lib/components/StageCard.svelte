@@ -18,16 +18,16 @@
 	});
 </script>
 
-<article class="flex flex-col gap-3 rounded-2xl border border-[color:var(--color-rule)] bg-white p-5">
+<article class="flex flex-col gap-3 rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-5">
 	<header class="flex items-center gap-3">
 		<span
-			class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[oklch(95%_0.005_260)] font-mono text-sm"
+			class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--color-surface-sunken)] font-mono text-sm"
 		>
 			{stage.number}
 		</span>
 		<h3 class="text-lg font-semibold">{stage.label}</h3>
 	</header>
-	<code class="self-start rounded bg-[oklch(96%_0.005_260)] px-2 py-1 font-mono text-xs">
+	<code class="self-start rounded bg-[color:var(--color-surface-sunken)] px-2 py-1 font-mono text-xs">
 		{stage.schematic}
 	</code>
 	<p class="text-sm text-[color:var(--color-ink-soft)]">{stage.description}</p>

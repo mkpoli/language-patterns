@@ -42,7 +42,7 @@
 					src.year}
 				<li
 					id={`ref-${src.id}`}
-					class="group relative overflow-hidden rounded-xl border border-[color:var(--color-rule)] bg-white p-4 pl-5 transition-colors hover:border-[oklch(82%_0.02_260)]"
+					class="group relative overflow-hidden rounded-xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-4 pl-5 transition-colors hover:border-[color:var(--color-accent)]"
 				>
 					<span
 						aria-hidden="true"
@@ -50,7 +50,7 @@
 					></span>
 					<div class="flex items-center justify-between gap-3">
 						<span
-							class="rounded-md bg-[oklch(96%_0.005_260)] px-2 py-0.5 font-mono text-[11px] text-[color:var(--color-ink-soft)]"
+							class="rounded-md bg-[color:var(--color-surface-sunken)] px-2 py-0.5 font-mono text-[11px] text-[color:var(--color-ink-soft)]"
 						>
 							{tag}
 						</span>

@@ -15,9 +15,9 @@
 	const attestations = $derived(pattern.attestations ?? []);
 </script>
 
-<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-white">
+<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]">
 	<table class="w-full text-sm">
-		<thead class="bg-[oklch(96%_0.005_260)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
+		<thead class="bg-[color:var(--color-surface-sunken)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 			<tr>
 				<th class="px-4 py-3">Language</th>
 				<th class="px-4 py-3">Strategy</th>

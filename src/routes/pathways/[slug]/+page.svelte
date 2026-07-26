@@ -151,7 +151,7 @@
 		<div
 			class="flex items-center gap-2 text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
 		>
-			<span class="rounded-full bg-[oklch(94%_0.04_295)] px-2 py-0.5">{m.label_pathway()}</span>
+			<span class="rounded-full bg-[color:var(--color-violet-soft)] px-2 py-0.5">{m.label_pathway()}</span>
 			<span>· {pathway.kind}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
@@ -197,7 +197,7 @@
 					<div
 						role="tablist"
 						aria-label="Example set"
-						class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[oklch(96%_0.005_260)] p-1 text-sm"
+						class="inline-flex gap-1 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)] p-1 text-sm"
 					>
 						{#each pathway.exampleSets as set (set.id)}
 							{@const count = (pathway.examples ?? []).filter((e) => e.set === set.id).length}
@@ -207,7 +207,7 @@
 								aria-selected={activeSet === set.id}
 								onclick={() => (selectedSet = set.id)}
 								class="rounded-full px-3 py-1.5 transition"
-								class:bg-white={activeSet === set.id}
+								class:bg-[color:var(--color-surface)]={activeSet === set.id}
 								class:shadow-sm={activeSet === set.id}
 								class:font-medium={activeSet === set.id}
 								class:text-[color:var(--color-ink-soft)]={activeSet !== set.id}
@@ -312,7 +312,7 @@
 					<li>
 						<a
 							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
-							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-white px-3 py-1.5 text-sm hover:border-[oklch(70%_0.05_260)]"
+							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
 								{rel.kind === 'pattern' ? 'Pattern' : 'Pathway'}

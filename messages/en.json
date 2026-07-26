@@ -49,6 +49,10 @@
 
 	"language_switcher_label": "Change interface language",
 
+	"theme_toggle_auto": "Theme: system (click for light)",
+	"theme_toggle_light": "Theme: light (click for dark)",
+	"theme_toggle_dark": "Theme: dark (click for system)",
+
 	"sister_sites_heading": "Sister sites",
 	"p_graveyard_title": "The Graveyard of /p/",
 	"p_graveyard_description": "A sound-change pathway catalogue tracking the disappearance of /p/ across the world's languages.",

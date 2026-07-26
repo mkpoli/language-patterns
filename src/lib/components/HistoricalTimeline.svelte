@@ -133,7 +133,7 @@
 </script>
 
 <figure class="flex flex-col gap-3">
-	<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-white p-4">
+	<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-4">
 		<svg
 			viewBox={`0 0 ${totalWidth} ${totalHeight}`}
 			class="block h-auto w-full"
@@ -148,14 +148,14 @@
 						x2={x(t)}
 						y1={headerHeight - 12}
 						y2={totalHeight - footerHeight + 8}
-						stroke="oklch(94% 0.005 260)"
+						stroke="var(--color-rule)"
 						stroke-width="1"
 					/>
 					<text
 						x={x(t)}
 						y={headerHeight - 20}
 						text-anchor="middle"
-						fill="oklch(45% 0.02 260)"
+						fill="var(--color-ink-soft)"
 						style="font-size: 11px; font-family: var(--font-mono);"
 					>
 						{t}
@@ -175,7 +175,7 @@
 						x2={totalWidth}
 						y1={yTop}
 						y2={yTop}
-						stroke="oklch(95% 0.005 260)"
+						stroke="var(--color-rule)"
 						stroke-width="1"
 					/>
 				{/if}
@@ -193,7 +193,7 @@
 					<text
 						x={16}
 						y={yTop + rowH / 2 + 14}
-						fill="oklch(55% 0.02 260)"
+						fill="var(--color-ink-faint)"
 						style="font-size: 10px;"
 					>
 						{row.family}
@@ -207,7 +207,7 @@
 						y={yTop + 4}
 						width={x(zone.end) - x(zone.start)}
 						height={rowH - 8}
-						fill="oklch(88% 0.02 260)"
+						fill="var(--color-rule)"
 						opacity="0.35"
 						rx="4"
 					/>
@@ -262,7 +262,7 @@
 								width={bandW}
 								height={trackHeight}
 								rx="8"
-								fill={band.status === 'declining' ? 'white' : tokens?.band}
+								fill={band.status === 'declining' ? 'var(--color-surface)' : tokens?.band}
 								stroke={tokens?.border ?? '#888'}
 								stroke-width={band.status === 'approximate' ? 1.5 : 1}
 								stroke-dasharray={band.status === 'approximate' ? '4 3' : 'none'}
@@ -309,7 +309,7 @@
 						height="8"
 						patternTransform="rotate(45)"
 					>
-						<rect width="8" height="8" fill="white" />
+						<rect width="8" height="8" fill="var(--color-surface)" />
 						<rect width="3" height="8" fill={tokens.band} />
 					</pattern>
 				{/each}
@@ -321,7 +321,7 @@
 	{#if hovered}
 		{@const h = hovered}
 		{@const stage = pathway.stages.find((s) => s.id === h.stageId)}
-		<div class="rounded-xl border border-[color:var(--color-rule)] bg-white p-3 text-sm">
+		<div class="rounded-xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-3 text-sm">
 			<div class="font-medium">{getLanguage(h.language).name} · <span class="font-mono">{h.form}</span></div>
 			<div class="text-[color:var(--color-ink-soft)]">
 				Stage {stage?.number} — {stage?.label} ·
@@ -333,7 +333,7 @@
 	{/if}
 
 	<!-- Legends -->
-	<figcaption class="mt-2 grid gap-4 rounded-2xl border border-[color:var(--color-rule)] bg-white p-4 text-xs sm:grid-cols-2">
+	<figcaption class="mt-2 grid gap-4 rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-4 text-xs sm:grid-cols-2">
 		<div>
 			<div class="mb-2 font-medium uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 				How to read this timeline
@@ -342,16 +342,16 @@
 				{#each statusLegend as item (item.id)}
 					<li class="flex items-center gap-2">
 						<span class="inline-block h-3 w-6 rounded-sm" style:background={
-							item.swatch === 'solid'   ? 'oklch(78% 0.08 230)' :
-							item.swatch === 'light'   ? 'oklch(94% 0.04 230)' :
-							item.swatch === 'striped' ? 'repeating-linear-gradient(135deg, oklch(78% 0.08 230) 0 3px, white 3px 6px)' :
+							item.swatch === 'solid'   ? 'var(--color-sky-band)' :
+							item.swatch === 'light'   ? 'var(--color-sky-soft)' :
+							item.swatch === 'striped' ? 'repeating-linear-gradient(135deg, var(--color-sky-band) 0 3px, var(--color-surface) 3px 6px)' :
 							'transparent'
-						} style:border={item.swatch === 'dashed' ? '1.5px dashed oklch(70% 0.1 230)' : 'none'}></span>
+						} style:border={item.swatch === 'dashed' ? '1.5px dashed var(--color-sky-border)' : 'none'}></span>
 						<span>{item.label}</span>
 					</li>
 				{/each}
 				<li class="flex items-center gap-2">
-					<span class="inline-block h-3 w-6 rounded-sm" style:background="oklch(88% 0.02 260)" style:opacity="0.45"></span>
+					<span class="inline-block h-3 w-6 rounded-sm" style:background="var(--color-rule)" style:opacity="0.45"></span>
 					<span>Overlap period (two forms coexist)</span>
 				</li>
 			</ul>

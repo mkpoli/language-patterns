@@ -11,6 +11,18 @@
 
 		<meta name="text-scale" content="scale" />
 
+		<script>
+			// Stamp the stored theme before first paint to avoid a flash.
+			(function () {
+				try {
+					var t = localStorage.getItem('theme');
+					if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+				} catch (e) {
+					// Unreadable storage means no stored preference; auto theme applies.
+				}
+			})();
+		</script>
+
 		<meta
 			name="referrer"
 			content="strict-origin-when-cross-origin"

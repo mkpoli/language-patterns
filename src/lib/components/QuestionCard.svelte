@@ -15,13 +15,13 @@
 	{href}
 	target={external ? '_blank' : undefined}
 	rel={external ? 'noopener' : undefined}
-	class="group flex flex-col gap-3 rounded-2xl border border-[color:var(--color-rule)] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[oklch(70%_0.05_260)] hover:shadow-md"
+	class="group flex flex-col gap-3 rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-6 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent)] hover:shadow-md"
 >
 	<div class="flex items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 		<span
 			class="rounded-full px-2 py-0.5"
-			class:bg-[oklch(94%_0.04_230)]={kind === 'pattern'}
-			class:bg-[oklch(94%_0.04_295)]={kind === 'pathway'}
+			class:bg-[color:var(--color-sky-soft)]={kind === 'pattern'}
+			class:bg-[color:var(--color-violet-soft)]={kind === 'pathway'}
 		>
 			{kind === 'pattern' ? 'Pattern' : 'Pathway'}
 		</span>

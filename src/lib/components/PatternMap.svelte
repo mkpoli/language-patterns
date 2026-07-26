@@ -100,6 +100,17 @@
 	let mapInstance: import('maplibre-gl').Map | null = $state.raw(null);
 	let markerHandles: import('maplibre-gl').Marker[] = [];
 	let maplibreModule: typeof import('maplibre-gl') | null = null;
+	let dark = $state(false);
+	let appliedStyle: string | null = null;
+
+	const STYLE_LIGHT = 'https://tiles.openfreemap.org/styles/positron';
+	const STYLE_DARK = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+
+	function resolvedDark(): boolean {
+		const t = document.documentElement.dataset.theme;
+		if (t === 'light' || t === 'dark') return t === 'dark';
+		return matchMedia('(prefers-color-scheme: dark)').matches;
+	}
 
 	function syncMarkers() {
 		const maplibregl = maplibreModule;
@@ -117,18 +128,18 @@
 			el.style.width = '16px';
 			el.style.height = '16px';
 			el.style.borderRadius = '999px';
-			el.style.boxShadow = '0 1px 4px oklch(0% 0 0 / 0.25)';
-			el.style.border = '2px solid white';
-			el.style.background = tokens?.band ?? 'oklch(70% 0.03 260)';
+			el.style.boxShadow = '0 1px 4px var(--color-shadow)';
+			el.style.border = '2px solid var(--color-on-band)';
+			el.style.background = tokens?.band ?? 'var(--color-slate-band)';
 			el.style.cursor = 'pointer';
 
 			const popupHtml = `
-				<div style="font-family: var(--font-sans); min-width: 180px;">
+				<div style="font-family: var(--font-sans); min-width: 180px; color: var(--color-ink);">
 					<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
-					<div style="font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(lang.family)}</div>
+					<div style="font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(lang.family)}</div>
 					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
 					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
-					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: oklch(45% 0.02 260);">${escapeHtml(p.note)}</div>` : ''}
+					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(p.note)}</div>` : ''}
 				</div>
 			`;
 			const popup = new maplibregl.Popup({ offset: 14, closeButton: false }).setHTML(popupHtml);
@@ -143,15 +154,35 @@
 		if (!container) return;
 		let disposed = false;
 
+		dark = resolvedDark();
+		const mq = matchMedia('(prefers-color-scheme: dark)');
+		const syncTheme = () => (dark = resolvedDark());
+		mq.addEventListener('change', syncTheme);
+		const themeObserver = new MutationObserver(syncTheme);
+		themeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['data-theme']
+		});
+
+		// Registered before the awaits: unmounting mid-import must still detach
+		// the theme listeners (an async onMount return value is never used as
+		// the lifecycle cleanup).
+		cleanup = () => {
+			disposed = true;
+			mq.removeEventListener('change', syncTheme);
+			themeObserver.disconnect();
+		};
+
 		// CSS — static-imported so it's bundled
 		await import('maplibre-gl/dist/maplibre-gl.css');
 		const maplibregl = await import('maplibre-gl');
 		if (disposed || !container) return;
 		maplibreModule = maplibregl;
 
+		appliedStyle = dark ? STYLE_DARK : STYLE_LIGHT;
 		const map = new maplibregl.Map({
 			container,
-			style: 'https://tiles.openfreemap.org/styles/positron',
+			style: appliedStyle,
 			center: [20, 25],
 			zoom: 1.4,
 			minZoom: 1,
@@ -170,6 +201,8 @@
 			disposed = true;
 			mapInstance = null;
 			markerHandles = [];
+			mq.removeEventListener('change', syncTheme);
+			themeObserver.disconnect();
 			map.remove();
 		};
 	});
@@ -182,12 +215,23 @@
 		void points;
 		syncMarkers();
 	});
+
+	// Swap base tiles when the theme flips. Markers are DOM elements and
+	// survive setStyle untouched. appliedStyle guards against re-sending the
+	// style the map was created with when mapInstance is first assigned.
+	$effect(() => {
+		const want = dark ? STYLE_DARK : STYLE_LIGHT;
+		if (mapInstance && want !== appliedStyle) {
+			appliedStyle = want;
+			mapInstance.setStyle(want);
+		}
+	});
 </script>
 
 <div class="flex flex-col gap-3">
 	<div
 		bind:this={container}
-		class="overflow-hidden rounded-2xl border border-[color:var(--color-rule)] bg-[oklch(96%_0.005_260)]"
+		class="overflow-hidden rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)]"
 		style:height
 		style:width="100%"
 	></div>
@@ -198,7 +242,7 @@
 			{#each legendItems as item, i (`${item.color}-${i}`)}
 				{@const tokens = strategyColor(item.color)}
 				<span
-					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-white px-2 py-1"
+					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
 				>
 					<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
 					{item.label}
@@ -220,6 +264,10 @@
 			href="https://www.openstreetmap.org/copyright"
 			target="_blank"
 			rel="noopener">© OpenStreetMap contributors</a
+		>
+		· Dark tiles:
+		<a class="underline" href="https://carto.com/attributions" target="_blank" rel="noopener"
+			>© CARTO</a
 		>.
 	</p>
 </div>
@@ -229,6 +277,38 @@
 	:global(.maplibregl-popup-content) {
 		padding: 12px 14px;
 		border-radius: 12px;
-		box-shadow: 0 4px 16px oklch(0% 0 0 / 0.08);
+		background: var(--color-surface);
+		color: var(--color-ink);
+		box-shadow: 0 4px 16px var(--color-shadow);
+	}
+
+	:global(.maplibregl-popup-tip) {
+		border-top-color: var(--color-surface);
+	}
+
+	/* MapLibre's bundled controls ship light-only defaults; retheme via tokens. */
+	:global(.maplibregl-ctrl-group) {
+		background: var(--color-surface);
+		box-shadow: 0 1px 4px var(--color-shadow);
+	}
+
+	:global(.maplibregl-ctrl-group button + button) {
+		border-top: 1px solid var(--color-rule);
+	}
+
+	:global(.maplibregl-ctrl button .maplibregl-ctrl-icon),
+	:global(.maplibregl-ctrl-attrib-button) {
+		filter: var(--map-icon-filter, none);
+	}
+
+	/* !important: the vendor stylesheet is injected at runtime after component
+	   CSS, so it wins every specificity tie. */
+	:global(.maplibregl-ctrl.maplibregl-ctrl-attrib) {
+		background: color-mix(in oklch, var(--color-surface) 85%, transparent) !important;
+		color: var(--color-ink-soft) !important;
+	}
+
+	:global(.maplibregl-ctrl-attrib a) {
+		color: var(--color-ink-soft);
 	}
 </style>

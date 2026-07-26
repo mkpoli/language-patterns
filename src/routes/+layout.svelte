@@ -3,6 +3,7 @@
 	import { SITE_URL, SITE_DESCRIPTION } from '$lib/seo';
 	import { m } from '$lib/paraglide/messages.js';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let { children } = $props();
 
@@ -43,6 +44,7 @@
 			<a href="/pathways" class="hover:underline">{m.nav_pathways()}</a>
 			<a href="/atlas" class="hover:underline">{m.nav_atlas()}</a>
 			<LanguageSwitcher />
+			<ThemeToggle />
 		</nav>
 	</header>
 

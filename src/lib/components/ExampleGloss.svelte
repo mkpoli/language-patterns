@@ -54,7 +54,7 @@
 	);
 </script>
 
-<article class="rounded-2xl border border-[color:var(--color-rule)] bg-white p-5">
+<article class="rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-5">
 	<header class="mb-3 flex items-center justify-between gap-3">
 		<div class="flex items-baseline gap-2">
 			<span class="font-medium">{lang.name}</span>
@@ -62,12 +62,12 @@
 				<span class="font-serif text-sm text-[color:var(--color-ink-soft)]">· {lang.endonym}</span>
 			{/if}
 		</div>
-		<div class="flex gap-1 rounded-full bg-[oklch(96%_0.005_260)] p-1 text-xs">
+		<div class="flex gap-1 rounded-full bg-[color:var(--color-surface-sunken)] p-1 text-xs">
 			{#each modes as m (m.id)}
 				<button
 					type="button"
 					class="rounded-full px-3 py-1 transition"
-					class:bg-white={mode === m.id}
+					class:bg-[color:var(--color-surface)]={mode === m.id}
 					class:shadow-sm={mode === m.id}
 					onclick={() => (mode = m.id)}
 				>
