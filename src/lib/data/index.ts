@@ -8,6 +8,7 @@ import { adpositionOrder } from './patterns/adposition-order';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
+import { negativeExistentialCycle } from './pathways/negative-existential-cycle';
 
 export { languages, getLanguage } from './languages';
 
@@ -19,7 +20,12 @@ export const patterns: Pattern[] = [
 	wordOrder,
 	adpositionOrder
 ];
-export const pathways: Pathway[] = [jespersensCycle, hearWordsToObey, seeToTry];
+export const pathways: Pathway[] = [
+	jespersensCycle,
+	negativeExistentialCycle,
+	hearWordsToObey,
+	seeToTry
+];
 
 const patternBySlug = new Map(patterns.map((p) => [p.slug, p]));
 const pathwayBySlug = new Map(pathways.map((p) => [p.slug, p]));
