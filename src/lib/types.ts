@@ -67,6 +67,20 @@ export interface Example {
 	sources?: Citation[];
 }
 
+/**
+ * Where the predicate came from lexically. Kept apart from `strategy`, which
+ * classifies the synchronic construction: a form can be BE in origin and a
+ * specialized existential in current use (Russian есть), or HAVE in origin and
+ * no longer the ordinary possessive verb (Spanish hay, against tener).
+ */
+export type PredicateOrigin = 'be' | 'have' | 'give' | 'find' | 'posture' | 'deictic' | 'opaque';
+
+/** How well the origin is established. `opaque` origins are usually `unknown`. */
+export type OriginEvidence = 'transparent' | 'established' | 'unknown';
+
+/** Functions that may share one predicate — the Clark/Stassen locational triad. */
+export type LocationalFunction = 'location' | 'existence' | 'possession';
+
 export interface Attestation {
 	language: LanguageCode;
 	strategy: string;
@@ -74,6 +88,12 @@ export interface Attestation {
 	confidence: Confidence;
 	note?: string;
 	sources?: Citation[];
+	/** Lexical origin of the predicate, with how securely it is known. */
+	origin?: { value: PredicateOrigin; evidence: OriginEvidence };
+	/** An expletive or locative element filling the subject slot: there, ci, y. */
+	proform?: 'none' | 'locative' | 'expletive';
+	/** Which of location / existence / possession this predicate also covers. */
+	syncretism?: LocationalFunction[];
 }
 
 export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';

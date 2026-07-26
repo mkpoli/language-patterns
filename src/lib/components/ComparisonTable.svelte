@@ -13,6 +13,22 @@
 		new Map(pattern.strategies.map((s) => [s.id, s]))
 	);
 	const attestations = $derived(pattern.attestations ?? []);
+
+	const originLabel: Record<string, string> = {
+		be: 'from BE',
+		have: 'from HAVE',
+		give: 'from GIVE',
+		find: 'from FIND',
+		posture: 'from a posture verb',
+		deictic: 'from a deictic',
+		opaque: 'no recoverable source'
+	};
+
+	const originTitle: Record<string, string> = {
+		transparent: 'The source is still visible in the form.',
+		established: 'The source is documented but no longer transparent.',
+		unknown: 'No source has been established.'
+	};
 </script>
 
 <div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]">
@@ -22,6 +38,7 @@
 				<th class="px-4 py-3">Language</th>
 				<th class="px-4 py-3">Strategy</th>
 				<th class="px-4 py-3">Expression</th>
+				<th class="px-4 py-3">Origin &amp; overlap</th>
 				<th class="px-4 py-3">Note</th>
 			</tr>
 		</thead>
@@ -47,6 +64,20 @@
 						{/if}
 					</td>
 					<td class="px-4 py-3 align-top font-mono">{att.expression}</td>
+					<td class="px-4 py-3 align-top text-xs text-[color:var(--color-ink-soft)]">
+						{#if att.origin}
+							<div title={originTitle[att.origin.evidence]}>
+								{originLabel[att.origin.value]}{att.origin.evidence === 'unknown' ? '' : ` · ${att.origin.evidence}`}
+							</div>
+						{/if}
+						{#if att.syncretism?.length}
+							<div class="mt-1 flex flex-wrap gap-1">
+								{#each att.syncretism as fn (fn)}
+									<span class="rounded border border-[color:var(--color-rule)] px-1">{fn}</span>
+								{/each}
+							</div>
+						{/if}
+					</td>
 					<td class="px-4 py-3 align-top text-[color:var(--color-ink-soft)]">
 						<div>{att.note ?? ''}</div>
 						{#if att.sources?.length}
