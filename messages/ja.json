@@ -37,6 +37,12 @@
 	"legend_ungrouped": "未分類",
 	"stage_documented_in": "タイムライン掲載",
 
+	"atlas_title": "繰り返し現れるパターンの地理的分布",
+	"atlas_subtitle": "すべてのトピックを一枚の地図に。パターンや経路を選ぶと、言語が方略・証拠セット別に色分けされる。合算表示では、マーカーの大きさがその言語を証録するトピック数を示す。",
+	"atlas_filter_topics": "トピック",
+	"atlas_all_topics": "すべてのトピック",
+	"atlas_by_family": "語族別の分布",
+
 	"example_natural": "自然訳",
 	"example_literal": "直訳",
 	"example_gloss": "グロス",

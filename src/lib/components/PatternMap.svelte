@@ -9,6 +9,8 @@
 		expression?: string;
 		note?: string;
 		color?: Strategy['color'];
+		size?: number;
+		links?: { href: string; label: string }[];
 	}
 
 	interface Props {
@@ -41,6 +43,8 @@
 			strategy?: Strategy;
 			expression: string;
 			note?: string;
+			size?: number;
+			links?: { href: string; label: string }[];
 		}
 
 		if (markers?.length) {
@@ -60,7 +64,9 @@
 					lng: lang.lng + dx,
 					color: m.color,
 					expression: m.expression ?? '',
-					note: m.note
+					note: m.note,
+					size: m.size,
+					links: m.links
 				});
 			}
 			return out;
@@ -123,10 +129,11 @@
 		for (const p of points) {
 			const lang = getLanguage(p.code);
 			const tokens = p.color ? strategyColor(p.color) : null;
+			const size = p.size ?? 16;
 			const el = document.createElement('div');
 			el.setAttribute('aria-label', lang.name);
-			el.style.width = '16px';
-			el.style.height = '16px';
+			el.style.width = `${size}px`;
+			el.style.height = `${size}px`;
 			el.style.borderRadius = '999px';
 			el.style.boxShadow = '0 1px 4px var(--color-shadow)';
 			el.style.border = '2px solid var(--color-on-band)';
@@ -140,6 +147,7 @@
 					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
 					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
 					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(p.note)}</div>` : ''}
+					${p.links?.length ? `<div style="margin-top: 6px; display: flex; flex-direction: column; gap: 2px;">${p.links.map((l) => `<a href="${escapeHtml(l.href)}" style="font-size: 12px; color: var(--color-ink); text-decoration: underline;">${escapeHtml(l.label)}</a>`).join('')}</div>` : ''}
 				</div>
 			`;
 			const popup = new maplibregl.Popup({ offset: 14, closeButton: false }).setHTML(popupHtml);
@@ -197,10 +205,16 @@
 			mapInstance = map;
 		});
 
+		// The canvas keeps the size the container had at construction; follow
+		// later layout changes (grid settling, panel collapse, viewport resize).
+		const resizeObserver = new ResizeObserver(() => map.resize());
+		resizeObserver.observe(container);
+
 		cleanup = () => {
 			disposed = true;
 			mapInstance = null;
 			markerHandles = [];
+			resizeObserver.disconnect();
 			mq.removeEventListener('change', syncTheme);
 			themeObserver.disconnect();
 			map.remove();
