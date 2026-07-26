@@ -83,6 +83,7 @@ export type PredicateOrigin =
 	| 'posture'
 	| 'stay'
 	| 'deictic'
+	| 'locative'
 	| 'article'
 	| 'opaque';
 
@@ -103,7 +104,14 @@ export interface Attestation {
 	origin?: { value: PredicateOrigin; evidence: OriginEvidence };
 	/** An expletive or locative element filling the subject slot: there, ci, y. */
 	proform?: 'none' | 'locative' | 'expletive';
-	/** Which of location / existence / possession this predicate also covers. */
+	/**
+	 * Which of location / existence / possession the predicate LEXEME covers,
+	 * across all its constructions — not what this one construction does. English
+	 * `be` therefore carries `location` even though `there is` takes no definite
+	 * subject, and French `avoir` carries `possession` even though `il y a` only
+	 * asserts existence. Tracking the lexeme keeps the field comparable across
+	 * rows; `strategy` already records what the construction does.
+	 */
 	syncretism?: LocationalFunction[];
 	/**
 	 * Whether the predicate HEAD can carry a plain locational clause with a

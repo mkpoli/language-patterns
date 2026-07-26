@@ -24,6 +24,7 @@
 		posture: 'from a posture verb',
 		stay: 'from “stay, remain”',
 		deictic: 'from a deictic',
+		locative: 'from locative morphology',
 		article: 'from an article',
 		opaque: 'no recoverable source'
 	};
