@@ -55,9 +55,10 @@ export const existence: Pattern = {
 		{ language: 'zh', strategy: 'have', expression: '有 yǒu', confidence: 'high', sources: [{ source: 'heine-kuteva-2002', locator: 's.v. HAVE' }] },
 
 		// EXIST
-		{ language: 'de', strategy: 'exist', expression: 'es gibt', confidence: 'high', note: 'literally “it gives”', sources: [{ source: 'heine-kuteva-2002', locator: 's.v. GIVE > EXIST' }] },
+		{ language: 'de', strategy: 'exist', expression: 'es gibt', confidence: 'high', note: 'literally “it gives”; used for generic or enduring existence', sources: [{ source: 'heine-kuteva-2002', locator: 's.v. GIVE > EXIST' }] },
+		{ language: 'de', strategy: 'be', expression: 'sein (ist / sind)', confidence: 'high', note: 'the plain copula competes with es gibt for located or temporary presence — Im Haus ist ein Hund' },
 		{ language: 'sv', strategy: 'exist', expression: 'det finns', confidence: 'high', note: 'literally “it is found”, passive of finna' },
-		{ language: 'tr', strategy: 'exist', expression: 'var', confidence: 'high', note: 'invariant existential particle', sources: [{ source: 'stassen-2009' }] },
+		{ language: 'tr', strategy: 'exist', expression: 'var / yok', confidence: 'high', note: 'existential and possessive predicate, usually analysed as nominal predication; uninflected for person but takes copular morphology (var-dır, var-dı). A location is typical but optional — Tanrı var “God exists”. Suppletive negative yok.', sources: [{ source: 'stassen-2009' }] },
 		{ language: 'ru', strategy: 'exist', expression: 'есть / нет', confidence: 'high', note: 'zero copula in present, есть when emphatic; нет for negation', sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
 		{ language: 'he', strategy: 'exist', expression: 'יש yesh / אין ein', confidence: 'high', note: 'positive/negative existential particles, no inflection', sources: [{ source: 'veselinova-hamari-2022' }] },
 		{ language: 'id', strategy: 'exist', expression: 'ada', confidence: 'high' },
@@ -66,16 +67,18 @@ export const existence: Pattern = {
 		// LOCATIVE
 		{ language: 'ja', strategy: 'locative', expression: 'ある / いる', confidence: 'high', note: 'animate / inanimate split', sources: [{ source: 'clark-1978' }] },
 		{ language: 'ko', strategy: 'locative', expression: '있다 itda', confidence: 'high', note: 'one form for animate and inanimate; honorific 계시다 for animate' },
-		{ language: 'sw', strategy: 'locative', expression: 'ku-na / class-po', confidence: 'high', note: 'locative class concord; kuna “there-with”' },
-		{ language: 'ain', strategy: 'locative', expression: 'an (SG) / oka(y) (PL)', confidence: 'high', note: 'existential verb; clause shape [LOC] [theme] an. Number split rather than animacy.', sources: [{ source: 'tamura-2000' }, { source: 'bugaeva-2012' }] },
+		{ language: 'sw', strategy: 'locative', expression: 'kuna / pana / mna', confidence: 'high', note: 'locative class agreement (cl.17 ku-, cl.16 pa-, cl.18 m-) plus comitative -na “with”, the same -na that builds possession in nina “I have”', sources: [{ source: 'marten-2013' }] },
+		{ language: 'sw', strategy: 'locative', expression: '-ko / -po / -mo', confidence: 'high', note: 'a separate agreeing locative copula for entities located somewhere — mbwa yuko nyumbani “the dog is at the house”', sources: [{ source: 'marten-2013' }] },
+		{ language: 'ain', strategy: 'locative', expression: 'an (SG) / oka(y) (PL)', confidence: 'high', note: 'one predicate for existence and location. Strictly intransitive: the bare existential is [theme] an, and a location is an optional oblique (N or ta), never a second argument. Number suppletion rather than an animacy split; suppletive negative isam.', sources: [{ source: 'tamura-2000' }, { source: 'bugaeva-2012' }, { source: 'sato-2008', locator: '3–4' }, { source: 'nakagawa-2024', locator: '146' }] },
 
 		// More language families
 		{ language: 'hi', strategy: 'be', expression: 'है hai', confidence: 'high', note: 'copula honā doubles as the existential predicate' },
-		{ language: 'ar', strategy: 'exist', expression: 'هناك hunāka / يوجد yūjad', confidence: 'high', note: 'MSA uses the locative deictic hunāka; some registers use the verb yūjad “is found”' },
+		{ language: 'ar', strategy: 'exist', expression: 'هناك hunāka', confidence: 'high', note: 'locative deictic “there” predicating with no verb' },
+		{ language: 'ar', strategy: 'exist', expression: 'يوجد yūjad', confidence: 'high', note: 'passive of wajada “find”, so literally “is found”; parallel to Swedish det finns' },
 		{ language: 'vi', strategy: 'have', expression: 'có', confidence: 'high', note: 'có “have/possess” serves as the existential predicate' },
 		{ language: 'hu', strategy: 'be', expression: 'van', confidence: 'high', note: 'the copula van marks both location and existence; possessor adds suffix' },
-		{ language: 'eu', strategy: 'locative', expression: 'egon (dago / daude)', confidence: 'high', note: 'Basque has two copulas: izan (identity) vs egon (location/existence)' },
-		{ language: 'mi', strategy: 'locative', expression: 'he X kei/i …', confidence: 'high', note: 'no verbal copula; an indefinite NP plus a locative particle' }
+		{ language: 'eu', strategy: 'locative', expression: 'egon (dago / daude)', confidence: 'medium', note: 'egon is the stage-level locative copula, against izan for identity. Western and central varieties select egon in existentials; eastern varieties use izan, and the ba- prefixed forms are a further pattern. Confidence is medium because a single row hides that variation.' },
+		{ language: 'mi', strategy: 'locative', expression: 'he X (kei/i …)', confidence: 'medium', note: 'no verbal predicate: an affirmative existential can be he plus an indefinite nominal on its own. kei (present) and i (past) contribute locative or temporal material and are not themselves existential predicates.', sources: [{ source: 'chung-ladusaw-2004' }] }
 	],
 	examples: [
 		{
