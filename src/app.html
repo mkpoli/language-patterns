@@ -14,8 +14,10 @@
 		<script>
 			// Stamp the stored theme before first paint to avoid a flash.
 			(function () {
-				var t = localStorage.getItem('theme');
-				if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+				try {
+					var t = localStorage.getItem('theme');
+					if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+				} catch {}
 			})();
 		</script>
 

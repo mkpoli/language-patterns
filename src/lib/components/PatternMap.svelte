@@ -101,6 +101,7 @@
 	let markerHandles: import('maplibre-gl').Marker[] = [];
 	let maplibreModule: typeof import('maplibre-gl') | null = null;
 	let dark = $state(false);
+	let appliedStyle: string | null = null;
 
 	const STYLE_LIGHT = 'https://tiles.openfreemap.org/styles/positron';
 	const STYLE_DARK = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
@@ -163,15 +164,25 @@
 			attributeFilter: ['data-theme']
 		});
 
+		// Registered before the awaits: unmounting mid-import must still detach
+		// the theme listeners (an async onMount return value is never used as
+		// the lifecycle cleanup).
+		cleanup = () => {
+			disposed = true;
+			mq.removeEventListener('change', syncTheme);
+			themeObserver.disconnect();
+		};
+
 		// CSS — static-imported so it's bundled
 		await import('maplibre-gl/dist/maplibre-gl.css');
 		const maplibregl = await import('maplibre-gl');
 		if (disposed || !container) return;
 		maplibreModule = maplibregl;
 
+		appliedStyle = dark ? STYLE_DARK : STYLE_LIGHT;
 		const map = new maplibregl.Map({
 			container,
-			style: dark ? STYLE_DARK : STYLE_LIGHT,
+			style: appliedStyle,
 			center: [20, 25],
 			zoom: 1.4,
 			minZoom: 1,
@@ -206,9 +217,14 @@
 	});
 
 	// Swap base tiles when the theme flips. Markers are DOM elements and
-	// survive setStyle untouched.
+	// survive setStyle untouched. appliedStyle guards against re-sending the
+	// style the map was created with when mapInstance is first assigned.
 	$effect(() => {
-		mapInstance?.setStyle(dark ? STYLE_DARK : STYLE_LIGHT);
+		const want = dark ? STYLE_DARK : STYLE_LIGHT;
+		if (mapInstance && want !== appliedStyle) {
+			appliedStyle = want;
+			mapInstance.setStyle(want);
+		}
 	});
 </script>
 
@@ -268,5 +284,31 @@
 
 	:global(.maplibregl-popup-tip) {
 		border-top-color: var(--color-surface);
+	}
+
+	/* MapLibre's bundled controls ship light-only defaults; retheme via tokens. */
+	:global(.maplibregl-ctrl-group) {
+		background: var(--color-surface);
+		box-shadow: 0 1px 4px var(--color-shadow);
+	}
+
+	:global(.maplibregl-ctrl-group button + button) {
+		border-top: 1px solid var(--color-rule);
+	}
+
+	:global(.maplibregl-ctrl button .maplibregl-ctrl-icon),
+	:global(.maplibregl-ctrl-attrib-button) {
+		filter: var(--map-icon-filter, none);
+	}
+
+	/* !important: the vendor stylesheet is injected at runtime after component
+	   CSS, so it wins every specificity tie. */
+	:global(.maplibregl-ctrl.maplibregl-ctrl-attrib) {
+		background: color-mix(in oklch, var(--color-surface) 85%, transparent) !important;
+		color: var(--color-ink-soft) !important;
+	}
+
+	:global(.maplibregl-ctrl-attrib a) {
+		color: var(--color-ink-soft);
 	}
 </style>

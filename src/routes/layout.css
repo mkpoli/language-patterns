@@ -57,6 +57,17 @@
 	color-scheme: dark;
 }
 
+/* light-dark() covers colors only; non-color theme values need the explicit
+   media/attribute pair. Used to invert MapLibre's black control glyphs. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--map-icon-filter: invert(1);
+	}
+}
+:root[data-theme='dark'] {
+	--map-icon-filter: invert(1);
+}
+
 html {
 	background: var(--color-paper);
 	color: var(--color-ink);
