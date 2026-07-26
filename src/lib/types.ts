@@ -73,7 +73,18 @@ export interface Example {
  * specialized existential in current use (Russian есть), or HAVE in origin and
  * no longer the ordinary possessive verb (Spanish hay, against tener).
  */
-export type PredicateOrigin = 'be' | 'have' | 'give' | 'find' | 'posture' | 'deictic' | 'opaque';
+export type PredicateOrigin =
+	| 'be'
+	| 'exist'
+	| 'have'
+	| 'comitative'
+	| 'give'
+	| 'find'
+	| 'posture'
+	| 'stay'
+	| 'deictic'
+	| 'article'
+	| 'opaque';
 
 /** How well the origin is established. `opaque` origins are usually `unknown`. */
 export type OriginEvidence = 'transparent' | 'established' | 'unknown';
@@ -94,6 +105,14 @@ export interface Attestation {
 	proform?: 'none' | 'locative' | 'expletive';
 	/** Which of location / existence / possession this predicate also covers. */
 	syncretism?: LocationalFunction[];
+	/**
+	 * Whether the predicate HEAD can carry a plain locational clause with a
+	 * definite subject, independently of whether this existential CONSTRUCTION
+	 * can. English `be` can (`the book is on the table`) even though `there is`
+	 * cannot take `the book`; Turkish `var` cannot at all. `strategy` classifies
+	 * the construction, so this records the separate fact about the head.
+	 */
+	headAlsoLocates?: boolean;
 }
 
 export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';

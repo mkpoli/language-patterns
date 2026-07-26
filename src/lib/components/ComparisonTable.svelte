@@ -16,11 +16,15 @@
 
 	const originLabel: Record<string, string> = {
 		be: 'from BE',
+		exist: 'from an existential root',
 		have: 'from HAVE',
+		comitative: 'from “with”',
 		give: 'from GIVE',
 		find: 'from FIND',
 		posture: 'from a posture verb',
+		stay: 'from “stay, remain”',
 		deictic: 'from a deictic',
+		article: 'from an article',
 		opaque: 'no recoverable source'
 	};
 
@@ -75,6 +79,14 @@
 								{#each att.syncretism as fn (fn)}
 									<span class="rounded border border-[color:var(--color-rule)] px-1">{fn}</span>
 								{/each}
+							</div>
+						{/if}
+						{#if att.headAlsoLocates !== undefined}
+							<div
+								class="mt-1"
+								title="Whether the predicate itself can carry a plain locational clause with a definite subject, even where this existential construction cannot."
+							>
+								{att.headAlsoLocates ? 'head also locates' : 'head is existential-only'}
 							</div>
 						{/if}
 					</td>
