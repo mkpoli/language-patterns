@@ -105,20 +105,15 @@ export interface Attestation {
 	/** An expletive or locative element filling the subject slot: there, ci, y. */
 	proform?: 'none' | 'locative' | 'expletive';
 	/**
-	 * Which of location / existence / possession the predicate LEXEME covers,
-	 * across all its constructions — not what this one construction does. English
-	 * `be` therefore carries `location` even though `there is` takes no definite
-	 * subject, and French `avoir` carries `possession` even though `il y a` only
-	 * asserts existence. Tracking the lexeme keeps the field comparable across
-	 * rows; `strategy` already records what the construction does.
+	 * Which of location / existence / possession the predicate lexeme covers
+	 * across all its constructions. Scoped to the lexeme, not to the one
+	 * construction in `expression`: English `be` carries `location`, French
+	 * `avoir` carries `possession`.
 	 */
 	syncretism?: LocationalFunction[];
 	/**
-	 * Whether the predicate HEAD can carry a plain locational clause with a
-	 * definite subject, independently of whether this existential CONSTRUCTION
-	 * can. English `be` can (`the book is on the table`) even though `there is`
-	 * cannot take `the book`; Turkish `var` cannot at all. `strategy` classifies
-	 * the construction, so this records the separate fact about the head.
+	 * Whether the predicate also states plain location — English `be` does,
+	 * Turkish `var` does not.
 	 */
 	headAlsoLocates?: boolean;
 }
