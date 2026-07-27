@@ -37,6 +37,7 @@
 	"section_geographic_distribution_hint_sets": "各マーカーは一つの言語で、所属する例セットによって色分けされている。マーカーを開くとその言語の表現が表示される。",
 	"legend_several_sets": "複数セット",
 	"legend_ungrouped": "未分類",
+	"legend_show_all": "すべて表示",
 	"stage_documented_in": "タイムライン掲載",
 
 	"atlas_title": "繰り返し現れるパターンの地理的分布",

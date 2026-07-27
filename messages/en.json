@@ -37,6 +37,7 @@
 	"section_geographic_distribution_hint_sets": "Each marker is one attested language, coloured by its evidence set; open it for the expression recorded there.",
 	"legend_several_sets": "Several sets",
 	"legend_ungrouped": "Ungrouped",
+	"legend_show_all": "Show all",
 	"stage_documented_in": "On the timeline",
 
 	"atlas_title": "Geographic distribution of recurring patterns",
