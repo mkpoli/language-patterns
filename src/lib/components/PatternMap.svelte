@@ -103,15 +103,11 @@
 		return out;
 	});
 
-	// The legend doubles as a filter wherever points carry a group. Markers
-	// supplied without one (the pathway map buckets several sets into a single
-	// dot) keep a static legend rather than a control that half works.
-	//
-	// An empty selection means every group shows. The first click on a chip
-	// isolates that group, so reaching one strategy costs one click rather than
-	// switching the other five off; later clicks add and remove groups, and
-	// clearing the last one returns to the full map.
-	let selected = $state<string[]>([]);
+	// Wherever points carry a group, the map gets a tab switcher: one tab per
+	// group plus an "all" tab, in the same segmented control the example sets
+	// use. Markers supplied without a group (the pathway map buckets several
+	// sets into a single dot) keep a static legend instead.
+	let selected = $state<string | null>(null);
 
 	const countByGroup = $derived.by(() => {
 		const counts = new Map<string, number>();
@@ -122,25 +118,18 @@
 		return counts;
 	});
 
-	const filterable = $derived(
-		legendItems.some((item) => item.id != null && countByGroup.has(item.id))
+	const tabs = $derived(
+		legendItems.filter(
+			(item): item is { id: string; label: string; color: Strategy['color'] } =>
+				item.id != null && countByGroup.has(item.id)
+		)
 	);
+
+	const active = $derived(selected != null && tabs.some((t) => t.id === selected) ? selected : null);
 
 	const visiblePoints = $derived(
-		filterable && selected.length
-			? points.filter((p) => p.group != null && selected.includes(p.group))
-			: points
+		active == null ? points : points.filter((p) => p.group === active)
 	);
-
-	function toggleGroup(id: string) {
-		if (!selected.length) {
-			selected = [id];
-		} else if (selected.includes(id)) {
-			selected = selected.length === 1 ? [] : selected.filter((s) => s !== id);
-		} else {
-			selected = [...selected, id];
-		}
-	}
 
 	function escapeHtml(s: string): string {
 		return s.replace(
@@ -289,6 +278,51 @@
 </script>
 
 <div class="flex flex-col gap-3">
+	{#if tabs.length}
+		<div
+			role="tablist"
+			aria-label={m.map_strategy_switcher()}
+			class="inline-flex flex-wrap gap-1 self-start rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)] p-1 text-sm"
+		>
+			<button
+				type="button"
+				role="tab"
+				aria-selected={active == null}
+				onclick={() => (selected = null)}
+				class="rounded-full px-3 py-1.5 transition"
+				class:bg-[color:var(--color-surface)]={active == null}
+				class:shadow-sm={active == null}
+				class:font-medium={active == null}
+				class:text-[color:var(--color-ink-soft)]={active != null}
+			>
+				{m.map_all_strategies()}
+				<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{points.length}</span>
+			</button>
+
+			{#each tabs as tab (tab.id)}
+				{@const tokens = strategyColor(tab.color)}
+				{@const on = active === tab.id}
+				<button
+					type="button"
+					role="tab"
+					aria-selected={on}
+					onclick={() => (selected = tab.id)}
+					class="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 transition"
+					class:bg-[color:var(--color-surface)]={on}
+					class:shadow-sm={on}
+					class:font-medium={on}
+					class:text-[color:var(--color-ink-soft)]={!on}
+				>
+					<span class="inline-block h-2.5 w-2.5 rounded-full" style:background={tokens.band}></span>
+					{tab.label}
+					<span class="font-mono text-xs text-[color:var(--color-ink-soft)]"
+						>{countByGroup.get(tab.id)}</span
+					>
+				</button>
+			{/each}
+		</div>
+	{/if}
+
 	<div
 		bind:this={container}
 		class="overflow-hidden rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)]"
@@ -296,47 +330,18 @@
 		style:width="100%"
 	></div>
 
-	<!-- Legend. Doubles as a filter when the points carry a group. -->
-	{#if legendItems.length}
+	<!-- Static colour key, for maps whose markers carry no group to switch on. -->
+	{#if !tabs.length && legendItems.length}
 		<div class="flex flex-wrap items-center gap-2 text-xs">
 			{#each legendItems as item, i (item.id ?? `${item.color}-${i}`)}
 				{@const tokens = strategyColor(item.color)}
-				{@const count = item.id != null ? countByGroup.get(item.id) : undefined}
-				{#if filterable && item.id != null}
-					{@const active = !selected.length || selected.includes(item.id)}
-					<button
-						type="button"
-						onclick={() => toggleGroup(item.id!)}
-						aria-pressed={active}
-						class="inline-flex items-center gap-1.5 rounded-full border px-2 py-1 transition-opacity {active
-							? 'border-[color:var(--color-rule)] bg-[color:var(--color-surface)]'
-							: 'border-dashed border-[color:var(--color-rule)] opacity-45'}"
-					>
-						<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
-						{item.label}
-						{#if count}
-							<span class="font-mono text-[10px] text-[color:var(--color-ink-soft)]">{count}</span>
-						{/if}
-					</button>
-				{:else}
-					<span
-						class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
-					>
-						<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
-						{item.label}
-					</span>
-				{/if}
-			{/each}
-
-			{#if filterable && selected.length}
-				<button
-					type="button"
-					onclick={() => (selected = [])}
-					class="rounded-full border border-[color:var(--color-rule)] px-2 py-1 text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
+				<span
+					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
 				>
-					{m.legend_show_all()}
-				</button>
-			{/if}
+					<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
+					{item.label}
+				</span>
+			{/each}
 		</div>
 	{/if}
 
