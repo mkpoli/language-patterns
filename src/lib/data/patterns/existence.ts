@@ -22,7 +22,7 @@ export const existence: Pattern = {
 			label: 'Copula with a proform',
 			schematic: '[there] [be] [X] ([at LOC])',
 			description:
-				'A placeholder holds the subject slot ahead of the copula — English there, Italian ci — leaving the thing whose existence is asserted to follow the verb.',
+				'A proform joins the copula and the thing whose existence is asserted follows it. English there stands in the subject slot; Italian ci is a locative clitic on the verb.',
 			color: 'sky'
 		},
 		{

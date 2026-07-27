@@ -87,7 +87,7 @@
 								class="mt-1"
 								title="Whether this predicate also states where something is, outside the existential clause."
 							>
-								{att.headAlsoLocates ? 'also states location' : 'existence only'}
+								{att.headAlsoLocates ? 'also states location' : 'not for plain location'}
 							</div>
 						{/if}
 					</td>
