@@ -934,6 +934,218 @@ export const sources: Record<string, Source> = {
 		title: 'A History of the Japanese Language',
 		publisher: 'Cambridge University Press',
 		type: 'book'
+	},
+
+	// ─── Lexical typology & colexification ──────────────────────────────────────
+	'francois-2008': {
+		id: 'francois-2008',
+		authors: ['François, Alexandre'],
+		year: 2008,
+		title: 'Semantic maps and the typology of colexification: Intertwining polysemous networks across languages',
+		container: 'From Polysemy to Semantic Change: Towards a Typology of Lexical Semantic Associations',
+		editors: ['Vanhove, Martine'],
+		publisher: 'John Benjamins (Studies in Language Companion Series 106)',
+		pages: '163–215',
+		url: 'https://www.jbe-platform.com/content/books/9789027290328-slcs.106.09fra',
+		type: 'chapter'
+	},
+	'koptjevskaja-tamm-rakhilina-vanhove-2016': {
+		id: 'koptjevskaja-tamm-rakhilina-vanhove-2016',
+		authors: ['Koptjevskaja-Tamm, Maria', 'Rakhilina, Ekaterina', 'Vanhove, Martine'],
+		year: 2016,
+		title: 'The semantics of lexical typology',
+		container: 'The Routledge Handbook of Semantics',
+		editors: ['Riemer, Nick'],
+		publisher: 'Routledge',
+		pages: '434–454',
+		url: 'https://www.ling.su.se/polopoly_fs/1.196379.1403771108!/menu/standard/file/MKT+ER+MV.pdf',
+		type: 'chapter'
+	},
+
+	// ─── Device-activation verbs: lexicographic support ─────────────────────────
+	'wiktionary-kyeoda': {
+		id: 'wiktionary-kyeoda',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 켜다',
+		url: 'https://en.wiktionary.org/wiki/켜다',
+		type: 'url'
+	},
+	'wiktionary-teulda': {
+		id: 'wiktionary-teulda',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 틀다',
+		url: 'https://en.wiktionary.org/wiki/틀다',
+		type: 'url'
+	},
+	'wiktionary-dollida': {
+		id: 'wiktionary-dollida',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 돌리다',
+		url: 'https://en.wiktionary.org/wiki/돌리다',
+		type: 'url'
+	},
+	'wiktionary-tsukeru': {
+		id: 'wiktionary-tsukeru',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 付ける',
+		url: 'https://en.wiktionary.org/wiki/付ける',
+		type: 'url'
+	},
+	'wiktionary-kakeru': {
+		id: 'wiktionary-kakeru',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 掛ける',
+		url: 'https://en.wiktionary.org/wiki/掛ける',
+		type: 'url'
+	},
+	'wiktionary-kai': {
+		id: 'wiktionary-kai',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 開',
+		url: 'https://en.wiktionary.org/wiki/開',
+		type: 'url'
+	},
+	'wiktionary-fang': {
+		id: 'wiktionary-fang',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 放',
+		url: 'https://en.wiktionary.org/wiki/放',
+		type: 'url'
+	},
+	'wiktionary-acmak': {
+		id: 'wiktionary-acmak',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: açmak',
+		url: 'https://en.wiktionary.org/wiki/açmak',
+		type: 'url'
+	},
+	'wiktionary-poet': {
+		id: 'wiktionary-poet',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: เปิด',
+		url: 'https://en.wiktionary.org/wiki/เปิด',
+		type: 'url'
+	},
+	'wiktionary-bat': {
+		id: 'wiktionary-bat',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: bật',
+		url: 'https://en.wiktionary.org/wiki/bật',
+		type: 'url'
+	},
+	'wiktionary-menghidupkan': {
+		id: 'wiktionary-menghidupkan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: menghidupkan',
+		url: 'https://en.wiktionary.org/wiki/menghidupkan',
+		type: 'url'
+	},
+	'wiktionary-vkljuchit': {
+		id: 'wiktionary-vkljuchit',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: включить',
+		url: 'https://en.wiktionary.org/wiki/включить',
+		type: 'url'
+	},
+	'wiktionary-wlaczyc': {
+		id: 'wiktionary-wlaczyc',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: włączyć',
+		url: 'https://en.wiktionary.org/wiki/włączyć',
+		type: 'url'
+	},
+	'wiktionary-puscic': {
+		id: 'wiktionary-puscic',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: puścić',
+		url: 'https://en.wiktionary.org/wiki/puścić',
+		type: 'url'
+	},
+	'wiktionary-encender': {
+		id: 'wiktionary-encender',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: encender',
+		url: 'https://en.wiktionary.org/wiki/encender',
+		type: 'url'
+	},
+	'wiktionary-allumer': {
+		id: 'wiktionary-allumer',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: allumer',
+		url: 'https://en.wiktionary.org/wiki/allumer',
+		type: 'url'
+	},
+	'wiktionary-ligar': {
+		id: 'wiktionary-ligar',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ligar',
+		url: 'https://en.wiktionary.org/wiki/ligar',
+		type: 'url'
+	},
+	'wiktionary-anavo': {
+		id: 'wiktionary-anavo',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ανάβω',
+		url: 'https://en.wiktionary.org/wiki/ανάβω',
+		type: 'url'
+	},
+	'wiktionary-washa': {
+		id: 'wiktionary-washa',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: washa',
+		url: 'https://en.wiktionary.org/wiki/washa',
+		type: 'url'
+	},
+	'wiktionary-jalana': {
+		id: 'wiktionary-jalana',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: जलाना',
+		url: 'https://en.wiktionary.org/wiki/जलाना',
+		type: 'url'
+	},
+	'wiktionary-chalana': {
+		id: 'wiktionary-chalana',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: चलाना',
+		url: 'https://en.wiktionary.org/wiki/चलाना',
+		type: 'url'
+	},
+	'wiktionary-cynnau': {
+		id: 'wiktionary-cynnau',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: cynnau',
+		url: 'https://en.wiktionary.org/wiki/cynnau',
+		type: 'url'
+	},
+	'wiktionary-einschalten': {
+		id: 'wiktionary-einschalten',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: einschalten',
+		url: 'https://en.wiktionary.org/wiki/einschalten',
+		type: 'url'
 	}
 };
 
