@@ -962,6 +962,26 @@ export const sources: Record<string, Source> = {
 		type: 'chapter'
 	},
 
+	'yuki7979seoul-2022-collocations': {
+		id: 'yuki7979seoul-2022-collocations',
+		authors: ['ゆうき 유욱희 (@yuki7979seoul)'],
+		year: 2022,
+		title: '日韓家電製品系コロケーション [Japanese–Korean household-appliance collocations]',
+		container: 'X (Twitter), 8 October 2022. Japanese–Korean grid of five appliances; a language teacher’s own judgements, without corpus counts',
+		url: 'https://x.com/yuki7979seoul/status/1578561594753441793',
+		type: 'url'
+	},
+	'mkpoli-2022-collocations': {
+		id: 'mkpoli-2022-collocations',
+		authors: ['@mkpoli'],
+		year: 2022,
+		title: '英中日韓の家電製品系共起表現 [English–Chinese–Japanese–Korean household-appliance collocations]',
+		container:
+			'X (Twitter), 8 October 2022. Extends the Japanese–Korean grid to English and Chinese and adds a literal gloss under each verb; speaker judgements, without corpus counts',
+		url: 'https://x.com/mkpoli/status/1578603868413624320',
+		type: 'url'
+	},
+
 	// ─── Device-activation verbs: lexicographic support ─────────────────────────
 	'wiktionary-kyeoda': {
 		id: 'wiktionary-kyeoda',

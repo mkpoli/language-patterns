@@ -59,19 +59,19 @@ export const switchingOn: Pattern = {
 		}
 	],
 	attestations: [
-		{ language: 'en', strategy: 'turning', expression: 'turn on the light', confidence: 'high', note: 'from rotary switches and taps' },
-		{ language: 'en', strategy: 'joining', expression: 'switch on', confidence: 'high' },
-		{ language: 'en', strategy: 'running', expression: 'vacuum the floor', confidence: 'high', note: 'denominal verb from the appliance' },
+		{ language: 'en', strategy: 'turning', expression: 'turn on the light', confidence: 'high', note: 'from rotary switches and taps', sources: [{ source: 'mkpoli-2022-collocations' }] },
+		{ language: 'en', strategy: 'joining', expression: 'switch on', confidence: 'high', sources: [{ source: 'mkpoli-2022-collocations' }] },
+		{ language: 'en', strategy: 'running', expression: 'vacuum the floor', confidence: 'high', note: 'denominal verb from the appliance', sources: [{ source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'zh', strategy: 'opening', expression: '開燈 kāi dēng', confidence: 'high', sources: [{ source: 'wiktionary-kai' }] },
-		{ language: 'zh', strategy: 'placing', expression: '放音樂 fàng yīnyuè', confidence: 'high', sources: [{ source: 'wiktionary-fang' }] },
-		{ language: 'zh', strategy: 'running', expression: '用洗衣機 yòng xǐyījī', confidence: 'high' },
+		{ language: 'zh', strategy: 'opening', expression: '開燈 kāi dēng', confidence: 'high', sources: [{ source: 'wiktionary-kai' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'zh', strategy: 'placing', expression: '放音樂 fàng yīnyuè', confidence: 'high', sources: [{ source: 'wiktionary-fang' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'zh', strategy: 'running', expression: '用洗衣機 yòng xǐyījī', confidence: 'high', sources: [{ source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'ja', strategy: 'placing', expression: '電気をつける denki o tsukeru', confidence: 'high', note: 'つける is 付ける, to attach; the spelling 点ける marks the lighting sense', sources: [{ source: 'wiktionary-tsukeru' }] },
-		{ language: 'ja', strategy: 'turning', expression: '洗濯機を回す sentakuki o mawasu', confidence: 'high' },
+		{ language: 'ja', strategy: 'placing', expression: '電気をつける denki o tsukeru', confidence: 'high', note: 'つける is 付ける, to attach; the spelling 点ける marks the lighting sense', sources: [{ source: 'wiktionary-tsukeru' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ja', strategy: 'turning', expression: '洗濯機を回す sentakuki o mawasu', confidence: 'high', sources: [{ source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'ko', strategy: 'fire', expression: '불을 켜다 bul-eul kyeoda', confidence: 'high', sources: [{ source: 'wiktionary-kyeoda' }] },
-		{ language: 'ko', strategy: 'turning', expression: '에어컨을 틀다 eeokeon-eul teulda', confidence: 'high', note: '틀다 is to twist; 돌리다 is to make something rotate', sources: [{ source: 'wiktionary-teulda' }, { source: 'wiktionary-dollida' }] },
+		{ language: 'ko', strategy: 'fire', expression: '불을 켜다 bul-eul kyeoda', confidence: 'high', sources: [{ source: 'wiktionary-kyeoda' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ko', strategy: 'turning', expression: '에어컨을 틀다 eeokeon-eul teulda', confidence: 'high', note: '틀다 is to twist; 돌리다 is to make something rotate', sources: [{ source: 'wiktionary-teulda' }, { source: 'wiktionary-dollida' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
 
 		{ language: 'fr', strategy: 'fire', expression: 'allumer la lumière', confidence: 'high', sources: [{ source: 'wiktionary-allumer' }] },
 		{ language: 'fr', strategy: 'placing', expression: 'mettre de la musique', confidence: 'high' },
@@ -289,7 +289,18 @@ export const switchingOn: Pattern = {
 			// ─── Welsh ─────────────────────────────────────────────────────────────
 			{ language: 'cy', axis: 'light', form: "cynnau'r golau", strategy: 'fire', note: 'kindle the light' }
 		],
-		sources: [{ source: 'francois-2008' }, { source: 'koptjevskaja-tamm-rakhilina-vanhove-2016' }]
+		sources: [
+			{
+				source: 'yuki7979seoul-2022-collocations',
+				note: 'the Japanese and Korean rows, and the five appliances that form the columns'
+			},
+			{
+				source: 'mkpoli-2022-collocations',
+				note: 'the English and Chinese rows, and the literal gloss under each verb'
+			},
+			{ source: 'francois-2008' },
+			{ source: 'koptjevskaja-tamm-rakhilina-vanhove-2016' }
+		]
 	},
 	examples: [
 		{
@@ -408,5 +419,10 @@ export const switchingOn: Pattern = {
 		{ kind: 'pathway', slug: 'see-to-try', label: 'From seeing to trying' },
 		{ kind: 'pathway', slug: 'hear-words-to-obey', label: 'From hearing words to obedience' }
 	],
-	sources: [{ source: 'francois-2008' }, { source: 'koptjevskaja-tamm-rakhilina-vanhove-2016' }]
+	sources: [
+		{ source: 'yuki7979seoul-2022-collocations' },
+		{ source: 'mkpoli-2022-collocations' },
+		{ source: 'francois-2008' },
+		{ source: 'koptjevskaja-tamm-rakhilina-vanhove-2016' }
+	]
 };
