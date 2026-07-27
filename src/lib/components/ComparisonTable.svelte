@@ -85,9 +85,9 @@
 						{#if att.headAlsoLocates !== undefined}
 							<div
 								class="mt-1"
-								title="Whether the predicate itself can carry a plain locational clause with a definite subject, even where this existential construction cannot."
+								title="Whether this predicate also states where something is, outside the existential clause."
 							>
-								{att.headAlsoLocates ? 'head also locates' : 'head is existential-only'}
+								{att.headAlsoLocates ? 'also states location' : 'existence only'}
 							</div>
 						{/if}
 					</td>
