@@ -5,6 +5,7 @@ import { possession } from './patterns/possession';
 import { indefinites } from './patterns/indefinites';
 import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
+import { switchingOn } from './patterns/switching-on';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -18,7 +19,8 @@ export const patterns: Pattern[] = [
 	nonPossession,
 	indefinites,
 	wordOrder,
-	adpositionOrder
+	adpositionOrder,
+	switchingOn
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,
