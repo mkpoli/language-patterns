@@ -1159,6 +1159,86 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/cynnau',
 		type: 'url'
 	},
+	'wiktionary-kesu': {
+		id: 'wiktionary-kesu',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 消す',
+		url: 'https://en.wiktionary.org/wiki/消す',
+		type: 'url'
+	},
+	'wiktionary-kkeuda': {
+		id: 'wiktionary-kkeuda',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 끄다',
+		url: 'https://en.wiktionary.org/wiki/끄다',
+		type: 'url'
+	},
+	'wiktionary-guan': {
+		id: 'wiktionary-guan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 關',
+		url: 'https://en.wiktionary.org/wiki/關',
+		type: 'url'
+	},
+	'wiktionary-kapatmak': {
+		id: 'wiktionary-kapatmak',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kapatmak',
+		url: 'https://en.wiktionary.org/wiki/kapatmak',
+		type: 'url'
+	},
+	'wiktionary-pit': {
+		id: 'wiktionary-pit',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ปิด',
+		url: 'https://en.wiktionary.org/wiki/ปิด',
+		type: 'url'
+	},
+	'wiktionary-tat': {
+		id: 'wiktionary-tat',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: tắt',
+		url: 'https://en.wiktionary.org/wiki/tắt',
+		type: 'url'
+	},
+	'wiktionary-vykljuchit': {
+		id: 'wiktionary-vykljuchit',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: выключить',
+		url: 'https://en.wiktionary.org/wiki/выключить',
+		type: 'url'
+	},
+	'wiktionary-eteindre': {
+		id: 'wiktionary-eteindre',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: éteindre',
+		url: 'https://en.wiktionary.org/wiki/éteindre',
+		type: 'url'
+	},
+	'wiktionary-apagar': {
+		id: 'wiktionary-apagar',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: apagar',
+		url: 'https://en.wiktionary.org/wiki/apagar',
+		type: 'url'
+	},
+	'wiktionary-svino': {
+		id: 'wiktionary-svino',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: σβήνω',
+		url: 'https://en.wiktionary.org/wiki/σβήνω',
+		type: 'url'
+	},
 	'wiktionary-einschalten': {
 		id: 'wiktionary-einschalten',
 		authors: ['Wiktionary contributors'],
