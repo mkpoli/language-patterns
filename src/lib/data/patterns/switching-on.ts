@@ -407,13 +407,388 @@ export const switchingOn: Pattern = {
 			natural: 'Turn the light off.',
 			set: 'off',
 			sources: [{ source: 'wiktionary-washa' }]
+		},
+
+		// ─── More of the lamp ──────────────────────────────────────────────────
+		{
+			language: 'tr',
+			original: 'Işığı aç.',
+			gloss: 'light.ACC open.IMP',
+			literal: 'Open the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-acmak' }]
+		},
+		{
+			language: 'th',
+			original: 'เปิดไฟ',
+			transliteration: 'pə̀ət fai',
+			gloss: 'open light',
+			literal: 'Open the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-poet' }]
+		},
+		{
+			language: 'el',
+			original: 'Άναψε το φως.',
+			transliteration: 'Ánapse to fos.',
+			gloss: 'kindle.IMP the light',
+			literal: 'Kindle the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-anavo' }]
+		},
+		{
+			language: 'fr',
+			original: 'Allume la lumière.',
+			gloss: 'light.IMP the light',
+			literal: 'Light the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-allumer' }]
+		},
+		{
+			language: 'es',
+			original: 'Enciende la luz.',
+			gloss: 'kindle.IMP the light',
+			literal: 'Kindle the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-encender' }]
+		},
+		{
+			language: 'ru',
+			original: 'Включи свет.',
+			transliteration: 'Vključi svet.',
+			gloss: 'include.IMP light',
+			literal: 'Include the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-vkljuchit' }]
+		},
+		{
+			language: 'pl',
+			original: 'Zapal światło.',
+			gloss: 'ignite.IMP light',
+			literal: 'Ignite the light.',
+			natural: 'Turn the light on.',
+			set: 'light'
+		},
+		{
+			language: 'de',
+			original: 'Mach das Licht an.',
+			gloss: 'make.IMP the light on',
+			literal: 'Make the light on.',
+			natural: 'Turn the light on.',
+			set: 'light'
+		},
+		{
+			language: 'vi',
+			original: 'Bật đèn lên.',
+			gloss: 'snap lamp up',
+			literal: 'Snap the lamp up.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-bat' }]
+		},
+		{
+			language: 'hi',
+			original: 'बत्ती जलाओ।',
+			transliteration: 'battī jalāo.',
+			gloss: 'light burn.CAUS.IMP',
+			literal: 'Burn the light.',
+			natural: 'Turn the light on.',
+			set: 'light',
+			sources: [{ source: 'wiktionary-jalana' }]
+		},
+		{
+			language: 'fa',
+			original: 'چراغ را روشن کن',
+			transliteration: 'čerâq râ rowšan kon',
+			gloss: 'lamp OBJ bright do.IMP',
+			literal: 'Make the lamp bright.',
+			natural: 'Turn the light on.',
+			set: 'light'
+		},
+		{
+			language: 'id',
+			original: 'Nyalakan lampunya.',
+			gloss: 'flame.CAUS.IMP lamp-DEF',
+			literal: 'Make the lamp flame.',
+			natural: 'Turn the light on.',
+			set: 'light'
+		},
+
+		// ─── More of the music ─────────────────────────────────────────────────
+		{
+			language: 'fr',
+			original: 'Mets de la musique.',
+			gloss: 'put.IMP of the music',
+			literal: 'Put some music.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+		{
+			language: 'es',
+			original: 'Pon música.',
+			gloss: 'put.IMP music',
+			literal: 'Put music.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+		{
+			language: 'el',
+			original: 'Βάλε μουσική.',
+			transliteration: 'Vále mousikí.',
+			gloss: 'put.IMP music',
+			literal: 'Put music.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+		{
+			language: 'tr',
+			original: 'Müzik aç.',
+			gloss: 'music open.IMP',
+			literal: 'Open music.',
+			natural: 'Put some music on.',
+			set: 'music',
+			sources: [{ source: 'wiktionary-acmak' }]
+		},
+		{
+			language: 'th',
+			original: 'เปิดเพลง',
+			transliteration: 'pə̀ət phleeng',
+			gloss: 'open song',
+			literal: 'Open the song.',
+			natural: 'Put some music on.',
+			set: 'music',
+			sources: [{ source: 'wiktionary-poet' }]
+		},
+		{
+			language: 'ru',
+			original: 'Включи музыку.',
+			transliteration: 'Vključi muzyku.',
+			gloss: 'include.IMP music.ACC',
+			literal: 'Include the music.',
+			natural: 'Put some music on.',
+			set: 'music',
+			sources: [{ source: 'wiktionary-vkljuchit' }]
+		},
+		{
+			language: 'de',
+			original: 'Leg Musik auf.',
+			gloss: 'lay.IMP music on',
+			literal: 'Lay music on.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+		{
+			language: 'id',
+			original: 'Putar musiknya.',
+			gloss: 'turn music-DEF',
+			literal: 'Turn the music.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+		{
+			language: 'hi',
+			original: 'गाना बजाओ।',
+			transliteration: 'gānā bajāo.',
+			gloss: 'song sound.CAUS.IMP',
+			literal: 'Make the song sound.',
+			natural: 'Put some music on.',
+			set: 'music'
+		},
+
+		// ─── More of the machines ──────────────────────────────────────────────
+		{
+			language: 'tr',
+			original: 'Çamaşır makinesini çalıştır.',
+			gloss: 'laundry machine.ACC work.CAUS.IMP',
+			literal: 'Make the washing machine work.',
+			natural: 'Put a load on.',
+			set: 'machines'
+		},
+		{
+			language: 'fr',
+			original: "J'ai lancé une machine.",
+			gloss: 'I.have launched a machine',
+			literal: 'I launched a machine.',
+			natural: 'I put a load on.',
+			set: 'machines'
+		},
+		{
+			language: 'es',
+			original: 'Voy a poner la lavadora.',
+			gloss: 'I.go to put.INF the washer',
+			literal: 'I am going to put the washer.',
+			natural: "I'm going to put a load on.",
+			set: 'machines'
+		},
+		{
+			language: 'it',
+			original: 'Ho fatto la lavatrice.',
+			gloss: 'I.have done the washer',
+			literal: 'I did the washer.',
+			natural: 'I ran the washing machine.',
+			set: 'machines'
+		},
+		{
+			language: 'ru',
+			original: 'Я пропылесосил.',
+			transliteration: 'Ja propylesosil.',
+			gloss: 'I dust-suck.PFV.PST',
+			literal: 'I dust-suckered.',
+			natural: 'I vacuumed.',
+			set: 'machines'
+		},
+		{
+			language: 'pl',
+			original: 'Muszę odkurzyć.',
+			gloss: 'must.1SG de-dust.INF',
+			literal: 'I must de-dust.',
+			natural: 'I need to vacuum.',
+			set: 'machines'
+		},
+		{
+			language: 'de',
+			original: 'Ich muss noch staubsaugen.',
+			gloss: 'I must still dust-suck',
+			literal: 'I still have to dust-suck.',
+			natural: 'I still have to vacuum.',
+			set: 'machines'
+		},
+		{
+			language: 'fa',
+			original: 'جارو کشیدم',
+			transliteration: 'jâru kešidam',
+			gloss: 'broom pull.PST.1SG',
+			literal: 'I pulled the broom.',
+			natural: 'I vacuumed.',
+			set: 'machines'
+		},
+		{
+			language: 'he',
+			original: 'הפעלתי את מכונת הכביסה',
+			transliteration: 'hif‘alti et mekhonat ha-kvisa',
+			gloss: 'activate.PST.1SG ACC machine.CONSTR the-laundry',
+			literal: 'I activated the laundry machine.',
+			natural: 'I put a load on.',
+			set: 'machines'
+		},
+
+		// ─── More of switching off ─────────────────────────────────────────────
+		{
+			language: 'ja',
+			original: '電気を消して。',
+			transliteration: 'denki o keshite.',
+			gloss: 'electricity ACC extinguish.IMP',
+			literal: 'Extinguish the electricity.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-kesu' }]
+		},
+		{
+			language: 'ko',
+			original: '불 꺼.',
+			transliteration: 'bul kkeo.',
+			gloss: 'light extinguish.IMP',
+			literal: 'Extinguish the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-kkeuda' }]
+		},
+		{
+			language: 'zh',
+			original: '把燈關掉。',
+			transliteration: 'bǎ dēng guāndiào.',
+			gloss: 'BA lamp close-away',
+			literal: 'Close the lamp away.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-guan' }]
+		},
+		{
+			language: 'tr',
+			original: 'Işığı kapat.',
+			gloss: 'light.ACC close.IMP',
+			literal: 'Close the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-kapatmak' }]
+		},
+		{
+			language: 'th',
+			original: 'ปิดไฟ',
+			transliteration: 'pìt fai',
+			gloss: 'close light',
+			literal: 'Close the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-pit' }]
+		},
+		{
+			language: 'vi',
+			original: 'Tắt đèn.',
+			gloss: 'go.out.CAUS lamp',
+			literal: 'Put the lamp out.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-tat' }]
+		},
+		{
+			language: 'ru',
+			original: 'Выключи свет.',
+			transliteration: 'Vyključi svet.',
+			gloss: 'exclude.IMP light',
+			literal: 'Exclude the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-vykljuchit' }]
+		},
+		{
+			language: 'fr',
+			original: 'Éteins la lumière.',
+			gloss: 'extinguish.IMP the light',
+			literal: 'Extinguish the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-eteindre' }]
+		},
+		{
+			language: 'es',
+			original: 'Apaga la luz.',
+			gloss: 'extinguish.IMP the light',
+			literal: 'Extinguish the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-apagar' }]
+		},
+		{
+			language: 'el',
+			original: 'Σβήσε το φως.',
+			transliteration: 'Svíse to fos.',
+			gloss: 'extinguish.IMP the light',
+			literal: 'Extinguish the light.',
+			natural: 'Turn the light off.',
+			set: 'off',
+			sources: [{ source: 'wiktionary-svino' }]
+		},
+		{
+			language: 'de',
+			original: 'Mach das Licht aus.',
+			gloss: 'make.IMP the light out',
+			literal: 'Make the light out.',
+			natural: 'Turn the light off.',
+			set: 'off'
 		}
 	],
 	exampleSets: [
 		{ id: 'light', label: 'the light', title: '“Turn the light on.”', description: 'The oldest of the five appliances, and the one that inherited the vocabulary of flame.' },
 		{ id: 'music', label: 'music', title: '“Put some music on.”', description: 'Placing and releasing verbs crowd this row, several of them traceable to the record player.' },
-		{ id: 'machines', label: 'the washing machine', title: '“I put a load on.”', description: 'Japanese and Korean both reach for rotation once the appliance is a turning drum.' },
-		{ id: 'off', label: 'switching off', title: '“Turn the light off.”', description: 'The reverse operation often runs through extinguishing or dying: Swahili zima, Indonesian mematikan.' }
+		{ id: 'machines', label: 'machines at work', title: '“I put a load on.”', description: 'Japanese and Korean reach for rotation once the appliance is a turning drum; elsewhere the verb names the job, and the vacuum cleaner turns into a verb of its own.' },
+		{ id: 'off', label: 'switching off', title: '“Turn the light off.”', description: 'Switching off usually mirrors the verb that switched on: Turkish opens then closes, Russian includes then excludes, and languages that kindle go on to extinguish.' }
 	],
 	related: [
 		{ kind: 'pathway', slug: 'see-to-try', label: 'From seeing to trying' },
