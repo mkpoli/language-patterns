@@ -4,6 +4,8 @@
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 
+	import { m } from '$lib/paraglide/messages.js';
+
 	export interface MapMarker {
 		code: string;
 		expression?: string;
@@ -11,13 +13,15 @@
 		color?: Strategy['color'];
 		size?: number;
 		links?: { href: string; label: string }[];
+		/** Legend entry this marker belongs to. Set it to make the legend filter. */
+		group?: string;
 	}
 
 	interface Props {
 		attestations?: Attestation[];
 		strategies?: Strategy[];
 		markers?: MapMarker[];
-		legend?: { label: string; color: Strategy['color'] }[];
+		legend?: { id?: string; label: string; color: Strategy['color'] }[];
 		height?: string;
 	}
 	let { attestations, strategies, markers, legend, height = '480px' }: Props = $props();
@@ -28,7 +32,7 @@
 	const strategyById = $derived(new Map((strategies ?? []).map((s) => [s.id, s])));
 
 	const legendItems = $derived(
-		legend ?? (strategies ?? []).map((s) => ({ label: s.label, color: s.color }))
+		legend ?? (strategies ?? []).map((s) => ({ id: s.id, label: s.label, color: s.color }))
 	);
 
 	// Group: one marker per (language, strategy) pair. Languages with multiple
@@ -45,13 +49,14 @@
 			note?: string;
 			size?: number;
 			links?: { href: string; label: string }[];
+			group?: string;
 		}
 
 		if (markers?.length) {
 			const seen = new Map<string, number>();
 			const out: Point[] = [];
-			for (const m of markers) {
-				const lang = getLanguage(m.code);
+			for (const mk of markers) {
+				const lang = getLanguage(mk.code);
 				if (lang.lat == null || lang.lng == null) continue;
 				const key = `${lang.lat.toFixed(1)},${lang.lng.toFixed(1)}`;
 				const n = seen.get(key) ?? 0;
@@ -59,14 +64,15 @@
 				const dx = n === 0 ? 0 : Math.cos(n * 2.4) * 1.4;
 				const dy = n === 0 ? 0 : Math.sin(n * 2.4) * 1.4;
 				out.push({
-					code: m.code,
+					code: mk.code,
 					lat: lang.lat + dy,
 					lng: lang.lng + dx,
-					color: m.color,
-					expression: m.expression ?? '',
-					note: m.note,
-					size: m.size,
-					links: m.links
+					color: mk.color,
+					expression: mk.expression ?? '',
+					note: mk.note,
+					size: mk.size,
+					links: mk.links,
+					group: mk.group
 				});
 			}
 			return out;
@@ -90,11 +96,51 @@
 				color: strat?.color,
 				strategy: strat,
 				expression: att.expression,
-				note: att.note
+				note: att.note,
+				group: att.strategy
 			});
 		}
 		return out;
 	});
+
+	// The legend doubles as a filter wherever points carry a group. Markers
+	// supplied without one (the pathway map buckets several sets into a single
+	// dot) keep a static legend rather than a control that half works.
+	//
+	// An empty selection means every group shows. The first click on a chip
+	// isolates that group, so reaching one strategy costs one click rather than
+	// switching the other five off; later clicks add and remove groups, and
+	// clearing the last one returns to the full map.
+	let selected = $state<string[]>([]);
+
+	const countByGroup = $derived.by(() => {
+		const counts = new Map<string, number>();
+		for (const p of points) {
+			if (p.group == null) continue;
+			counts.set(p.group, (counts.get(p.group) ?? 0) + 1);
+		}
+		return counts;
+	});
+
+	const filterable = $derived(
+		legendItems.some((item) => item.id != null && countByGroup.has(item.id))
+	);
+
+	const visiblePoints = $derived(
+		filterable && selected.length
+			? points.filter((p) => p.group != null && selected.includes(p.group))
+			: points
+	);
+
+	function toggleGroup(id: string) {
+		if (!selected.length) {
+			selected = [id];
+		} else if (selected.includes(id)) {
+			selected = selected.length === 1 ? [] : selected.filter((s) => s !== id);
+		} else {
+			selected = [...selected, id];
+		}
+	}
 
 	function escapeHtml(s: string): string {
 		return s.replace(
@@ -126,7 +172,7 @@
 		for (const h of markerHandles) h.remove();
 		markerHandles = [];
 
-		for (const p of points) {
+		for (const p of visiblePoints) {
 			const lang = getLanguage(p.code);
 			const tokens = p.color ? strategyColor(p.color) : null;
 			const size = p.size ?? 16;
@@ -226,7 +272,7 @@
 	// Redraws markers whenever the data props change (client-side navigation
 	// reuses this component across pattern/pathway pages).
 	$effect(() => {
-		void points;
+		void visiblePoints;
 		syncMarkers();
 	});
 
@@ -250,18 +296,47 @@
 		style:width="100%"
 	></div>
 
-	<!-- Legend -->
+	<!-- Legend. Doubles as a filter when the points carry a group. -->
 	{#if legendItems.length}
-		<div class="flex flex-wrap gap-2 text-xs">
-			{#each legendItems as item, i (`${item.color}-${i}`)}
+		<div class="flex flex-wrap items-center gap-2 text-xs">
+			{#each legendItems as item, i (item.id ?? `${item.color}-${i}`)}
 				{@const tokens = strategyColor(item.color)}
-				<span
-					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
-				>
-					<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
-					{item.label}
-				</span>
+				{@const count = item.id != null ? countByGroup.get(item.id) : undefined}
+				{#if filterable && item.id != null}
+					{@const active = !selected.length || selected.includes(item.id)}
+					<button
+						type="button"
+						onclick={() => toggleGroup(item.id!)}
+						aria-pressed={active}
+						class="inline-flex items-center gap-1.5 rounded-full border px-2 py-1 transition-opacity {active
+							? 'border-[color:var(--color-rule)] bg-[color:var(--color-surface)]'
+							: 'border-dashed border-[color:var(--color-rule)] opacity-45'}"
+					>
+						<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
+						{item.label}
+						{#if count}
+							<span class="font-mono text-[10px] text-[color:var(--color-ink-soft)]">{count}</span>
+						{/if}
+					</button>
+				{:else}
+					<span
+						class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
+					>
+						<span class="inline-block h-3 w-3 rounded-full" style:background={tokens.band}></span>
+						{item.label}
+					</span>
+				{/if}
 			{/each}
+
+			{#if filterable && selected.length}
+				<button
+					type="button"
+					onclick={() => (selected = [])}
+					class="rounded-full border border-[color:var(--color-rule)] px-2 py-1 text-[color:var(--color-ink-soft)] hover:border-[color:var(--color-accent)]"
+				>
+					{m.legend_show_all()}
+				</button>
+			{/if}
 		</div>
 	{/if}
 
