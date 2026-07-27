@@ -6,7 +6,7 @@ export const switchingOn: Pattern = {
 	shortTitle: 'turn on the light, play the music',
 	question: 'Which verb makes a machine start working?',
 	summary:
-		'A lamp, an air conditioner, recorded music, a vacuum cleaner and a washing machine each need a verb, and languages take that verb from fire, from opening, from rotation, from putting things down. The choice also moves from appliance to appliance inside one language: Japanese attaches a light and hangs music, while Korean kindles the light and rotates the washing machine.',
+		'A lamp, an air conditioner, recorded music, a vacuum cleaner and a washing machine each need a verb. Some languages reach for fire, some for opening or rotation, some for the plain act of putting a thing down. The choice also shifts from appliance to appliance within one language: Japanese attaches a light and hangs music, where Korean kindles the light and rotates the washing machine.',
 	category: ['Meaning & Expression', 'Lexicon & Collocation'],
 	strategies: [
 		{
@@ -14,7 +14,7 @@ export const switchingOn: Pattern = {
 			label: 'Fire and light',
 			schematic: 'KINDLE / MAKE BRIGHT → switch on',
 			description:
-				'The verb otherwise lights a lamp, strikes a match or sets something alight. Korean 켜다 kyeoda lights an oil lamp; Spanish encender continues Latin incendere; Swahili washa sets something on fire; Persian روشن کردن rowšan kardan makes it bright.',
+				'Away from the switch, this verb lights a lamp or strikes a match. Korean 켜다 kyeoda lights an oil lamp, Spanish encender continues Latin incendere, Swahili washa sets something on fire. Persian روشن کردن rowšan kardan works from brightness instead of flame.',
 			color: 'sky'
 		},
 		{
@@ -22,7 +22,7 @@ export const switchingOn: Pattern = {
 			label: 'Opening',
 			schematic: 'OPEN → switch on',
 			description:
-				'The verb otherwise opens a door, a lid or a knot. Mandarin 開 kāi, Turkish açmak, Thai เปิด pə̀ət, Vietnamese mở and Greek ανοίγω all reach the switch this way, and in Turkish and Thai the same verb serves the lamp, the air conditioner and the music.',
+				'A door, a lid and a knot take the same verb. Mandarin 開 kāi, Turkish açmak, Thai เปิด pə̀ət, Vietnamese mở and Greek ανοίγω all reach the switch this way. In Turkish and Thai one verb covers the lamp, the air conditioner and the music alike.',
 			color: 'amber'
 		},
 		{
@@ -30,7 +30,7 @@ export const switchingOn: Pattern = {
 			label: 'Turning',
 			schematic: 'TURN / TWIST / ROTATE → switch on',
 			description:
-				'The verb turns or twists something. English turn on and Korean 틀다 teulda go back to knobs and taps; Korean 돌리다 dollida, Japanese 回す mawasu and Indonesian memutar name a drum or a disc going round.',
+				'Knobs and taps left their mark here. English turn on and Korean 틀다 teulda come from twisting a control, while Korean 돌리다 dollida, Japanese 回す mawasu and Indonesian memutar name a drum or a disc going round.',
 			color: 'emerald'
 		},
 		{
@@ -38,7 +38,7 @@ export const switchingOn: Pattern = {
 			label: 'Connecting and switching',
 			schematic: 'JOIN / FLIP → switch on',
 			description:
-				'The verb makes or breaks a connection. Russian включить and Polish włączyć are built on joining and enclosing, calqued on Latin inclūdere; Portuguese ligar is Latin ligāre, to bind; German einschalten uses schalten, to shift; Vietnamese bật snaps.',
+				'Making and breaking a connection. Russian включить and Polish włączyć are built on joining and enclosing, calqued on Latin inclūdere, and Portuguese ligar is Latin ligāre, to bind. German einschalten uses schalten, to shift; Vietnamese bật snaps.',
 			color: 'slate'
 		},
 		{
@@ -46,7 +46,7 @@ export const switchingOn: Pattern = {
 			label: 'Placing',
 			schematic: 'PUT / HANG / LET GO → switch on',
 			description:
-				'The verb puts the thing somewhere, or lets it loose. French mettre, Spanish poner, Greek βάζω and Hebrew לשים lasim all put music on; Mandarin 放 fàng and Polish puścić release it; Japanese つける tsukeru attaches and かける kakeru hangs.',
+				'Here the thing gets put somewhere, or let loose. French mettre, Spanish poner, Greek βάζω and Hebrew לשים lasim all put music on, where Mandarin 放 fàng and Polish puścić release it. Japanese つける tsukeru attaches and かける kakeru hangs.',
 			color: 'rose'
 		},
 		{
@@ -139,7 +139,7 @@ export const switchingOn: Pattern = {
 	paradigm: {
 		title: 'Which verb for which appliance',
 		summary:
-			'Read across a row for one language handling five appliances; read down a column for one appliance across languages. The lamp column leans on fire, the music column on placing and letting go, the washing-machine column on rotation and on plain “do the washing”. Where a language reuses one verb down several rows, the run of a single colour shows it.',
+			'Read across a row for one language handling five appliances; read down a column for one appliance across languages. Fire dominates the lamp column. Music draws placing and letting-go verbs, and the washing machine draws rotation alongside a plain “do the washing”. Where a language reuses one verb down several rows, the run of a single colour shows it.',
 		axes: [
 			{ id: 'light', label: 'the light', description: 'An electric lamp, heir to the candle and the oil lamp.' },
 			{ id: 'ac', label: 'the air conditioner', description: 'A machine with no pre-electric ancestor to borrow words from.' },
