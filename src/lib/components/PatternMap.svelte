@@ -3,6 +3,7 @@
 	import type { Attestation, ParadigmSection, Strategy } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
+	import { orderedAxes } from '$lib/colexification';
 
 	import { m } from '$lib/paraglide/messages.js';
 
@@ -56,7 +57,7 @@
 	// one cell per column, so nothing has to be offset.
 	const columns = $derived(
 		paradigm
-			? paradigm.axes.filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
+			? orderedAxes(paradigm).filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
 			: []
 	);
 
