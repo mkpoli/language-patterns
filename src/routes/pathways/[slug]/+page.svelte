@@ -5,11 +5,13 @@
 	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import TagList from '$lib/components/TagList.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 	import StageFlow from '$lib/components/StageFlow.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import { getLanguage } from '$lib/data/languages';
+	import { sortTags } from '$lib/data';
 	import { m } from '$lib/paraglide/messages.js';
 
 	let { data } = $props();
@@ -98,6 +100,8 @@
 		return items;
 	});
 
+	const tagLabels = $derived(sortTags(pathway.tags).map((t) => t.label));
+
 	const allCitations = $derived([
 		...(pathway.sources ?? []),
 		...pathway.stages.flatMap((s) => s.sources ?? []),
@@ -118,7 +122,7 @@
 			url: SITE_URL
 		},
 		mainEntityOfPage: `${SITE_URL}/pathways/${pathway.slug}`,
-		about: ['historical linguistics', 'grammaticalization', pathway.kind],
+		about: [...tagLabels, 'historical linguistics', pathway.kind],
 		citation: (pathway.sources ?? []).map((c) => {
 			const s = getSource(c.source);
 			return {
@@ -139,9 +143,9 @@
 	keywords={[
 		pathway.title,
 		pathway.shortTitle,
+		...tagLabels,
 		'historical linguistics',
-		'language change',
-		'grammaticalization'
+		'language change'
 	]}
 	{jsonLd}
 />
@@ -157,6 +161,7 @@
 		<h1 class="font-serif text-4xl leading-tight">{pathway.title}</h1>
 		<p class="text-lg text-[color:var(--color-ink-soft)] italic">{pathway.question}</p>
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
+		<TagList tags={pathway.tags} />
 	</header>
 
 	{#if pathway.kind === 'cycle'}

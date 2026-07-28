@@ -46,6 +46,7 @@
 			title={topic.title}
 			summary={topic.summary}
 			href={`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`}
+			tags={topic.tags}
 			kind={topic.kind}
 		/>
 	{/each}
