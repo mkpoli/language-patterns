@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import type { Attestation, Strategy } from '$lib/types';
+	import type { Attestation, ParadigmSection, Strategy } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 
@@ -13,8 +13,6 @@
 		color?: Strategy['color'];
 		size?: number;
 		links?: { href: string; label: string }[];
-		/** Legend entry this marker belongs to. Set it to make the legend filter. */
-		group?: string;
 	}
 
 	interface Props {
@@ -22,9 +20,15 @@
 		strategies?: Strategy[];
 		markers?: MapMarker[];
 		legend?: { id?: string; label: string; color: Strategy['color'] }[];
+		/**
+		 * When given, the map plots one language's form per selected column —
+		 * how each language says that one thing — instead of a single
+		 * representative expression per language.
+		 */
+		paradigm?: ParadigmSection;
 		height?: string;
 	}
-	let { attestations, strategies, markers, legend, height = '480px' }: Props = $props();
+	let { attestations, strategies, markers, legend, paradigm, height = '480px' }: Props = $props();
 
 	let container: HTMLDivElement | undefined = $state();
 	let cleanup: (() => void) | null = null;
@@ -35,21 +39,69 @@
 		legend ?? (strategies ?? []).map((s) => ({ id: s.id, label: s.label, color: s.color }))
 	);
 
-	// Group: one marker per (language, strategy) pair. Languages with multiple
-	// attestations (e.g. English in non-possession uses two strategies) get
-	// slightly offset markers so they don't stack on top of one another.
+	interface Point {
+		code: string;
+		lat: number;
+		lng: number;
+		color?: Strategy['color'];
+		strategy?: Strategy;
+		expression: string;
+		note?: string;
+		size?: number;
+		links?: { href: string; label: string }[];
+	}
+
+	// A paradigm turns the map into one column at a time: pick a thing, and every
+	// dot is that language's way of saying it. Each language contributes at most
+	// one cell per column, so nothing has to be offset.
+	const columns = $derived(
+		paradigm
+			? paradigm.axes.filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
+			: []
+	);
+
+	let selected = $state<string | null>(null);
+	const activeColumn = $derived(
+		columns.length
+			? (columns.find((c) => c.id === selected)?.id ?? columns[0].id)
+			: null
+	);
+
+	const countByColumn = $derived.by(() => {
+		const counts = new Map<string, number>();
+		for (const c of paradigm?.cells ?? []) {
+			const lang = getLanguage(c.language);
+			if (lang.lat == null || lang.lng == null) continue;
+			counts.set(c.axis, (counts.get(c.axis) ?? 0) + 1);
+		}
+		return counts;
+	});
+
+	// Offsets duplicates by ~1° in a small spiral, for the modes where one
+	// language can contribute several dots.
+	function spiral(n: number): [number, number] {
+		return n === 0 ? [0, 0] : [Math.cos(n * 2.4) * 1.4, Math.sin(n * 2.4) * 1.4];
+	}
+
 	const points = $derived.by(() => {
-		interface Point {
-			code: string;
-			lat: number;
-			lng: number;
-			color?: Strategy['color'];
-			strategy?: Strategy;
-			expression: string;
-			note?: string;
-			size?: number;
-			links?: { href: string; label: string }[];
-			group?: string;
+		if (activeColumn != null && paradigm) {
+			const out: Point[] = [];
+			for (const c of paradigm.cells) {
+				if (c.axis !== activeColumn) continue;
+				const lang = getLanguage(c.language);
+				if (lang.lat == null || lang.lng == null) continue;
+				const strat = c.strategy ? strategyById.get(c.strategy) : undefined;
+				out.push({
+					code: c.language,
+					lat: lang.lat,
+					lng: lang.lng,
+					color: strat?.color,
+					strategy: strat,
+					expression: c.form,
+					note: c.note
+				});
+			}
+			return out;
 		}
 
 		if (markers?.length) {
@@ -61,8 +113,7 @@
 				const key = `${lang.lat.toFixed(1)},${lang.lng.toFixed(1)}`;
 				const n = seen.get(key) ?? 0;
 				seen.set(key, n + 1);
-				const dx = n === 0 ? 0 : Math.cos(n * 2.4) * 1.4;
-				const dy = n === 0 ? 0 : Math.sin(n * 2.4) * 1.4;
+				const [dx, dy] = spiral(n);
 				out.push({
 					code: mk.code,
 					lat: lang.lat + dy,
@@ -71,13 +122,14 @@
 					expression: mk.expression ?? '',
 					note: mk.note,
 					size: mk.size,
-					links: mk.links,
-					group: mk.group
+					links: mk.links
 				});
 			}
 			return out;
 		}
 
+		// One marker per (language, strategy) pair. Languages using more than one
+		// strategy get slightly offset markers so they don't stack.
 		const byLangCount = new Map<string, number>();
 		const out: Point[] = [];
 		for (const att of attestations ?? []) {
@@ -85,9 +137,7 @@
 			if (lang.lat == null || lang.lng == null) continue;
 			const seen = byLangCount.get(att.language) ?? 0;
 			byLangCount.set(att.language, seen + 1);
-			// Offset duplicates by ~1° in a small spiral
-			const dx = seen === 0 ? 0 : Math.cos(seen * 2.4) * 1.4;
-			const dy = seen === 0 ? 0 : Math.sin(seen * 2.4) * 1.4;
+			const [dx, dy] = spiral(seen);
 			const strat = strategyById.get(att.strategy);
 			out.push({
 				code: att.language,
@@ -96,40 +146,20 @@
 				color: strat?.color,
 				strategy: strat,
 				expression: att.expression,
-				note: att.note,
-				group: att.strategy
+				note: att.note
 			});
 		}
 		return out;
 	});
 
-	// Wherever points carry a group, the map gets a tab switcher: one tab per
-	// group plus an "all" tab, in the same segmented control the example sets
-	// use. Markers supplied without a group (the pathway map buckets several
-	// sets into a single dot) keep a static legend instead.
-	let selected = $state<string | null>(null);
+	const visiblePoints = $derived(points);
 
-	const countByGroup = $derived.by(() => {
-		const counts = new Map<string, number>();
-		for (const p of points) {
-			if (p.group == null) continue;
-			counts.set(p.group, (counts.get(p.group) ?? 0) + 1);
-		}
-		return counts;
+	// Colour key: only the strategies actually on the map right now.
+	const keyItems = $derived.by(() => {
+		if (activeColumn == null) return legendItems;
+		const used = new Set(points.map((p) => p.strategy?.id).filter(Boolean));
+		return legendItems.filter((item) => item.id != null && used.has(item.id));
 	});
-
-	const tabs = $derived(
-		legendItems.filter(
-			(item): item is { id: string; label: string; color: Strategy['color'] } =>
-				item.id != null && countByGroup.has(item.id)
-		)
-	);
-
-	const active = $derived(selected != null && tabs.some((t) => t.id === selected) ? selected : null);
-
-	const visiblePoints = $derived(
-		active == null ? points : points.filter((p) => p.group === active)
-	);
 
 	function escapeHtml(s: string): string {
 		return s.replace(
@@ -278,45 +308,28 @@
 </script>
 
 <div class="flex flex-col gap-3">
-	{#if tabs.length}
+	{#if columns.length > 1}
 		<div
 			role="tablist"
-			aria-label={m.map_strategy_switcher()}
+			aria-label={m.map_item_switcher()}
 			class="inline-flex flex-wrap gap-1 self-start rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)] p-1 text-sm"
 		>
-			<button
-				type="button"
-				role="tab"
-				aria-selected={active == null}
-				onclick={() => (selected = null)}
-				class="rounded-full px-3 py-1.5 transition"
-				class:bg-[color:var(--color-surface)]={active == null}
-				class:shadow-sm={active == null}
-				class:font-medium={active == null}
-				class:text-[color:var(--color-ink-soft)]={active != null}
-			>
-				{m.map_all_strategies()}
-				<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]">{points.length}</span>
-			</button>
-
-			{#each tabs as tab (tab.id)}
-				{@const tokens = strategyColor(tab.color)}
-				{@const on = active === tab.id}
+			{#each columns as column (column.id)}
+				{@const on = activeColumn === column.id}
 				<button
 					type="button"
 					role="tab"
 					aria-selected={on}
-					onclick={() => (selected = tab.id)}
-					class="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 transition"
+					onclick={() => (selected = column.id)}
+					class="rounded-full px-3 py-1.5 transition"
 					class:bg-[color:var(--color-surface)]={on}
 					class:shadow-sm={on}
 					class:font-medium={on}
 					class:text-[color:var(--color-ink-soft)]={!on}
 				>
-					<span class="inline-block h-2.5 w-2.5 rounded-full" style:background={tokens.band}></span>
-					{tab.label}
-					<span class="font-mono text-xs text-[color:var(--color-ink-soft)]"
-						>{countByGroup.get(tab.id)}</span
+					{column.label}
+					<span class="ml-1 font-mono text-xs text-[color:var(--color-ink-soft)]"
+						>{countByColumn.get(column.id)}</span
 					>
 				</button>
 			{/each}
@@ -330,10 +343,9 @@
 		style:width="100%"
 	></div>
 
-	<!-- Static colour key, for maps whose markers carry no group to switch on. -->
-	{#if !tabs.length && legendItems.length}
+	{#if keyItems.length}
 		<div class="flex flex-wrap items-center gap-2 text-xs">
-			{#each legendItems as item, i (item.id ?? `${item.color}-${i}`)}
+			{#each keyItems as item, i (item.id ?? `${item.color}-${i}`)}
 				{@const tokens = strategyColor(item.color)}
 				<span
 					class="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1"
@@ -367,17 +379,20 @@
 </div>
 
 <style>
-	/* Allow popup to use our color tokens */
+	/* Allow popup to use our color tokens. !important for the same reason as the
+	   attribution control below: the vendor stylesheet is injected at runtime
+	   after component CSS, so its `background: #fff` otherwise wins the tie and
+	   leaves light text on a white popup in dark mode. */
 	:global(.maplibregl-popup-content) {
 		padding: 12px 14px;
 		border-radius: 12px;
-		background: var(--color-surface);
-		color: var(--color-ink);
+		background: var(--color-surface) !important;
+		color: var(--color-ink) !important;
 		box-shadow: 0 4px 16px var(--color-shadow);
 	}
 
 	:global(.maplibregl-popup-tip) {
-		border-top-color: var(--color-surface);
+		border-top-color: var(--color-surface) !important;
 	}
 
 	/* MapLibre's bundled controls ship light-only defaults; retheme via tokens. */

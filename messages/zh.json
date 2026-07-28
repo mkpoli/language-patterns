@@ -37,8 +37,8 @@
 	"section_geographic_distribution_hint_sets": "每个标记代表一个已记录的语言，颜色对应其例句组；点开可查看该语言的表达。",
 	"legend_several_sets": "多个例句组",
 	"legend_ungrouped": "未分组",
-	"map_all_strategies": "全部",
-	"map_strategy_switcher": "地图上显示的策略",
+	"map_item_switcher": "地图上显示的对象",
+	"section_geographic_distribution_hint_items": "选定一个对象，每个圆点即为该语言的说法，颜色对应动词所用的策略。点击圆点可查看具体形式。",
 	"stage_documented_in": "时间轴收录",
 
 	"atlas_title": "反复出现的模式之地理分布",
