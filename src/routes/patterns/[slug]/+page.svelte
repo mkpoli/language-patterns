@@ -8,12 +8,16 @@
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import TagList from '$lib/components/TagList.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
+	import { sortTags } from '$lib/data';
 
 	let { data } = $props();
 	const pattern = $derived(data.pattern);
+
+	const tagLabels = $derived(sortTags(pattern.tags).map((t) => t.label));
 
 	const allCitations = $derived([
 		...(pattern.sources ?? []),
@@ -52,7 +56,7 @@
 			url: SITE_URL
 		},
 		mainEntityOfPage: `${SITE_URL}/patterns/${pattern.slug}`,
-		about: pattern.category,
+		about: tagLabels,
 		citation: (pattern.sources ?? []).map((c) => {
 			const s = getSource(c.source);
 			return { '@type': 'CreativeWork', name: s.title, author: s.authors.join('; '), datePublished: String(s.year) };
@@ -65,7 +69,7 @@
 	description={pattern.summary}
 	path={`/patterns/${pattern.slug}`}
 	type="article"
-	keywords={[pattern.title, pattern.shortTitle, ...pattern.category, 'linguistic typology', 'cross-linguistic']}
+	keywords={[pattern.title, pattern.shortTitle, ...tagLabels, 'linguistic typology', 'cross-linguistic']}
 	{jsonLd}
 />
 
@@ -73,13 +77,11 @@
 	<header class="flex flex-col gap-3">
 		<div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 			<span class="rounded-full bg-[color:var(--color-sky-soft)] px-2 py-0.5">Pattern</span>
-			{#each pattern.category as cat (cat)}
-				<span>· {cat}</span>
-			{/each}
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pattern.title}</h1>
 		<p class="text-lg italic text-[color:var(--color-ink-soft)]">{pattern.question}</p>
 		<p class="max-w-3xl text-base">{pattern.summary}</p>
+		<TagList tags={pattern.tags} />
 	</header>
 
 	<section>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
-	import { topics } from '$lib/data';
+	import { topics, topicHref } from '$lib/data';
 	import { SITE_NAME, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_URL } from '$lib/seo';
 	import { m } from '$lib/paraglide/messages.js';
 
@@ -45,8 +45,8 @@
 			question={topic.question}
 			title={topic.title}
 			summary={topic.summary}
-			href={`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`}
-			category={topic.category}
+			href={topicHref(topic)}
+			tags={topic.tags}
 			kind={topic.kind}
 		/>
 	{/each}
