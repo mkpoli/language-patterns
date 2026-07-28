@@ -8,7 +8,7 @@ export const seeToTry: Pathway = {
 	kind: 'shift',
 	summary:
 		'Verbs of seeing repeatedly become markers of attempting. Japanese 食べてみる “eat and see”, Korean 먹어 보다, Mandarin 試試看, and the Turkic converb + kör- constructions all say “do it and see” for “try doing it”; Voinov (2013) traces the co-lexification across Eurasia, New Guinea, India, and West Africa.',
-	tags: ['perception', 'aspect', 'colexification', 'multiverb-construction', 'auxiliary-verb', 'metonymy', 'semantic-bleaching', 'grammaticalization', 'areal'],
+	tags: ['perception', 'aspect', 'colexification', 'multiverb-construction', 'auxiliary-verb', 'metonymy', 'semantic-bleaching', 'grammaticalization', 'several-macroareas'],
 	evidenceNote:
 		'The shift is documented almost exclusively inside multiverb constructions — a converb, infinitive, or serial verb followed by SEE — where the perception verb first means “observe the outcome” and then bleaches into an attemptive auxiliary. In several languages the auxiliary further softens commands into polite requests. The Database of Semantic Shifts catalogues it as shift 36 (see → try), with realizations from Adyghe, Chamalal, Croatian, Japanese, Karaim, Meadow Mari, Mongolian, Serbian, and Tuvan — all Eurasian, against 243 worldwide realizations for its sibling hear → obey (shift 34).',
 	stages: [

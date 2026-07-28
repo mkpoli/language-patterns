@@ -111,6 +111,12 @@ const tagList = [
 		definition: 'Making a machine start or stop working.'
 	},
 	{
+		id: 'grammatical-relations',
+		label: 'Grammatical relations',
+		facet: 'domain',
+		definition: 'Subject, object, and the other roles a clause assigns its participants.'
+	},
+	{
 		id: 'spatial-relation',
 		label: 'Spatial relation',
 		facet: 'domain',
@@ -240,6 +246,12 @@ const tagList = [
 		definition: 'Recurs in unrelated families across every macroarea.'
 	},
 	{
+		id: 'several-macroareas',
+		label: 'Several macroareas',
+		facet: 'scope',
+		definition: 'Attested in more than one macroarea, without reaching all of them.'
+	},
+	{
 		id: 'areal',
 		label: 'Areal',
 		facet: 'scope',
@@ -266,6 +278,7 @@ export function getFacet(id: TagFacetId): TagFacet {
 }
 
 const facetOrder = new Map(facets.map((f, i) => [f.id, i]));
+const vocabularyOrder = new Map(tagList.map((t, i) => [t.id as TagId, i]));
 
 /** Tags in facet order, then in vocabulary order within a facet. */
 export function sortTags(ids: readonly TagId[]): Tag[] {
@@ -274,13 +287,14 @@ export function sortTags(ids: readonly TagId[]): Tag[] {
 		.sort(
 			(a, b) =>
 				facetOrder.get(a.facet)! - facetOrder.get(b.facet)! ||
-				tagList.findIndex((t) => t.id === a.id) - tagList.findIndex((t) => t.id === b.id)
+				vocabularyOrder.get(a.id as TagId)! - vocabularyOrder.get(b.id as TagId)!
 		);
 }
 
 /** Tags of one entry, grouped into the facets that entry actually uses. */
 export function groupByFacet(ids: readonly TagId[]): { facet: TagFacet; tags: Tag[] }[] {
+	const sorted = sortTags(ids);
 	return facets
-		.map((facet) => ({ facet, tags: sortTags(ids).filter((t) => t.facet === facet.id) }))
+		.map((facet) => ({ facet, tags: sorted.filter((t) => t.facet === facet.id) }))
 		.filter((g) => g.tags.length > 0);
 }

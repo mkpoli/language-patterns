@@ -8,7 +8,7 @@ export const jespersensCycle: Pathway = {
 	kind: 'cycle',
 	summary:
 		'A preverbal negator weakens and is reinforced by an extra element, often a minimizer like “step” or “thing”. The reinforcer is reanalysed as the negator itself, then weakens in turn, and the cycle starts again.',
-	tags: ['negation', 'negative-concord', 'renewal-cycle', 'reanalysis', 'semantic-bleaching', 'grammaticalization', 'areal'],
+	tags: ['negation', 'negative-concord', 'renewal-cycle', 'reanalysis', 'semantic-bleaching', 'grammaticalization', 'worldwide'],
 	stages: [
 		{
 			id: 'stage-1',
