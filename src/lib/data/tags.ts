@@ -105,6 +105,12 @@ const tagList = [
 		definition: 'How an event unfolds: attempted, begun, ongoing, completed.'
 	},
 	{
+		id: 'modality',
+		label: 'Modality',
+		facet: 'domain',
+		definition: 'Possibility, necessity, or attempt, short of asserting that the event came off.'
+	},
+	{
 		id: 'device-operation',
 		label: 'Device operation',
 		facet: 'domain',

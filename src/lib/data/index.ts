@@ -83,7 +83,7 @@ export const tagIndex: { facet: (typeof facets)[number]; entries: { tag: Tag; co
 	(() => {
 		const counts = new Map<TagId, number>();
 		for (const topic of topics) {
-			for (const id of topic.tags) counts.set(id, (counts.get(id) ?? 0) + 1);
+			for (const id of new Set(topic.tags)) counts.set(id, (counts.get(id) ?? 0) + 1);
 		}
 		const used = sortTags([...counts.keys()]);
 		return facets
