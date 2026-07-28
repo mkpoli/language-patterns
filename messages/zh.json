@@ -7,6 +7,7 @@
 	"nav_patterns": "模式",
 	"nav_pathways": "演化路径",
 	"nav_atlas": "图谱",
+	"nav_tags": "标签",
 
 	"footer_text": "Language Patterns — 概念验证版。跨语言类型学与历时语言学。示例数据仅作展示，来源将陆续补充。",
 	"footer_license_html": "内容采用 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> 协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
@@ -46,6 +47,11 @@
 	"atlas_filter_topics": "主题",
 	"atlas_all_topics": "全部主题",
 	"atlas_by_family": "按语系分布",
+
+	"tags_title": "按标签浏览",
+	"tags_subtitle": "标签分为四个层面：条目涉及的意义、承载它的形式、背后的演变过程，以及分布的广度。",
+	"tags_topics_heading": "带此标签的条目",
+	"tags_more_in_facet": "同一层面的其他标签",
 
 	"example_natural": "自然",
 	"example_literal": "直译",

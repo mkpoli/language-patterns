@@ -32,7 +32,7 @@ After editing `wrangler.jsonc`, rerun `bun run gen` to refresh `worker-configura
 | `src/lib/data/patterns/non-possession.ts` | Pattern: "Non-possession" |
 | `src/lib/data/pathways/jespersens-cycle.ts` | Pathway: "Jespersen's Cycle" — drives the timeline viz |
 | `src/lib/data/tags.ts` | Tag vocabulary, facets, `TagId`, grouping helpers |
-| `src/lib/data/index.ts` | Barrel exports + `getPattern / getPathway / topics` |
+| `src/lib/data/index.ts` | Barrel exports + `getPattern / getPathway / topics / tagIndex / topicsWithTag` |
 
 To add a pattern, create a file under `src/lib/data/patterns/` and register it in `src/lib/data/index.ts` and in the route's `entries()` function at `src/routes/patterns/[slug]/+page.ts`. Give it tags from `tags.ts`; a tag the vocabulary lacks goes in there first, into the facet it belongs to.
 
@@ -49,9 +49,11 @@ To add a pattern, create a file under `src/lib/data/patterns/` and register it i
 /pathways                        all pathways
 /pathways/[slug]                 pathway page (stages + cycle diagram + comparative timeline)
 /atlas                           stub for the world-atlas view (deferred)
+/tags                            tag vocabulary, grouped by facet, with entry counts
+/tags/[id]                       patterns and pathways carrying one tag
 ```
 
-Pattern and pathway pages are prerendered via `entries()`.
+Pattern, pathway and tag pages are prerendered via `entries()`; the tag routes take theirs from `usedTagIds`, so a tag with no entries gets no page.
 
 ## TODO (the big roadmap)
 

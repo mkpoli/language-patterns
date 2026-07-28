@@ -4,7 +4,7 @@
 
 	interface Props {
 		tags: TagId[];
-		/** `full` groups by facet; `inline` is a flat run of chips. */
+		/** `full` groups by facet and links each tag; `inline` is a flat run of plain chips. */
 		variant?: 'full' | 'inline';
 		max?: number;
 	}
@@ -32,13 +32,14 @@
 				</dt>
 				<dd class="flex flex-wrap gap-1.5">
 					{#each group.tags as tag (tag.id)}
-						<span
+						<a
+							href={`/tags/${tag.id}`}
 							title={tag.definition}
-							class="rounded-full border px-2.5 py-0.5 text-xs"
+							class="rounded-full border px-2.5 py-0.5 text-xs transition hover:brightness-95 dark:hover:brightness-125"
 							style={chipStyle(tag)}
 						>
 							{tag.label}
-						</span>
+						</a>
 					{/each}
 				</dd>
 			</div>

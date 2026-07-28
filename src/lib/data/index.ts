@@ -1,5 +1,5 @@
 import type { Pattern, Pathway } from '$lib/types';
-import type { TagId } from './tags';
+import { type Tag, type TagId, facets, sortTags } from './tags';
 import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
@@ -69,3 +69,27 @@ export const topics: TopicEntry[] = [
 	...patterns.map(toTopic('pattern')),
 	...pathways.map(toTopic('pathway'))
 ];
+
+export function topicsWithTag(id: TagId): TopicEntry[] {
+	return topics.filter((t) => t.tags.includes(id));
+}
+
+/** Every tag carried by at least one entry, with how many carry it. */
+export const tagIndex: { facet: (typeof facets)[number]; entries: { tag: Tag; count: number }[] }[] =
+	(() => {
+		const counts = new Map<TagId, number>();
+		for (const topic of topics) {
+			for (const id of new Set(topic.tags)) counts.set(id, (counts.get(id) ?? 0) + 1);
+		}
+		const used = sortTags([...counts.keys()]);
+		return facets
+			.map((facet) => ({
+				facet,
+				entries: used
+					.filter((tag) => tag.facet === facet.id)
+					.map((tag) => ({ tag, count: counts.get(tag.id as TagId)! }))
+			}))
+			.filter((group) => group.entries.length > 0);
+	})();
+
+export const usedTagIds: TagId[] = tagIndex.flatMap((g) => g.entries.map((e) => e.tag.id as TagId));
