@@ -24,7 +24,6 @@
 			title={pathway.title}
 			summary={pathway.summary}
 			href={`/pathways/${pathway.slug}`}
-			category={['Cycles & Pathways']}
 			kind="pathway"
 		/>
 	{/each}
@@ -34,7 +33,6 @@
 		title={m.p_graveyard_title()}
 		summary={m.p_graveyard_description()}
 		href="https://p.languagepatterns.org"
-		category={['Sound change']}
 		kind="pathway"
 		external
 	/>

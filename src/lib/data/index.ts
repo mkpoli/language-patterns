@@ -1,4 +1,5 @@
 import type { Pattern, Pathway } from '$lib/types';
+import type { TagId } from './tags';
 import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
@@ -12,6 +13,8 @@ import { seeToTry } from './pathways/see-to-try';
 import { negativeExistentialCycle } from './pathways/negative-existential-cycle';
 
 export { languages, getLanguage } from './languages';
+export { facets, tags, getTag, getFacet, groupByFacet, sortTags } from './tags';
+export type { Tag, TagId, TagFacet, TagFacetId } from './tags';
 
 export const patterns: Pattern[] = [
 	existence,
@@ -47,30 +50,22 @@ export interface TopicEntry {
 	shortTitle: string;
 	question: string;
 	summary: string;
-	category: string[];
+	tags: TagId[];
 }
 
+const toTopic =
+	(kind: 'pattern' | 'pathway') =>
+	(p: Pattern | Pathway): TopicEntry => ({
+		kind,
+		slug: p.slug,
+		title: p.title,
+		shortTitle: p.shortTitle,
+		question: p.question,
+		summary: p.summary,
+		tags: p.tags
+	});
+
 export const topics: TopicEntry[] = [
-	...patterns.map(
-		(p): TopicEntry => ({
-			kind: 'pattern',
-			slug: p.slug,
-			title: p.title,
-			shortTitle: p.shortTitle,
-			question: p.question,
-			summary: p.summary,
-			category: p.category
-		})
-	),
-	...pathways.map(
-		(p): TopicEntry => ({
-			kind: 'pathway',
-			slug: p.slug,
-			title: p.title,
-			shortTitle: p.shortTitle,
-			question: p.question,
-			summary: p.summary,
-			category: ['Cycles & Pathways']
-		})
-	)
+	...patterns.map(toTopic('pattern')),
+	...pathways.map(toTopic('pathway'))
 ];

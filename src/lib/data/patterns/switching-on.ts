@@ -7,7 +7,7 @@ export const switchingOn: Pattern = {
 	question: 'Which verb makes a machine start working?',
 	summary:
 		'A lamp, an air conditioner, recorded music, a vacuum cleaner and a washing machine each need a verb. Some languages reach for fire, some for opening or rotation, some for the plain act of putting a thing down. The choice also shifts from appliance to appliance within one language: Japanese attaches a light and hangs music, where Korean kindles the light and rotates the washing machine.',
-	category: ['Meaning & Expression', 'Lexicon & Collocation'],
+	tags: ['device-operation', 'colexification', 'metaphor', 'metonymy', 'worldwide'],
 	strategies: [
 		{
 			id: 'fire',

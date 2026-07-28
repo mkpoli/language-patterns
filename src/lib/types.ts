@@ -1,3 +1,5 @@
+import type { TagId } from './data/tags';
+
 export type LanguageCode = string;
 
 export type Confidence = 'high' | 'medium' | 'low';
@@ -167,7 +169,7 @@ export interface Pattern {
 	shortTitle: string;
 	question: string;
 	summary: string;
-	category: string[];
+	tags: TagId[];
 	strategies: Strategy[];
 	attestations?: Attestation[];
 	examples: Example[];
@@ -217,6 +219,7 @@ export interface Pathway {
 	question: string;
 	kind: 'cycle' | 'pathway' | 'shift';
 	summary: string;
+	tags: TagId[];
 	evidenceNote?: string;
 	stages: Stage[];
 	bands: TimelineBand[];

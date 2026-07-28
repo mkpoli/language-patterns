@@ -23,7 +23,6 @@
 			title={pattern.title}
 			summary={pattern.summary}
 			href={`/patterns/${pattern.slug}`}
-			category={pattern.category}
 			kind="pattern"
 		/>
 	{/each}

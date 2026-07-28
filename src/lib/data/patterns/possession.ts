@@ -7,7 +7,7 @@ export const possession: Pattern = {
 	question: 'How do languages say “I have X”?',
 	summary:
 		'Some languages use a transitive HAVE verb; others say “at me, X is”, “to me, X is”, or “I-with X”. The same language often switches strategy with what is possessed — inanimate, animate, kin, body-parts.',
-	category: ['Meaning & Expression', 'Possession & Existence'],
+	tags: ['possession', 'existence', 'location', 'syncretism', 'oblique-marking', 'topic-marking', 'grammaticalization', 'worldwide'],
 	strategies: [
 		{
 			id: 'have',

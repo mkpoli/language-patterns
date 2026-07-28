@@ -8,6 +8,7 @@ export const hearWordsToObey: Pathway = {
 	kind: 'shift',
 	summary:
 		'Verbs of hearing and listening repeatedly grow a sense of obeying. The pattern recurs from Mandarin tīnghuà and Japanese iu koto o kiku to Latin oboedīre, built on audīre “to hear”, behind French obéir and English obey.',
+	tags: ['perception', 'obligation', 'colexification', 'metonymy', 'lexicalization', 'worldwide'],
 	evidenceNote:
 		'Each expression retains hearing or listening in its structure while conventionally expressing attention, compliance, or obedience. The Database of Semantic Shifts catalogues the change as shift 34 (hear/listen → obey) with 243 realizations across every macroarea, from Akkadian and Egyptian to Swahili and Hawaiian — among the most widely replicated semantic shifts on record.',
 	stages: [

@@ -4,11 +4,10 @@
 		title: string;
 		summary: string;
 		href: string;
-		category: string[];
 		kind: 'pattern' | 'pathway';
 		external?: boolean;
 	}
-	let { question, title, summary, href, category, kind, external = false }: Props = $props();
+	let { question, title, summary, href, kind, external = false }: Props = $props();
 </script>
 
 <a
@@ -25,9 +24,6 @@
 		>
 			{kind === 'pattern' ? 'Pattern' : 'Pathway'}
 		</span>
-		{#each category.slice(0, 1) as cat (cat)}
-			<span>{cat}</span>
-		{/each}
 	</div>
 	<h3 class="font-serif text-2xl leading-tight">
 		<span class="text-[color:var(--color-ink-soft)]">{question}</span>
