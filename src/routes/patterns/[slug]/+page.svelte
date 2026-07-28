@@ -97,9 +97,15 @@
 		<section>
 			<h2 class="mb-1 font-serif text-2xl">{m.section_geographic_distribution()}</h2>
 			<p class="mb-4 text-sm text-[color:var(--color-ink-soft)]">
-				{m.section_geographic_distribution_hint()}
+				{pattern.paradigm
+					? m.section_geographic_distribution_hint_items()
+					: m.section_geographic_distribution_hint()}
 			</p>
-			<PatternMap attestations={pattern.attestations} strategies={pattern.strategies} />
+			<PatternMap
+				attestations={pattern.attestations}
+				strategies={pattern.strategies}
+				paradigm={pattern.paradigm}
+			/>
 		</section>
 
 		{#if pattern.attestations.some((a) => a.syncretism?.length)}
