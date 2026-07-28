@@ -6,7 +6,7 @@ export const switchingOn: Pattern = {
 	shortTitle: 'turn on the light, play the music',
 	question: 'Which verb makes a machine start working?',
 	summary:
-		'A lamp, an air conditioner, recorded music, a vacuum cleaner and a washing machine each need a verb. Some languages reach for fire, some for opening or rotation, some for the plain act of putting a thing down. The choice also shifts from appliance to appliance within one language: Japanese attaches a light and hangs music, where Korean kindles the light and rotates the washing machine.',
+		'A lamp, an air conditioner, a tap, recorded music, an alarm clock, a vacuum cleaner and a washing machine each need a verb. Some languages reach for fire, some for opening or rotation, some for the plain act of putting a thing down. The choice also shifts from one thing to the next within a single language: Japanese attaches a light and hangs music, where Korean kindles the light and rotates the washing machine.',
 	category: ['Meaning & Expression', 'Lexicon & Collocation'],
 	strategies: [
 		{
@@ -139,160 +139,203 @@ export const switchingOn: Pattern = {
 	paradigm: {
 		title: 'Which verb for which appliance',
 		summary:
-			'Read across a row for one language handling five appliances; read down a column for one appliance across languages. Fire dominates the lamp column. Music draws placing and letting-go verbs, and the washing machine draws rotation alongside a plain “do the washing”. Where a language reuses one verb down several rows, the run of a single colour shows it.',
+			'Read across a row for one language handling seven things; read down a column for one thing across languages. Columns sit in clustered order, so the pairs that most often share a verb stand side by side. Fire dominates the lamp column, the tap draws opening verbs even where nothing electric is involved, and the vacuum cleaner takes a verb of its own almost everywhere. Where a language reuses one verb down several rows, the run of a single colour shows it.',
 		axes: [
 			{ id: 'light', label: 'the light', description: 'An electric lamp, heir to the candle and the oil lamp.' },
 			{ id: 'ac', label: 'the air conditioner', description: 'A machine with no pre-electric ancestor to borrow words from.' },
+			{ id: 'tap', label: 'the tap', description: 'Not electric at all — a valve you open, and the source of English “turn on”.' },
 			{ id: 'music', label: 'music', description: 'Putting on a record, a tape, a file.' },
+			{ id: 'alarm', label: 'the alarm clock', description: 'Set rather than switched: it has to be told a time.' },
 			{ id: 'vacuum', label: 'the vacuum cleaner', description: 'A hand tool that has to be pushed across a floor.' },
 			{ id: 'washer', label: 'the washing machine', description: 'A drum that turns for an hour unattended.' }
 		],
 		cells: [
-			// ─── English ───────────────────────────────────────────────────────────
-			{ language: 'en', axis: 'light', form: 'turn on the light', strategy: 'turning' },
-			{ language: 'en', axis: 'ac', form: 'turn on the AC', strategy: 'turning' },
-			{ language: 'en', axis: 'music', form: 'put on music / play music', strategy: 'placing' },
-			{ language: 'en', axis: 'vacuum', form: 'vacuum (the floor)', strategy: 'running', note: 'the appliance became the verb' },
-			{ language: 'en', axis: 'washer', form: 'do the washing / run a load', strategy: 'running' },
+			// ─── English ───────────────────────────────────────────────────────
+			{ language: 'en', axis: 'light', form: 'turn on the light', strategy: 'turning', lemma: 'turn on' },
+			{ language: 'en', axis: 'ac', form: 'turn on the AC', strategy: 'turning', lemma: 'turn on' },
+			{ language: 'en', axis: 'tap', form: 'turn on the tap', strategy: 'turning', lemma: 'turn on', note: 'the tap is where “turn on” came from' },
+			{ language: 'en', axis: 'music', form: 'put on music / play music', strategy: 'placing', lemma: 'put on' },
+			{ language: 'en', axis: 'alarm', form: 'set the alarm', strategy: 'placing', lemma: 'set' },
+			{ language: 'en', axis: 'vacuum', form: 'vacuum (the floor)', strategy: 'running', lemma: 'vacuum', note: 'the appliance became the verb' },
+			{ language: 'en', axis: 'washer', form: 'do the washing / run a load', strategy: 'running', lemma: 'do' },
 
-			// ─── Mandarin Chinese ──────────────────────────────────────────────────
-			{ language: 'zh', axis: 'light', form: '開燈 kāi dēng', strategy: 'opening', note: 'open the light' },
-			{ language: 'zh', axis: 'ac', form: '開冷氣 / 開空調 kāi lěngqì', strategy: 'opening', note: 'open the cold air' },
-			{ language: 'zh', axis: 'music', form: '放音樂 fàng yīnyuè', strategy: 'placing', note: 'release the music' },
-			{ language: 'zh', axis: 'vacuum', form: '用吸塵器 yòng xīchénqì', strategy: 'running', note: 'use the dust-sucker' },
-			{ language: 'zh', axis: 'washer', form: '用洗衣機 yòng xǐyījī', strategy: 'running', note: 'use the clothes-washer' },
+			// ─── Mandarin Chinese ──────────────────────────────────────────────
+			{ language: 'zh', axis: 'light', form: '開燈 kāi dēng', strategy: 'opening', lemma: '開', note: 'open the light' },
+			{ language: 'zh', axis: 'ac', form: '開冷氣 / 開空調 kāi lěngqì', strategy: 'opening', lemma: '開', note: 'open the cold air' },
+			{ language: 'zh', axis: 'tap', form: '開水龍頭 kāi shuǐlóngtóu', strategy: 'opening', lemma: '開', note: 'open the water-dragon-head' },
+			{ language: 'zh', axis: 'music', form: '放音樂 fàng yīnyuè', strategy: 'placing', lemma: '放', note: 'release the music' },
+			{ language: 'zh', axis: 'alarm', form: '定鬧鐘 dìng nàozhōng', strategy: 'placing', lemma: '定', note: 'fix the alarm clock' },
+			{ language: 'zh', axis: 'vacuum', form: '用吸塵器 yòng xīchénqì', strategy: 'running', lemma: '用', note: 'use the dust-sucker' },
+			{ language: 'zh', axis: 'washer', form: '用洗衣機 yòng xǐyījī', strategy: 'running', lemma: '用', note: 'use the clothes-washer' },
 
-			// ─── Japanese ──────────────────────────────────────────────────────────
-			{ language: 'ja', axis: 'light', form: '電気をつける denki o tsukeru', strategy: 'placing', note: 'attach the electricity; spelled 点ける in the lighting sense' },
-			{ language: 'ja', axis: 'ac', form: 'エアコンをつける eakon o tsukeru', strategy: 'placing', note: 'attach the air conditioner' },
-			{ language: 'ja', axis: 'music', form: '音楽をかける ongaku o kakeru', strategy: 'placing', note: 'hang the music' },
-			{ language: 'ja', axis: 'vacuum', form: '掃除機をかける sōjiki o kakeru', strategy: 'placing', note: 'hang the cleaner' },
-			{ language: 'ja', axis: 'washer', form: '洗濯機をまわす sentakuki o mawasu', strategy: 'turning', note: 'turn the washer' },
+			// ─── Japanese ──────────────────────────────────────────────────────
+			{ language: 'ja', axis: 'light', form: '電気をつける denki o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the electricity; spelled 点ける in the lighting sense' },
+			{ language: 'ja', axis: 'ac', form: 'エアコンをつける eakon o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the air conditioner' },
+			{ language: 'ja', axis: 'tap', form: '蛇口をひねる jaguchi o hineru', strategy: 'turning', lemma: 'ひねる', note: 'twist the tap' },
+			{ language: 'ja', axis: 'music', form: '音楽をかける ongaku o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the music' },
+			{ language: 'ja', axis: 'alarm', form: '目覚ましをかける mezamashi o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the alarm' },
+			{ language: 'ja', axis: 'vacuum', form: '掃除機をかける sōjiki o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the cleaner' },
+			{ language: 'ja', axis: 'washer', form: '洗濯機をまわす sentakuki o mawasu', strategy: 'turning', lemma: 'まわす', note: 'turn the washer' },
 
-			// ─── Korean ────────────────────────────────────────────────────────────
-			{ language: 'ko', axis: 'light', form: '불을 켜다 bul-eul kyeoda', strategy: 'fire', note: 'kindle the light' },
-			{ language: 'ko', axis: 'ac', form: '에어컨을 틀다 eeokeon-eul teulda', strategy: 'turning', note: 'twist the air conditioner' },
-			{ language: 'ko', axis: 'music', form: '음악을 틀다 eumak-eul teulda', strategy: 'turning', note: 'twist the music' },
-			{ language: 'ko', axis: 'vacuum', form: '청소기를 돌리다 cheongsogi-reul dollida', strategy: 'turning', note: 'make the cleaner rotate' },
-			{ language: 'ko', axis: 'washer', form: '세탁기를 돌리다 setakgi-reul dollida', strategy: 'turning', note: 'make the washer rotate' },
+			// ─── Korean ────────────────────────────────────────────────────────
+			{ language: 'ko', axis: 'light', form: '불을 켜다 bul-eul kyeoda', strategy: 'fire', lemma: '켜다', note: 'kindle the light' },
+			{ language: 'ko', axis: 'ac', form: '에어컨을 틀다 eeokeon-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the air conditioner' },
+			{ language: 'ko', axis: 'tap', form: '수도꼭지를 틀다 sudokkokji-reul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the tap' },
+			{ language: 'ko', axis: 'music', form: '음악을 틀다 eumak-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the music' },
+			{ language: 'ko', axis: 'alarm', form: '알람을 맞추다 allam-eul matchuda', strategy: 'placing', lemma: '맞추다', note: 'set it to match' },
+			{ language: 'ko', axis: 'vacuum', form: '청소기를 돌리다 cheongsogi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the cleaner rotate' },
+			{ language: 'ko', axis: 'washer', form: '세탁기를 돌리다 setakgi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the washer rotate' },
 
-			// ─── French ────────────────────────────────────────────────────────────
-			{ language: 'fr', axis: 'light', form: 'allumer la lumière', strategy: 'fire', note: 'light it up' },
-			{ language: 'fr', axis: 'ac', form: 'allumer / mettre la clim', strategy: 'fire' },
-			{ language: 'fr', axis: 'music', form: 'mettre de la musique', strategy: 'placing', note: 'put some music' },
-			{ language: 'fr', axis: 'vacuum', form: "passer l'aspirateur", strategy: 'running', note: 'pass the vacuum' },
-			{ language: 'fr', axis: 'washer', form: 'lancer une machine', strategy: 'running', note: 'launch a machine' },
+			// ─── French ────────────────────────────────────────────────────────
+			{ language: 'fr', axis: 'light', form: 'allumer la lumière', strategy: 'fire', lemma: 'allumer', note: 'light it up' },
+			{ language: 'fr', axis: 'ac', form: 'allumer / mettre la clim', strategy: 'fire', lemma: 'allumer' },
+			{ language: 'fr', axis: 'tap', form: 'ouvrir le robinet', strategy: 'opening', lemma: 'ouvrir', note: 'open the tap' },
+			{ language: 'fr', axis: 'music', form: 'mettre de la musique', strategy: 'placing', lemma: 'mettre', note: 'put some music' },
+			{ language: 'fr', axis: 'alarm', form: 'mettre le réveil', strategy: 'placing', lemma: 'mettre', note: 'put the alarm' },
+			{ language: 'fr', axis: 'vacuum', form: "passer l'aspirateur", strategy: 'running', lemma: 'passer', note: 'pass the vacuum' },
+			{ language: 'fr', axis: 'washer', form: 'lancer une machine', strategy: 'running', lemma: 'lancer', note: 'launch a machine' },
 
-			// ─── Spanish ───────────────────────────────────────────────────────────
-			{ language: 'es', axis: 'light', form: 'encender la luz', strategy: 'fire', note: 'from Latin incendere' },
-			{ language: 'es', axis: 'ac', form: 'poner el aire', strategy: 'placing', note: 'put the air' },
-			{ language: 'es', axis: 'music', form: 'poner música', strategy: 'placing' },
-			{ language: 'es', axis: 'vacuum', form: 'pasar la aspiradora', strategy: 'running', note: 'pass the vacuum' },
-			{ language: 'es', axis: 'washer', form: 'poner la lavadora', strategy: 'placing' },
+			// ─── Spanish ───────────────────────────────────────────────────────
+			{ language: 'es', axis: 'light', form: 'encender la luz', strategy: 'fire', lemma: 'encender', note: 'from Latin incendere' },
+			{ language: 'es', axis: 'ac', form: 'poner el aire', strategy: 'placing', lemma: 'poner', note: 'put the air' },
+			{ language: 'es', axis: 'tap', form: 'abrir el grifo', strategy: 'opening', lemma: 'abrir', note: 'open the tap' },
+			{ language: 'es', axis: 'music', form: 'poner música', strategy: 'placing', lemma: 'poner' },
+			{ language: 'es', axis: 'alarm', form: 'poner el despertador', strategy: 'placing', lemma: 'poner' },
+			{ language: 'es', axis: 'vacuum', form: 'pasar la aspiradora', strategy: 'running', lemma: 'pasar', note: 'pass the vacuum' },
+			{ language: 'es', axis: 'washer', form: 'poner la lavadora', strategy: 'placing', lemma: 'poner' },
 
-			// ─── Italian ───────────────────────────────────────────────────────────
-			{ language: 'it', axis: 'light', form: 'accendere la luce', strategy: 'fire', note: 'from Latin accendere, to kindle' },
-			{ language: 'it', axis: 'ac', form: 'accendere il condizionatore', strategy: 'fire' },
-			{ language: 'it', axis: 'music', form: 'mettere la musica', strategy: 'placing' },
-			{ language: 'it', axis: 'vacuum', form: "passare l'aspirapolvere", strategy: 'running' },
-			{ language: 'it', axis: 'washer', form: 'fare la lavatrice', strategy: 'running', note: 'do the washer' },
+			// ─── Italian ───────────────────────────────────────────────────────
+			{ language: 'it', axis: 'light', form: 'accendere la luce', strategy: 'fire', lemma: 'accendere', note: 'from Latin accendere, to kindle' },
+			{ language: 'it', axis: 'ac', form: 'accendere il condizionatore', strategy: 'fire', lemma: 'accendere' },
+			{ language: 'it', axis: 'tap', form: 'aprire il rubinetto', strategy: 'opening', lemma: 'aprire', note: 'open the tap' },
+			{ language: 'it', axis: 'music', form: 'mettere la musica', strategy: 'placing', lemma: 'mettere' },
+			{ language: 'it', axis: 'alarm', form: 'mettere la sveglia', strategy: 'placing', lemma: 'mettere' },
+			{ language: 'it', axis: 'vacuum', form: "passare l'aspirapolvere", strategy: 'running', lemma: 'passare' },
+			{ language: 'it', axis: 'washer', form: 'fare la lavatrice', strategy: 'running', lemma: 'fare', note: 'do the washer' },
 
-			// ─── Portuguese ────────────────────────────────────────────────────────
-			{ language: 'pt', axis: 'light', form: 'acender / ligar a luz', strategy: 'fire' },
-			{ language: 'pt', axis: 'ac', form: 'ligar o ar-condicionado', strategy: 'joining', note: 'connect it, from Latin ligāre' },
-			{ language: 'pt', axis: 'music', form: 'pôr música', strategy: 'placing' },
-			{ language: 'pt', axis: 'vacuum', form: 'passar o aspirador', strategy: 'running' },
-			{ language: 'pt', axis: 'washer', form: 'pôr a máquina de lavar', strategy: 'placing' },
+			// ─── Portuguese ────────────────────────────────────────────────────
+			{ language: 'pt', axis: 'light', form: 'acender / ligar a luz', strategy: 'fire', lemma: 'acender' },
+			{ language: 'pt', axis: 'ac', form: 'ligar o ar-condicionado', strategy: 'joining', lemma: 'ligar', note: 'connect it, from Latin ligāre' },
+			{ language: 'pt', axis: 'tap', form: 'abrir a torneira', strategy: 'opening', lemma: 'abrir', note: 'open the tap' },
+			{ language: 'pt', axis: 'music', form: 'pôr música', strategy: 'placing', lemma: 'pôr' },
+			{ language: 'pt', axis: 'alarm', form: 'pôr o despertador', strategy: 'placing', lemma: 'pôr' },
+			{ language: 'pt', axis: 'vacuum', form: 'passar o aspirador', strategy: 'running', lemma: 'passar' },
+			{ language: 'pt', axis: 'washer', form: 'pôr a máquina de lavar', strategy: 'placing', lemma: 'pôr' },
 
-			// ─── German ────────────────────────────────────────────────────────────
-			{ language: 'de', axis: 'light', form: 'das Licht einschalten / anmachen', strategy: 'joining', note: 'schalten, to shift a switch' },
-			{ language: 'de', axis: 'ac', form: 'die Klimaanlage einschalten', strategy: 'joining' },
-			{ language: 'de', axis: 'music', form: 'Musik auflegen / anmachen', strategy: 'placing', note: 'lay the record on' },
-			{ language: 'de', axis: 'vacuum', form: 'staubsaugen', strategy: 'running', note: 'dust-suck' },
-			{ language: 'de', axis: 'washer', form: 'die Waschmaschine anstellen', strategy: 'placing', note: 'stellen, to set' },
+			// ─── German ────────────────────────────────────────────────────────
+			{ language: 'de', axis: 'light', form: 'das Licht einschalten / anmachen', strategy: 'joining', lemma: 'einschalten', note: 'schalten, to shift a switch' },
+			{ language: 'de', axis: 'ac', form: 'die Klimaanlage einschalten', strategy: 'joining', lemma: 'einschalten' },
+			{ language: 'de', axis: 'tap', form: 'den Wasserhahn aufdrehen', strategy: 'turning', lemma: 'aufdrehen', note: 'screw it open' },
+			{ language: 'de', axis: 'music', form: 'Musik auflegen / anmachen', strategy: 'placing', lemma: 'auflegen', note: 'lay the record on' },
+			{ language: 'de', axis: 'alarm', form: 'den Wecker stellen', strategy: 'placing', lemma: 'stellen', note: 'place the alarm' },
+			{ language: 'de', axis: 'vacuum', form: 'staubsaugen', strategy: 'running', lemma: 'staubsaugen', note: 'dust-suck' },
+			{ language: 'de', axis: 'washer', form: 'die Waschmaschine anstellen', strategy: 'placing', lemma: 'anstellen', note: 'stellen, to set' },
 
-			// ─── Dutch ─────────────────────────────────────────────────────────────
-			{ language: 'nl', axis: 'light', form: 'het licht aandoen / aanzetten', strategy: 'placing', note: 'set it on' },
-			{ language: 'nl', axis: 'ac', form: 'de airco aanzetten', strategy: 'placing' },
-			{ language: 'nl', axis: 'music', form: 'muziek opzetten', strategy: 'placing', note: 'set it up' },
-			{ language: 'nl', axis: 'vacuum', form: 'stofzuigen', strategy: 'running', note: 'dust-suck' },
-			{ language: 'nl', axis: 'washer', form: 'de wasmachine aanzetten', strategy: 'placing' },
+			// ─── Dutch ─────────────────────────────────────────────────────────
+			{ language: 'nl', axis: 'light', form: 'het licht aandoen / aanzetten', strategy: 'placing', lemma: 'aanzetten', note: 'set it on' },
+			{ language: 'nl', axis: 'ac', form: 'de airco aanzetten', strategy: 'placing', lemma: 'aanzetten' },
+			{ language: 'nl', axis: 'tap', form: 'de kraan opendraaien', strategy: 'turning', lemma: 'opendraaien', note: 'turn it open' },
+			{ language: 'nl', axis: 'music', form: 'muziek opzetten', strategy: 'placing', lemma: 'opzetten', note: 'set it up' },
+			{ language: 'nl', axis: 'alarm', form: 'de wekker zetten', strategy: 'placing', lemma: 'zetten', note: 'set the alarm' },
+			{ language: 'nl', axis: 'vacuum', form: 'stofzuigen', strategy: 'running', lemma: 'stofzuigen', note: 'dust-suck' },
+			{ language: 'nl', axis: 'washer', form: 'de wasmachine aanzetten', strategy: 'placing', lemma: 'aanzetten' },
 
-			// ─── Russian ───────────────────────────────────────────────────────────
-			{ language: 'ru', axis: 'light', form: 'включить свет vključit’ svet', strategy: 'joining', note: 'calqued on Latin inclūdere, to enclose' },
-			{ language: 'ru', axis: 'ac', form: 'включить кондиционер', strategy: 'joining' },
-			{ language: 'ru', axis: 'music', form: 'включить / поставить музыку', strategy: 'joining', note: 'поставить, to stand it up, is the placing alternative' },
-			{ language: 'ru', axis: 'vacuum', form: 'пропылесосить propylesosit’', strategy: 'running', note: 'a verb made from пылесос, dust-sucker' },
-			{ language: 'ru', axis: 'washer', form: 'запустить стирку', strategy: 'running', note: 'launch the wash' },
+			// ─── Russian ───────────────────────────────────────────────────────
+			{ language: 'ru', axis: 'light', form: 'включить свет vključit’ svet', strategy: 'joining', lemma: 'включить', note: 'calqued on Latin inclūdere, to enclose' },
+			{ language: 'ru', axis: 'ac', form: 'включить кондиционер', strategy: 'joining', lemma: 'включить' },
+			{ language: 'ru', axis: 'tap', form: 'открыть кран otkryt’ kran', strategy: 'opening', lemma: 'открыть', note: 'open the tap' },
+			{ language: 'ru', axis: 'music', form: 'включить / поставить музыку', strategy: 'joining', lemma: 'включить', note: 'поставить, to stand it up, is the placing alternative' },
+			{ language: 'ru', axis: 'alarm', form: 'поставить будильник', strategy: 'placing', lemma: 'поставить', note: 'stand the alarm up' },
+			{ language: 'ru', axis: 'vacuum', form: 'пропылесосить propylesosit’', strategy: 'running', lemma: 'пропылесосить', note: 'a verb made from пылесос, dust-sucker' },
+			{ language: 'ru', axis: 'washer', form: 'запустить стирку', strategy: 'running', lemma: 'запустить', note: 'launch the wash' },
 
-			// ─── Polish ────────────────────────────────────────────────────────────
-			{ language: 'pl', axis: 'light', form: 'zapalić światło', strategy: 'fire', note: 'ignite the light' },
-			{ language: 'pl', axis: 'ac', form: 'włączyć klimatyzację', strategy: 'joining', note: 'w- plus łączyć, to join' },
-			{ language: 'pl', axis: 'music', form: 'puścić muzykę', strategy: 'placing', note: 'let the music go' },
-			{ language: 'pl', axis: 'vacuum', form: 'odkurzać', strategy: 'running', note: 'de-dust' },
-			{ language: 'pl', axis: 'washer', form: 'nastawić pralkę', strategy: 'placing', note: 'set the washer' },
+			// ─── Polish ────────────────────────────────────────────────────────
+			{ language: 'pl', axis: 'light', form: 'zapalić światło', strategy: 'fire', lemma: 'zapalić', note: 'ignite the light' },
+			{ language: 'pl', axis: 'ac', form: 'włączyć klimatyzację', strategy: 'joining', lemma: 'włączyć', note: 'w- plus łączyć, to join' },
+			{ language: 'pl', axis: 'tap', form: 'odkręcić kran', strategy: 'turning', lemma: 'odkręcić', note: 'unscrew the tap' },
+			{ language: 'pl', axis: 'music', form: 'puścić muzykę', strategy: 'placing', lemma: 'puścić', note: 'let the music go' },
+			{ language: 'pl', axis: 'alarm', form: 'nastawić budzik', strategy: 'placing', lemma: 'nastawić', note: 'set the alarm' },
+			{ language: 'pl', axis: 'vacuum', form: 'odkurzać', strategy: 'running', lemma: 'odkurzać', note: 'de-dust' },
+			{ language: 'pl', axis: 'washer', form: 'nastawić pralkę', strategy: 'placing', lemma: 'nastawić', note: 'set the washer' },
 
-			// ─── Greek ─────────────────────────────────────────────────────────────
-			{ language: 'el', axis: 'light', form: 'ανάβω το φως anávo to fos', strategy: 'fire', note: 'from Ancient Greek ἀνάπτω, to kindle' },
-			{ language: 'el', axis: 'ac', form: 'ανοίγω το κλιματιστικό', strategy: 'opening' },
-			{ language: 'el', axis: 'music', form: 'βάζω μουσική vázo mousikí', strategy: 'placing' },
-			{ language: 'el', axis: 'washer', form: 'βάζω πλυντήριο vázo plyntírio', strategy: 'placing', note: 'put the washer' },
+			// ─── Greek (Modern) ────────────────────────────────────────────────
+			{ language: 'el', axis: 'light', form: 'ανάβω το φως anávo to fos', strategy: 'fire', lemma: 'ανάβω', note: 'from Ancient Greek ἀνάπτω, to kindle' },
+			{ language: 'el', axis: 'ac', form: 'ανοίγω το κλιματιστικό', strategy: 'opening', lemma: 'ανοίγω' },
+			{ language: 'el', axis: 'tap', form: 'ανοίγω τη βρύση', strategy: 'opening', lemma: 'ανοίγω', note: 'open the tap' },
+			{ language: 'el', axis: 'music', form: 'βάζω μουσική vázo mousikí', strategy: 'placing', lemma: 'βάζω' },
+			{ language: 'el', axis: 'alarm', form: 'βάζω ξυπνητήρι', strategy: 'placing', lemma: 'βάζω', note: 'put the alarm' },
+			{ language: 'el', axis: 'washer', form: 'βάζω πλυντήριο vázo plyntírio', strategy: 'placing', lemma: 'βάζω', note: 'put the washer' },
 
-			// ─── Turkish ───────────────────────────────────────────────────────────
-			{ language: 'tr', axis: 'light', form: 'ışığı açmak', strategy: 'opening', note: 'open the light' },
-			{ language: 'tr', axis: 'ac', form: 'klimayı açmak', strategy: 'opening' },
-			{ language: 'tr', axis: 'music', form: 'müzik açmak', strategy: 'opening' },
-			{ language: 'tr', axis: 'vacuum', form: 'süpürmek', strategy: 'running', note: 'sweep — the same verb as with a broom' },
-			{ language: 'tr', axis: 'washer', form: 'çamaşır makinesini çalıştırmak', strategy: 'running', note: 'make the washer work' },
+			// ─── Turkish ───────────────────────────────────────────────────────
+			{ language: 'tr', axis: 'light', form: 'ışığı açmak', strategy: 'opening', lemma: 'açmak', note: 'open the light' },
+			{ language: 'tr', axis: 'ac', form: 'klimayı açmak', strategy: 'opening', lemma: 'açmak' },
+			{ language: 'tr', axis: 'tap', form: 'musluğu açmak', strategy: 'opening', lemma: 'açmak', note: 'open the tap' },
+			{ language: 'tr', axis: 'music', form: 'müzik açmak', strategy: 'opening', lemma: 'açmak' },
+			{ language: 'tr', axis: 'alarm', form: 'alarm kurmak', strategy: 'placing', lemma: 'kurmak', note: 'set it up; the same verb winds a clock' },
+			{ language: 'tr', axis: 'vacuum', form: 'süpürmek', strategy: 'running', lemma: 'süpürmek', note: 'sweep — the same verb as with a broom' },
+			{ language: 'tr', axis: 'washer', form: 'çamaşır makinesini çalıştırmak', strategy: 'running', lemma: 'çalıştırmak', note: 'make the washer work' },
 
-			// ─── Thai ──────────────────────────────────────────────────────────────
-			{ language: 'th', axis: 'light', form: 'เปิดไฟ pə̀ət fai', strategy: 'opening', note: 'open the light' },
-			{ language: 'th', axis: 'ac', form: 'เปิดแอร์ pə̀ət ɛɛ', strategy: 'opening' },
-			{ language: 'th', axis: 'music', form: 'เปิดเพลง pə̀ət phleeng', strategy: 'opening' },
-			{ language: 'th', axis: 'vacuum', form: 'ดูดฝุ่น dùut fùn', strategy: 'running', note: 'suck dust' },
-			{ language: 'th', axis: 'washer', form: 'ซักผ้า sák phâa', strategy: 'running', note: 'wash the clothes' },
+			// ─── Thai ──────────────────────────────────────────────────────────
+			{ language: 'th', axis: 'light', form: 'เปิดไฟ pə̀ət fai', strategy: 'opening', lemma: 'เปิด', note: 'open the light' },
+			{ language: 'th', axis: 'ac', form: 'เปิดแอร์ pə̀ət ɛɛ', strategy: 'opening', lemma: 'เปิด' },
+			{ language: 'th', axis: 'tap', form: 'เปิดก๊อกน้ำ pə̀ət kɔ́k náam', strategy: 'opening', lemma: 'เปิด', note: 'open the tap' },
+			{ language: 'th', axis: 'music', form: 'เปิดเพลง pə̀ət phleeng', strategy: 'opening', lemma: 'เปิด' },
+			{ language: 'th', axis: 'alarm', form: 'ตั้งนาฬิกาปลุก tâng naalikaa plùk', strategy: 'placing', lemma: 'ตั้ง', note: 'set the waking clock' },
+			{ language: 'th', axis: 'vacuum', form: 'ดูดฝุ่น dùut fùn', strategy: 'running', lemma: 'ดูดฝุ่น', note: 'suck dust' },
+			{ language: 'th', axis: 'washer', form: 'ซักผ้า sák phâa', strategy: 'running', lemma: 'ซัก', note: 'wash the clothes' },
 
-			// ─── Vietnamese ────────────────────────────────────────────────────────
-			{ language: 'vi', axis: 'light', form: 'bật đèn', strategy: 'joining', note: 'snap the lamp' },
-			{ language: 'vi', axis: 'ac', form: 'bật điều hòa', strategy: 'joining' },
-			{ language: 'vi', axis: 'music', form: 'mở nhạc / bật nhạc', strategy: 'opening', note: 'open the music' },
-			{ language: 'vi', axis: 'vacuum', form: 'hút bụi', strategy: 'running', note: 'suck dust' },
+			// ─── Vietnamese ────────────────────────────────────────────────────
+			{ language: 'vi', axis: 'light', form: 'bật đèn', strategy: 'joining', lemma: 'bật', note: 'snap the lamp' },
+			{ language: 'vi', axis: 'ac', form: 'bật điều hòa', strategy: 'joining', lemma: 'bật' },
+			{ language: 'vi', axis: 'tap', form: 'mở vòi nước', strategy: 'opening', lemma: 'mở', note: 'open the tap' },
+			{ language: 'vi', axis: 'music', form: 'mở nhạc / bật nhạc', strategy: 'opening', lemma: 'mở', note: 'open the music' },
+			{ language: 'vi', axis: 'alarm', form: 'đặt báo thức', strategy: 'placing', lemma: 'đặt', note: 'place the alarm' },
+			{ language: 'vi', axis: 'vacuum', form: 'hút bụi', strategy: 'running', lemma: 'hút bụi', note: 'suck dust' },
 
-			// ─── Indonesian ────────────────────────────────────────────────────────
-			{ language: 'id', axis: 'light', form: 'menyalakan lampu', strategy: 'fire', note: 'from nyala, flame' },
-			{ language: 'id', axis: 'ac', form: 'menghidupkan AC', strategy: 'running', note: 'make it live' },
-			{ language: 'id', axis: 'music', form: 'memutar musik', strategy: 'turning', note: 'from putar, to turn' },
-			{ language: 'id', axis: 'vacuum', form: 'menyedot debu', strategy: 'running', note: 'suck dust' },
+			// ─── Indonesian ────────────────────────────────────────────────────
+			{ language: 'id', axis: 'light', form: 'menyalakan lampu', strategy: 'fire', lemma: 'menyalakan', note: 'from nyala, flame' },
+			{ language: 'id', axis: 'ac', form: 'menghidupkan AC', strategy: 'running', lemma: 'menghidupkan', note: 'make it live' },
+			{ language: 'id', axis: 'tap', form: 'membuka keran', strategy: 'opening', lemma: 'membuka', note: 'open the tap' },
+			{ language: 'id', axis: 'music', form: 'memutar musik', strategy: 'turning', lemma: 'memutar', note: 'from putar, to turn' },
+			{ language: 'id', axis: 'alarm', form: 'menyetel alarm', strategy: 'placing', lemma: 'menyetel', note: 'set the alarm' },
+			{ language: 'id', axis: 'vacuum', form: 'menyedot debu', strategy: 'running', lemma: 'menyedot', note: 'suck dust' },
 
-			// ─── Hindi ─────────────────────────────────────────────────────────────
-			{ language: 'hi', axis: 'light', form: 'बत्ती जलाना battī jalānā', strategy: 'fire', note: 'burn the light' },
-			{ language: 'hi', axis: 'ac', form: 'एसी चलाना esī calānā', strategy: 'running', note: 'make the AC go' },
-			{ language: 'hi', axis: 'music', form: 'गाना बजाना gānā bajānā', strategy: 'running', note: 'make the song sound' },
-			{ language: 'hi', axis: 'washer', form: 'मशीन चलाना maśīn calānā', strategy: 'running' },
+			// ─── Hindi ─────────────────────────────────────────────────────────
+			{ language: 'hi', axis: 'light', form: 'बत्ती जलाना battī jalānā', strategy: 'fire', lemma: 'जलाना', note: 'burn the light' },
+			{ language: 'hi', axis: 'ac', form: 'एसी चलाना esī calānā', strategy: 'running', lemma: 'चलाना', note: 'make the AC go' },
+			{ language: 'hi', axis: 'tap', form: 'नल खोलना nal kholnā', strategy: 'opening', lemma: 'खोलना', note: 'open the tap' },
+			{ language: 'hi', axis: 'music', form: 'गाना बजाना gānā bajānā', strategy: 'running', lemma: 'बजाना', note: 'make the song sound' },
+			{ language: 'hi', axis: 'alarm', form: 'अलार्म लगाना alārm lagānā', strategy: 'placing', lemma: 'लगाना', note: 'apply the alarm' },
+			{ language: 'hi', axis: 'washer', form: 'मशीन चलाना maśīn calānā', strategy: 'running', lemma: 'चलाना' },
 
-			// ─── Persian ───────────────────────────────────────────────────────────
-			{ language: 'fa', axis: 'light', form: 'چراغ را روشن کردن čerâq râ rowšan kardan', strategy: 'fire', note: 'make the lamp bright' },
-			{ language: 'fa', axis: 'ac', form: 'کولر را روشن کردن kulir râ rowšan kardan', strategy: 'fire' },
-			{ language: 'fa', axis: 'music', form: 'آهنگ گذاشتن âhang gozâštan', strategy: 'placing', note: 'put a song' },
-			{ language: 'fa', axis: 'washer', form: 'ماشین لباسشویی را روشن کردن mâšin-e lebâsšuyi râ rowšan kardan', strategy: 'fire' },
+			// ─── Persian (Farsi) ───────────────────────────────────────────────
+			{ language: 'fa', axis: 'light', form: 'چراغ را روشن کردن čerâq râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن', note: 'make the lamp bright' },
+			{ language: 'fa', axis: 'ac', form: 'کولر را روشن کردن kulir râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
+			{ language: 'fa', axis: 'tap', form: 'شیر آب را باز کردن šir-e âb râ bâz kardan', strategy: 'opening', lemma: 'باز کردن', note: 'open the tap' },
+			{ language: 'fa', axis: 'music', form: 'آهنگ گذاشتن âhang gozâštan', strategy: 'placing', lemma: 'گذاشتن', note: 'put a song' },
+			{ language: 'fa', axis: 'vacuum', form: 'جارو کشیدن jâru kešidan', strategy: 'running', lemma: 'کشیدن', note: 'pull the broom' },
+			{ language: 'fa', axis: 'washer', form: 'ماشین لباسشویی را روشن کردن mâšin-e lebâsšuyi râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
 
-			// ─── Hebrew ────────────────────────────────────────────────────────────
-			{ language: 'he', axis: 'light', form: 'להדליק אור lehadlik or', strategy: 'fire', note: 'kindle a light' },
-			{ language: 'he', axis: 'ac', form: 'להדליק מזגן lehadlik mazgan', strategy: 'fire' },
-			{ language: 'he', axis: 'music', form: 'לשים מוזיקה lasim muzika', strategy: 'placing', note: 'put music' },
-			{ language: 'he', axis: 'washer', form: 'להפעיל מכונת כביסה lehaf‘il mekhonat kvisa', strategy: 'running', note: 'activate the washer' },
+			// ─── Hebrew (Modern) ───────────────────────────────────────────────
+			{ language: 'he', axis: 'light', form: 'להדליק אור lehadlik or', strategy: 'fire', lemma: 'להדליק', note: 'kindle a light' },
+			{ language: 'he', axis: 'ac', form: 'להדליק מזגן lehadlik mazgan', strategy: 'fire', lemma: 'להדליק' },
+			{ language: 'he', axis: 'tap', form: 'לפתוח את הברז liftoach et ha-berez', strategy: 'opening', lemma: 'לפתוח', note: 'open the tap' },
+			{ language: 'he', axis: 'music', form: 'לשים מוזיקה lasim muzika', strategy: 'placing', lemma: 'לשים', note: 'put music' },
+			{ language: 'he', axis: 'vacuum', form: 'לשאוב אבק lish’ov avak', strategy: 'running', lemma: 'לשאוב', note: 'suck dust' },
+			{ language: 'he', axis: 'washer', form: 'להפעיל מכונת כביסה lehaf‘il mekhonat kvisa', strategy: 'running', lemma: 'להפעיל', note: 'activate the washer' },
 
-			// ─── Swahili ───────────────────────────────────────────────────────────
-			{ language: 'sw', axis: 'light', form: 'kuwasha taa', strategy: 'fire', note: 'set the lamp alight; kuzima, to extinguish, turns it off' },
-			{ language: 'sw', axis: 'ac', form: 'kuwasha kiyoyozi', strategy: 'fire' },
+			// ─── Swahili ───────────────────────────────────────────────────────
+			{ language: 'sw', axis: 'light', form: 'kuwasha taa', strategy: 'fire', lemma: 'kuwasha', note: 'set the lamp alight; kuzima, to extinguish, turns it off' },
+			{ language: 'sw', axis: 'ac', form: 'kuwasha kiyoyozi', strategy: 'fire', lemma: 'kuwasha' },
+			{ language: 'sw', axis: 'tap', form: 'kufungua bomba', strategy: 'opening', lemma: 'kufungua', note: 'open the tap' },
 
-			// ─── Welsh ─────────────────────────────────────────────────────────────
-			{ language: 'cy', axis: 'light', form: "cynnau'r golau", strategy: 'fire', note: 'kindle the light' }
+			// ─── Welsh ─────────────────────────────────────────────────────────
+			{ language: 'cy', axis: 'light', form: "cynnau'r golau", strategy: 'fire', lemma: 'cynnau', note: 'kindle the light' },
 		],
 		sources: [
 			{
 				source: 'yuki7979seoul-2022-collocations',
-				note: 'the Japanese and Korean rows, and the five appliances that form the columns'
+				note: 'the Japanese and Korean rows, and five of the columns'
 			},
 			{
 				source: 'mkpoli-2022-collocations',
@@ -785,7 +828,7 @@ export const switchingOn: Pattern = {
 		}
 	],
 	exampleSets: [
-		{ id: 'light', label: 'the light', title: '“Turn the light on.”', description: 'The oldest of the five appliances, and the one that inherited the vocabulary of flame.' },
+		{ id: 'light', label: 'the light', title: '“Turn the light on.”', description: 'The oldest of these appliances, and the one that inherited the vocabulary of flame.' },
 		{ id: 'music', label: 'music', title: '“Put some music on.”', description: 'Placing and releasing verbs crowd this row, several of them traceable to the record player.' },
 		{ id: 'machines', label: 'machines at work', title: '“I put a load on.”', description: 'Japanese and Korean reach for rotation once the appliance is a turning drum; elsewhere the verb names the job, and the vacuum cleaner turns into a verb of its own.' },
 		{ id: 'off', label: 'switching off', title: '“Turn the light off.”', description: 'Switching off usually mirrors the verb that switched on: Turkish opens then closes, Russian includes then excludes, and languages that kindle go on to extinguish.' }
