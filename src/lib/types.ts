@@ -149,6 +149,12 @@ export interface ParadigmCell {
 	axis: string;
 	form: string;
 	strategy?: string;
+	/**
+	 * Citation form of the verb inside `form`. Two cells of one language sharing
+	 * a lemma is that language colexifying the two columns, which is what the
+	 * column clustering measures.
+	 */
+	lemma?: string;
 	note?: string;
 	sources?: Citation[];
 }
