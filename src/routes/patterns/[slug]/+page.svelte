@@ -8,6 +8,7 @@
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import TagList from '$lib/components/TagList.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
@@ -80,6 +81,7 @@
 		<h1 class="font-serif text-4xl leading-tight">{pattern.title}</h1>
 		<p class="text-lg italic text-[color:var(--color-ink-soft)]">{pattern.question}</p>
 		<p class="max-w-3xl text-base">{pattern.summary}</p>
+		<TagList tags={pattern.tags} />
 	</header>
 
 	<section>

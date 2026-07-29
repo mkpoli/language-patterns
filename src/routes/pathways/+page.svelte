@@ -24,6 +24,7 @@
 			title={pathway.title}
 			summary={pathway.summary}
 			href={`/pathways/${pathway.slug}`}
+			tags={pathway.tags}
 			kind="pathway"
 		/>
 	{/each}
