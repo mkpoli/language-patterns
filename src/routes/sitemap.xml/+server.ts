@@ -1,4 +1,4 @@
-import { patterns, pathways } from '$lib/data';
+import { patterns, pathways, usedTagIds } from '$lib/data';
 import { SITE_URL } from '$lib/seo';
 
 export const prerender = true;
@@ -21,7 +21,9 @@ export function GET() {
 		{ loc: '/patterns', changefreq: 'weekly', priority: '0.9' },
 		{ loc: '/pathways', changefreq: 'weekly', priority: '0.9' },
 		...patterns.map((p) => ({ loc: `/patterns/${p.slug}`, changefreq: 'monthly', priority: '0.8' })),
-		...pathways.map((p) => ({ loc: `/pathways/${p.slug}`, changefreq: 'monthly', priority: '0.8' }))
+		...pathways.map((p) => ({ loc: `/pathways/${p.slug}`, changefreq: 'monthly', priority: '0.8' })),
+		{ loc: '/tags', changefreq: 'weekly', priority: '0.7' },
+		...usedTagIds.map((id) => ({ loc: `/tags/${id}`, changefreq: 'monthly', priority: '0.5' }))
 	];
 
 	const urls = entries

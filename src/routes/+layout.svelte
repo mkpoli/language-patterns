@@ -43,6 +43,7 @@
 			<a href="/patterns" class="hover:underline">{m.nav_patterns()}</a>
 			<a href="/pathways" class="hover:underline">{m.nav_pathways()}</a>
 			<a href="/atlas" class="hover:underline">{m.nav_atlas()}</a>
+			<a href="/tags" class="hover:underline">{m.nav_tags()}</a>
 			<LanguageSwitcher />
 			<ThemeToggle />
 		</nav>
