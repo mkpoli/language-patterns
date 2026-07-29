@@ -5,6 +5,7 @@
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import PolarityContrastTable from '$lib/components/PolarityContrastTable.svelte';
 	import ParadigmGrid from '$lib/components/ParadigmGrid.svelte';
+	import ColexificationTree from '$lib/components/ColexificationTree.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
@@ -128,6 +129,14 @@
 		<section>
 			<h2 class="mb-4 font-serif text-2xl">{pattern.paradigm.title ?? m.section_paradigm_grid()}</h2>
 			<ParadigmGrid paradigm={pattern.paradigm} strategies={pattern.strategies} />
+		</section>
+
+		<section>
+			<h2 class="mb-1 font-serif text-2xl">{m.section_column_clusters()}</h2>
+			<p class="mb-4 max-w-3xl text-sm text-[color:var(--color-ink-soft)]">
+				{m.section_column_clusters_hint()}
+			</p>
+			<ColexificationTree paradigm={pattern.paradigm} />
 		</section>
 	{/if}
 
