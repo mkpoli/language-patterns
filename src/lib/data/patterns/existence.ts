@@ -7,7 +7,7 @@ export const existence: Pattern = {
 	question: 'How do languages say “there is”?',
 	summary:
 		'“The water is in the river” takes the water as given and tells you where it is. “There is water in the river” reverses that: the river is the setting and the water is the news. Saying that something exists therefore reuses the machinery for saying where it is, and languages differ in how much they change along the way — some leave the locational predicate untouched, some add a placeholder subject, some borrow the possessive verb, and some keep a predicate for existence alone. The choice often splits by animacy and by number.',
-	category: ['Meaning & Expression', 'Possession & Existence'],
+	tags: ['existence', 'location', 'possession', 'syncretism', 'expletive-subject', 'grammaticalization', 'reanalysis', 'worldwide'],
 	strategies: [
 		{
 			id: 'general-locational',

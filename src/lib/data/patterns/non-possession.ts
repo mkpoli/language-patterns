@@ -7,7 +7,7 @@ export const nonPossession: Pattern = {
 	question: 'How do languages say “I don’t have X”?',
 	summary:
 		'To express absence of possession, languages either negate a HAVE-verb, add a negative determiner to the object, or reframe the situation as one of non-existence or absence — with the possessor as topic, location, or dative.',
-	category: ['Meaning & Expression', 'Possession & Existence', 'Negation & Polarity'],
+	tags: ['negation', 'possession', 'existence', 'suppletion', 'oblique-marking', 'lexicalization', 'worldwide'],
 	strategies: [
 		{
 			id: 'negated-have',
