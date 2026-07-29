@@ -23,6 +23,8 @@
 	"section_shared_predicates_hint": "Many languages use one predicate for more than one of these three. Each language sits in the region covering everything its predicate can express.",
 	"section_language_comparison": "Language comparison",
 	"section_paradigm_grid": "Paradigm grid",
+	"section_column_clusters": "How the columns cluster",
+	"section_column_clusters_hint": "Two columns count as close when the same language uses one verb for both. Branches joining further right are the pairs more languages merge; the column order in the grid and on the map follows this tree, so neighbours behave alike.",
 	"section_examples": "Examples",
 	"section_examples_hint": "Toggle between Natural / Literal / Gloss to see how each language conceptualises the same idea.",
 	"section_related_patterns": "Related patterns",

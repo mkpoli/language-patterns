@@ -23,6 +23,8 @@
 	"section_shared_predicates_hint": "一つの述語が三つの領域のうち複数をまかなう言語は多い。各言語は、その述語が表しうる範囲に対応する領域に置かれている。",
 	"section_language_comparison": "言語比較",
 	"section_paradigm_grid": "パラダイム表",
+	"section_column_clusters": "列のクラスター",
+	"section_column_clusters_hint": "同じ言語が両方に同じ動詞を使うとき、2つの列は近いと数える。右側で結合する枝ほど多くの言語が同一視する組み合わせであり、表と地図の列順はこの樹形図に従うため、隣り合う列は似た振る舞いをする。",
 	"section_examples": "例文",
 	"section_examples_hint": "「自然訳 / 直訳 / グロス」を切り替えて、同じ意味を各言語がどう構成するかを見比べる。",
 	"section_related_patterns": "関連パターン",

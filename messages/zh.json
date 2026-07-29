@@ -23,6 +23,8 @@
 	"section_shared_predicates_hint": "不少语言用同一个谓语兼管这三者中的两项或三项。每种语言都落在与其谓语实际覆盖范围相应的区域里。",
 	"section_language_comparison": "语言对比",
 	"section_paradigm_grid": "范式表",
+	"section_column_clusters": "列的聚类",
+	"section_column_clusters_hint": "当同一语言对两列使用同一个动词时，两列即视为接近。分支在越靠右处合并，表示越多语言将该组合视为一体；表格与地图的列序依此树排列，因此相邻的列行为相似。",
 	"section_examples": "例句",
 	"section_examples_hint": "在「自然 / 直译 / 注释」之间切换，对比同一概念在各语言中的不同表达方式。",
 	"section_related_patterns": "相关模式",
