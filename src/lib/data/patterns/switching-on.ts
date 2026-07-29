@@ -63,15 +63,15 @@ export const switchingOn: Pattern = {
 		{ language: 'en', strategy: 'joining', expression: 'switch on', confidence: 'high', sources: [{ source: 'mkpoli-2022-collocations' }] },
 		{ language: 'en', strategy: 'running', expression: 'vacuum the floor', confidence: 'high', note: 'denominal verb from the appliance', sources: [{ source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'zh', strategy: 'opening', expression: '開燈 kāi dēng', confidence: 'high', sources: [{ source: 'wiktionary-kai' }, { source: 'mkpoli-2022-collocations' }] },
-		{ language: 'zh', strategy: 'placing', expression: '放音樂 fàng yīnyuè', confidence: 'high', sources: [{ source: 'wiktionary-fang' }, { source: 'mkpoli-2022-collocations' }] },
-		{ language: 'zh', strategy: 'running', expression: '用洗衣機 yòng xǐyījī', confidence: 'high', sources: [{ source: 'mkpoli-2022-collocations' }] },
+		{ language: 'zh', strategy: 'opening', expression: '開燈', transliteration: 'kāi dēng', confidence: 'high', sources: [{ source: 'wiktionary-kai' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'zh', strategy: 'placing', expression: '放音樂', transliteration: 'fàng yīnyuè', confidence: 'high', sources: [{ source: 'wiktionary-fang' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'zh', strategy: 'running', expression: '用洗衣機', transliteration: 'yòng xǐyījī', confidence: 'high', sources: [{ source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'ja', strategy: 'placing', expression: '電気をつける denki o tsukeru', confidence: 'high', note: 'つける is 付ける, to attach; the spelling 点ける marks the lighting sense', sources: [{ source: 'wiktionary-tsukeru' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
-		{ language: 'ja', strategy: 'turning', expression: '洗濯機を回す sentakuki o mawasu', confidence: 'high', sources: [{ source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ja', strategy: 'placing', expression: '電気をつける', transliteration: 'denki o tsukeru', confidence: 'high', note: 'つける is 付ける, to attach; the spelling 点ける marks the lighting sense', sources: [{ source: 'wiktionary-tsukeru' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ja', strategy: 'turning', expression: '洗濯機を回す', transliteration: 'sentakuki o mawasu', confidence: 'high', sources: [{ source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
 
-		{ language: 'ko', strategy: 'fire', expression: '불을 켜다 bul-eul kyeoda', confidence: 'high', sources: [{ source: 'wiktionary-kyeoda' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
-		{ language: 'ko', strategy: 'turning', expression: '에어컨을 틀다 eeokeon-eul teulda', confidence: 'high', note: '틀다 is to twist; 돌리다 is to make something rotate', sources: [{ source: 'wiktionary-teulda' }, { source: 'wiktionary-dollida' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ko', strategy: 'fire', expression: '불을 켜다', transliteration: 'bul-eul kyeoda', confidence: 'high', sources: [{ source: 'wiktionary-kyeoda' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
+		{ language: 'ko', strategy: 'turning', expression: '에어컨을 틀다', transliteration: 'eeokeon-eul teulda', confidence: 'high', note: '틀다 is to twist; 돌리다 is to make something rotate', sources: [{ source: 'wiktionary-teulda' }, { source: 'wiktionary-dollida' }, { source: 'yuki7979seoul-2022-collocations' }, { source: 'mkpoli-2022-collocations' }] },
 
 		{ language: 'fr', strategy: 'fire', expression: 'allumer la lumière', confidence: 'high', sources: [{ source: 'wiktionary-allumer' }] },
 		{ language: 'fr', strategy: 'placing', expression: 'mettre de la musique', confidence: 'high' },
@@ -96,23 +96,23 @@ export const switchingOn: Pattern = {
 		{ language: 'nl', strategy: 'placing', expression: 'het licht aanzetten', confidence: 'high', note: 'zetten, to set; the particle aan carries “on”' },
 		{ language: 'nl', strategy: 'running', expression: 'stofzuigen', confidence: 'high' },
 
-		{ language: 'ru', strategy: 'joining', expression: 'включить свет vključit’ svet', confidence: 'high', sources: [{ source: 'wiktionary-vkljuchit' }] },
-		{ language: 'ru', strategy: 'running', expression: 'пропылесосить propylesosit’', confidence: 'high' },
+		{ language: 'ru', strategy: 'joining', expression: 'включить свет', transliteration: 'vključit’ svet', confidence: 'high', sources: [{ source: 'wiktionary-vkljuchit' }] },
+		{ language: 'ru', strategy: 'running', expression: 'пропылесосить', transliteration: 'propylesosit’', confidence: 'high' },
 
 		{ language: 'pl', strategy: 'fire', expression: 'zapalić światło', confidence: 'high' },
 		{ language: 'pl', strategy: 'joining', expression: 'włączyć klimatyzację', confidence: 'high', sources: [{ source: 'wiktionary-wlaczyc' }] },
 		{ language: 'pl', strategy: 'placing', expression: 'puścić muzykę', confidence: 'high', note: 'puścić, to let go — the same move as Mandarin 放', sources: [{ source: 'wiktionary-puscic' }] },
 		{ language: 'pl', strategy: 'running', expression: 'odkurzać', confidence: 'high' },
 
-		{ language: 'el', strategy: 'fire', expression: 'ανάβω το φως anávo to fos', confidence: 'high', sources: [{ source: 'wiktionary-anavo' }] },
-		{ language: 'el', strategy: 'opening', expression: 'ανοίγω το κλιματιστικό', confidence: 'high' },
-		{ language: 'el', strategy: 'placing', expression: 'βάζω μουσική vázo mousikí', confidence: 'high' },
+		{ language: 'el', strategy: 'fire', expression: 'ανάβω το φως', transliteration: 'anávo to fos', confidence: 'high', sources: [{ source: 'wiktionary-anavo' }] },
+		{ language: 'el', strategy: 'opening', expression: 'ανοίγω το κλιματιστικό', transliteration: 'anoígo to klimatistikó', confidence: 'high' },
+		{ language: 'el', strategy: 'placing', expression: 'βάζω μουσική', transliteration: 'vázo mousikí', confidence: 'high' },
 
 		{ language: 'tr', strategy: 'opening', expression: 'ışığı açmak', confidence: 'high', sources: [{ source: 'wiktionary-acmak' }] },
 		{ language: 'tr', strategy: 'running', expression: 'çamaşır makinesini çalıştırmak', confidence: 'high' },
 
-		{ language: 'th', strategy: 'opening', expression: 'เปิดไฟ pə̀ət fai', confidence: 'high', sources: [{ source: 'wiktionary-poet' }] },
-		{ language: 'th', strategy: 'running', expression: 'ดูดฝุ่น dùut fùn', confidence: 'medium', note: 'literally “suck dust”' },
+		{ language: 'th', strategy: 'opening', expression: 'เปิดไฟ', transliteration: 'pə̀ət fai', confidence: 'high', sources: [{ source: 'wiktionary-poet' }] },
+		{ language: 'th', strategy: 'running', expression: 'ดูดฝุ่น', transliteration: 'dùut fùn', confidence: 'medium', note: 'literally “suck dust”' },
 
 		{ language: 'vi', strategy: 'joining', expression: 'bật đèn', confidence: 'high', note: 'bật, to snap or bounce', sources: [{ source: 'wiktionary-bat' }] },
 		{ language: 'vi', strategy: 'opening', expression: 'mở nhạc', confidence: 'high' },
@@ -122,15 +122,15 @@ export const switchingOn: Pattern = {
 		{ language: 'id', strategy: 'running', expression: 'menghidupkan AC', confidence: 'high', note: 'hidup is alive; mati, dead, turns it off', sources: [{ source: 'wiktionary-menghidupkan' }] },
 		{ language: 'id', strategy: 'turning', expression: 'memutar musik', confidence: 'high' },
 
-		{ language: 'hi', strategy: 'fire', expression: 'बत्ती जलाना battī jalānā', confidence: 'high', sources: [{ source: 'wiktionary-jalana' }] },
-		{ language: 'hi', strategy: 'running', expression: 'मशीन चलाना maśīn calānā', confidence: 'high', sources: [{ source: 'wiktionary-chalana' }] },
+		{ language: 'hi', strategy: 'fire', expression: 'बत्ती जलाना', transliteration: 'battī jalānā', confidence: 'high', sources: [{ source: 'wiktionary-jalana' }] },
+		{ language: 'hi', strategy: 'running', expression: 'मशीन चलाना', transliteration: 'maśīn calānā', confidence: 'high', sources: [{ source: 'wiktionary-chalana' }] },
 
-		{ language: 'fa', strategy: 'fire', expression: 'چراغ را روشن کردن čerâq râ rowšan kardan', confidence: 'high', note: 'rowšan is bright' },
-		{ language: 'fa', strategy: 'placing', expression: 'آهنگ گذاشتن âhang gozâštan', confidence: 'medium' },
+		{ language: 'fa', strategy: 'fire', expression: 'چراغ را روشن کردن', transliteration: 'čerâq râ rowšan kardan', confidence: 'high', note: 'rowšan is bright' },
+		{ language: 'fa', strategy: 'placing', expression: 'آهنگ گذاشتن', transliteration: 'âhang gozâštan', confidence: 'medium' },
 
-		{ language: 'he', strategy: 'fire', expression: 'להדליק אור lehadlik or', confidence: 'high' },
-		{ language: 'he', strategy: 'placing', expression: 'לשים מוזיקה lasim muzika', confidence: 'medium' },
-		{ language: 'he', strategy: 'running', expression: 'להפעיל מכונת כביסה lehaf‘il mekhonat kvisa', confidence: 'medium', note: 'lehaf‘il, to activate, from פעל, to act' },
+		{ language: 'he', strategy: 'fire', expression: 'להדליק אור', transliteration: 'lehadlik or', confidence: 'high' },
+		{ language: 'he', strategy: 'placing', expression: 'לשים מוזיקה', transliteration: 'lasim muzika', confidence: 'medium' },
+		{ language: 'he', strategy: 'running', expression: 'להפעיל מכונת כביסה', transliteration: 'lehaf‘il mekhonat kvisa', confidence: 'medium', note: 'lehaf‘il, to activate, from פעל, to act' },
 
 		{ language: 'sw', strategy: 'fire', expression: 'kuwasha taa', confidence: 'high', note: 'washa, to set on fire; zima, to extinguish, turns it off', sources: [{ source: 'wiktionary-washa' }] },
 
@@ -160,31 +160,31 @@ export const switchingOn: Pattern = {
 			{ language: 'en', axis: 'washer', form: 'do the washing / run a load', strategy: 'running', lemma: 'do' },
 
 			// ─── Mandarin Chinese ──────────────────────────────────────────────
-			{ language: 'zh', axis: 'light', form: '開燈 kāi dēng', strategy: 'opening', lemma: '開', note: 'open the light' },
-			{ language: 'zh', axis: 'ac', form: '開冷氣 / 開空調 kāi lěngqì', strategy: 'opening', lemma: '開', note: 'open the cold air' },
-			{ language: 'zh', axis: 'tap', form: '開水龍頭 kāi shuǐlóngtóu', strategy: 'opening', lemma: '開', note: 'open the water-dragon-head' },
-			{ language: 'zh', axis: 'music', form: '放音樂 fàng yīnyuè', strategy: 'placing', lemma: '放', note: 'release the music' },
-			{ language: 'zh', axis: 'alarm', form: '定鬧鐘 dìng nàozhōng', strategy: 'placing', lemma: '定', note: 'fix the alarm clock' },
-			{ language: 'zh', axis: 'vacuum', form: '用吸塵器 yòng xīchénqì', strategy: 'running', lemma: '用', note: 'use the dust-sucker' },
-			{ language: 'zh', axis: 'washer', form: '用洗衣機 yòng xǐyījī', strategy: 'running', lemma: '用', note: 'use the clothes-washer' },
+			{ language: 'zh', axis: 'light', form: '開燈', transliteration: 'kāi dēng', strategy: 'opening', lemma: '開', note: 'open the light' },
+			{ language: 'zh', axis: 'ac', form: '開冷氣 / 開空調', transliteration: 'kāi lěngqì / kāi kōngtiáo', strategy: 'opening', lemma: '開', note: 'open the cold air' },
+			{ language: 'zh', axis: 'tap', form: '開水龍頭', transliteration: 'kāi shuǐlóngtóu', strategy: 'opening', lemma: '開', note: 'open the water-dragon-head' },
+			{ language: 'zh', axis: 'music', form: '放音樂', transliteration: 'fàng yīnyuè', strategy: 'placing', lemma: '放', note: 'release the music' },
+			{ language: 'zh', axis: 'alarm', form: '定鬧鐘', transliteration: 'dìng nàozhōng', strategy: 'placing', lemma: '定', note: 'fix the alarm clock' },
+			{ language: 'zh', axis: 'vacuum', form: '用吸塵器', transliteration: 'yòng xīchénqì', strategy: 'running', lemma: '用', note: 'use the dust-sucker' },
+			{ language: 'zh', axis: 'washer', form: '用洗衣機', transliteration: 'yòng xǐyījī', strategy: 'running', lemma: '用', note: 'use the clothes-washer' },
 
 			// ─── Japanese ──────────────────────────────────────────────────────
-			{ language: 'ja', axis: 'light', form: '電気をつける denki o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the electricity; spelled 点ける in the lighting sense' },
-			{ language: 'ja', axis: 'ac', form: 'エアコンをつける eakon o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the air conditioner' },
-			{ language: 'ja', axis: 'tap', form: '蛇口をひねる jaguchi o hineru', strategy: 'turning', lemma: 'ひねる', note: 'twist the tap' },
-			{ language: 'ja', axis: 'music', form: '音楽をかける ongaku o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the music' },
-			{ language: 'ja', axis: 'alarm', form: '目覚ましをかける mezamashi o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the alarm' },
-			{ language: 'ja', axis: 'vacuum', form: '掃除機をかける sōjiki o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the cleaner' },
-			{ language: 'ja', axis: 'washer', form: '洗濯機をまわす sentakuki o mawasu', strategy: 'turning', lemma: 'まわす', note: 'turn the washer' },
+			{ language: 'ja', axis: 'light', form: '電気をつける', transliteration: 'denki o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the electricity; spelled 点ける in the lighting sense' },
+			{ language: 'ja', axis: 'ac', form: 'エアコンをつける', transliteration: 'eakon o tsukeru', strategy: 'placing', lemma: 'つける', note: 'attach the air conditioner' },
+			{ language: 'ja', axis: 'tap', form: '蛇口をひねる', transliteration: 'jaguchi o hineru', strategy: 'turning', lemma: 'ひねる', note: 'twist the tap' },
+			{ language: 'ja', axis: 'music', form: '音楽をかける', transliteration: 'ongaku o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the music' },
+			{ language: 'ja', axis: 'alarm', form: '目覚ましをかける', transliteration: 'mezamashi o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the alarm' },
+			{ language: 'ja', axis: 'vacuum', form: '掃除機をかける', transliteration: 'sōjiki o kakeru', strategy: 'placing', lemma: 'かける', note: 'hang the cleaner' },
+			{ language: 'ja', axis: 'washer', form: '洗濯機をまわす', transliteration: 'sentakuki o mawasu', strategy: 'turning', lemma: 'まわす', note: 'turn the washer' },
 
 			// ─── Korean ────────────────────────────────────────────────────────
-			{ language: 'ko', axis: 'light', form: '불을 켜다 bul-eul kyeoda', strategy: 'fire', lemma: '켜다', note: 'kindle the light' },
-			{ language: 'ko', axis: 'ac', form: '에어컨을 틀다 eeokeon-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the air conditioner' },
-			{ language: 'ko', axis: 'tap', form: '수도꼭지를 틀다 sudokkokji-reul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the tap' },
-			{ language: 'ko', axis: 'music', form: '음악을 틀다 eumak-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the music' },
-			{ language: 'ko', axis: 'alarm', form: '알람을 맞추다 allam-eul matchuda', strategy: 'placing', lemma: '맞추다', note: 'set it to match' },
-			{ language: 'ko', axis: 'vacuum', form: '청소기를 돌리다 cheongsogi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the cleaner rotate' },
-			{ language: 'ko', axis: 'washer', form: '세탁기를 돌리다 setakgi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the washer rotate' },
+			{ language: 'ko', axis: 'light', form: '불을 켜다', transliteration: 'bul-eul kyeoda', strategy: 'fire', lemma: '켜다', note: 'kindle the light' },
+			{ language: 'ko', axis: 'ac', form: '에어컨을 틀다', transliteration: 'eeokeon-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the air conditioner' },
+			{ language: 'ko', axis: 'tap', form: '수도꼭지를 틀다', transliteration: 'sudokkokji-reul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the tap' },
+			{ language: 'ko', axis: 'music', form: '음악을 틀다', transliteration: 'eumak-eul teulda', strategy: 'turning', lemma: '틀다', note: 'twist the music' },
+			{ language: 'ko', axis: 'alarm', form: '알람을 맞추다', transliteration: 'allam-eul matchuda', strategy: 'placing', lemma: '맞추다', note: 'set it to match' },
+			{ language: 'ko', axis: 'vacuum', form: '청소기를 돌리다', transliteration: 'cheongsogi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the cleaner rotate' },
+			{ language: 'ko', axis: 'washer', form: '세탁기를 돌리다', transliteration: 'setakgi-reul dollida', strategy: 'turning', lemma: '돌리다', note: 'make the washer rotate' },
 
 			// ─── French ────────────────────────────────────────────────────────
 			{ language: 'fr', axis: 'light', form: 'allumer la lumière', strategy: 'fire', lemma: 'allumer', note: 'light it up' },
@@ -241,13 +241,13 @@ export const switchingOn: Pattern = {
 			{ language: 'nl', axis: 'washer', form: 'de wasmachine aanzetten', strategy: 'placing', lemma: 'aanzetten' },
 
 			// ─── Russian ───────────────────────────────────────────────────────
-			{ language: 'ru', axis: 'light', form: 'включить свет vključit’ svet', strategy: 'joining', lemma: 'включить', note: 'calqued on Latin inclūdere, to enclose' },
-			{ language: 'ru', axis: 'ac', form: 'включить кондиционер', strategy: 'joining', lemma: 'включить' },
-			{ language: 'ru', axis: 'tap', form: 'открыть кран otkryt’ kran', strategy: 'opening', lemma: 'открыть', note: 'open the tap' },
-			{ language: 'ru', axis: 'music', form: 'включить / поставить музыку', strategy: 'joining', lemma: 'включить', note: 'поставить, to stand it up, is the placing alternative' },
-			{ language: 'ru', axis: 'alarm', form: 'поставить будильник', strategy: 'placing', lemma: 'поставить', note: 'stand the alarm up' },
-			{ language: 'ru', axis: 'vacuum', form: 'пропылесосить propylesosit’', strategy: 'running', lemma: 'пропылесосить', note: 'a verb made from пылесос, dust-sucker' },
-			{ language: 'ru', axis: 'washer', form: 'запустить стирку', strategy: 'running', lemma: 'запустить', note: 'launch the wash' },
+			{ language: 'ru', axis: 'light', form: 'включить свет', transliteration: 'vključit’ svet', strategy: 'joining', lemma: 'включить', note: 'calqued on Latin inclūdere, to enclose' },
+			{ language: 'ru', axis: 'ac', form: 'включить кондиционер', transliteration: 'vključit’ kondicioner', strategy: 'joining', lemma: 'включить' },
+			{ language: 'ru', axis: 'tap', form: 'открыть кран', transliteration: 'otkryt’ kran', strategy: 'opening', lemma: 'открыть', note: 'open the tap' },
+			{ language: 'ru', axis: 'music', form: 'включить / поставить музыку', transliteration: 'vključit’ / postavit’ muzyku', strategy: 'joining', lemma: 'включить', note: 'поставить, to stand it up, is the placing alternative' },
+			{ language: 'ru', axis: 'alarm', form: 'поставить будильник', transliteration: 'postavit’ budil’nik', strategy: 'placing', lemma: 'поставить', note: 'stand the alarm up' },
+			{ language: 'ru', axis: 'vacuum', form: 'пропылесосить', transliteration: 'propylesosit’', strategy: 'running', lemma: 'пропылесосить', note: 'a verb made from пылесос, dust-sucker' },
+			{ language: 'ru', axis: 'washer', form: 'запустить стирку', transliteration: 'zapustit’ stirku', strategy: 'running', lemma: 'запустить', note: 'launch the wash' },
 
 			// ─── Polish ────────────────────────────────────────────────────────
 			{ language: 'pl', axis: 'light', form: 'zapalić światło', strategy: 'fire', lemma: 'zapalić', note: 'ignite the light' },
@@ -259,12 +259,12 @@ export const switchingOn: Pattern = {
 			{ language: 'pl', axis: 'washer', form: 'nastawić pralkę', strategy: 'placing', lemma: 'nastawić', note: 'set the washer' },
 
 			// ─── Greek (Modern) ────────────────────────────────────────────────
-			{ language: 'el', axis: 'light', form: 'ανάβω το φως anávo to fos', strategy: 'fire', lemma: 'ανάβω', note: 'from Ancient Greek ἀνάπτω, to kindle' },
-			{ language: 'el', axis: 'ac', form: 'ανοίγω το κλιματιστικό', strategy: 'opening', lemma: 'ανοίγω' },
-			{ language: 'el', axis: 'tap', form: 'ανοίγω τη βρύση', strategy: 'opening', lemma: 'ανοίγω', note: 'open the tap' },
-			{ language: 'el', axis: 'music', form: 'βάζω μουσική vázo mousikí', strategy: 'placing', lemma: 'βάζω' },
-			{ language: 'el', axis: 'alarm', form: 'βάζω ξυπνητήρι', strategy: 'placing', lemma: 'βάζω', note: 'put the alarm' },
-			{ language: 'el', axis: 'washer', form: 'βάζω πλυντήριο vázo plyntírio', strategy: 'placing', lemma: 'βάζω', note: 'put the washer' },
+			{ language: 'el', axis: 'light', form: 'ανάβω το φως', transliteration: 'anávo to fos', strategy: 'fire', lemma: 'ανάβω', note: 'from Ancient Greek ἀνάπτω, to kindle' },
+			{ language: 'el', axis: 'ac', form: 'ανοίγω το κλιματιστικό', transliteration: 'anoígo to klimatistikó', strategy: 'opening', lemma: 'ανοίγω' },
+			{ language: 'el', axis: 'tap', form: 'ανοίγω τη βρύση', transliteration: 'anoígo ti vrísi', strategy: 'opening', lemma: 'ανοίγω', note: 'open the tap' },
+			{ language: 'el', axis: 'music', form: 'βάζω μουσική', transliteration: 'vázo mousikí', strategy: 'placing', lemma: 'βάζω' },
+			{ language: 'el', axis: 'alarm', form: 'βάζω ξυπνητήρι', transliteration: 'vázo xypnitíri', strategy: 'placing', lemma: 'βάζω', note: 'put the alarm' },
+			{ language: 'el', axis: 'washer', form: 'βάζω πλυντήριο', transliteration: 'vázo plyntírio', strategy: 'placing', lemma: 'βάζω', note: 'put the washer' },
 
 			// ─── Turkish ───────────────────────────────────────────────────────
 			{ language: 'tr', axis: 'light', form: 'ışığı açmak', strategy: 'opening', lemma: 'açmak', note: 'open the light' },
@@ -276,13 +276,13 @@ export const switchingOn: Pattern = {
 			{ language: 'tr', axis: 'washer', form: 'çamaşır makinesini çalıştırmak', strategy: 'running', lemma: 'çalıştırmak', note: 'make the washer work' },
 
 			// ─── Thai ──────────────────────────────────────────────────────────
-			{ language: 'th', axis: 'light', form: 'เปิดไฟ pə̀ət fai', strategy: 'opening', lemma: 'เปิด', note: 'open the light' },
-			{ language: 'th', axis: 'ac', form: 'เปิดแอร์ pə̀ət ɛɛ', strategy: 'opening', lemma: 'เปิด' },
-			{ language: 'th', axis: 'tap', form: 'เปิดก๊อกน้ำ pə̀ət kɔ́k náam', strategy: 'opening', lemma: 'เปิด', note: 'open the tap' },
-			{ language: 'th', axis: 'music', form: 'เปิดเพลง pə̀ət phleeng', strategy: 'opening', lemma: 'เปิด' },
-			{ language: 'th', axis: 'alarm', form: 'ตั้งนาฬิกาปลุก tâng naalikaa plùk', strategy: 'placing', lemma: 'ตั้ง', note: 'set the waking clock' },
-			{ language: 'th', axis: 'vacuum', form: 'ดูดฝุ่น dùut fùn', strategy: 'running', lemma: 'ดูดฝุ่น', note: 'suck dust' },
-			{ language: 'th', axis: 'washer', form: 'ซักผ้า sák phâa', strategy: 'running', lemma: 'ซัก', note: 'wash the clothes' },
+			{ language: 'th', axis: 'light', form: 'เปิดไฟ', transliteration: 'pə̀ət fai', strategy: 'opening', lemma: 'เปิด', note: 'open the light' },
+			{ language: 'th', axis: 'ac', form: 'เปิดแอร์', transliteration: 'pə̀ət ɛɛ', strategy: 'opening', lemma: 'เปิด' },
+			{ language: 'th', axis: 'tap', form: 'เปิดก๊อกน้ำ', transliteration: 'pə̀ət kɔ́k náam', strategy: 'opening', lemma: 'เปิด', note: 'open the tap' },
+			{ language: 'th', axis: 'music', form: 'เปิดเพลง', transliteration: 'pə̀ət phleeng', strategy: 'opening', lemma: 'เปิด' },
+			{ language: 'th', axis: 'alarm', form: 'ตั้งนาฬิกาปลุก', transliteration: 'tâng naalikaa plùk', strategy: 'placing', lemma: 'ตั้ง', note: 'set the waking clock' },
+			{ language: 'th', axis: 'vacuum', form: 'ดูดฝุ่น', transliteration: 'dùut fùn', strategy: 'running', lemma: 'ดูดฝุ่น', note: 'suck dust' },
+			{ language: 'th', axis: 'washer', form: 'ซักผ้า', transliteration: 'sák phâa', strategy: 'running', lemma: 'ซัก', note: 'wash the clothes' },
 
 			// ─── Vietnamese ────────────────────────────────────────────────────
 			{ language: 'vi', axis: 'light', form: 'bật đèn', strategy: 'joining', lemma: 'bật', note: 'snap the lamp' },
@@ -301,28 +301,28 @@ export const switchingOn: Pattern = {
 			{ language: 'id', axis: 'vacuum', form: 'menyedot debu', strategy: 'running', lemma: 'menyedot', note: 'suck dust' },
 
 			// ─── Hindi ─────────────────────────────────────────────────────────
-			{ language: 'hi', axis: 'light', form: 'बत्ती जलाना battī jalānā', strategy: 'fire', lemma: 'जलाना', note: 'burn the light' },
-			{ language: 'hi', axis: 'ac', form: 'एसी चलाना esī calānā', strategy: 'running', lemma: 'चलाना', note: 'make the AC go' },
-			{ language: 'hi', axis: 'tap', form: 'नल खोलना nal kholnā', strategy: 'opening', lemma: 'खोलना', note: 'open the tap' },
-			{ language: 'hi', axis: 'music', form: 'गाना बजाना gānā bajānā', strategy: 'running', lemma: 'बजाना', note: 'make the song sound' },
-			{ language: 'hi', axis: 'alarm', form: 'अलार्म लगाना alārm lagānā', strategy: 'placing', lemma: 'लगाना', note: 'apply the alarm' },
-			{ language: 'hi', axis: 'washer', form: 'मशीन चलाना maśīn calānā', strategy: 'running', lemma: 'चलाना' },
+			{ language: 'hi', axis: 'light', form: 'बत्ती जलाना', transliteration: 'battī jalānā', strategy: 'fire', lemma: 'जलाना', note: 'burn the light' },
+			{ language: 'hi', axis: 'ac', form: 'एसी चलाना', transliteration: 'esī calānā', strategy: 'running', lemma: 'चलाना', note: 'make the AC go' },
+			{ language: 'hi', axis: 'tap', form: 'नल खोलना', transliteration: 'nal kholnā', strategy: 'opening', lemma: 'खोलना', note: 'open the tap' },
+			{ language: 'hi', axis: 'music', form: 'गाना बजाना', transliteration: 'gānā bajānā', strategy: 'running', lemma: 'बजाना', note: 'make the song sound' },
+			{ language: 'hi', axis: 'alarm', form: 'अलार्म लगाना', transliteration: 'alārm lagānā', strategy: 'placing', lemma: 'लगाना', note: 'apply the alarm' },
+			{ language: 'hi', axis: 'washer', form: 'मशीन चलाना', transliteration: 'maśīn calānā', strategy: 'running', lemma: 'चलाना' },
 
 			// ─── Persian (Farsi) ───────────────────────────────────────────────
-			{ language: 'fa', axis: 'light', form: 'چراغ را روشن کردن čerâq râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن', note: 'make the lamp bright' },
-			{ language: 'fa', axis: 'ac', form: 'کولر را روشن کردن kulir râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
-			{ language: 'fa', axis: 'tap', form: 'شیر آب را باز کردن šir-e âb râ bâz kardan', strategy: 'opening', lemma: 'باز کردن', note: 'open the tap' },
-			{ language: 'fa', axis: 'music', form: 'آهنگ گذاشتن âhang gozâštan', strategy: 'placing', lemma: 'گذاشتن', note: 'put a song' },
-			{ language: 'fa', axis: 'vacuum', form: 'جارو کشیدن jâru kešidan', strategy: 'running', lemma: 'کشیدن', note: 'pull the broom' },
-			{ language: 'fa', axis: 'washer', form: 'ماشین لباسشویی را روشن کردن mâšin-e lebâsšuyi râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
+			{ language: 'fa', axis: 'light', form: 'چراغ را روشن کردن', transliteration: 'čerâq râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن', note: 'make the lamp bright' },
+			{ language: 'fa', axis: 'ac', form: 'کولر را روشن کردن', transliteration: 'kulir râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
+			{ language: 'fa', axis: 'tap', form: 'شیر آب را باز کردن', transliteration: 'šir-e âb râ bâz kardan', strategy: 'opening', lemma: 'باز کردن', note: 'open the tap' },
+			{ language: 'fa', axis: 'music', form: 'آهنگ گذاشتن', transliteration: 'âhang gozâštan', strategy: 'placing', lemma: 'گذاشتن', note: 'put a song' },
+			{ language: 'fa', axis: 'vacuum', form: 'جارو کشیدن', transliteration: 'jâru kešidan', strategy: 'running', lemma: 'کشیدن', note: 'pull the broom' },
+			{ language: 'fa', axis: 'washer', form: 'ماشین لباسشویی را روشن کردن', transliteration: 'mâšin-e lebâsšuyi râ rowšan kardan', strategy: 'fire', lemma: 'روشن کردن' },
 
 			// ─── Hebrew (Modern) ───────────────────────────────────────────────
-			{ language: 'he', axis: 'light', form: 'להדליק אור lehadlik or', strategy: 'fire', lemma: 'להדליק', note: 'kindle a light' },
-			{ language: 'he', axis: 'ac', form: 'להדליק מזגן lehadlik mazgan', strategy: 'fire', lemma: 'להדליק' },
-			{ language: 'he', axis: 'tap', form: 'לפתוח את הברז liftoach et ha-berez', strategy: 'opening', lemma: 'לפתוח', note: 'open the tap' },
-			{ language: 'he', axis: 'music', form: 'לשים מוזיקה lasim muzika', strategy: 'placing', lemma: 'לשים', note: 'put music' },
-			{ language: 'he', axis: 'vacuum', form: 'לשאוב אבק lish’ov avak', strategy: 'running', lemma: 'לשאוב', note: 'suck dust' },
-			{ language: 'he', axis: 'washer', form: 'להפעיל מכונת כביסה lehaf‘il mekhonat kvisa', strategy: 'running', lemma: 'להפעיל', note: 'activate the washer' },
+			{ language: 'he', axis: 'light', form: 'להדליק אור', transliteration: 'lehadlik or', strategy: 'fire', lemma: 'להדליק', note: 'kindle a light' },
+			{ language: 'he', axis: 'ac', form: 'להדליק מזגן', transliteration: 'lehadlik mazgan', strategy: 'fire', lemma: 'להדליק' },
+			{ language: 'he', axis: 'tap', form: 'לפתוח את הברז', transliteration: 'liftoach et ha-berez', strategy: 'opening', lemma: 'לפתוח', note: 'open the tap' },
+			{ language: 'he', axis: 'music', form: 'לשים מוזיקה', transliteration: 'lasim muzika', strategy: 'placing', lemma: 'לשים', note: 'put music' },
+			{ language: 'he', axis: 'vacuum', form: 'לשאוב אבק', transliteration: 'lish’ov avak', strategy: 'running', lemma: 'לשאוב', note: 'suck dust' },
+			{ language: 'he', axis: 'washer', form: 'להפעיל מכונת כביסה', transliteration: 'lehaf‘il mekhonat kvisa', strategy: 'running', lemma: 'להפעיל', note: 'activate the washer' },
 
 			// ─── Swahili ───────────────────────────────────────────────────────
 			{ language: 'sw', axis: 'light', form: 'kuwasha taa', strategy: 'fire', lemma: 'kuwasha', note: 'set the lamp alight; kuzima, to extinguish, turns it off' },
