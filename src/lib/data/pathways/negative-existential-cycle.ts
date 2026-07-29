@@ -71,7 +71,8 @@ export const negativeExistentialCycle: Pathway = {
 		// Japanese — a completed B → C shift
 		{
 			language: 'ja',
-			form: 'なし nasi',
+			form: 'なし',
+			transliteration: 'nasi',
 			stageId: 'stage-b',
 			start: 700,
 			end: 1600,
@@ -82,7 +83,8 @@ export const negativeExistentialCycle: Pathway = {
 		},
 		{
 			language: 'ja',
-			form: '-ない -nai (verbal)',
+			form: '-ない (verbal)',
+			transliteration: '-nai',
 			stageId: 'stage-bc',
 			start: 1500,
 			end: 1750,
@@ -94,6 +96,7 @@ export const negativeExistentialCycle: Pathway = {
 		{
 			language: 'ja',
 			form: '-ない / ない',
+			transliteration: '-nai / nai',
 			stageId: 'stage-c',
 			start: 1750,
 			end: 2000,
@@ -105,7 +108,8 @@ export const negativeExistentialCycle: Pathway = {
 		// Mandarin — méi(you) spreading from existential to perfective negation
 		{
 			language: 'zh',
-			form: '無 wú',
+			form: '無',
+			transliteration: 'wú',
 			stageId: 'stage-b',
 			start: 200,
 			end: 1300,
@@ -115,7 +119,8 @@ export const negativeExistentialCycle: Pathway = {
 		},
 		{
 			language: 'zh',
-			form: '沒 méi',
+			form: '沒',
+			transliteration: 'méi',
 			stageId: 'stage-bc',
 			start: 1250,
 			end: 2000,
@@ -126,7 +131,8 @@ export const negativeExistentialCycle: Pathway = {
 		},
 		{
 			language: 'zh',
-			form: '沒有 méiyǒu + V',
+			form: '沒有 + V',
+			transliteration: 'méiyǒu',
 			stageId: 'stage-bc',
 			start: 1750,
 			end: 2000,
@@ -152,6 +158,7 @@ export const negativeExistentialCycle: Pathway = {
 		{
 			language: 'ru',
 			form: 'не + есть/было/будет',
+			transliteration: 'ne + jest’/bylo/budet',
 			stageId: 'stage-a',
 			start: 900,
 			end: 2000,
@@ -163,6 +170,7 @@ export const negativeExistentialCycle: Pathway = {
 		{
 			language: 'ru',
 			form: 'нет',
+			transliteration: 'net',
 			stageId: 'stage-ab',
 			start: 1300,
 			end: 2000,
