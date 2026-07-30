@@ -8,7 +8,7 @@ export const negativeExistentialCycle: Pathway = {
 	kind: 'cycle',
 	summary:
 		'A dedicated negative existential (“there is no X”) arises beside the ordinary negator, then spreads from existential sentences into verbal negation until it becomes the standard negator itself. Croft distinguishes six synchronic types — A, A~B, B, B~C, C, C~A — and the languages below sit at different points along the drift.',
-	tags: ['negation', 'existence', 'suppletion', 'renewal-cycle', 'reanalysis', 'grammaticalization', 'worldwide'],
+	tags: ['negation', 'existence', 'suppletion', 'renewal-cycle', 'reanalysis', 'grammaticalization'],
 	evidenceNote:
 		'Stage assignments and dates are editorial summaries of the cited literature; band edges are approximate, and transitional stages overlap by design. The schematics show function, not word order or morphological attachment, which vary by language.',
 	stages: [
