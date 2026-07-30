@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
-	import { tagIndex } from '$lib/data';
+	import { localized, tagIndex } from '$lib/data';
 	import { strategyColor } from '$lib/strategyColor';
 	import { m } from '$lib/paraglide/messages.js';
 </script>
@@ -22,9 +22,9 @@
 	{#each tagIndex as group (group.facet.id)}
 		{@const c = strategyColor(group.facet.color)}
 		<section>
-			<h2 class="font-serif text-2xl">{group.facet.label}</h2>
+			<h2 class="font-serif text-2xl">{localized(group.facet.label)}</h2>
 			<p class="mt-1 mb-4 text-sm text-[color:var(--color-ink-soft)]">
-				{group.facet.description}
+				{localized(group.facet.description)}
 			</p>
 			<ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 				{#each group.entries as entry (entry.tag.id)}
@@ -38,11 +38,11 @@
 									class="rounded-full border px-2.5 py-0.5 text-xs"
 									style={`background:${c.soft};border-color:${c.border};color:${c.textOn}`}
 								>
-									{entry.tag.label}
+									{localized(entry.tag.label)}
 								</span>
 								<span class="text-xs text-[color:var(--color-ink-faint)]">{entry.count}</span>
 							</span>
-							<span class="text-sm text-[color:var(--color-ink-soft)]">{entry.tag.definition}</span>
+							<span class="text-sm text-[color:var(--color-ink-soft)]">{localized(entry.tag.definition)}</span>
 						</a>
 					</li>
 				{/each}

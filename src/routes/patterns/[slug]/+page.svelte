@@ -18,7 +18,7 @@
 	let { data } = $props();
 	const pattern = $derived(data.pattern);
 
-	const tagLabels = $derived(sortTags(pattern.tags).map((t) => t.label));
+	const tagLabels = $derived(sortTags(pattern.tags).map((t) => t.label.en));
 
 	const allCitations = $derived([
 		...(pattern.sources ?? []),

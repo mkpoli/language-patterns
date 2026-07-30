@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getFacet, groupByFacet, sortTags, type Tag, type TagId } from '$lib/data';
+	import { getFacet, groupByFacet, localized, sortTags, type Tag, type TagId } from '$lib/data';
 	import { strategyColor } from '$lib/strategyColor';
 
 	interface Props {
@@ -26,19 +26,19 @@
 			<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
 				<dt
 					class="w-20 shrink-0 text-[0.6875rem] uppercase tracking-widest text-[color:var(--color-ink-faint)]"
-					title={group.facet.description}
+					title={localized(group.facet.description)}
 				>
-					{group.facet.label}
+					{localized(group.facet.label)}
 				</dt>
 				<dd class="flex flex-wrap gap-1.5">
 					{#each group.tags as tag (tag.id)}
 						<a
 							href={`/tags/${tag.id}`}
-							title={tag.definition}
+							title={localized(tag.definition)}
 							class="rounded-full border px-2.5 py-0.5 text-xs transition hover:brightness-95 dark:hover:brightness-125"
 							style={chipStyle(tag)}
 						>
-							{tag.label}
+							{localized(tag.label)}
 						</a>
 					{/each}
 				</dd>
@@ -49,7 +49,7 @@
 	<div class="flex flex-wrap items-center gap-1">
 		{#each flat as tag (tag.id)}
 			<span class="rounded-full border px-2 py-0.5 text-[0.6875rem]" style={chipStyle(tag)}>
-				{tag.label}
+				{localized(tag.label)}
 			</span>
 		{/each}
 		{#if hidden > 0}
