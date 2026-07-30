@@ -277,6 +277,7 @@ export const possession: Pattern = {
 	],
 	related: [
 		{ kind: 'pattern', slug: 'existence', label: 'Existence' },
+		{ kind: 'pattern', slug: 'alienability', label: 'Alienability' },
 		{ kind: 'pattern', slug: 'non-possession', label: 'Non-possession' },
 		{ kind: 'pathway', slug: 'jespersens-cycle', label: "Jespersen's Cycle" }
 	],

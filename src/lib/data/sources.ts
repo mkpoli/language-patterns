@@ -121,6 +121,92 @@ export const sources: Record<string, Source> = {
 		type: 'book'
 	},
 
+	// ─── Alienability & adnominal possession ────────────────────────────────────
+	'nichols-1988': {
+		id: 'nichols-1988',
+		authors: ['Nichols, Johanna'],
+		year: 1988,
+		title: 'On alienable and inalienable possession',
+		container: 'In Honor of Mary Haas: From the Haas Festival Conference on Native American Linguistics',
+		editors: ['Shipley, William'],
+		publisher: 'Mouton de Gruyter',
+		pages: '557–609',
+		type: 'chapter'
+	},
+	'chappell-mcgregor-1996': {
+		id: 'chappell-mcgregor-1996',
+		authors: ['Chappell, Hilary', 'McGregor, William'],
+		year: 1996,
+		title: 'The Grammar of Inalienability: A Typological Perspective on Body Part Terms and the Part-Whole Relation',
+		publisher: 'Mouton de Gruyter',
+		type: 'book'
+	},
+	'haspelmath-1999-external': {
+		id: 'haspelmath-1999-external',
+		authors: ['Haspelmath, Martin'],
+		year: 1999,
+		title: 'External possession in a European areal perspective',
+		container: 'External Possession',
+		editors: ['Payne, Doris L.', 'Barshi, Immanuel'],
+		publisher: 'John Benjamins',
+		pages: '109–135',
+		type: 'chapter'
+	},
+	'haspelmath-2017': {
+		id: 'haspelmath-2017',
+		authors: ['Haspelmath, Martin'],
+		year: 2017,
+		title: 'Explaining alienability contrasts in adpossessive constructions: Predictability vs. iconicity',
+		container: 'Zeitschrift für Sprachwissenschaft',
+		pages: '36(2): 193–231',
+		doi: '10.1515/zfs-2017-0009',
+		type: 'article'
+	},
+	'nichols-bickel-2013-possclass': {
+		id: 'nichols-bickel-2013-possclass',
+		authors: ['Nichols, Johanna', 'Bickel, Balthasar'],
+		year: 2013,
+		title: 'Possessive Classification',
+		container: 'WALS Online (v2020.4), Chapter 59',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/59',
+		type: 'chapter'
+	},
+	'young-morgan-1987': {
+		id: 'young-morgan-1987',
+		authors: ['Young, Robert W.', 'Morgan, William'],
+		year: 1987,
+		title: 'The Navajo Language: A Grammar and Colloquial Dictionary',
+		container: 'Revised edition',
+		publisher: 'University of New Mexico Press',
+		type: 'book'
+	},
+	'dixon-1988': {
+		id: 'dixon-1988',
+		authors: ['Dixon, R. M. W.'],
+		year: 1988,
+		title: 'A Grammar of Boumaa Fijian',
+		publisher: 'University of Chicago Press',
+		type: 'book'
+	},
+	'elbert-pukui-1979': {
+		id: 'elbert-pukui-1979',
+		authors: ['Elbert, Samuel H.', 'Pukui, Mary Kawena'],
+		year: 1979,
+		title: 'Hawaiian Grammar',
+		publisher: 'University Press of Hawaii',
+		type: 'book'
+	},
+	'li-thompson-1981': {
+		id: 'li-thompson-1981',
+		authors: ['Li, Charles N.', 'Thompson, Sandra A.'],
+		year: 1981,
+		title: 'Mandarin Chinese: A Functional Reference Grammar',
+		publisher: 'University of California Press',
+		type: 'book'
+	},
+
 	// ─── Negation ───────────────────────────────────────────────────────────────
 	'jespersen-1917': {
 		id: 'jespersen-1917',
