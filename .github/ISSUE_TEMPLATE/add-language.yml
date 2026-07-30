@@ -1,0 +1,69 @@
+name: Add a language to an entry
+description: A language is missing from a comparison table, map, paradigm grid, or set of examples.
+title: '[language] '
+labels: [data]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Partial records are welcome. A language with one attested form and no example sentence still lands on the map and in the table, and the gaps can be filled later.
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The pattern or pathway the language should appear in.
+      placeholder: Existence (patterns/existence)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page address
+      placeholder: https://languagepatterns.org/patterns/existence
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Name, endonym, and variety. An ISO 639-3 or Glottocode if you have one.
+      placeholder: Ainu / アイヌ イタㇰ, Saru dialect (ain, ainu1252)
+    validations:
+      required: true
+  - type: input
+    id: strategy
+    attributes:
+      label: Which strategy it uses
+      description: One of the strategies named on the entry page, or a new one the entry has no room for yet.
+  - type: input
+    id: expression
+    attributes:
+      label: The form
+      description: The construction as it appears, schematically if that reads better.
+      placeholder: an / oka (SG / PL existential verb)
+  - type: textarea
+    id: example
+    attributes:
+      label: Example sentence
+      description: The entry uses the same test sentences across all languages, so a translation of the ones already on the page compares best.
+      value: |
+        original:
+        transliteration:
+        gloss:
+        literal:
+        natural:
+      render: yaml
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: How firm is this
+      description: High means a description or a speaker states it directly. Low means it is inferred, or the sources disagree.
+      options:
+        - High
+        - Medium
+        - Low
+  - type: textarea
+    id: sources
+    attributes:
+      label: Where it comes from
+      description: Grammars, dictionaries, corpora, wikis, posts, or your own knowledge as a speaker. Every kind is citable here; unattributed additions are not.
+    validations:
+      required: true
