@@ -57,27 +57,27 @@ export const possession: Pattern = {
 		{ language: 'es', strategy: 'have', expression: 'tengo X', confidence: 'high' },
 		{ language: 'it', strategy: 'have', expression: 'ho X', confidence: 'high' },
 		{ language: 'de', strategy: 'have', expression: 'ich habe X', confidence: 'high' },
-		{ language: 'zh', strategy: 'have', expression: '我有 X', confidence: 'high', note: 'same 有 yǒu as the existential', sources: [{ source: 'heine-1997' }] },
+		{ language: 'zh', strategy: 'have', expression: '我有 X', transliteration: 'wǒ yǒu X', confidence: 'high', note: 'same 有 yǒu as the existential', sources: [{ source: 'heine-1997' }] },
 		{ language: 'vi', strategy: 'have', expression: 'tôi có X', confidence: 'high' },
 		{ language: 'eu', strategy: 'have', expression: 'X daukat', confidence: 'high', note: 'eduki / *edun: transitive HAVE-verbs; ergative-absolutive agreement on the verb' },
 		{ language: 'ain', strategy: 'have', expression: 'ku=kor X', confidence: 'high', note: 'kor “have, own”; 1SG agent prefix ku=', sources: [{ source: 'tamura-2000' }] },
 
 		// Locational
-		{ language: 'ru', strategy: 'locational', expression: 'у меня есть X', confidence: 'high', note: 'at me.GEN EXIST X', sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
+		{ language: 'ru', strategy: 'locational', expression: 'у меня есть X', transliteration: 'u menja jest’ X', confidence: 'high', note: 'at me.GEN EXIST X', sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
 		{ language: 'la', strategy: 'locational', expression: 'mihi X est', confidence: 'high', note: 'dative of possessor + copula' },
 		{ language: 'cy', strategy: 'locational', expression: 'mae X gennyf', confidence: 'high', note: 'comitative preposition gan + pronoun suffix' },
-		{ language: 'ar', strategy: 'locational', expression: 'عندي X ʿindī X', confidence: 'high', note: 'ʿinda “at, with” + 1SG suffix' },
-		{ language: 'he', strategy: 'locational', expression: 'יש לי X yesh li X', confidence: 'high', note: 'EXIST + dative; the canonical case study for non-HAVE possession', sources: [{ source: 'stassen-2009' }] },
-		{ language: 'hi', strategy: 'locational', expression: 'मेरे पास X है mere pās X hai', confidence: 'high', note: 'literally “near me, X is”' },
+		{ language: 'ar', strategy: 'locational', expression: 'عندي X', transliteration: 'ʿindī X', confidence: 'high', note: 'ʿinda “at, with” + 1SG suffix' },
+		{ language: 'he', strategy: 'locational', expression: 'יש לי X', transliteration: 'yesh li X', confidence: 'high', note: 'EXIST + dative; the canonical case study for non-HAVE possession', sources: [{ source: 'stassen-2009' }] },
+		{ language: 'hi', strategy: 'locational', expression: 'मेरे पास X है', transliteration: 'mere pās X hai', confidence: 'high', note: 'literally “near me, X is”' },
 		{ language: 'fi', strategy: 'locational', expression: 'minulla on X', confidence: 'high', note: 'adessive case on the possessor' },
-		{ language: 'ko', strategy: 'locational', expression: '나에게 X가 있다 na-ege X-ga issda', confidence: 'high', note: 'dative possessor + existential 있다' },
+		{ language: 'ko', strategy: 'locational', expression: '나에게 X가 있다', transliteration: 'na-ege X-ga issda', confidence: 'high', note: 'dative possessor + existential 있다' },
 
 		// Genitive-existential
 		{ language: 'tr', strategy: 'genitive-existential', expression: 'benim X-im var', confidence: 'high', note: 'genitive possessor + possessive suffix on noun + var', sources: [{ source: 'stassen-2009' }] },
 		{ language: 'hu', strategy: 'genitive-existential', expression: 'van X-em', confidence: 'high', note: 'van + possessive suffix on the possessed noun' },
 
 		// Topic
-		{ language: 'ja', strategy: 'topic', expression: '私は X がある / いる', confidence: 'high', note: 'animate/inanimate split inherited from the existential', sources: [{ source: 'clark-1978' }] },
+		{ language: 'ja', strategy: 'topic', expression: '私は X がある / いる', transliteration: 'watashi wa X ga aru / iru', confidence: 'high', note: 'animate/inanimate split inherited from the existential', sources: [{ source: 'clark-1978' }] },
 
 		// Comitative
 		{ language: 'sw', strategy: 'comitative', expression: 'ni-na X', confidence: 'high', note: 'ni- (1SG) + -na “with”' }

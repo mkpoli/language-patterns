@@ -31,12 +31,12 @@ export const wordOrder: Pattern = {
 		'Two of the six logically possible orders dominate the world’s languages — SOV (Japanese, Hindi, Turkish) and SVO (English, Mandarin, Romance). The rest are rare, or set by information structure rather than a fixed template.',
 	tags: ['grammatical-relations', 'word-order'],
 	strategies: [
-		{ id: 'sov', label: 'SOV', schematic: '[S] [O] [V]', description: 'Subject – Object – Verb. The most common order globally (≈45% of the WALS sample).', color: 'sky' },
-		{ id: 'svo', label: 'SVO', schematic: '[S] [V] [O]', description: 'Subject – Verb – Object. The second-largest group (≈42%).', color: 'amber' },
-		{ id: 'vso', label: 'VSO', schematic: '[V] [S] [O]', description: 'Verb – Subject – Object. Robust in Celtic, Polynesian, Classical Semitic, and parts of Mesoamerica.', color: 'emerald' },
-		{ id: 'vos', label: 'VOS', schematic: '[V] [O] [S]', description: 'Verb – Object – Subject. Rare; textbook case is Malagasy.', color: 'violet' },
-		{ id: 'ovs', label: 'OVS', schematic: '[O] [V] [S]', description: 'Object – Verb – Subject. Extremely rare; Hixkaryana is the canonical attestation.', color: 'rose' },
-		{ id: 'free', label: 'Free / no dominant', schematic: '[…] driven by information structure', description: 'Word order is determined pragmatically — by topic, focus, or contrast — rather than by a fixed syntactic template. Includes Latin, Sanskrit, Hungarian, and many Australian languages.', color: 'slate' }
+		{ id: 'sov', label: 'SOV', schematic: '[S] [O] [V]', description: 'Subject – Object – Verb. The largest group in WALS chapter 81: 564 of the 1,376 languages surveyed, about 41%.', color: 'sky' },
+		{ id: 'svo', label: 'SVO', schematic: '[S] [V] [O]', description: 'Subject – Verb – Object. The second-largest group, 488 languages, about 35%.', color: 'amber' },
+		{ id: 'vso', label: 'VSO', schematic: '[V] [S] [O]', description: 'Verb – Subject – Object. 95 languages, about 7%. Robust in Celtic, Polynesian, Classical Semitic, and parts of Mesoamerica.', color: 'emerald' },
+		{ id: 'vos', label: 'VOS', schematic: '[V] [O] [S]', description: 'Verb – Object – Subject. 25 languages; textbook case is Malagasy.', color: 'violet' },
+		{ id: 'ovs', label: 'OVS', schematic: '[O] [V] [S]', description: 'Object – Verb – Subject. 11 languages; Hixkaryana is the canonical attestation.', color: 'rose' },
+		{ id: 'free', label: 'Free / no dominant', schematic: '[…] driven by information structure', description: 'Word order is determined pragmatically — by topic, focus, or contrast — rather than by a fixed syntactic template. 189 languages, about 14%. Includes Latin, Sanskrit, Hungarian, and many Australian languages.', color: 'slate' }
 	],
 	attestations: [
 		// ─── SOV ─────────────────────────────────────────────────────────────

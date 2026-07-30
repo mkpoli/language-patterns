@@ -1,0 +1,23 @@
+/* Shared TOC styles, imported by Toc.svelte. */
+
+/* Keep anchored headings clear of the viewport top when jumped to. */
+main article h2,
+main article h3 {
+	scroll-margin-top: 4rem;
+}
+
+/* From 80rem the rail is shown, but the page margin is still too narrow to
+   hold it, so the article yields the width. */
+@media (min-width: 80rem) {
+	main article.toc-has-rail {
+		margin-right: 13.5rem;
+	}
+}
+
+/* Past 101rem the margin fits the rail on its own and the article keeps its
+   full width, which the map and the timeline want. */
+@media (min-width: 101rem) {
+	main article.toc-has-rail {
+		margin-right: 0;
+	}
+}

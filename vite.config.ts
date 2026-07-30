@@ -7,6 +7,13 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
-		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' })
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			// The /zh and /ja prefixes decide the locale, so a page can be linked,
+			// shared and indexed in one language. Cookie and Accept-Language only
+			// come into play on the unprefixed English paths.
+			strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale']
+		})
 	]
 });

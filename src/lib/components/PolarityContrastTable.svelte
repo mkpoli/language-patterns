@@ -3,6 +3,7 @@
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 	import CitationMark from './CitationMark.svelte';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		contrasts: PolarityContrast[];
@@ -77,8 +78,20 @@
 										<div class="font-medium">{lang.name}</div>
 										<div class="text-xs text-[color:var(--color-ink-soft)]">{lang.family}</div>
 									</td>
-									<td class="px-4 py-3 align-top font-mono">{c.affirmative}</td>
-									<td class="px-4 py-3 align-top font-mono" style:color={tokens.textOn}>{c.negative}</td>
+									<td class="px-4 py-3 align-top">
+										<Expression
+											text={c.affirmative}
+											transliteration={c.affirmativeTransliteration}
+											stacked
+										/>
+									</td>
+									<td class="px-4 py-3 align-top" style:color={tokens.textOn}>
+										<Expression
+											text={c.negative}
+											transliteration={c.negativeTransliteration}
+											stacked
+										/>
+									</td>
 									<td class="px-4 py-3 align-top text-[color:var(--color-ink-soft)]">
 										{#if c.note}<div>{c.note}</div>{/if}
 										{#if c.sources?.length}
