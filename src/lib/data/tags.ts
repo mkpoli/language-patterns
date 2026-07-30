@@ -250,6 +250,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'benefaction',
+		label: {
+			en: 'Benefaction',
+			ja: '受益',
+			zh: '受益'
+		},
+		facet: 'domain',
+		definition: {
+			en: 'An action done for someone’s sake, or at their expense.',
+			ja: '誰かのために行われる行為、また誰かが不利益をこうむる行為。',
+			zh: '为某人而做的行为，或使某人蒙受损失的行为。'
+		}
+	},
+	{
 		id: 'spatial-relation',
 		label: {
 			en: 'Spatial relation',
@@ -417,6 +431,20 @@ const tagList = [
 			en: 'Two or more verbs in one clause describing a single event: converbs, serial verbs, auxiliary chains.',
 			ja: '一つの節に複数の動詞が並び、一つの出来事を述べる構文。副動詞、連続動詞、補助動詞の連鎖。',
 			zh: '一个小句中两个及以上动词描述同一事件：副动词、连动、助动词链。'
+		}
+	},
+	{
+		id: 'valency-change',
+		label: {
+			en: 'Valency change',
+			ja: '項の増減',
+			zh: '配价变化'
+		},
+		facet: 'structure',
+		definition: {
+			en: 'Marking on the verb that adds a participant, or shifts which one the clause is built around.',
+			ja: '参与者を増やす、あるいは節がどの参与者を中心に組み立てられるかを変える動詞標示。',
+			zh: '动词上的标记，增加参与者或改变小句以哪个参与者为中心。'
 		}
 	},
 	{

@@ -9,6 +9,7 @@ import { indefinites } from './patterns/indefinites';
 import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
 import { switchingOn } from './patterns/switching-on';
+import { benefaction } from './patterns/benefaction';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -27,7 +28,8 @@ export const patterns: Pattern[] = [
 	indefinites,
 	wordOrder,
 	adpositionOrder,
-	switchingOn
+	switchingOn,
+	benefaction
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,
