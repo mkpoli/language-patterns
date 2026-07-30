@@ -14,6 +14,7 @@ export function entries() {
 	return [
 		{ slug: 'existence' },
 		{ slug: 'possession' },
+		{ slug: 'alienability' },
 		{ slug: 'non-possession' },
 		{ slug: 'indefinites' },
 		{ slug: 'word-order' },

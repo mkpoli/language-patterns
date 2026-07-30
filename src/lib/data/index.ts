@@ -3,6 +3,7 @@ import { type Tag, type TagId, facets, sortTags } from './tags';
 import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
+import { alienability } from './patterns/alienability';
 import { indefinites } from './patterns/indefinites';
 import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
@@ -19,6 +20,7 @@ export type { Tag, TagId, TagFacet, TagFacetId, Localized } from './tags';
 export const patterns: Pattern[] = [
 	existence,
 	possession,
+	alienability,
 	nonPossession,
 	indefinites,
 	wordOrder,

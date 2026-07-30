@@ -124,6 +124,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'alienability',
+		label: {
+			en: 'Alienability',
+			ja: '譲渡可能性',
+			zh: '可让渡性'
+		},
+		facet: 'domain',
+		definition: {
+			en: 'Whether a possession can change hands — body parts and kin against acquired belongings.',
+			ja: '所有物が手放せるものかどうか。身体部位や親族と、後から得た持ち物との対立。',
+			zh: '所有物能否易主——身体部位、亲属与后天获得的物品相对。'
+		}
+	},
+	{
 		id: 'negation',
 		label: {
 			en: 'Negation',
