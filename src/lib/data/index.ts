@@ -70,6 +70,14 @@ export const topics: TopicEntry[] = [
 	...pathways.map(toTopic('pathway'))
 ];
 
+for (const topic of topics) {
+	const seen = new Set<TagId>();
+	for (const id of topic.tags) {
+		if (seen.has(id)) throw new Error(`${topic.slug} lists the tag ${id} twice`);
+		seen.add(id);
+	}
+}
+
 export function topicsWithTag(id: TagId): TopicEntry[] {
 	return topics.filter((t) => t.tags.includes(id));
 }
@@ -79,7 +87,7 @@ export const tagIndex: { facet: (typeof facets)[number]; entries: { tag: Tag; co
 	(() => {
 		const counts = new Map<TagId, number>();
 		for (const topic of topics) {
-			for (const id of new Set(topic.tags)) counts.set(id, (counts.get(id) ?? 0) + 1);
+			for (const id of topic.tags) counts.set(id, (counts.get(id) ?? 0) + 1);
 		}
 		const used = sortTags([...counts.keys()]);
 		return facets
