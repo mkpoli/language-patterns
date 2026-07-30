@@ -7,10 +7,16 @@
 
 	import { m } from '$lib/paraglide/messages.js';
 
+	/** One form in the language's own script, with its romanization if it has one. */
+	export interface MarkerForm {
+		text: string;
+		transliteration?: string;
+	}
+
 	export interface MapMarker {
 		code: string;
-		expression?: string;
-		transliteration?: string;
+		/** Every form this marker stands for. A marker may cover more than one. */
+		forms?: MarkerForm[];
 		note?: string;
 		color?: Strategy['color'];
 		size?: number;
@@ -47,8 +53,7 @@
 		lng: number;
 		color?: Strategy['color'];
 		strategy?: Strategy;
-		expression: string;
-		transliteration?: string;
+		forms: MarkerForm[];
 		note?: string;
 		size?: number;
 		links?: { href: string; label: string }[];
@@ -100,8 +105,7 @@
 					lng: lang.lng,
 					color: strat?.color,
 					strategy: strat,
-					expression: c.form,
-					transliteration: c.transliteration,
+					forms: [{ text: c.form, transliteration: c.transliteration }],
 					note: c.note
 				});
 			}
@@ -123,8 +127,7 @@
 					lat: lang.lat + dy,
 					lng: lang.lng + dx,
 					color: mk.color,
-					expression: mk.expression ?? '',
-					transliteration: mk.transliteration,
+					forms: mk.forms ?? [],
 					note: mk.note,
 					size: mk.size,
 					links: mk.links
@@ -150,8 +153,7 @@
 				lng: lang.lng + dx,
 				color: strat?.color,
 				strategy: strat,
-				expression: att.expression,
-				transliteration: att.transliteration,
+				forms: [{ text: att.expression, transliteration: att.transliteration }],
 				note: att.note
 			});
 		}
@@ -215,8 +217,7 @@
 				<div style="font-family: var(--font-sans); min-width: 180px; color: var(--color-ink);">
 					<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
 					<div style="font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(lang.family)}</div>
-					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
-					${p.transliteration ? `<div style="margin-top: 2px; font-size: 12px; font-style: italic; color: var(--color-ink-soft);">${escapeHtml(p.transliteration)}</div>` : ''}
+					${p.forms.map((f) => `<div style="margin-top: 6px;"><div style="font-family: var(--font-mono); font-size: 13px;">${escapeHtml(f.text)}</div>${f.transliteration ? `<div style="margin-top: 2px; font-size: 12px; font-style: italic; color: var(--color-ink-soft);">${escapeHtml(f.transliteration)}</div>` : ''}</div>`).join('')}
 					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
 					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(p.note)}</div>` : ''}
 					${p.links?.length ? `<div style="margin-top: 6px; display: flex; flex-direction: column; gap: 2px;">${p.links.map((l) => `<a href="${escapeHtml(l.href)}" style="font-size: 12px; color: var(--color-ink); text-decoration: underline;">${escapeHtml(l.label)}</a>`).join('')}</div>` : ''}

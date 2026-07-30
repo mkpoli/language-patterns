@@ -3,7 +3,10 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import Seo from '$lib/components/Seo.svelte';
-	import PatternMap, { type MapMarker } from '$lib/components/PatternMap.svelte';
+	import PatternMap, {
+		type MapMarker,
+		type MarkerForm
+	} from '$lib/components/PatternMap.svelte';
 	import { patterns, pathways, getLanguage } from '$lib/data';
 	import { strategyColor, colorForIndex } from '$lib/strategyColor';
 	import type { Strategy } from '$lib/types';
@@ -140,21 +143,20 @@
 			const noteById = new Map(chips.map((c) => [c.id, c.label]));
 			return visible.map((r) => ({
 				code: r.code,
-				expression: r.expression,
-				transliteration: r.transliteration,
+				forms: r.expression ? [{ text: r.expression, transliteration: r.transliteration }] : [],
 				color: r.color,
 				note: noteById.get(r.group)
 			}));
 		}
 		if (topicEntry?.kind === 'pathway') {
-			const byCode = new Map<string, { expressions: string[]; groups: Set<string> }>();
+			const byCode = new Map<string, { forms: MarkerForm[]; groups: Set<string> }>();
 			for (const r of visible) {
 				let b = byCode.get(r.code);
 				if (!b) {
-					b = { expressions: [], groups: new Set() };
+					b = { forms: [], groups: new Set() };
 					byCode.set(r.code, b);
 				}
-				if (r.expression) b.expressions.push(r.expression);
+				if (r.expression) b.forms.push({ text: r.expression, transliteration: r.transliteration });
 				if (r.group) b.groups.add(r.group);
 			}
 			const labelById = new Map(chips.map((c) => [c.id, c.label]));
@@ -162,7 +164,7 @@
 				const groups = [...b.groups];
 				return {
 					code,
-					expression: b.expressions.join('  ·  '),
+					forms: b.forms,
 					color:
 						groups.length === 1
 							? (chips.find((c) => c.id === groups[0])?.color ?? 'slate')

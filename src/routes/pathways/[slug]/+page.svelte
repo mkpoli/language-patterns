@@ -9,7 +9,7 @@
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 	import StageFlow from '$lib/components/StageFlow.svelte';
-	import PatternMap from '$lib/components/PatternMap.svelte';
+	import PatternMap, { type MarkerForm } from '$lib/components/PatternMap.svelte';
 	import { getLanguage } from '$lib/data/languages';
 	import { sortTags } from '$lib/data';
 	import { m } from '$lib/paraglide/messages.js';
@@ -54,7 +54,7 @@
 	const mapMarkers = $derived.by(() => {
 		interface Bucket {
 			code: string;
-			expressions: string[];
+			forms: MarkerForm[];
 			groups: Set<string>;
 		}
 		const byCode = new Map<string, Bucket>();
@@ -63,10 +63,10 @@
 			if (lang.lat == null || lang.lng == null) continue;
 			let bucket = byCode.get(e.language);
 			if (!bucket) {
-				bucket = { code: e.language, expressions: [], groups: new Set() };
+				bucket = { code: e.language, forms: [], groups: new Set() };
 				byCode.set(e.language, bucket);
 			}
-			bucket.expressions.push(e.original);
+			bucket.forms.push({ text: e.original, transliteration: e.transliteration });
 			if (e.set) bucket.groups.add(e.set);
 		}
 		return [...byCode.values()].map((b) => {
@@ -76,7 +76,7 @@
 			const note = setIds.length
 				? setIds.map((id) => setLabelById.get(id) ?? id).join(' · ')
 				: undefined;
-			return { code: b.code, expression: b.expressions.join('  ·  '), note, color };
+			return { code: b.code, forms: b.forms, note, color };
 		});
 	});
 
