@@ -6,7 +6,7 @@ export const benefaction: Pattern = {
 	shortTitle: 'she cooked me a meal',
 	question: 'How does a language say an action was done for someone?',
 	summary:
-		'English hangs a beneficiary on the end of the clause with “for”, or slips it in front of the object: cook a meal for her, cook her a meal. Elsewhere the verb itself carries the news. Swahili lengthens the stem, Tagalog rebuilds the clause around the person who profits, and across East and Southeast Asia into West Africa a second verb meaning “give” follows the first. Japanese splits that second verb three ways, so one act of cooking is worded differently depending on who ends up better off — and uses the passive when the answer is nobody.',
+		'English hangs a beneficiary on the end of the clause with “for”, or slips it in front of the object: cook a meal for her, cook her a meal. Elsewhere the verb itself carries the news. Swahili adds a suffix to the verb, Tagalog rebuilds the clause around the person who profits, and across East and Southeast Asia, as in parts of West Africa, a second verb meaning “give” follows the first. Japanese splits that second verb several ways, so one act of cooking is worded differently depending on who ends up better off — and uses the passive when the answer is nobody.',
 	tags: ['benefaction', 'grammatical-relations', 'valency-change', 'multiverb-construction', 'grammaticalization'],
 	strategies: [
 		{
@@ -14,7 +14,7 @@ export const benefaction: Pattern = {
 			label: 'A second verb “give”',
 			schematic: '[V] + GIVE → done for someone',
 			description:
-				'The verb that names the action is joined by a verb that elsewhere means handing something over. Japanese 〜てくれる and 〜てあげる, Korean 〜어 주다, Mandarin 給 gěi, Thai ให้ hâi, Vietnamese cho and Ewe ná all work this way. The goods have dropped out: what is given is the action.',
+				'The verb that names the action is joined by a verb that elsewhere means handing something over. Japanese 〜てくれる and 〜てあげる, Korean 〜어 주다, Mandarin 給 gěi, Thai ให้ hâi, Vietnamese cho and Ewe ná all work this way. The goods have dropped out: what is given is the action. Several of these sit on a line running from full verb to preposition, and grammars differ over where along it to place them.',
 			color: 'sky'
 		},
 		{
@@ -30,7 +30,7 @@ export const benefaction: Pattern = {
 			label: 'An applicative on the verb',
 			schematic: 'V-APPL → the beneficiary becomes an object',
 			description:
-				'An affix on the verb licenses a beneficiary and treats it like a direct object, with no preposition anywhere. Swahili pika “cook” becomes pikia “cook for”, Chichewa and Zulu use reflexes of -ir-/-el-, Classical Nahuatl has -lia, and Ainu prefixes ko- to the verb. The clause gains an argument it had no room for before.',
+				'An affix on the verb licenses a beneficiary and gives it object properties, with no preposition needed. Swahili pika “cook” becomes pikia “cook for”, Chichewa and Zulu use reflexes of -ir-/-el-, Classical Nahuatl has -ia/-lia/-huia, and Ainu prefixes ko- to the verb. The clause gains an argument it had no room for before. How far the new argument behaves like an ordinary object varies from language to language, and the same affixes also serve locative and instrumental roles.',
 			color: 'emerald'
 		},
 		{
@@ -46,7 +46,7 @@ export const benefaction: Pattern = {
 			label: 'A “for” phrase',
 			schematic: 'for / 替 / ために + BENEFICIARY',
 			description:
-				'A preposition or postposition marks the beneficiary and leaves the verb untouched. English for, German für, Russian для, Turkish için, Hindi के लिए and Japanese のために sit here. Several of these languages keep the phrase for emphasis or contrast while using a shorter construction by default.',
+				'A preposition or postposition marks the beneficiary and leaves the verb untouched. English for, German für, Russian для, Turkish için, Hindi के लिए and Japanese のために sit here. In Turkish and Hindi this is the ordinary way to name a beneficiary; in Japanese it competes with the auxiliaries and carries a more detached, less personal tone.',
 			color: 'rose'
 		},
 		{
@@ -59,48 +59,48 @@ export const benefaction: Pattern = {
 		}
 	],
 	attestations: [
-		{ language: 'ja', strategy: 'give-verb', expression: '作ってくれた', transliteration: 'tsukutte kureta', confidence: 'high', note: 'くれる when the benefit comes toward the speaker, あげる when it goes away; くださる and さしあげる are the versions used where rank is at stake', sources: [{ source: 'shibatani-1994' }, { source: 'yamada-2004' }] },
+		{ language: 'ja', strategy: 'give-verb', expression: '作ってくれた', transliteration: 'tsukutte kureta', confidence: 'high', note: 'くれる when the speaker or the speaker’s side profits, あげる when someone else does — a matter of alignment and empathy rather than physical direction. The full set runs やる, あげる, さしあげる, くれる, くださる', sources: [{ source: 'shibatani-1994' }, { source: 'yamada-2004' }] },
 		{ language: 'ja', strategy: 'receive-verb', expression: '作ってもらった', transliteration: 'tsukutte moratta', confidence: 'high', note: 'もらう < 貰う, to receive; いただく in deferential use', sources: [{ source: 'shibatani-1994' }, { source: 'yamada-2004' }] },
 		{ language: 'ja', strategy: 'voice', expression: '雨に降られた', transliteration: 'ame ni furareta', confidence: 'high', note: 'the adversative passive, here on an intransitive verb — the unwelcome counterpart of the benefactive auxiliaries', sources: [{ source: 'shibatani-1994' }] },
-		{ language: 'ja', strategy: 'adposition', expression: '私のために', transliteration: 'watashi no tame ni', confidence: 'high', note: 'used where the auxiliary would be too weak or too intimate' },
+		{ language: 'ja', strategy: 'adposition', expression: '私のために', transliteration: 'watashi no tame ni', confidence: 'high', note: 'names the beneficiary without the empathy the auxiliaries carry' },
 
-		{ language: 'ko', strategy: 'give-verb', expression: '만들어 줬다', transliteration: 'mandeureo jwotta', confidence: 'high', note: '주다, to give; one form for both directions, with 드리다 when the person served outranks the server', sources: [{ source: 'shibatani-1994' }] },
+		{ language: 'ko', strategy: 'give-verb', expression: '만들어 줬다', transliteration: 'mandeureo jwotda', confidence: 'high', note: '주다, to give; one form for both directions, with 드리다 when the person served outranks the server', sources: [{ source: 'shibatani-1994' }] },
 		{ language: 'ko', strategy: 'adposition', expression: '나를 위해서', transliteration: 'nareul wihaeseo', confidence: 'high', note: 'Korean has no auxiliary matching Japanese もらう and uses a full verb, 도움을 받다, to put the beneficiary in subject position; 받다 does occur in bound forms like 사랑받다', sources: [{ source: 'shibatani-1994' }] },
 
-		{ language: 'zh', strategy: 'give-verb', expression: '給我做飯', transliteration: 'gěi wǒ zuò fàn', confidence: 'high', note: '給 stands before the verb here, and after it in 送給', sources: [{ source: 'newman-1996' }] },
-		{ language: 'zh', strategy: 'adposition', expression: '替我 / 為我', transliteration: 'tì wǒ / wèi wǒ', confidence: 'high', note: '替, to stand in for; 為, on account of' },
+		{ language: 'zh', strategy: 'give-verb', expression: '給我做飯', transliteration: 'gěi wǒ zuò fàn', confidence: 'high', note: 'preverbal 給 is read as a coverb or preposition by most accounts, with its GIVE origin still visible', sources: [{ source: 'newman-1996' }] },
+		{ language: 'zh', strategy: 'adposition', expression: '替我 / 為我', transliteration: 'tì wǒ / wèi wǒ', confidence: 'high', note: '替, in someone’s place; 為, for or on behalf of' },
 
 		{ language: 'th', strategy: 'give-verb', expression: 'ทำอาหารให้ผม', transliteration: 'tham aahǎan hâi phǒm', confidence: 'high', note: 'ให้ hâi is the ordinary verb “give”; with no object between them, ทำให้ reads as a causative instead', sources: [{ source: 'newman-1996' }] },
 
 		{ language: 'vi', strategy: 'give-verb', expression: 'nấu cho tôi', confidence: 'high', note: 'cho, to give', sources: [{ source: 'newman-1996' }] },
 		{ language: 'vi', strategy: 'receive-verb', expression: 'được giúp', confidence: 'medium', note: 'được, to get, marks the welcome case; the unwelcome one takes bị' },
 
-		{ language: 'ee', strategy: 'give-verb', expression: 'ná', confidence: 'medium', note: 'the verb “give” in a serial chain', sources: [{ source: 'heine-kuteva-2002' }] },
+		{ language: 'ee', strategy: 'give-verb', expression: 'ná', confidence: 'low', note: 'the form alone, without a clause to fix its analysis: descriptions place it between a serial verb “give” and a benefactive preposition', sources: [{ source: 'heine-kuteva-2002' }] },
 
-		{ language: 'sw', strategy: 'applicative', expression: 'nilimpikia', confidence: 'high', note: 'ni-li-m-pik-i-a, I cooked for him; pika “cook” → pikia “cook for”, and the vowel of the suffix follows the stem', sources: [{ source: 'ashton-1944' }, { source: 'peterson-2007' }] },
-		{ language: 'ny', strategy: 'applicative', expression: '-ir- / -er-', confidence: 'high', note: 'the Bantu applicative extension', sources: [{ source: 'peterson-2007' }] },
-		{ language: 'zu', strategy: 'applicative', expression: '-el-', confidence: 'high', sources: [{ source: 'peterson-2007' }] },
-		{ language: 'nah', strategy: 'applicative', expression: '-lia', confidence: 'medium', note: 'Classical Nahuatl', sources: [{ source: 'peterson-2007' }] },
-		{ language: 'ain', strategy: 'applicative', expression: 'ko-', confidence: 'medium', note: 'a prefix adding a participant the action is directed at', sources: [{ source: 'sato-2008' }] },
+		{ language: 'sw', strategy: 'applicative', expression: 'nilimpikia', confidence: 'high', note: 'ni-li-m-pik-i-a, I cooked for him; pika “cook” → pikia “cook for”. The suffix vowel is -i- after a, i or u in the stem and -e- after e or o', sources: [{ source: 'ashton-1944' }, { source: 'peterson-2007' }] },
+		{ language: 'ny', strategy: 'applicative', expression: '-ir-a / -er-a', confidence: 'high', note: 'the Bantu applicative extension, which also carries locative and instrumental readings', sources: [{ source: 'peterson-2007' }] },
+		{ language: 'zu', strategy: 'applicative', expression: '-el-a', confidence: 'high', sources: [{ source: 'peterson-2007' }] },
+		{ language: 'nah', strategy: 'applicative', expression: '-ia / -lia / -huia', confidence: 'medium', note: 'Classical Nahuatl, where the applicative has several allomorphs', sources: [{ source: 'peterson-2007' }] },
+		{ language: 'ain', strategy: 'applicative', expression: 'ko-', confidence: 'medium', note: 'a prefix adding a participant the action is directed at; it covers goal and dative roles besides benefit, and the reading depends on the verb', sources: [{ source: 'sato-2008' }] },
 
 		{ language: 'tl', strategy: 'voice', expression: 'i- (ibili)', confidence: 'medium', note: 'the beneficiary becomes the pivot and takes the ang-phrase; ipag- serves other verb classes, and on this root ipagbili means “sell” rather than “buy for”', sources: [{ source: 'schachter-otanes-1972' }] },
 
 		{ language: 'en', strategy: 'adposition', expression: 'cook a meal for her', confidence: 'high' },
 		{ language: 'en', strategy: 'case', expression: 'cook her a meal', confidence: 'high', note: 'productive with native verbs; Latinate ones resist it, hence explain the problem to me but not *explain me the problem' },
 
-		{ language: 'de', strategy: 'case', expression: 'Ich habe ihr Essen gekocht', confidence: 'high', note: 'a free dative: kochen does not require it, and the benefit is what it adds' },
+		{ language: 'de', strategy: 'case', expression: 'Ich habe ihr Essen gekocht', confidence: 'high', note: 'a free dative: kochen does not require it. Whether it reads as advantage or disadvantage depends on the verb — the same case marks both' },
 		{ language: 'de', strategy: 'adposition', expression: 'für sie', confidence: 'high' },
 
 		{ language: 'ru', strategy: 'case', expression: 'Я ей приготовил еду', transliteration: 'Ja ej prigotovil edu', confidence: 'high' },
 		{ language: 'ru', strategy: 'adposition', expression: 'для меня', transliteration: 'dlja menja', confidence: 'high' },
 
-		{ language: 'la', strategy: 'case', expression: 'mihi', confidence: 'high', note: 'the dative of advantage, dativus commodi, beside the dative of disadvantage' },
-		{ language: 'grc', strategy: 'case', expression: 'μοι', transliteration: 'moi', confidence: 'high', note: 'the dative, which also covers the recipient and the possessor' },
+		{ language: 'la', strategy: 'case', expression: 'mihi', confidence: 'medium', note: 'the case form on its own: the dative of advantage, dativus commodi, is a use of the dative rather than a marker of its own, and stands beside the dative of disadvantage' },
+		{ language: 'grc', strategy: 'case', expression: 'μοι', transliteration: 'moi', confidence: 'medium', note: 'likewise a use of the dative, which also covers the recipient, the possessor and the instrument' },
 
-		{ language: 'fr', strategy: 'case', expression: 'Je lui ai préparé un repas', confidence: 'high', note: 'the dative clitic; aider by contrast takes a plain direct object and marks nothing' },
+		{ language: 'fr', strategy: 'case', expression: 'Je lui ai préparé un repas', confidence: 'high', note: 'an indirect-object clitic rather than a case ending; French keeps the dative only in its pronouns' },
 		{ language: 'fr', strategy: 'adposition', expression: 'pour elle', confidence: 'high' },
 
-		{ language: 'es', strategy: 'case', expression: 'Le preparé la cena', confidence: 'high' },
+		{ language: 'es', strategy: 'case', expression: 'Le preparé la cena', confidence: 'high', note: 'an indirect-object clitic, as in French' },
 
 		{ language: 'tr', strategy: 'adposition', expression: 'onun için', confidence: 'high' },
 
@@ -127,9 +127,9 @@ export const benefaction: Pattern = {
 			{ language: 'ja', axis: 'adverse', form: '雨に降られた', transliteration: 'ame ni furareta', strategy: 'voice', lemma: '〜られる', note: 'the adversative passive, built on an intransitive verb' },
 
 			// ─── Korean ────────────────────────────────────────────────────────
-			{ language: 'ko', axis: 'inward', form: '만들어 줬다', transliteration: 'mandeureo jwotta', strategy: 'give-verb', lemma: '주다' },
-			{ language: 'ko', axis: 'outward', form: '만들어 줬다', transliteration: 'mandeureo jwotta', strategy: 'give-verb', lemma: '주다', note: 'the same form as the row above' },
-			{ language: 'ko', axis: 'deferential', form: '만들어 드렸다', transliteration: 'mandeureo deuryeotta', strategy: 'give-verb', lemma: '드리다', note: '드리다 when the person served outranks the server' },
+			{ language: 'ko', axis: 'inward', form: '만들어 줬다', transliteration: 'mandeureo jwotda', strategy: 'give-verb', lemma: '주다' },
+			{ language: 'ko', axis: 'outward', form: '만들어 줬다', transliteration: 'mandeureo jwotda', strategy: 'give-verb', lemma: '주다', note: 'the same form as the row above' },
+			{ language: 'ko', axis: 'deferential', form: '만들어 드렸다', transliteration: 'mandeureo deuryeotda', strategy: 'give-verb', lemma: '드리다', note: '드리다 when the person served outranks the server' },
 
 			// ─── Mandarin Chinese ──────────────────────────────────────────────
 			{ language: 'zh', axis: 'inward', form: '他給我做了飯', transliteration: 'tā gěi wǒ zuò le fàn', strategy: 'give-verb', lemma: '給' },
@@ -200,7 +200,7 @@ export const benefaction: Pattern = {
 			original: '妹に本を読んであげた。',
 			transliteration: 'imōto ni hon o yonde ageta.',
 			gloss: 'younger.sister DAT book ACC read.GER give.OUT.PST',
-			literal: 'I raised the reading of a book to my sister.',
+			literal: 'I gave my sister the reading of a book.',
 			natural: 'I read my little sister a book.',
 			set: 'direction',
 			sources: [{ source: 'yamada-2004' }]
@@ -211,7 +211,7 @@ export const benefaction: Pattern = {
 			transliteration: 'tomodachi ni tsukutte moratta.',
 			gloss: 'friend DAT make.GER receive.PST',
 			literal: 'I received the making of it from a friend.',
-			natural: 'I got a friend to make it for me.',
+			natural: 'I had a friend make it for me.',
 			set: 'direction',
 			sources: [{ source: 'yamada-2004' }]
 		},
@@ -267,7 +267,7 @@ export const benefaction: Pattern = {
 		{
 			language: 'tl',
 			original: 'Ibili mo ako ng tinapay.',
-			gloss: 'BEN.buy 2SG.GEN 1SG.NOM GEN bread',
+			gloss: 'BV-buy 2SG.GEN 1SG.ANG GEN bread',
 			literal: 'Let bread be bought by you with me as the one it is for.',
 			natural: 'Buy me some bread.',
 			set: 'onverb',
@@ -279,7 +279,7 @@ export const benefaction: Pattern = {
 			original: '雨に降られた。',
 			transliteration: 'ame ni furareta.',
 			gloss: 'rain DAT fall.PASS.PST',
-			literal: 'I was rained on by the rain.',
+			literal: 'The rain fell, and I was the one it happened to.',
 			natural: 'I got caught in the rain.',
 			set: 'adverse',
 			sources: [{ source: 'shibatani-1994' }]
@@ -287,7 +287,7 @@ export const benefaction: Pattern = {
 		{
 			language: 'de',
 			original: 'Mir ist der Zug weggefahren.',
-			gloss: '1SG.DAT is the train away.driven',
+			gloss: '1SG.DAT AUX.3SG the train away.drive.PTCP',
 			literal: 'To me the train has driven away.',
 			natural: 'The train left without me.',
 			set: 'adverse'
@@ -321,7 +321,7 @@ export const benefaction: Pattern = {
 			label: 'the unwelcome kind',
 			title: 'Worse off for it',
 			description:
-				'The same grammar that reports a favour can report a loss. Japanese uses the passive on an intransitive verb, German a dative, English the preposition on.'
+				'Three constructions doing comparable work when the event goes against someone. German reuses the very dative that marks advantage; Japanese switches from the benefactive auxiliaries to the passive, and English from “for” to “on”, so the mirror is a matter of function rather than of form.'
 		}
 	],
 	related: [
@@ -337,6 +337,9 @@ export const benefaction: Pattern = {
 		{ source: 'newman-1996' },
 		{ source: 'shibatani-1994' },
 		{ source: 'yamada-2004' },
+		{ source: 'ashton-1944' },
+		{ source: 'schachter-otanes-1972' },
+		{ source: 'sato-2008' },
 		{ source: 'heine-kuteva-2002' }
 	]
 };
