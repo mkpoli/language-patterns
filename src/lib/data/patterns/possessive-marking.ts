@@ -53,7 +53,7 @@ export const possessiveMarking: Pattern = {
 	attestations: [
 		// Possessor-marked
 		{ language: 'en', strategy: 'possessor-marked', expression: 'X’s Y', confidence: 'high', note: '’s is a phrasal clitic on the possessor phrase: the King of Spain’s daughter', sources: [{ source: 'nichols-bickel-2013-locus' }] },
-		{ language: 'ru', strategy: 'possessor-marked', expression: 'Y X-а', transliteration: 'golova čeloveka', confidence: 'high', note: 'genitive case on the possessor, which follows the head' },
+		{ language: 'ru', strategy: 'possessor-marked', expression: 'голова человека', transliteration: 'golova čeloveka', confidence: 'high', note: 'genitive case on the possessor, which follows the head' },
 		{ language: 'la', strategy: 'possessor-marked', expression: 'caput virī', confidence: 'high', note: 'genitive case; either order occurs' },
 		{ language: 'de', strategy: 'possessor-marked', expression: 'der Kopf des Mannes', confidence: 'high', note: 'genitive on article and noun; prenominal des Mannes Kopf survives in names and set phrases' },
 
