@@ -3,6 +3,7 @@
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 	import CitationMark from './CitationMark.svelte';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		pattern: Pattern;
@@ -68,7 +69,9 @@
 							</span>
 						{/if}
 					</td>
-					<td class="px-4 py-3 align-top font-mono">{att.expression}</td>
+					<td class="px-4 py-3 align-top">
+						<Expression text={att.expression} transliteration={att.transliteration} stacked />
+					</td>
 					<td class="px-4 py-3 align-top text-xs text-[color:var(--color-ink-soft)]">
 						{#if att.origin}
 							<div title={originTitle[att.origin.evidence]}>

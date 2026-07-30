@@ -2,6 +2,7 @@
 	import type { Pathway, TimelineBand } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor, colorForIndex } from '$lib/strategyColor';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		pathway: Pathway;
@@ -9,6 +10,27 @@
 		endYear?: number;
 	}
 	let { pathway, startYear = 1000, endYear = 2000 }: Props = $props();
+
+	/**
+	 * Rough advance width of an SVG label: full-width scripts take one em, the
+	 * rest a little over half. Short bands drop the romanization rather than let
+	 * it run past the band edge; the hover panel still carries it.
+	 */
+	function textWidth(s: string, size: number): number {
+		let w = 0;
+		for (const ch of s) {
+			w += /[ᄀ-ᇿ⺀-꓏ꥠ-꥿가-퟿豈-﫿︰-﹏＀-｠]/.test(
+				ch
+			)
+				? size
+				: size * 0.56;
+		}
+		return w;
+	}
+
+	function labelFits(form: string, transliteration: string, bandWidth: number): boolean {
+		return 10 + textWidth(form, 12) + 5 + textWidth(transliteration, 11) <= bandWidth - 8;
+	}
 
 	// Color map: assign one strategy-palette color to each stage.
 	const stageColor = $derived.by(() => {
@@ -287,9 +309,16 @@
 								clip-path={`inset(0 0 0 0)`}
 							>
 								<tspan>{band.form}</tspan>
+								{#if band.transliteration && labelFits(band.form, band.transliteration, bandW)}
+									<tspan dx="5" style="font-style: italic; font-size: 11px;" opacity="0.68"
+										>{band.transliteration}</tspan
+									>
+								{/if}
 							</text>
 							<title>
-								{band.form} ({band.start}–{band.end})
+								{band.form}{band.transliteration
+									? ` ${band.transliteration}`
+									: ''} ({band.start}–{band.end})
 								Stage: {pathway.stages.find((s) => s.id === band.stageId)?.label}
 								{band.note ? `\n${band.note}` : ''}
 							</title>
@@ -322,7 +351,10 @@
 		{@const h = hovered}
 		{@const stage = pathway.stages.find((s) => s.id === h.stageId)}
 		<div class="rounded-xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-3 text-sm">
-			<div class="font-medium">{getLanguage(h.language).name} · <span class="font-mono">{h.form}</span></div>
+			<div class="font-medium">
+				{getLanguage(h.language).name} ·
+				<Expression text={h.form} transliteration={h.transliteration} />
+			</div>
 			<div class="text-[color:var(--color-ink-soft)]">
 				Stage {stage?.number} — {stage?.label} ·
 				<span class="font-mono">{h.start}–{h.end}</span> ·

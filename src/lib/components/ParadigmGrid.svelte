@@ -4,6 +4,7 @@
 	import { strategyColor } from '$lib/strategyColor';
 	import { orderedAxes } from '$lib/colexification';
 	import CitationMark from './CitationMark.svelte';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		paradigm: ParadigmSection;
@@ -69,7 +70,13 @@
 							{@const tokens = strategy ? strategyColor(strategy.color) : undefined}
 							<td class="px-4 py-3" style:background={tokens ? tokens.soft : 'transparent'}>
 								{#if cell}
-									<div class="font-mono text-[13px]" style:color={tokens?.textOn}>{cell.form}</div>
+									<div class="text-[13px]" style:color={tokens?.textOn}>
+										<Expression
+											text={cell.form}
+											transliteration={cell.transliteration}
+											stacked
+										/>
+									</div>
 									{#if strategy}
 										<div class="mt-1 text-[10px] font-medium uppercase tracking-wide" style:color={tokens?.textOn} style:opacity={0.7}>
 											{strategy.label}

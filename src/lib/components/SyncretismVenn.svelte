@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Attestation, LocationalFunction } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		attestations?: Attestation[];
@@ -123,7 +124,11 @@
 							title={att.expression}
 						>
 							<span class="font-medium">{getLanguage(att.language).name}</span>
-							<span class="font-mono text-[color:var(--color-ink-soft)]">{att.expression}</span>
+							<Expression
+								text={att.expression}
+								transliteration={att.transliteration}
+								class="text-[color:var(--color-ink-soft)]"
+							/>
 						</span>
 					{/each}
 				</div>
