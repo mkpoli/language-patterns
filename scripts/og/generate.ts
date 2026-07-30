@@ -61,7 +61,7 @@ function exampleLanguages(examples: Example[] = []): string[] {
 /** The eyebrow names the area of meaning the entry sits in. */
 function domainOf(ids: TagId[]): string | undefined {
 	const carried = ids.map(getTag);
-	return (carried.find((t) => t.facet === 'domain') ?? carried[0])?.label;
+	return (carried.find((t) => t.facet === 'domain') ?? carried[0])?.label.en;
 }
 
 function patternSpec(pattern: Pattern): CardSpec {
@@ -254,9 +254,9 @@ function tagSpec(tag: Tag, facet: TagFacet): CardSpec {
 	const view = topicView(tagged);
 	return {
 		kind: 'Tag',
-		category: facet.label,
-		title: tag.label,
-		lede: tag.definition,
+		category: facet.label.en,
+		title: tag.label.en,
+		lede: tag.definition.en,
 		chips: view.chips,
 		dots: view.dots,
 		stat: `${plural(view.languages, 'language')} · ${plural(tagged.length, 'topic')}`,
@@ -328,7 +328,7 @@ function targets(): Target[] {
 				category: 'Facets',
 				title: messages.tags_title,
 				lede: messages.tags_subtitle,
-				chips: facets.map((f) => ({ label: f.label, color: f.color })),
+				chips: facets.map((f) => ({ label: f.label.en, color: f.color })),
 				dots: coverageDots(),
 				stat: `${plural(usedTagIds.length, 'tag')} · ${plural(facets.length, 'facet')}`,
 				accent: 'violet'
