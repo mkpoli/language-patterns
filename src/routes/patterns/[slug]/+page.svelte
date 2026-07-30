@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import StrategyCard from '$lib/components/StrategyCard.svelte';
 	import ComparisonTable from '$lib/components/ComparisonTable.svelte';
 	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
@@ -286,7 +287,7 @@
 				{#each pattern.related as rel (rel.slug)}
 					<li>
 						<a
-							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
+							href={localizeHref(`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`)}
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">

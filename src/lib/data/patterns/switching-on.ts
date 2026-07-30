@@ -134,7 +134,37 @@ export const switchingOn: Pattern = {
 
 		{ language: 'sw', strategy: 'fire', expression: 'kuwasha taa', confidence: 'high', note: 'washa, to set on fire; zima, to extinguish, turns it off', sources: [{ source: 'wiktionary-washa' }] },
 
-		{ language: 'cy', strategy: 'fire', expression: "cynnau'r golau", confidence: 'high', sources: [{ source: 'wiktionary-cynnau' }] }
+		{ language: 'cy', strategy: 'fire', expression: "cynnau'r golau", confidence: 'high', sources: [{ source: 'wiktionary-cynnau' }] },
+
+		// Verbs for switching a device on generally, from the Wiktionary translation
+		// table; the basic sense of each verb comes from its own entry. These carry no
+		// appliance of their own, so they stay out of the grid and off the map.
+		{ language: 'ca', strategy: 'fire', expression: 'encendre', confidence: 'high', note: 'sets fire to something', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-encendre' }] },
+		{ language: 'gl', strategy: 'fire', expression: 'acender', confidence: 'high', note: 'lights a fire or a match', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-acender' }] },
+		{ language: 'oc', strategy: 'fire', expression: 'alucar', confidence: 'high', note: 'lights something', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-alucar' }] },
+		{ language: 'da', strategy: 'fire', expression: 'tænde', confidence: 'high', note: 'kindles, ignites, sets fire to', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-taende' }] },
+		{ language: 'is', strategy: 'fire', expression: 'kveikja á', confidence: 'high', note: 'kindles, and starts a fire', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-kveikja' }] },
+		{ language: 'yi', strategy: 'fire', expression: 'אָנצינדן ontsindn', confidence: 'high', note: 'lights, sparks, kindles', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-ontsindn' }] },
+		{ language: 'ro', strategy: 'fire', expression: 'aprinde', confidence: 'high', note: 'lights a fire, a candle, a lamp', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-aprinde' }] },
+		{ language: 'mlt', strategy: 'fire', expression: 'xegħel', confidence: 'high', note: 'lights a candle', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-xeghel' }] },
+		{ language: 'af', strategy: 'joining', expression: 'aanskakel', confidence: 'high', note: 'skakel, to switch', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-aanskakel' }] },
+		{ language: 'hy', strategy: 'joining', expression: 'միացնել miats‘nel', confidence: 'high', note: 'joins, unites, connects', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-miatsnel' }] },
+		{ language: 'lt', strategy: 'joining', expression: 'įjungti', confidence: 'high', note: 'į- plus jungti, to connect or yoke', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-jungti' }] },
+		{ language: 'lv', strategy: 'joining', expression: 'ieslēgt', confidence: 'high', note: 'ie- plus slēgt, to close', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-slegt' }] },
+		{ language: 'cs', strategy: 'joining', expression: 'zapnout', confidence: 'high', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-zapnout' }] },
+		{ language: 'sk', strategy: 'joining', expression: 'zapnúť', confidence: 'high', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-zapnut' }] },
+		{ language: 'sl', strategy: 'joining', expression: 'vklopiti', confidence: 'high', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-vklopiti' }] },
+		{ language: 'hu', strategy: 'joining', expression: 'bekapcsol', confidence: 'high', note: 'kapcsol, to switch, connect or join', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-kapcsol' }] },
+		{ language: 'bg', strategy: 'joining', expression: 'включвам vključvam', confidence: 'high', note: 'the Slavic в- plus ключ-, as in Russian включить', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-vkljucvam' }] },
+		{ language: 'be', strategy: 'joining', expression: 'уключыць uključyć', confidence: 'high', note: 'the same в-ключ- formation', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-ukljucyc' }] },
+		{ language: 'mk', strategy: 'joining', expression: 'вклучува vklučuva', confidence: 'high', note: 'the same в-ключ- formation', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-vklucuva' }] },
+		{ language: 'uk', strategy: 'joining', expression: 'вмикати vmykaty', confidence: 'high', note: 'в- plus микати; включати stands beside it', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-vmykaty' }] },
+		{ language: 'my', strategy: 'opening', expression: 'ဖွင့် hpwin', confidence: 'high', note: 'opens; the dictionary names the tap for this sense', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-hpwin' }] },
+		{ language: 'km', strategy: 'opening', expression: 'បើក baək', confidence: 'high', note: 'opens, uncovers, reveals', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-baek' }] },
+		{ language: 'lo', strategy: 'opening', expression: 'ເປີດ pòet', confidence: 'high', note: 'opens', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-poet-lo' }] },
+		{ language: 'tl', strategy: 'running', expression: 'paandarin', confidence: 'high', note: 'causes it to work or move', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-paandarin' }] },
+		{ language: 'ar', strategy: 'running', expression: 'شغّل šaġġala', confidence: 'high', note: 'from شغل, to occupy or keep busy', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-shaghala' }] },
+		{ language: 'sv', strategy: 'placing', expression: 'sätta på', confidence: 'high', note: 'sätta, to put or place', sources: [{ source: 'wiktionary-turn-on' }, { source: 'wiktionary-satta' }] }
 	],
 	paradigm: {
 		title: 'Which verb for which appliance',

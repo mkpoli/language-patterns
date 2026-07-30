@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import Seo from '$lib/components/Seo.svelte';
 	import { tagIndex } from '$lib/data';
 	import { strategyColor } from '$lib/strategyColor';
@@ -30,7 +31,7 @@
 				{#each group.entries as entry (entry.tag.id)}
 					<li>
 						<a
-							href={`/tags/${entry.tag.id}`}
+							href={localizeHref(`/tags/${entry.tag.id}`)}
 							class="flex h-full flex-col gap-1 rounded-xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] p-4 transition hover:-translate-y-0.5 hover:border-[color:var(--color-accent)] hover:shadow-sm"
 						>
 							<span class="flex items-baseline justify-between gap-2">

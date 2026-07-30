@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import StageCard from '$lib/components/StageCard.svelte';
 	import CycleDiagram from '$lib/components/CycleDiagram.svelte';
 	import HistoricalTimeline from '$lib/components/HistoricalTimeline.svelte';
@@ -319,7 +320,7 @@
 				{#each pathway.related as rel (rel.slug)}
 					<li>
 						<a
-							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
+							href={localizeHref(`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`)}
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
