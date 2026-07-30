@@ -60,7 +60,7 @@ export const possession: Pattern = {
 		{ language: 'zh', strategy: 'have', expression: '我有 X', transliteration: 'wǒ yǒu X', confidence: 'high', note: 'same 有 yǒu as the existential', sources: [{ source: 'heine-1997' }] },
 		{ language: 'vi', strategy: 'have', expression: 'tôi có X', confidence: 'high' },
 		{ language: 'eu', strategy: 'have', expression: 'X daukat', confidence: 'high', note: 'eduki / *edun: transitive HAVE-verbs; ergative-absolutive agreement on the verb' },
-		{ language: 'ain', strategy: 'have', expression: 'ku=kor X', confidence: 'high', note: 'kor “have, own”; 1SG agent prefix ku=', sources: [{ source: 'tamura-2000' }] },
+		{ language: 'ain', strategy: 'have', expression: 'X ku=kor', confidence: 'high', note: 'kor “have, own”; 1SG agent prefix ku=; the verb is clause-final, and prenominal ku=kor X reads as attributive “my X”', sources: [{ source: 'tamura-2000' }] },
 
 		// Locational
 		{ language: 'ru', strategy: 'locational', expression: 'у меня есть X', transliteration: 'u menja jest’ X', confidence: 'high', note: 'at me.GEN EXIST X', sources: [{ source: 'stassen-2009' }, { source: 'freeze-1992' }] },
@@ -142,10 +142,10 @@ export const possession: Pattern = {
 		},
 		{
 			language: 'ain',
-			original: 'Ku=kor wakka.',
-			transliteration: 'クコㇿ ワッカ',
-			gloss: '1SG.A=have water',
-			literal: 'I-have water.',
+			original: 'Wakka ku=kor.',
+			transliteration: 'ワッカ クコㇿ',
+			gloss: 'water 1SG.A=have',
+			literal: 'Water I-have.',
 			natural: 'I have water.',
 			set: 'inanimate',
 			sources: [{ source: 'tamura-2000' }]

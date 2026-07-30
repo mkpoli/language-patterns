@@ -10,6 +10,7 @@
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import Corrections from '$lib/components/Corrections.svelte';
 	import TagList from '$lib/components/TagList.svelte';
 	import Toc from '$lib/components/toc/Toc.svelte';
 	import { m } from '$lib/paraglide/messages.js';
@@ -301,4 +302,6 @@
 			</ul>
 		</section>
 	{/if}
+
+	<Corrections kind="pattern" slug={pattern.slug} title={pattern.title} />
 </article>

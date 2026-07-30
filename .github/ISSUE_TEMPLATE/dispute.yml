@@ -1,0 +1,60 @@
+name: Dispute a claim
+description: A form, gloss, translation, date, or classification on the site is wrong.
+title: '[dispute] '
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Everything on the site is open to challenge, citation attached or not. Naming the language and the problem is enough to file; the rest of the fields help but none of them are required.
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The pattern or pathway page. Already filled in if you came from one.
+      placeholder: Existence (patterns/existence)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page address
+      placeholder: https://languagepatterns.org/patterns/existence
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Which language the disputed claim is about, and which variety if it matters.
+      placeholder: Turkish (Istanbul standard)
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where on the page
+      options:
+        - Comparison table
+        - Example sentence
+        - Strategy description
+        - Paradigm grid
+        - Map
+        - Timeline
+        - Polarity section
+        - Summary or question
+        - References
+        - Somewhere else
+  - type: textarea
+    id: says
+    attributes:
+      label: What the page says
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say
+      description: If the claim is defensible but stated too strongly, say where the limit is.
+  - type: textarea
+    id: basis
+    attributes:
+      label: What this rests on
+      description: |
+        A reference, a corpus hit, a link, a dictionary, a thread — anything a reader can go and check. Your own judgement as a speaker also counts: it gets recorded as speaker judgement with the variety and date, rather than dressed up as something else.

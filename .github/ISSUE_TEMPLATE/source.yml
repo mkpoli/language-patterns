@@ -1,0 +1,45 @@
+name: Citation problem
+description: A claim has no source, cites the wrong one, or reads a source it does not support.
+title: '[source] '
+labels: [sources]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A claim that survives because nobody checked the reference is the failure this form exists to catch.
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      placeholder: Jespersen's Cycle (pathways/jespersens-cycle)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page address
+      placeholder: https://languagepatterns.org/pathways/jespersens-cycle
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong with it
+      options:
+        - The claim carries no source at all
+        - The source does not say this
+        - The source says it with more hedging than the page shows
+        - The citation details are wrong (author, year, page, edition)
+        - A better or more recent source exists
+        - The source has been superseded or retracted
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: What the source actually says
+      description: A page number and a quotation settle these fastest.

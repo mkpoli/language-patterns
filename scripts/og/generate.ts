@@ -333,6 +333,18 @@ function targets(): Target[] {
 				stat: `${plural(usedTagIds.length, 'tag')} · ${plural(facets.length, 'facet')}`,
 				accent: 'violet'
 			}
+		},
+		{
+			path: '/contribute',
+			spec: {
+				kind: 'Corrections',
+				category: 'Open data',
+				title: messages.contribute_title,
+				lede: messages.contribute_lede,
+				dots: coverageDots(),
+				stat: `${plural(topicLanguageCount(['pattern', 'pathway']), 'language')} · ${plural(topics.length, 'topic')}`,
+				accent: 'amber'
+			}
 		}
 	];
 

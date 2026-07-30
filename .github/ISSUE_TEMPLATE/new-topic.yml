@@ -1,0 +1,42 @@
+name: Propose a pattern or pathway
+description: A recurring cross-linguistic pattern, or a direction of change, that has no entry yet.
+title: '[topic] '
+labels: [topic]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Entries begin as a question that several unrelated languages answer in a handful of ways. "How do languages say *there is*" works; "the syntax of Hungarian" does not.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which kind
+      options:
+        - Pattern — languages solve one problem in a few recurring ways
+        - Pathway — one form or meaning turns into another over time
+    validations:
+      required: true
+  - type: input
+    id: question
+    attributes:
+      label: The question it asks
+      placeholder: How do languages express that something switched from one state to the other?
+    validations:
+      required: true
+  - type: textarea
+    id: strategies
+    attributes:
+      label: The recurring answers
+      description: The two to six strategies or stages you expect the entry to split into, with a language or two under each.
+    validations:
+      required: true
+  - type: textarea
+    id: literature
+    attributes:
+      label: Literature
+      description: What has been written on it. A typological survey to build the first table from is the most useful thing here.
+  - type: textarea
+    id: related
+    attributes:
+      label: How it connects
+      description: Entries already on the site that this one would sit next to.

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How corrections and contributions work
+    url: https://languagepatterns.org/contribute
+    about: What a report needs, how claims are graded, and where the data for each entry lives.
+  - name: Contributor guide
+    url: https://github.com/mkpoli/language-patterns/blob/main/CONTRIBUTING.md
+    about: The record shapes, the citation format, and the gloss conventions.
