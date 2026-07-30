@@ -11,11 +11,11 @@
 	"nav_contribute": "訂正",
 
 	"footer_text": "Language Patterns — 試作版。通言語的類型論と歴史言語学。例示用のデータ。出典は順次追加。",
-	"footer_license_html": "コンテンツは <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.ja\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> の下で利用可能です。出典は「Language Patterns (languagepatterns.org)」と表記してください。",
+	"footer_license_html": "コンテンツは<a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.ja\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>の下で利用可能です。出典は「Language Patterns (languagepatterns.org)」と表記してください。",
 
 	"home_eyebrow": "類型論・通時的データベース",
 	"home_title": "言語がどう共有し、異なり、変化するかを探る。",
-	"home_subtitle": "Language Patterns は、世界の諸言語に繰り返し現れる方略・経路・循環を記録する。互いに無関係な言語がどう「ある」を表すか、否定が何世紀をかけてどう作り直されるか、まで。",
+	"home_subtitle": "Language Patternsは、世界の諸言語に繰り返し現れる方略・経路・循環を記録する。互いに無関係な言語がどう「ある」を表すか、否定が何世紀をかけてどう作り直されるか、まで。",
 
 	"section_strategies": "方略",
 	"section_geographic_distribution": "地理的分布",
@@ -110,9 +110,9 @@
 	"contribute_more": "訂正の手続きについて",
 
 	"sister_sites_heading": "姉妹サイト",
-	"p_graveyard_title": "/p/ の墓場",
+	"p_graveyard_title": "/p/の墓場",
 	"p_graveyard_topic": "音変化",
-	"p_graveyard_description": "世界の諸言語における /p/ の消失と変遷を追う音変化経路カタログ。",
+	"p_graveyard_description": "世界の諸言語における/p/の消失と変遷を追う音変化経路カタログ。",
 	"p_graveyard_cta": "p.languagepatterns.org →",
 
 	"friendly_sites_heading": "リンク",

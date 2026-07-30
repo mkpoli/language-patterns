@@ -11,11 +11,11 @@
 	"nav_contribute": "订正",
 
 	"footer_text": "Language Patterns — 概念验证版。跨语言类型学与历时语言学。示例数据仅作展示，来源将陆续补充。",
-	"footer_license_html": "内容采用 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> 协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
+	"footer_license_html": "内容采用<a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
 
 	"home_eyebrow": "类型学与历时语言学数据库",
 	"home_title": "看世界各语言如何共享、差异、变化。",
-	"home_subtitle": "Language Patterns 记录世界各语言反复出现的策略、路径与循环——从互不相关的语言如何表达「有」，到否定词如何在数百年间不断重建。",
+	"home_subtitle": "Language Patterns记录世界各语言反复出现的策略、路径与循环——从互不相关的语言如何表达「有」，到否定词如何在数百年间不断重建。",
 
 	"section_strategies": "策略",
 	"section_geographic_distribution": "地理分布",
@@ -110,9 +110,9 @@
 	"contribute_more": "订正的流程",
 
 	"sister_sites_heading": "姊妹站点",
-	"p_graveyard_title": "/p/ 之墓",
+	"p_graveyard_title": "/p/之墓",
 	"p_graveyard_topic": "音变",
-	"p_graveyard_description": "记录辅音 /p/ 在世界各语言中消失与演化的音变路径合集。",
+	"p_graveyard_description": "记录辅音/p/在世界各语言中消失与演化的音变路径合集。",
 	"p_graveyard_cta": "p.languagepatterns.org →",
 
 	"friendly_sites_heading": "友情链接",
