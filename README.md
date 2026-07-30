@@ -41,6 +41,17 @@ The database currently spans languages from Indo-European, Sino-Tibetan, Japonic
 - It's not a dictionary. Words appear here as evidence for *constructions* and *strategies*, not as headwords.
 - It's not closed. The data lives in version control alongside the code, so contributions are pull requests against well-typed records with sources attached.
 
+## Corrections and contributions
+
+Anything on the site can be challenged, citation attached or not.
+
+- [Dispute a claim](https://github.com/mkpoli/language-patterns/issues/new?template=dispute.yml) — a form, gloss, date, or classification that is wrong.
+- [Add a language](https://github.com/mkpoli/language-patterns/issues/new?template=add-language.yml) — a language missing from a table, map, or set of examples.
+- [Citation problem](https://github.com/mkpoli/language-patterns/issues/new?template=source.yml) — a claim with no source, the wrong source, or one that does not say what the page says.
+- [Propose an entry](https://github.com/mkpoli/language-patterns/issues/new?template=new-topic.yml) — a pattern or pathway with no page yet.
+
+Every entry page carries those links, along with a link to the file it was rendered from. Each entry is one TypeScript module named after its slug, so a correction is usually a few lines and can be edited on GitHub without cloning anything. [`CONTRIBUTING.md`](./CONTRIBUTING.md) has the record shapes, the citation format, and the gloss conventions; [languagepatterns.org/contribute](https://languagepatterns.org/contribute) says the same in three languages.
+
 ## Tech
 
 SvelteKit + TypeScript + Tailwind v4, deployed to Cloudflare Workers with a custom domain. The data layer is plain TypeScript modules — readable, diffable, and trivially exportable — with the long-term option to move to a real datastore once contribution volume justifies it.
