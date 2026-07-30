@@ -94,6 +94,24 @@ export const sources: Record<string, Source> = {
 		publisher: 'Oxford University Press',
 		type: 'book'
 	},
+	'schachter-otanes-1972': {
+		id: 'schachter-otanes-1972',
+		authors: ['Schachter, Paul', 'Otanes, Fe T.'],
+		year: 1972,
+		title: 'Tagalog Reference Grammar',
+		publisher: 'University of California Press',
+		type: 'book'
+	},
+	'sabbagh-2009': {
+		id: 'sabbagh-2009',
+		authors: ['Sabbagh, Joseph'],
+		year: 2009,
+		title: 'Existential sentences in Tagalog',
+		container: 'Natural Language & Linguistic Theory',
+		pages: '27: 675–719',
+		doi: '10.1007/s11049-009-9083-3',
+		type: 'article'
+	},
 	'heine-1997': {
 		id: 'heine-1997',
 		authors: ['Heine, Bernd'],

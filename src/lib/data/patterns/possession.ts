@@ -34,6 +34,14 @@ export const possession: Pattern = {
 			color: 'emerald'
 		},
 		{
+			id: 'existential',
+			label: 'Existential possession',
+			schematic: '[EXIST X] [possessor]',
+			description:
+				'The existential predicate carries possession on its own, with no HAVE-verb in the language at all. The possessed item stays inside the existential predicate and the possessor is added as the clause’s subject — Tagalog May pera ako “I have money”, beside subjectless May pera “there is money”.',
+			color: 'slate'
+		},
+		{
 			id: 'comitative',
 			label: 'Comitative possession',
 			schematic: '[I] [with] [X]',
@@ -80,7 +88,10 @@ export const possession: Pattern = {
 		{ language: 'ja', strategy: 'topic', expression: '私は X がある / いる', transliteration: 'watashi wa X ga aru / iru', confidence: 'high', note: 'animate/inanimate split inherited from the existential', sources: [{ source: 'clark-1978' }] },
 
 		// Comitative
-		{ language: 'sw', strategy: 'comitative', expression: 'ni-na X', confidence: 'high', note: 'ni- (1SG) + -na “with”' }
+		{ language: 'sw', strategy: 'comitative', expression: 'ni-na X', confidence: 'high', note: 'ni- (1SG) + -na “with”' },
+
+		// Existential
+		{ language: 'tl', strategy: 'existential', expression: 'may X ako / mayroon akong X', confidence: 'high', note: 'may pera ako “money exists, I” — the same predicate as the subjectless existential may pera, with the possessor added as the ang-phrase. mayroon takes the linker: mayroon akong pera.', sources: [{ source: 'schachter-otanes-1972' }, { source: 'sabbagh-2009' }] }
 	],
 	examples: [
 		{
