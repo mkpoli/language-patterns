@@ -10,7 +10,7 @@ import type { Language } from '$lib/types';
 // TODO: source provenance — most coordinates here are picked by hand based
 // on commonly-cited cultural centres; a future pass should reconcile against
 // Glottolog or WALS coordinates for consistency.
-export const languages: Record<string, Language> = {
+export const languages = {
 	// ─── Indo-European › Germanic ──────────────────────────────────────────────
 	en: { code: 'en', name: 'English', family: 'Indo-European › Germanic', lat: 51.5, lng: -0.12, locationNote: 'London (historical core)' },
 	de: { code: 'de', name: 'German', endonym: 'Deutsch', family: 'Indo-European › Germanic', lat: 52.52, lng: 13.4, locationNote: 'Berlin' },
@@ -519,10 +519,16 @@ export const languages: Record<string, Language> = {
 	enm: { code: 'enm', name: 'Middle English', family: 'Indo-European › Germanic (historical)', lat: 51.5, lng: -0.12, locationNote: 'London (Middle English period)' },
 	ang: { code: 'ang', name: 'Old English', endonym: 'Englisċ', family: 'Indo-European › Germanic (historical)', lat: 51.06, lng: -1.31, locationNote: 'Winchester (West Saxon literary standard)' },
 	fro: { code: 'fro', name: 'Old French', family: 'Indo-European › Romance (historical)', lat: 48.85, lng: 2.35, locationNote: 'Île-de-France (medieval)' }
-};
+} satisfies Record<string, Language>;
 
-export function getLanguage(code: string): Language {
-	const lang = languages[code];
-	if (!lang) throw new Error(`Unknown language code: ${code}`);
-	return lang;
+/**
+ * Every key of the table above. Attestations, examples, timeline bands and
+ * paradigm cells are all typed against this, so a code that is not in the
+ * table — a typo, or a language removed without its references — is a build
+ * error rather than a marker that silently fails to render.
+ */
+export type LanguageCode = keyof typeof languages;
+
+export function getLanguage(code: LanguageCode): Language {
+	return languages[code];
 }

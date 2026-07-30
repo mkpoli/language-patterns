@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ParadigmSection, Pattern } from '$lib/types';
+	import type { ParadigmSection, Pattern, LanguageCode } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 	import { orderedAxes } from '$lib/colexification';
@@ -16,8 +16,8 @@
 	const axes = $derived(orderedAxes(paradigm));
 
 	const languages = $derived.by(() => {
-		const order: string[] = [];
-		const seen = new Set<string>();
+		const order: LanguageCode[] = [];
+		const seen = new Set<LanguageCode>();
 		for (const c of paradigm.cells) {
 			if (!seen.has(c.language)) {
 				seen.add(c.language);

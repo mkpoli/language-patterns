@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Pathway, TimelineBand } from '$lib/types';
+	import type { Pathway, TimelineBand, LanguageCode } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor, colorForIndex } from '$lib/strategyColor';
 	import Expression from './Expression.svelte';
@@ -41,7 +41,7 @@
 
 	// Group bands by language, assigning tracks so overlapping bands stack.
 	interface LangRow {
-		code: string;
+		code: LanguageCode;
 		name: string;
 		family: string;
 		tracks: TimelineBand[][];
@@ -49,7 +49,7 @@
 	}
 
 	const rows = $derived.by<LangRow[]>(() => {
-		const byLang = new Map<string, TimelineBand[]>();
+		const byLang = new Map<LanguageCode, TimelineBand[]>();
 		for (const b of pathway.bands) {
 			if (!byLang.has(b.language)) byLang.set(b.language, []);
 			byLang.get(b.language)!.push(b);
