@@ -41,6 +41,7 @@
 	"legend_several_sets": "多个例句组",
 	"legend_ungrouped": "未分组",
 	"map_item_switcher": "地图上显示的对象",
+	"map_generic_column": "不限对象",
 	"section_geographic_distribution_hint_items": "选定一个对象，每个圆点即为该语言的说法，颜色对应动词所用的策略。点击圆点可查看具体形式。",
 	"stage_documented_in": "时间轴收录",
 
