@@ -20,6 +20,7 @@ export function GET() {
 		{ loc: '/', changefreq: 'weekly', priority: '1.0' },
 		{ loc: '/patterns', changefreq: 'weekly', priority: '0.9' },
 		{ loc: '/pathways', changefreq: 'weekly', priority: '0.9' },
+		{ loc: '/contribute', changefreq: 'monthly', priority: '0.5' },
 		...patterns.map((p) => ({ loc: `/patterns/${p.slug}`, changefreq: 'monthly', priority: '0.8' })),
 		...pathways.map((p) => ({ loc: `/pathways/${p.slug}`, changefreq: 'monthly', priority: '0.8' }))
 	];

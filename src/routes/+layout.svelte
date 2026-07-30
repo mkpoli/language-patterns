@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import { SITE_URL, SITE_DESCRIPTION } from '$lib/seo';
+	import { REPO_URL } from '$lib/contribute';
 	import { m } from '$lib/paraglide/messages.js';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
@@ -43,6 +44,7 @@
 			<a href="/patterns" class="hover:underline">{m.nav_patterns()}</a>
 			<a href="/pathways" class="hover:underline">{m.nav_pathways()}</a>
 			<a href="/atlas" class="hover:underline">{m.nav_atlas()}</a>
+			<a href="/contribute" class="hover:underline">{m.nav_contribute()}</a>
 			<LanguageSwitcher />
 			<ThemeToggle />
 		</nav>
@@ -53,6 +55,15 @@
 	<footer class="flex flex-col gap-1 border-t border-[color:var(--color-rule)] py-6 text-xs text-[color:var(--color-ink-soft)]">
 		<div>{m.footer_text()}</div>
 		<div>{@html m.footer_license_html()}</div>
+		<div>
+			<a href="/contribute" class="underline hover:text-[color:var(--color-ink)]">
+				{m.contribute_title()}
+			</a>
+			·
+			<a href={REPO_URL} target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">
+				GitHub
+			</a>
+		</div>
 		<div>
 			{m.sister_sites_heading()}:
 			<a href="https://p.languagepatterns.org" target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">

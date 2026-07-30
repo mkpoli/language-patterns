@@ -5,6 +5,7 @@
 	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import Corrections from '$lib/components/Corrections.svelte';
 	import TagList from '$lib/components/TagList.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
@@ -330,4 +331,6 @@
 			</ul>
 		</section>
 	{/if}
+
+	<Corrections kind="pathway" slug={pathway.slug} title={pathway.title} />
 </article>
