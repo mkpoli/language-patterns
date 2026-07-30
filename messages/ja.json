@@ -41,6 +41,7 @@
 	"legend_several_sets": "複数セット",
 	"legend_ungrouped": "未分類",
 	"map_item_switcher": "地図に表示する対象",
+	"map_generic_column": "対象を問わず",
 	"section_geographic_distribution_hint_items": "対象を一つ選ぶと、各ドットはその言語での言い方を示し、動詞の方略によって色分けされる。ドットをクリックすると形が表示される。",
 	"stage_documented_in": "タイムライン掲載",
 
