@@ -10,6 +10,7 @@
 	export interface MapMarker {
 		code: string;
 		expression?: string;
+		transliteration?: string;
 		note?: string;
 		color?: Strategy['color'];
 		size?: number;
@@ -47,6 +48,7 @@
 		color?: Strategy['color'];
 		strategy?: Strategy;
 		expression: string;
+		transliteration?: string;
 		note?: string;
 		size?: number;
 		links?: { href: string; label: string }[];
@@ -55,10 +57,32 @@
 	// A paradigm turns the map into one column at a time: pick a thing, and every
 	// dot is that language's way of saying it. Each language contributes at most
 	// one cell per column, so nothing has to be offset.
-	const columns = $derived(
+	/**
+	 * Alongside the paradigm columns, a tab for the verb a language uses to switch
+	 * something on with no particular appliance in mind. Its data are the
+	 * attestations, so languages recorded only that way still reach the map.
+	 */
+	const GENERIC = '__generic';
+
+	const paradigmColumns = $derived(
 		paradigm
 			? orderedAxes(paradigm).filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
 			: []
+	);
+
+	// Counted as dots rather than languages, like every other tab: a language
+	// using more than one strategy gets one marker per strategy.
+	const genericDots = $derived(
+		(attestations ?? []).filter((att) => {
+			const lang = getLanguage(att.language);
+			return lang.lat != null && lang.lng != null;
+		}).length
+	);
+
+	const columns = $derived(
+		paradigmColumns.length && genericDots
+			? [...paradigmColumns, { id: GENERIC, label: m.map_generic_column() }]
+			: paradigmColumns
 	);
 
 	let selected = $state<string | null>(null);
@@ -75,6 +99,7 @@
 			if (lang.lat == null || lang.lng == null) continue;
 			counts.set(c.axis, (counts.get(c.axis) ?? 0) + 1);
 		}
+		counts.set(GENERIC, genericDots);
 		return counts;
 	});
 
@@ -85,6 +110,30 @@
 	}
 
 	const points = $derived.by(() => {
+		if (activeColumn === GENERIC) {
+			const byLangCount = new Map<string, number>();
+			const out: Point[] = [];
+			for (const att of attestations ?? []) {
+				const lang = getLanguage(att.language);
+				if (lang.lat == null || lang.lng == null) continue;
+				const seen = byLangCount.get(att.language) ?? 0;
+				byLangCount.set(att.language, seen + 1);
+				const [dx, dy] = spiral(seen);
+				const strat = strategyById.get(att.strategy);
+				out.push({
+					code: att.language,
+					lat: lang.lat + dy,
+					lng: lang.lng + dx,
+					color: strat?.color,
+					strategy: strat,
+					expression: att.expression,
+					transliteration: att.transliteration,
+					note: att.note
+				});
+			}
+			return out;
+		}
+
 		if (activeColumn != null && paradigm) {
 			const out: Point[] = [];
 			for (const c of paradigm.cells) {
@@ -99,6 +148,7 @@
 					color: strat?.color,
 					strategy: strat,
 					expression: c.form,
+					transliteration: c.transliteration,
 					note: c.note
 				});
 			}
@@ -121,6 +171,7 @@
 					lng: lang.lng + dx,
 					color: mk.color,
 					expression: mk.expression ?? '',
+					transliteration: mk.transliteration,
 					note: mk.note,
 					size: mk.size,
 					links: mk.links
@@ -147,6 +198,7 @@
 				color: strat?.color,
 				strategy: strat,
 				expression: att.expression,
+				transliteration: att.transliteration,
 				note: att.note
 			});
 		}
@@ -211,6 +263,7 @@
 					<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
 					<div style="font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(lang.family)}</div>
 					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
+					${p.transliteration ? `<div style="margin-top: 2px; font-size: 12px; font-style: italic; color: var(--color-ink-soft);">${escapeHtml(p.transliteration)}</div>` : ''}
 					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
 					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(p.note)}</div>` : ''}
 					${p.links?.length ? `<div style="margin-top: 6px; display: flex; flex-direction: column; gap: 2px;">${p.links.map((l) => `<a href="${escapeHtml(l.href)}" style="font-size: 12px; color: var(--color-ink); text-decoration: underline;">${escapeHtml(l.label)}</a>`).join('')}</div>` : ''}

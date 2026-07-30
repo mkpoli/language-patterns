@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { getFacet, groupByFacet, localized, sortTags, type Tag, type TagId } from '$lib/data';
 	import { strategyColor } from '$lib/strategyColor';
 
@@ -33,7 +34,7 @@
 				<dd class="flex flex-wrap gap-1.5">
 					{#each group.tags as tag (tag.id)}
 						<a
-							href={`/tags/${tag.id}`}
+							href={localizeHref(`/tags/${tag.id}`)}
 							title={localized(tag.definition)}
 							class="rounded-full border px-2.5 py-0.5 text-xs transition hover:brightness-95 dark:hover:brightness-125"
 							style={chipStyle(tag)}
