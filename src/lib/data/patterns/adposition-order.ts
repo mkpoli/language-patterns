@@ -219,7 +219,7 @@ export const adpositionOrder: Pattern = {
 			confidence: 'high',
 			note: 'Munda OV'
 		},
-		{ language: 'kal', strategy: 'post', expression: 'postpositions', confidence: 'high' },
+		{ language: 'kmh', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'lkt', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'hop', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'chr', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
@@ -398,11 +398,11 @@ export const adpositionOrder: Pattern = {
 			note: 'Romani has shifted to prepositions under Balkan / European contact, unlike most Indo-Aryan'
 		},
 		{ language: 'zza', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
-		{ language: 'pa2', strategy: 'post', expression: 'postpositions', confidence: 'high' },
+		{ language: 'skr', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'jje', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'lep', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'lhu', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'naq2', strategy: 'post', expression: 'postpositions', confidence: 'high' },
+		{ language: 'nxq', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'ksw', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'mad', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'bug', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
@@ -412,7 +412,7 @@ export const adpositionOrder: Pattern = {
 		{ language: 'niu', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'tkl', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'tvl', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'mri2', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
+		{ language: 'tet', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'tay', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'ami', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'pwn', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
@@ -537,7 +537,7 @@ export const adpositionOrder: Pattern = {
 		},
 		{ language: 'enm', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'fro', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'cy_old', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
+		{ language: 'owl', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Pacific NW
 		{ language: 'hur', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'squ', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
@@ -549,12 +549,12 @@ export const adpositionOrder: Pattern = {
 		{ language: 'tiw', strategy: 'none', expression: 'case marking only', confidence: 'high' },
 		{ language: 'gup', strategy: 'none', expression: 'case marking only', confidence: 'high' },
 		// More PNG
-		{ language: 'yim', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
+		{ language: 'yee', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		{ language: 'yle', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
 		// !Xóõ
 		{ language: 'nmn', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		// Saharan / Nilotic
-		{ language: 'dik', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
+		{ language: 'kdj', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'teo', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'zna', strategy: 'post', expression: 'postpositions', confidence: 'low' },
 		// Misc
