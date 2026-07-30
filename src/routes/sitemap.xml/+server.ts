@@ -1,5 +1,6 @@
 import { patterns, pathways, usedTagIds } from '$lib/data';
-import { SITE_URL } from '$lib/seo';
+import { locales } from '$lib/paraglide/runtime';
+import { alternates, canonical } from '$lib/seo';
 
 export const prerender = true;
 
@@ -26,13 +27,25 @@ export function GET() {
 		...usedTagIds.map((id) => ({ loc: `/tags/${id}`, changefreq: 'monthly', priority: '0.5' }))
 	];
 
+	// One <url> per locale, each listing the whole set as alternates, so a
+	// crawler can reach the Chinese and Japanese pages and knows they are
+	// translations of one another rather than duplicates.
 	const urls = entries
-		.map((e) =>
-			`  <url>\n    <loc>${escapeXml(SITE_URL + (e.loc === '/' ? '' : e.loc))}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`
-		)
+		.flatMap((e) => {
+			const links = alternates(e.loc)
+				.map(
+					(alt) =>
+						`    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${escapeXml(alt.href)}" />`
+				)
+				.join('\n');
+			return locales.map(
+				(locale) =>
+					`  <url>\n    <loc>${escapeXml(canonical(e.loc, locale))}</loc>\n${links}\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`
+			);
+		})
 		.join('\n');
 
-	const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+	const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
 
 	return new Response(body, {
 		headers: {

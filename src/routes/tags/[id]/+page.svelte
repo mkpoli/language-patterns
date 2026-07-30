@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { getFacet, localized, tagIndex } from '$lib/data';
@@ -29,7 +30,7 @@
 <article class="flex flex-col gap-8">
 	<header class="flex flex-col gap-3">
 		<p class="text-xs tracking-widest text-[color:var(--color-ink-soft)] uppercase">
-			<a href="/tags" class="hover:underline">{m.nav_tags()}</a>
+			<a href={localizeHref("/tags")} class="hover:underline">{m.nav_tags()}</a>
 			· {facetLabel}
 		</p>
 		<h1 class="font-serif text-4xl leading-tight">
@@ -51,7 +52,7 @@
 					question={topic.question}
 					title={topic.title}
 					summary={topic.summary}
-					href={`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`}
+					href={localizeHref(`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`)}
 					tags={topic.tags}
 					kind={topic.kind}
 				/>
@@ -65,7 +66,7 @@
 			<div class="flex flex-wrap gap-2">
 				{#each siblings as sibling (sibling.tag.id)}
 					<a
-						href={`/tags/${sibling.tag.id}`}
+						href={localizeHref(`/tags/${sibling.tag.id}`)}
 						title={localized(sibling.tag.definition)}
 						class="rounded-full border px-3 py-1 text-sm transition hover:brightness-95 dark:hover:brightness-125"
 						style={`background:${color.soft};border-color:${color.border};color:${color.textOn}`}

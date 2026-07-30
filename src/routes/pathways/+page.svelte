@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { pathways } from '$lib/data';
@@ -23,7 +24,7 @@
 			question={pathway.question}
 			title={pathway.title}
 			summary={pathway.summary}
-			href={`/pathways/${pathway.slug}`}
+			href={localizeHref(`/pathways/${pathway.slug}`)}
 			tags={pathway.tags}
 			kind="pathway"
 		/>

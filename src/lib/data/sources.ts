@@ -343,6 +343,15 @@ export const sources: Record<string, Source> = {
 		pages: '497–544',
 		type: 'chapter'
 	},
+	'masajaninga-2026-pela': {
+		id: 'masajaninga-2026-pela',
+		authors: ['@masajaninga'],
+		year: 2026,
+		title: 'Pela existential predicates tʃàʔ, pá and ŋjí, split by the class of the pivot',
+		container: 'X, 27 July 2026',
+		url: 'https://x.com/masajaninga/status/2081670630638813570',
+		type: 'url'
+	},
 	'moe-taiwan-2021-tinghua': {
 		id: 'moe-taiwan-2021-tinghua',
 		authors: ['Ministry of Education, Republic of China (Taiwan)'],
@@ -1071,6 +1080,22 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/menghidupkan',
 		type: 'url'
 	},
+	'wiktionary-mematikan': {
+		id: 'wiktionary-mematikan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: mematikan',
+		url: 'https://en.wiktionary.org/wiki/mematikan',
+		type: 'url'
+	},
+	'wiktionary-zima': {
+		id: 'wiktionary-zima',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: zima',
+		url: 'https://en.wiktionary.org/wiki/zima#Swahili',
+		type: 'url'
+	},
 	'wiktionary-vkljuchit': {
 		id: 'wiktionary-vkljuchit',
 		authors: ['Wiktionary contributors'],
@@ -1157,6 +1182,223 @@ export const sources: Record<string, Source> = {
 		year: 2026,
 		title: 'Wiktionary: cynnau',
 		url: 'https://en.wiktionary.org/wiki/cynnau',
+		type: 'url'
+	},
+	'wiktionary-encendre': {
+		id: 'wiktionary-encendre',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: encendre',
+		url: 'https://en.wiktionary.org/wiki/encendre',
+		type: 'url'
+	},
+	'wiktionary-acender': {
+		id: 'wiktionary-acender',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: acender',
+		url: 'https://en.wiktionary.org/wiki/acender',
+		type: 'url'
+	},
+	'wiktionary-alucar': {
+		id: 'wiktionary-alucar',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: alucar',
+		url: 'https://en.wiktionary.org/wiki/alucar',
+		type: 'url'
+	},
+	'wiktionary-taende': {
+		id: 'wiktionary-taende',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: tænde',
+		url: 'https://en.wiktionary.org/wiki/tænde',
+		type: 'url'
+	},
+	'wiktionary-kveikja': {
+		id: 'wiktionary-kveikja',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kveikja',
+		url: 'https://en.wiktionary.org/wiki/kveikja',
+		type: 'url'
+	},
+	'wiktionary-ontsindn': {
+		id: 'wiktionary-ontsindn',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: אָנצינדן',
+		url: 'https://en.wiktionary.org/wiki/אָנצינדן',
+		type: 'url'
+	},
+	'wiktionary-aprinde': {
+		id: 'wiktionary-aprinde',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: aprinde',
+		url: 'https://en.wiktionary.org/wiki/aprinde',
+		type: 'url'
+	},
+	'wiktionary-xeghel': {
+		id: 'wiktionary-xeghel',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: xegħel',
+		url: 'https://en.wiktionary.org/wiki/xegħel',
+		type: 'url'
+	},
+	'wiktionary-aanskakel': {
+		id: 'wiktionary-aanskakel',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: aanskakel',
+		url: 'https://en.wiktionary.org/wiki/aanskakel',
+		type: 'url'
+	},
+	'wiktionary-miatsnel': {
+		id: 'wiktionary-miatsnel',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: միացնել',
+		url: 'https://en.wiktionary.org/wiki/միացնել',
+		type: 'url'
+	},
+	'wiktionary-jungti': {
+		id: 'wiktionary-jungti',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: jungti',
+		url: 'https://en.wiktionary.org/wiki/jungti',
+		type: 'url'
+	},
+	'wiktionary-slegt': {
+		id: 'wiktionary-slegt',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: slēgt',
+		url: 'https://en.wiktionary.org/wiki/slēgt',
+		type: 'url'
+	},
+	'wiktionary-zapnout': {
+		id: 'wiktionary-zapnout',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: zapnout',
+		url: 'https://en.wiktionary.org/wiki/zapnout',
+		type: 'url'
+	},
+	'wiktionary-zapnut': {
+		id: 'wiktionary-zapnut',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: zapnúť',
+		url: 'https://en.wiktionary.org/wiki/zapnúť',
+		type: 'url'
+	},
+	'wiktionary-vklopiti': {
+		id: 'wiktionary-vklopiti',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: vklopiti',
+		url: 'https://en.wiktionary.org/wiki/vklopiti',
+		type: 'url'
+	},
+	'wiktionary-kapcsol': {
+		id: 'wiktionary-kapcsol',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kapcsol',
+		url: 'https://en.wiktionary.org/wiki/kapcsol',
+		type: 'url'
+	},
+	'wiktionary-vkljucvam': {
+		id: 'wiktionary-vkljucvam',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: включвам',
+		url: 'https://en.wiktionary.org/wiki/включвам',
+		type: 'url'
+	},
+	'wiktionary-ukljucyc': {
+		id: 'wiktionary-ukljucyc',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: уключыць',
+		url: 'https://en.wiktionary.org/wiki/уключыць',
+		type: 'url'
+	},
+	'wiktionary-vklucuva': {
+		id: 'wiktionary-vklucuva',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: вклучува',
+		url: 'https://en.wiktionary.org/wiki/вклучува',
+		type: 'url'
+	},
+	'wiktionary-vmykaty': {
+		id: 'wiktionary-vmykaty',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: вмикати',
+		url: 'https://en.wiktionary.org/wiki/вмикати',
+		type: 'url'
+	},
+	'wiktionary-hpwin': {
+		id: 'wiktionary-hpwin',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ဖွင့်',
+		url: 'https://en.wiktionary.org/wiki/ဖွင့်',
+		type: 'url'
+	},
+	'wiktionary-baek': {
+		id: 'wiktionary-baek',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: បើក',
+		url: 'https://en.wiktionary.org/wiki/បើក',
+		type: 'url'
+	},
+	'wiktionary-poet-lo': {
+		id: 'wiktionary-poet-lo',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ເປີດ',
+		url: 'https://en.wiktionary.org/wiki/ເປີດ',
+		type: 'url'
+	},
+	'wiktionary-paandarin': {
+		id: 'wiktionary-paandarin',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: paandarin',
+		url: 'https://en.wiktionary.org/wiki/paandarin',
+		type: 'url'
+	},
+	'wiktionary-shaghala': {
+		id: 'wiktionary-shaghala',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: شغل',
+		url: 'https://en.wiktionary.org/wiki/شغل',
+		type: 'url'
+	},
+	'wiktionary-satta': {
+		id: 'wiktionary-satta',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: sätta',
+		url: 'https://en.wiktionary.org/wiki/sätta',
+		type: 'url'
+	},
+	'wiktionary-turn-on': {
+		id: 'wiktionary-turn-on',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: turn on',
+		container: 'Translation table for the sense “to activate an appliance, light, mechanism, functionality”',
+		url: 'https://en.wiktionary.org/wiki/turn_on',
 		type: 'url'
 	},
 	'wiktionary-kesu': {

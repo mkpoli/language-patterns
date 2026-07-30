@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { patterns } from '$lib/data';
@@ -22,7 +23,7 @@
 			question={pattern.question}
 			title={pattern.title}
 			summary={pattern.summary}
-			href={`/patterns/${pattern.slug}`}
+			href={localizeHref(`/patterns/${pattern.slug}`)}
 			tags={pattern.tags}
 			kind="pattern"
 		/>

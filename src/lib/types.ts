@@ -99,6 +99,8 @@ export interface Attestation {
 	language: LanguageCode;
 	strategy: string;
 	expression: string;
+	/** Romanization of `expression`, for languages written in another script. */
+	transliteration?: string;
 	confidence: Confidence;
 	note?: string;
 	sources?: Citation[];
@@ -125,7 +127,9 @@ export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';
 export interface PolarityContrast {
 	language: LanguageCode;
 	affirmative: string;
+	affirmativeTransliteration?: string;
 	negative: string;
+	negativeTransliteration?: string;
 	relation: PolarityRelation;
 	note?: string;
 	sources?: Citation[];
@@ -150,6 +154,8 @@ export interface ParadigmCell {
 	language: LanguageCode;
 	axis: string;
 	form: string;
+	/** Romanization of `form`, for languages written in another script. */
+	transliteration?: string;
 	strategy?: string;
 	/**
 	 * Citation form of the verb inside `form`. Two cells of one language sharing
@@ -200,6 +206,8 @@ export type BandStatus = 'dominant' | 'emerging' | 'declining' | 'approximate';
 export interface TimelineBand {
 	language: LanguageCode;
 	form: string;
+	/** Romanization of `form`, for languages written in another script. */
+	transliteration?: string;
 	stageId: string;
 	start: number;
 	end: number;
