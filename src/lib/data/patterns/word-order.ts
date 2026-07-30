@@ -29,7 +29,7 @@ export const wordOrder: Pattern = {
 	question: 'In what order do languages arrange subject, object, and verb?',
 	summary:
 		'Two of the six logically possible orders dominate the world’s languages — SOV (Japanese, Hindi, Turkish) and SVO (English, Mandarin, Romance). The rest are rare, or set by information structure rather than a fixed template.',
-	tags: ['grammatical-relations', 'word-order', 'worldwide'],
+	tags: ['grammatical-relations', 'word-order'],
 	strategies: [
 		{ id: 'sov', label: 'SOV', schematic: '[S] [O] [V]', description: 'Subject – Object – Verb. The largest group in WALS chapter 81: 564 of the 1,376 languages surveyed, about 41%.', color: 'sky' },
 		{ id: 'svo', label: 'SVO', schematic: '[S] [V] [O]', description: 'Subject – Verb – Object. The second-largest group, 488 languages, about 35%.', color: 'amber' },

@@ -21,7 +21,7 @@ After editing `wrangler.jsonc`, rerun `bun run gen` to refresh `worker-configura
 - **Example** — concrete sentence with `original / transliteration / gloss / literal / natural`.
 - **Pathway** — directional / cyclic change ("Jespersen's Cycle"). Has Stages and TimelineBands.
 - **TimelineBand** — one colored band on the historical timeline for one language: `start, end, stageId, status, uncertaintyStart?, uncertaintyEnd?, note?`.
-- **Tag** — one entry in the controlled vocabulary of `src/lib/data/tags.ts`, belonging to one of four facets: `domain` (area of meaning), `structure` (formal machinery), `mechanism` (process, e.g. metaphor / grammaticalization), `scope` (geographic reach). Patterns and pathways both carry `tags: TagId[]`; `TagId` is a union derived from the vocabulary, so an unknown tag fails `bun run check`.
+- **Tag** — one entry in the controlled vocabulary of `src/lib/data/tags.ts`, belonging to one of three facets: `domain` (area of meaning), `structure` (formal machinery), `mechanism` (process, e.g. metaphor / grammaticalization). Patterns and pathways both carry `tags: TagId[]`; `TagId` is a union derived from the vocabulary, so an unknown tag fails `bun run check`. Geographic reach is not a facet: how global a phenomenon looks tracks how much of the world the entry has been researched against, so it says more about the entry than about the languages.
 
 ## Where seed data lives
 

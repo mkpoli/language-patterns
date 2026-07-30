@@ -7,7 +7,7 @@ export const indefinites: Pattern = {
 	question: 'How do languages build the paradigm of someone, anyone, no one, and everyone?',
 	summary:
 		'Most often these words share one interrogative base (who?) plus a small particle — “also”, “every”, “some”, “any” — that sets the reading. A few languages, English among them, lexicalise the series instead.',
-	tags: ['indefiniteness', 'quantification', 'negation', 'syncretism', 'negative-concord', 'grammaticalization', 'lexicalization', 'worldwide'],
+	tags: ['indefiniteness', 'quantification', 'negation', 'syncretism', 'negative-concord', 'grammaticalization', 'lexicalization'],
 	strategies: [
 		{
 			id: 'interrogative-additive',

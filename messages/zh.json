@@ -56,7 +56,7 @@
 	"atlas_by_family": "按语系分布",
 
 	"tags_title": "按标签浏览",
-	"tags_subtitle": "标签分为四个层面：条目涉及的意义、承载它的形式、背后的演变过程，以及分布的广度。",
+	"tags_subtitle": "标签分为三个层面：条目涉及的意义、承载它的形式，以及背后的演变过程。",
 	"tags_topics_heading": "带此标签的条目",
 	"tags_more_in_facet": "同一层面的其他标签",
 

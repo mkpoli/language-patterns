@@ -13,8 +13,8 @@ import { seeToTry } from './pathways/see-to-try';
 import { negativeExistentialCycle } from './pathways/negative-existential-cycle';
 
 export { languages, getLanguage } from './languages';
-export { facets, tags, getTag, getFacet, groupByFacet, sortTags } from './tags';
-export type { Tag, TagId, TagFacet, TagFacetId } from './tags';
+export { facets, tags, getTag, getFacet, groupByFacet, sortTags, localized } from './tags';
+export type { Tag, TagId, TagFacet, TagFacetId, Localized } from './tags';
 
 export const patterns: Pattern[] = [
 	existence,

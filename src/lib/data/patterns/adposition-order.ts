@@ -18,7 +18,7 @@ export const adpositionOrder: Pattern = {
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
 		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). Exceptions recur across families: Persian and Tajik combine OV order with prepositions, while SVO-leaning Finnish keeps its Uralic postpositions.',
-	tags: ['spatial-relation', 'word-order', 'adposition', 'worldwide'],
+	tags: ['spatial-relation', 'word-order', 'adposition'],
 	strategies: [
 		{
 			id: 'pre',

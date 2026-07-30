@@ -2,13 +2,16 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
-	import { getFacet, tagIndex } from '$lib/data';
+	import { getFacet, localized, tagIndex } from '$lib/data';
 	import { strategyColor } from '$lib/strategyColor';
 	import { m } from '$lib/paraglide/messages.js';
 
 	let { data } = $props();
 	const tag = $derived(data.tag);
 	const facet = $derived(getFacet(tag.facet));
+	const label = $derived(localized(tag.label));
+	const definition = $derived(localized(tag.definition));
+	const facetLabel = $derived(localized(facet.label));
 	const color = $derived(strategyColor(facet.color));
 	const siblings = $derived(
 		(tagIndex.find((g) => g.facet.id === tag.facet)?.entries ?? []).filter(
@@ -18,27 +21,27 @@
 </script>
 
 <Seo
-	title={`${tag.label} — ${facet.label}`}
-	description={`${tag.definition} ${data.topics.length} topic${data.topics.length === 1 ? '' : 's'} on Language Patterns carry this tag.`}
+	title={`${label} — ${facetLabel}`}
+	description={`${definition} ${data.topics.length} topic${data.topics.length === 1 ? '' : 's'} on Language Patterns carry this tag.`}
 	path={`/tags/${tag.id}`}
-	keywords={[tag.label, facet.label, 'linguistic typology', 'cross-linguistic']}
+	keywords={[label, tag.label.en, facetLabel, 'linguistic typology', 'cross-linguistic']}
 />
 
 <article class="flex flex-col gap-8">
 	<header class="flex flex-col gap-3">
 		<p class="text-xs tracking-widest text-[color:var(--color-ink-soft)] uppercase">
 			<a href={localizeHref("/tags")} class="hover:underline">{m.nav_tags()}</a>
-			· {facet.label}
+			· {facetLabel}
 		</p>
 		<h1 class="font-serif text-4xl leading-tight">
 			<span
 				class="rounded-full border px-3 py-1"
 				style={`background:${color.soft};border-color:${color.border};color:${color.textOn}`}
 			>
-				{tag.label}
+				{label}
 			</span>
 		</h1>
-		<p class="max-w-3xl text-base text-[color:var(--color-ink-soft)]">{tag.definition}</p>
+		<p class="max-w-3xl text-base text-[color:var(--color-ink-soft)]">{definition}</p>
 	</header>
 
 	<section>
@@ -64,11 +67,11 @@
 				{#each siblings as sibling (sibling.tag.id)}
 					<a
 						href={localizeHref(`/tags/${sibling.tag.id}`)}
-						title={sibling.tag.definition}
+						title={localized(sibling.tag.definition)}
 						class="rounded-full border px-3 py-1 text-sm transition hover:brightness-95 dark:hover:brightness-125"
 						style={`background:${color.soft};border-color:${color.border};color:${color.textOn}`}
 					>
-						{sibling.tag.label}
+						{localized(sibling.tag.label)}
 						<span class="opacity-60">{sibling.count}</span>
 					</a>
 				{/each}

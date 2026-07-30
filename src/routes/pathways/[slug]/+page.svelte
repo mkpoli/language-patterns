@@ -103,7 +103,7 @@
 		return items;
 	});
 
-	const tagLabels = $derived(sortTags(pathway.tags).map((t) => t.label));
+	const tagLabels = $derived(sortTags(pathway.tags).map((t) => t.label.en));
 
 	const allCitations = $derived([
 		...(pathway.sources ?? []),
