@@ -4,7 +4,7 @@ import type { Strategy } from '$lib/types';
  * Tags sit in four facets, each answering one question about an entry. An
  * entry carries tags from several facets at once.
  */
-export type TagFacetId = 'domain' | 'structure' | 'mechanism' | 'scope';
+export type TagFacetId = 'domain' | 'structure' | 'mechanism';
 
 export interface TagFacet {
 	id: TagFacetId;
@@ -38,12 +38,6 @@ export const facets: TagFacet[] = [
 		label: 'Mechanism',
 		description: 'The process that produced the form or drives its change.',
 		color: 'violet'
-	},
-	{
-		id: 'scope',
-		label: 'Scope',
-		description: 'How far the phenomenon reaches across families and regions.',
-		color: 'slate'
 	}
 ];
 
@@ -97,12 +91,6 @@ const tagList = [
 		label: 'Obligation',
 		facet: 'domain',
 		definition: 'Being bound to act — orders, compliance, duty.'
-	},
-	{
-		id: 'aspect',
-		label: 'Aspect',
-		facet: 'domain',
-		definition: 'How an event unfolds: attempted, begun, ongoing, completed.'
 	},
 	{
 		id: 'modality',
@@ -242,26 +230,6 @@ const tagList = [
 		label: 'Lexicalization',
 		facet: 'mechanism',
 		definition: 'A phrase or paradigm cell frozen into a single stored word.'
-	},
-
-	// scope
-	{
-		id: 'worldwide',
-		label: 'Worldwide',
-		facet: 'scope',
-		definition: 'Recurs in unrelated families across every macroarea.'
-	},
-	{
-		id: 'several-macroareas',
-		label: 'Several macroareas',
-		facet: 'scope',
-		definition: 'Attested in more than one macroarea, without reaching all of them.'
-	},
-	{
-		id: 'areal',
-		label: 'Areal',
-		facet: 'scope',
-		definition: 'Clusters in one region, crossing family lines within it.'
 	}
 ] as const satisfies readonly Tag[];
 
