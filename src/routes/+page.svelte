@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { topics } from '$lib/data';
@@ -45,7 +46,7 @@
 			question={topic.question}
 			title={topic.title}
 			summary={topic.summary}
-			href={`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`}
+			href={localizeHref(`/${topic.kind === 'pattern' ? 'patterns' : 'pathways'}/${topic.slug}`)}
 			tags={topic.tags}
 			kind={topic.kind}
 		/>
