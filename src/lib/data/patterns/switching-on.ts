@@ -38,7 +38,7 @@ export const switchingOn: Pattern = {
 			label: 'Connecting and switching',
 			schematic: 'JOIN / FLIP → switch on',
 			description:
-				'Making and breaking a connection. Russian включить and Polish włączyć are built on joining and enclosing, calqued on Latin inclūdere, and Portuguese ligar is Latin ligāre, to bind. German einschalten uses schalten, to shift; Vietnamese bật snaps.',
+				'Making and breaking a connection. Russian включить is в- on -ключить, from ключ, a key, and reached its “include” sense as a calque of Latin inclūdere by way of French inclure; Polish włączyć is the native w- on łączyć, to join. Portuguese ligar is Latin ligāre, to bind. German einschalten uses schalten, to shift; Vietnamese bật snaps.',
 			color: 'slate'
 		},
 		{
@@ -241,7 +241,7 @@ export const switchingOn: Pattern = {
 			{ language: 'nl', axis: 'washer', form: 'de wasmachine aanzetten', strategy: 'placing', lemma: 'aanzetten' },
 
 			// ─── Russian ───────────────────────────────────────────────────────
-			{ language: 'ru', axis: 'light', form: 'включить свет vključit’ svet', strategy: 'joining', lemma: 'включить', note: 'calqued on Latin inclūdere, to enclose' },
+			{ language: 'ru', axis: 'light', form: 'включить свет vključit’ svet', strategy: 'joining', lemma: 'включить', note: 'в- on ключ, a key; the “include” sense calques Latin inclūdere', sources: [{ source: 'wiktionary-vkljuchit' }] },
 			{ language: 'ru', axis: 'ac', form: 'включить кондиционер', strategy: 'joining', lemma: 'включить' },
 			{ language: 'ru', axis: 'tap', form: 'открыть кран otkryt’ kran', strategy: 'opening', lemma: 'открыть', note: 'open the tap' },
 			{ language: 'ru', axis: 'music', form: 'включить / поставить музыку', strategy: 'joining', lemma: 'включить', note: 'поставить, to stand it up, is the placing alternative' },
@@ -251,7 +251,7 @@ export const switchingOn: Pattern = {
 
 			// ─── Polish ────────────────────────────────────────────────────────
 			{ language: 'pl', axis: 'light', form: 'zapalić światło', strategy: 'fire', lemma: 'zapalić', note: 'ignite the light' },
-			{ language: 'pl', axis: 'ac', form: 'włączyć klimatyzację', strategy: 'joining', lemma: 'włączyć', note: 'w- plus łączyć, to join' },
+			{ language: 'pl', axis: 'ac', form: 'włączyć klimatyzację', strategy: 'joining', lemma: 'włączyć', note: 'w- plus łączyć, to join', sources: [{ source: 'wiktionary-wlaczyc' }] },
 			{ language: 'pl', axis: 'tap', form: 'odkręcić kran', strategy: 'turning', lemma: 'odkręcić', note: 'unscrew the tap' },
 			{ language: 'pl', axis: 'music', form: 'puścić muzykę', strategy: 'placing', lemma: 'puścić', note: 'let the music go' },
 			{ language: 'pl', axis: 'alarm', form: 'nastawić budzik', strategy: 'placing', lemma: 'nastawić', note: 'set the alarm' },
