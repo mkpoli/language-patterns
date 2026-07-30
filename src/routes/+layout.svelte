@@ -72,5 +72,11 @@
 				{m.p_graveyard_title()}
 			</a>
 		</div>
+		<div>
+			{m.friendly_sites_heading()}:
+			<a href="https://langmap.heuron.com" target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">
+				{m.langmap_label()}
+			</a>
+		</div>
 	</footer>
 </div>
