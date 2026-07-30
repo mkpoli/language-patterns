@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
 	import { SITE_URL, SITE_DESCRIPTION } from '$lib/seo';
 	import { m } from '$lib/paraglide/messages.js';
@@ -13,7 +14,7 @@
 		name: m.site_name(),
 		url: SITE_URL,
 		description: SITE_DESCRIPTION,
-		inLanguage: 'en',
+		inLanguage: getLocale(),
 		publisher: { '@type': 'Organization', name: m.site_name(), url: SITE_URL }
 	});
 </script>
@@ -32,7 +33,7 @@
 
 <div class="mx-auto flex min-h-screen max-w-6xl flex-col px-6">
 	<header class="flex flex-wrap items-center justify-between gap-3 border-b border-[color:var(--color-rule)] py-4">
-		<a href="/" class="flex items-center gap-3">
+		<a href={localizeHref("/")} class="flex items-center gap-3">
 			<img src="/icon-192.png" alt="" aria-hidden="true" width="40" height="40" class="h-10 w-10" />
 			<div>
 				<div class="font-serif text-lg font-semibold leading-tight">{m.site_name()}</div>
@@ -40,10 +41,10 @@
 			</div>
 		</a>
 		<nav class="flex items-center gap-4 text-sm">
-			<a href="/patterns" class="hover:underline">{m.nav_patterns()}</a>
-			<a href="/pathways" class="hover:underline">{m.nav_pathways()}</a>
-			<a href="/atlas" class="hover:underline">{m.nav_atlas()}</a>
-			<a href="/tags" class="hover:underline">{m.nav_tags()}</a>
+			<a href={localizeHref("/patterns")} class="hover:underline">{m.nav_patterns()}</a>
+			<a href={localizeHref("/pathways")} class="hover:underline">{m.nav_pathways()}</a>
+			<a href={localizeHref("/atlas")} class="hover:underline">{m.nav_atlas()}</a>
+			<a href={localizeHref("/tags")} class="hover:underline">{m.nav_tags()}</a>
 			<LanguageSwitcher />
 			<ThemeToggle />
 		</nav>
