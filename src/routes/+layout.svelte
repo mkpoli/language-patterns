@@ -71,6 +71,10 @@
 			<a href="https://p.languagepatterns.org" target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">
 				{m.p_graveyard_title()}
 			</a>
+			·
+			<a href="https://word-order.mkpo.li" target="_blank" rel="noopener" class="underline hover:text-[color:var(--color-ink)]">
+				{m.word_order_illustrator_label()}
+			</a>
 		</div>
 		<div>
 			{m.friendly_sites_heading()}:
