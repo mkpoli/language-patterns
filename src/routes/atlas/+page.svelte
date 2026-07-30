@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 	import Seo from '$lib/components/Seo.svelte';
 	import PatternMap, { type MapMarker } from '$lib/components/PatternMap.svelte';
-	import { patterns, pathways, getLanguage } from '$lib/data';
+	import { patterns, pathways, getLanguage, facets, localized, sortTags, type TagId } from '$lib/data';
 	import { strategyColor, colorForIndex } from '$lib/strategyColor';
 	import type { Strategy } from '$lib/types';
 	import { m } from '$lib/paraglide/messages.js';
@@ -32,13 +32,29 @@
 	}
 
 	let topic = $state('all');
+	let tag = $state<TagId | 'all'>('all');
 	let hidden = $state<string[]>([]);
 	let urlReady = $state(false);
 
+	const carriesTag = (e: { tags: TagId[] }) => tag === 'all' || e.tags.includes(tag as TagId);
+	const shownPatterns = $derived(patterns.filter(carriesTag));
+	const shownPathways = $derived(pathways.filter(carriesTag));
+
+	/** Tags in use, grouped by facet, for the picker. */
+	const tagOptions = $derived.by(() => {
+		const used = new Set([...patterns, ...pathways].flatMap((e) => e.tags));
+		return facets
+			.map((facet) => ({
+				facet,
+				tags: sortTags([...used]).filter((t) => t.facet === facet.id)
+			}))
+			.filter((g) => g.tags.length > 0);
+	});
+
 	const topicEntry = $derived.by(() => {
-		const p = patterns.find((x) => x.slug === topic);
+		const p = shownPatterns.find((x) => x.slug === topic);
 		if (p) return { kind: 'pattern' as const, value: p };
-		const w = pathways.find((x) => x.slug === topic);
+		const w = shownPathways.find((x) => x.slug === topic);
 		if (w) return { kind: 'pathway' as const, value: w };
 		return null;
 	});
@@ -48,11 +64,11 @@
 			// All topics: one record per (topic, language).
 			const out: PlottedRecord[] = [];
 			const all = [
-				...patterns.map((p) => ({
+				...shownPatterns.map((p) => ({
 					slug: p.slug,
 					codes: (p.attestations ?? []).map((a) => a.language)
 				})),
-				...pathways.map((w) => ({ slug: w.slug, codes: (w.examples ?? []).map((e) => e.language) }))
+				...shownPathways.map((w) => ({ slug: w.slug, codes: (w.examples ?? []).map((e) => e.language) }))
 			];
 			all.forEach((t, i) => {
 				for (const code of new Set(t.codes)) {
@@ -100,12 +116,16 @@
 
 	const visible = $derived(records.filter((r) => !hidden.includes(r.group)));
 
+	$effect(() => {
+		if (topic !== 'all' && !topicEntry) topic = 'all';
+	});
+
 	const chips = $derived.by((): Chip[] => {
 		if (!topicEntry) {
-			const slugs = [...patterns.map((p) => p.slug), ...pathways.map((w) => w.slug)];
+			const slugs = [...shownPatterns.map((p) => p.slug), ...shownPathways.map((w) => w.slug)];
 			const titles = new Map([
-				...patterns.map((p) => [p.slug, p.shortTitle] as const),
-				...pathways.map((w) => [w.slug, w.shortTitle] as const)
+				...shownPatterns.map((p) => [p.slug, p.shortTitle] as const),
+				...shownPathways.map((w) => [w.slug, w.shortTitle] as const)
 			]);
 			return slugs.map((slug, i) => ({
 				id: slug,
@@ -235,6 +255,10 @@
 	}
 
 	onMount(() => {
+		const qTag = page.url.searchParams.get('tag');
+		if (qTag && [...patterns, ...pathways].some((e) => e.tags.includes(qTag as TagId))) {
+			tag = qTag as TagId;
+		}
 		const q = page.url.searchParams.get('topic');
 		if (q && (patterns.some((p) => p.slug === q) || pathways.some((w) => w.slug === q))) {
 			topic = q;
@@ -249,6 +273,8 @@
 		const url = new URL(page.url);
 		if (topic === 'all') url.searchParams.delete('topic');
 		else url.searchParams.set('topic', topic);
+		if (tag === 'all') url.searchParams.delete('tag');
+		else url.searchParams.set('tag', tag);
 		const target = url.pathname + url.search;
 		if (target !== page.url.pathname + page.url.search) {
 			goto(target, { replaceState: true, noScroll: true, keepFocus: true });
@@ -273,6 +299,22 @@
 		<h2 class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">
 			{m.atlas_filter_topics()}
 		</h2>
+		<label class="flex flex-col gap-1 text-xs text-[color:var(--color-ink-soft)]">
+			{m.atlas_filter_tag()}
+			<select
+				bind:value={tag}
+				class="rounded-lg border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-2 py-1.5 text-sm text-[color:var(--color-ink)]"
+			>
+				<option value="all">{m.atlas_any_tag()}</option>
+				{#each tagOptions as group (group.facet.id)}
+					<optgroup label={localized(group.facet.label)}>
+						{#each group.tags as option (option.id)}
+							<option value={option.id}>{localized(option.label)}</option>
+						{/each}
+					</optgroup>
+				{/each}
+			</select>
+		</label>
 		<button
 			type="button"
 			onclick={() => selectTopic('all')}
@@ -283,7 +325,7 @@
 		>
 			{m.atlas_all_topics()}
 		</button>
-		{#each [{ kind: 'pattern', list: patterns }, { kind: 'pathway', list: pathways }] as g (g.kind)}
+		{#each [{ kind: 'pattern', list: shownPatterns }, { kind: 'pathway', list: shownPathways }] as g (g.kind)}
 			<div class="flex flex-col gap-1">
 				<p class="px-3 text-xs text-[color:var(--color-ink-soft)]">
 					{g.kind === 'pattern' ? m.nav_patterns() : m.nav_pathways()}

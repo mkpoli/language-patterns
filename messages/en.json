@@ -48,6 +48,8 @@
 	"atlas_subtitle": "Every topic on one map. Pick a pattern or pathway to colour languages by strategy or evidence set, or view all topics at once. In the combined view, marker size shows how many topics attest a language.",
 	"atlas_filter_topics": "Topics",
 	"atlas_all_topics": "All topics",
+	"atlas_filter_tag": "Tag",
+	"atlas_any_tag": "Any tag",
 	"atlas_by_family": "Distribution by family",
 
 	"tags_title": "Browse by tag",
