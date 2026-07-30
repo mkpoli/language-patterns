@@ -10,10 +10,13 @@
 	}
 	let { pattern }: Props = $props();
 
-	const strategyById = $derived(
-		new Map(pattern.strategies.map((s) => [s.id, s]))
-	);
+	const strategyById = $derived(new Map(pattern.strategies.map((s) => [s.id, s])));
 	const attestations = $derived(pattern.attestations ?? []);
+	const hasOrigin = $derived(
+		attestations.some(
+			(att) => att.origin || att.syncretism?.length || att.headAlsoLocates !== undefined
+		)
+	);
 
 	const originLabel: Record<string, string> = {
 		be: 'from BE',
@@ -37,15 +40,21 @@
 	};
 </script>
 
-<div class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]">
+<div
+	class="overflow-x-auto rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]"
+>
 	<table class="w-full text-sm">
-		<thead class="bg-[color:var(--color-surface-sunken)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
+		<thead
+			class="bg-[color:var(--color-surface-sunken)] text-left text-xs tracking-wide text-[color:var(--color-ink-soft)] uppercase"
+		>
 			<tr>
-				<th class="px-4 py-3">Language</th>
-				<th class="px-4 py-3">Strategy</th>
-				<th class="px-4 py-3">Expression</th>
-				<th class="px-4 py-3">Origin &amp; overlap</th>
-				<th class="px-4 py-3">Note</th>
+				<th class="px-4 py-3 whitespace-nowrap">Language</th>
+				<th class="px-4 py-3 whitespace-nowrap">Strategy</th>
+				<th class="px-4 py-3 whitespace-nowrap">Expression</th>
+				{#if hasOrigin}
+					<th class="px-4 py-3 whitespace-nowrap">Origin &amp; overlap</th>
+				{/if}
+				<th class="w-full px-4 py-3">Note</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -54,14 +63,14 @@
 				{@const strategy = strategyById.get(att.strategy)}
 				{@const tokens = strategy ? strategyColor(strategy.color) : undefined}
 				<tr class="border-t border-[color:var(--color-rule)]">
-					<td class="px-4 py-3 align-top">
+					<td class="px-4 py-3 align-top whitespace-nowrap">
 						<div class="font-medium">{lang.name}</div>
 						<div class="text-xs text-[color:var(--color-ink-soft)]">{lang.family}</div>
 					</td>
 					<td class="px-4 py-3 align-top">
 						{#if strategy}
 							<span
-								class="inline-block rounded-full px-2 py-0.5 text-xs"
+								class="inline-flex items-center rounded-full px-2 py-0.5 text-xs leading-5 whitespace-nowrap"
 								style:background={tokens?.soft}
 								style:color={tokens?.textOn}
 							>
@@ -69,31 +78,38 @@
 							</span>
 						{/if}
 					</td>
-					<td class="px-4 py-3 align-top">
+					<td class="px-4 py-3 align-top whitespace-nowrap">
 						<Expression text={att.expression} transliteration={att.transliteration} stacked />
 					</td>
-					<td class="px-4 py-3 align-top text-xs text-[color:var(--color-ink-soft)]">
-						{#if att.origin}
-							<div title={originTitle[att.origin.evidence]}>
-								{originLabel[att.origin.value]}{att.origin.evidence === 'unknown' ? '' : ` · ${att.origin.evidence}`}
-							</div>
-						{/if}
-						{#if att.syncretism?.length}
-							<div class="mt-1 flex flex-wrap gap-1">
-								{#each att.syncretism as fn (fn)}
-									<span class="rounded border border-[color:var(--color-rule)] px-1">{fn}</span>
-								{/each}
-							</div>
-						{/if}
-						{#if att.headAlsoLocates !== undefined}
-							<div
-								class="mt-1"
-								title="Whether this predicate also states where something is, outside the existential clause."
-							>
-								{att.headAlsoLocates ? 'also states location' : 'not for plain location'}
-							</div>
-						{/if}
-					</td>
+					{#if hasOrigin}
+						<td class="px-4 py-3 align-top text-xs text-[color:var(--color-ink-soft)]">
+							{#if att.origin}
+								<div title={originTitle[att.origin.evidence]}>
+									{originLabel[att.origin.value]}{att.origin.evidence === 'unknown'
+										? ''
+										: ` · ${att.origin.evidence}`}
+								</div>
+							{/if}
+							{#if att.syncretism?.length}
+								<div class="mt-1 flex flex-wrap gap-1">
+									{#each att.syncretism as fn (fn)}
+										<span
+											class="rounded border border-[color:var(--color-rule)] px-1 whitespace-nowrap"
+											>{fn}</span
+										>
+									{/each}
+								</div>
+							{/if}
+							{#if att.headAlsoLocates !== undefined}
+								<div
+									class="mt-1"
+									title="Whether this predicate also states where something is, outside the existential clause."
+								>
+									{att.headAlsoLocates ? 'also states location' : 'not for plain location'}
+								</div>
+							{/if}
+						</td>
+					{/if}
 					<td class="px-4 py-3 align-top text-[color:var(--color-ink-soft)]">
 						<div>{att.note ?? ''}</div>
 						{#if att.sources?.length}
