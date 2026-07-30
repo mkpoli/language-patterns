@@ -34,6 +34,7 @@
 		title={m.p_graveyard_title()}
 		summary={m.p_graveyard_description()}
 		href="https://p.languagepatterns.org"
+		note={m.p_graveyard_topic()}
 		kind="pathway"
 		external
 	/>
