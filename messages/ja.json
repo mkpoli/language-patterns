@@ -53,6 +53,8 @@
 	"atlas_subtitle": "すべてのトピックを一枚の地図に。パターンや経路を選ぶと、言語が方略・証拠セット別に色分けされる。合算表示では、マーカーの大きさがその言語を証録するトピック数を示す。",
 	"atlas_filter_topics": "トピック",
 	"atlas_all_topics": "すべてのトピック",
+	"atlas_filter_tag": "タグ",
+	"atlas_any_tag": "すべてのタグ",
 	"atlas_by_family": "語族別の分布",
 
 	"tags_title": "タグから探す",
@@ -109,6 +111,7 @@
 
 	"sister_sites_heading": "姉妹サイト",
 	"p_graveyard_title": "/p/ の墓場",
+	"p_graveyard_topic": "音変化",
 	"p_graveyard_description": "世界の諸言語における /p/ の消失と変遷を追う音変化経路カタログ。",
 	"p_graveyard_cta": "p.languagepatterns.org →"
 }

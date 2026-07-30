@@ -8,10 +8,12 @@
 		summary: string;
 		href: string;
 		tags?: TagId[];
+		/** Shown beside the kind chip when an entry has no tags of its own. */
+		note?: string;
 		kind: 'pattern' | 'pathway';
 		external?: boolean;
 	}
-	let { question, title, summary, href, tags = [], kind, external = false }: Props = $props();
+	let { question, title, summary, href, tags = [], note, kind, external = false }: Props = $props();
 </script>
 
 <a
@@ -28,6 +30,9 @@
 		>
 			{kind === 'pattern' ? 'Pattern' : 'Pathway'}
 		</span>
+		{#if note}
+			<span>{note}</span>
+		{/if}
 	</div>
 	<h3 class="font-serif text-2xl leading-tight">
 		<span class="text-[color:var(--color-ink-soft)]">{question}</span>

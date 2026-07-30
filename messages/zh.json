@@ -53,6 +53,8 @@
 	"atlas_subtitle": "所有主题汇于一张地图。选择某个模式或路径，语言即按策略或证据集着色；也可以一次查看全部主题，此时标记大小表示该语言见于多少个主题。",
 	"atlas_filter_topics": "主题",
 	"atlas_all_topics": "全部主题",
+	"atlas_filter_tag": "标签",
+	"atlas_any_tag": "所有标签",
 	"atlas_by_family": "按语系分布",
 
 	"tags_title": "按标签浏览",
@@ -109,6 +111,7 @@
 
 	"sister_sites_heading": "姊妹站点",
 	"p_graveyard_title": "/p/ 之墓",
+	"p_graveyard_topic": "音变",
 	"p_graveyard_description": "记录辅音 /p/ 在世界各语言中消失与演化的音变路径合集。",
 	"p_graveyard_cta": "p.languagepatterns.org →"
 }

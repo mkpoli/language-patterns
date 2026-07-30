@@ -53,6 +53,8 @@
 	"atlas_subtitle": "Every topic on one map. Pick a pattern or pathway to colour languages by strategy or evidence set, or view all topics at once. In the combined view, marker size shows how many topics attest a language.",
 	"atlas_filter_topics": "Topics",
 	"atlas_all_topics": "All topics",
+	"atlas_filter_tag": "Tag",
+	"atlas_any_tag": "Any tag",
 	"atlas_by_family": "Distribution by family",
 
 	"tags_title": "Browse by tag",
@@ -109,6 +111,7 @@
 
 	"sister_sites_heading": "Sister sites",
 	"p_graveyard_title": "The Graveyard of /p/",
+	"p_graveyard_topic": "Sound change",
 	"p_graveyard_description": "A sound-change pathway catalogue tracking the disappearance of /p/ across the world's languages.",
 	"p_graveyard_cta": "p.languagepatterns.org →"
 }
