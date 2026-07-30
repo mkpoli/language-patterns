@@ -110,5 +110,8 @@
 	"sister_sites_heading": "姉妹サイト",
 	"p_graveyard_title": "/p/ の墓場",
 	"p_graveyard_description": "世界の諸言語における /p/ の消失と変遷を追う音変化経路カタログ。",
-	"p_graveyard_cta": "p.languagepatterns.org →"
+	"p_graveyard_cta": "p.languagepatterns.org →",
+
+	"friendly_sites_heading": "リンク",
+	"langmap_label": "LangMap（世界の言語マップ集）"
 }
