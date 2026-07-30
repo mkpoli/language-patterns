@@ -5,6 +5,7 @@
 	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import Toc from '$lib/components/toc/Toc.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 	import StageFlow from '$lib/components/StageFlow.svelte';
@@ -158,6 +159,8 @@
 		<p class="text-lg text-[color:var(--color-ink-soft)] italic">{pathway.question}</p>
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 	</header>
+
+	<Toc />
 
 	{#if pathway.kind === 'cycle'}
 		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">

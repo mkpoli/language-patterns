@@ -41,6 +41,9 @@
 	"section_geographic_distribution_hint_items": "対象を一つ選ぶと、各ドットはその言語での言い方を示し、動詞の方略によって色分けされる。ドットをクリックすると形が表示される。",
 	"stage_documented_in": "タイムライン掲載",
 
+	"toc_title": "このページの内容",
+	"toc_close": "閉じる",
+
 	"atlas_title": "繰り返し現れるパターンの地理的分布",
 	"atlas_subtitle": "すべてのトピックを一枚の地図に。パターンや経路を選ぶと、言語が方略・証拠セット別に色分けされる。合算表示では、マーカーの大きさがその言語を証録するトピック数を示す。",
 	"atlas_filter_topics": "トピック",
