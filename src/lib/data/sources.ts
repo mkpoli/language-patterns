@@ -1080,6 +1080,22 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/menghidupkan',
 		type: 'url'
 	},
+	'wiktionary-mematikan': {
+		id: 'wiktionary-mematikan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: mematikan',
+		url: 'https://en.wiktionary.org/wiki/mematikan',
+		type: 'url'
+	},
+	'wiktionary-zima': {
+		id: 'wiktionary-zima',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: zima',
+		url: 'https://en.wiktionary.org/wiki/zima#Swahili',
+		type: 'url'
+	},
 	'wiktionary-vkljuchit': {
 		id: 'wiktionary-vkljuchit',
 		authors: ['Wiktionary contributors'],

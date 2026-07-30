@@ -119,7 +119,7 @@ export const switchingOn: Pattern = {
 		{ language: 'vi', strategy: 'running', expression: 'hút bụi', confidence: 'medium' },
 
 		{ language: 'id', strategy: 'fire', expression: 'menyalakan lampu', confidence: 'high', note: 'nyala is flame' },
-		{ language: 'id', strategy: 'running', expression: 'menghidupkan AC', confidence: 'high', note: 'hidup is alive; mati, dead, turns it off', sources: [{ source: 'wiktionary-menghidupkan' }] },
+		{ language: 'id', strategy: 'running', expression: 'menghidupkan AC', confidence: 'high', note: 'hidup is alive; mati, dead, turns it off', sources: [{ source: 'wiktionary-menghidupkan' }, { source: 'wiktionary-mematikan' }] },
 		{ language: 'id', strategy: 'turning', expression: 'memutar musik', confidence: 'high' },
 
 		{ language: 'hi', strategy: 'fire', expression: 'बत्ती जलाना battī jalānā', confidence: 'high', sources: [{ source: 'wiktionary-jalana' }] },
@@ -132,7 +132,7 @@ export const switchingOn: Pattern = {
 		{ language: 'he', strategy: 'placing', expression: 'לשים מוזיקה lasim muzika', confidence: 'medium' },
 		{ language: 'he', strategy: 'running', expression: 'להפעיל מכונת כביסה lehaf‘il mekhonat kvisa', confidence: 'medium', note: 'lehaf‘il, to activate, from פעל, to act' },
 
-		{ language: 'sw', strategy: 'fire', expression: 'kuwasha taa', confidence: 'high', note: 'washa, to set on fire; zima, to extinguish, turns it off', sources: [{ source: 'wiktionary-washa' }] },
+		{ language: 'sw', strategy: 'fire', expression: 'kuwasha taa', confidence: 'high', note: 'washa, to set on fire; zima, to extinguish, turns it off', sources: [{ source: 'wiktionary-washa' }, { source: 'wiktionary-zima' }] },
 
 		{ language: 'cy', strategy: 'fire', expression: "cynnau'r golau", confidence: 'high', sources: [{ source: 'wiktionary-cynnau' }] },
 
@@ -470,7 +470,7 @@ export const switchingOn: Pattern = {
 			literal: 'Make the lamp die.',
 			natural: 'Turn the light off.',
 			set: 'off',
-			sources: [{ source: 'wiktionary-menghidupkan' }]
+			sources: [{ source: 'wiktionary-mematikan' }]
 		},
 		{
 			language: 'sw',
@@ -479,7 +479,7 @@ export const switchingOn: Pattern = {
 			literal: 'Extinguish the lamp.',
 			natural: 'Turn the light off.',
 			set: 'off',
-			sources: [{ source: 'wiktionary-washa' }]
+			sources: [{ source: 'wiktionary-zima' }]
 		},
 
 		// ─── More of the lamp ──────────────────────────────────────────────────
