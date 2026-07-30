@@ -1550,6 +1550,48 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/sätta',
 		type: 'url'
 	},
+	'wiktionary-yakmak': {
+		id: 'wiktionary-yakmak',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: yakmak',
+		url: 'https://en.wiktionary.org/wiki/yakmak',
+		type: 'url'
+	},
+	'wiktionary-yandirmaq': {
+		id: 'wiktionary-yandirmaq',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: yandırmaq',
+		url: 'https://en.wiktionary.org/wiki/yandırmaq',
+		type: 'url'
+	},
+	'wiktionary-pusti': {
+		id: 'wiktionary-pusti',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: пушти',
+		url: 'https://en.wiktionary.org/wiki/пушти',
+		type: 'url'
+	},
+	'wiktionary-buksan': {
+		id: 'wiktionary-buksan',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: buksan',
+		url: 'https://en.wiktionary.org/wiki/buksan',
+		type: 'url'
+	},
+	'tatoeba': {
+		id: 'tatoeba',
+		authors: ['Tatoeba contributors'],
+		year: 2026,
+		title: 'Tatoeba: sentences and translations',
+		container:
+			'Crowd-written translations of English sentences, CC BY 2.0 FR. Contributors are not always native speakers and the corpus carries no frequency information, so a form found here shows that a variant exists rather than which one dominates',
+		url: 'https://tatoeba.org/',
+		type: 'dataset'
+	},
 	'wiktionary-turn-on': {
 		id: 'wiktionary-turn-on',
 		authors: ['Wiktionary contributors'],
