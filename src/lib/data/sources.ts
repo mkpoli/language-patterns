@@ -343,6 +343,15 @@ export const sources: Record<string, Source> = {
 		pages: '497–544',
 		type: 'chapter'
 	},
+	'masajaninga-2026-pela': {
+		id: 'masajaninga-2026-pela',
+		authors: ['@masajaninga'],
+		year: 2026,
+		title: 'Pela existential predicates tʃàʔ, pá and ŋjí, split by the class of the pivot',
+		container: 'X, 27 July 2026',
+		url: 'https://x.com/masajaninga/status/2081670630638813570',
+		type: 'url'
+	},
 	'moe-taiwan-2021-tinghua': {
 		id: 'moe-taiwan-2021-tinghua',
 		authors: ['Ministry of Education, Republic of China (Taiwan)'],

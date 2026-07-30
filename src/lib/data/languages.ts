@@ -134,6 +134,7 @@ export const languages: Record<string, Language> = {
 	bo: { code: 'bo', name: 'Tibetan', endonym: 'བོད་སྐད', family: 'Sino-Tibetan › Bodish', lat: 29.65, lng: 91.11, locationNote: 'Lhasa' },
 	my: { code: 'my', name: 'Burmese', endonym: 'မြန်မာ', family: 'Sino-Tibetan › Burmish', lat: 16.84, lng: 96.17, locationNote: 'Yangon' },
 	ii: { code: 'ii', name: 'Yi (Nuosu)', endonym: 'ꆈꌠꉙ', family: 'Sino-Tibetan › Loloish', lat: 27.91, lng: 102.27, locationNote: 'Liangshan' },
+	bxd: { code: 'bxd', name: 'Pela', endonym: 'pə̆lá 波拉', family: 'Sino-Tibetan › Burmish (endangered)', lat: 24.44, lng: 98.58, locationNote: 'Dehong, western Yunnan' },
 	dz: { code: 'dz', name: 'Dzongkha', endonym: 'རྫོང་ཁ', family: 'Sino-Tibetan › Bodish', lat: 27.47, lng: 89.64, locationNote: 'Thimphu' },
 	new: { code: 'new', name: 'Newar', endonym: 'नेपाल भाषा', family: 'Sino-Tibetan › Newaric', lat: 27.7, lng: 85.32, locationNote: 'Kathmandu valley' },
 	mni: { code: 'mni', name: 'Meitei (Manipuri)', endonym: 'ꯃꯩꯇꯩ ꯂꯣꯟ', family: 'Sino-Tibetan › Kuki-Chin-Naga', lat: 24.82, lng: 93.94, locationNote: 'Imphal' },
