@@ -32,13 +32,29 @@ After editing `wrangler.jsonc`, rerun `bun run gen` to refresh `worker-configura
 | `src/lib/data/patterns/non-possession.ts` | Pattern: "Non-possession" |
 | `src/lib/data/pathways/jespersens-cycle.ts` | Pathway: "Jespersen's Cycle" — drives the timeline viz |
 | `src/lib/data/tags.ts` | Tag vocabulary, facets, `TagId`, grouping helpers |
-| `src/lib/data/index.ts` | Barrel exports + `getPattern / getPathway / topics` |
+| `src/lib/data/index.ts` | Barrel exports + `getPattern / getPathway / topics / tagIndex / topicsWithTag` |
 
 To add a pattern, create a file under `src/lib/data/patterns/` and register it in `src/lib/data/index.ts` and in the route's `entries()` function at `src/routes/patterns/[slug]/+page.ts`. Give it tags from `tags.ts`; a tag the vocabulary lacks goes in there first, into the facet it belongs to.
 
 ## Signature view
 
 `src/lib/components/HistoricalTimeline.svelte` — SVG-based comparative timeline rendered on `/pathways/jespersens-cycle`. Per language it computes track packing for overlapping bands, sweeps an overlap-zone background, and renders status-specific fills (dominant / emerging / declining / approximate) with uncertainty pre/post-extensions.
+
+## Social cards
+
+Every page has its own 1200×630 card under `static/og/`, drawn from the same
+data the page shows: an Equal Earth map of the languages involved, coloured by
+strategy, stage, tagged topic or family, over the site palette. Cards whose
+languages sit in one region zoom to that region; the rest keep the whole world.
+
+- `scripts/og/card.ts` — the card document (layout, masks, markers, chips)
+- `scripts/og/geo.ts` — Natural Earth 1:110m geometry, projection, land paths
+- `scripts/og/generate.ts` — one spec per page, rendered through headless Chromium
+- `src/lib/og.ts` — route path ⇄ file name, shared with `Seo.svelte`
+
+Adding a pattern, pathway or tag means rerunning `bun run og` and committing the
+new card; changing the palette in `layout.css` changes every card too, since
+`scripts/og/theme.ts` reads the light value of each token from there.
 
 ## Routes
 
@@ -49,9 +65,11 @@ To add a pattern, create a file under `src/lib/data/patterns/` and register it i
 /pathways                        all pathways
 /pathways/[slug]                 pathway page (stages + cycle diagram + comparative timeline)
 /atlas                           stub for the world-atlas view (deferred)
+/tags                            tag vocabulary, grouped by facet, with entry counts
+/tags/[id]                       patterns and pathways carrying one tag
 ```
 
-Pattern and pathway pages are prerendered via `entries()`.
+Pattern, pathway and tag pages are prerendered via `entries()`; the tag routes take theirs from `usedTagIds`, so a tag with no entries gets no page.
 
 ## TODO (the big roadmap)
 
@@ -90,4 +108,5 @@ bun run check    # paraglide compile + svelte-kit sync + svelte-check
 bun run build    # production build into .svelte-kit/cloudflare
 bun run preview  # wrangler dev against the built worker on :4173
 bun run gen      # regenerate worker-configuration.d.ts from wrangler.jsonc
+bun run og       # redraw the social cards in static/og (append a filter, e.g. `bun run og existence`)
 ```

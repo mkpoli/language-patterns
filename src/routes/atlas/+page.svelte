@@ -29,6 +29,7 @@
 		group: string;
 		color: Color;
 		expression?: string;
+		transliteration?: string;
 	}
 
 	let topic = $state('all');
@@ -75,7 +76,8 @@
 						code: a.language,
 						group: a.strategy,
 						color: strat?.color ?? ('slate' as Color),
-						expression: a.expression
+						expression: a.expression,
+						transliteration: a.transliteration
 					}
 				];
 			});
@@ -92,7 +94,8 @@
 					code: e.language,
 					group: e.set ?? '',
 					color: (e.set ? setColor.get(e.set) : undefined) ?? ('slate' as Color),
-					expression: e.original
+					expression: e.original,
+					transliteration: e.transliteration
 				}
 			];
 		});
@@ -138,6 +141,7 @@
 			return visible.map((r) => ({
 				code: r.code,
 				expression: r.expression,
+				transliteration: r.transliteration,
 				color: r.color,
 				note: noteById.get(r.group)
 			}));

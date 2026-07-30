@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 	import { m } from '$lib/paraglide/messages.js';
-	import { SITE_URL } from '$lib/seo';
+	import { canonical } from '$lib/seo';
 	import {
 		TEMPLATE,
 		dataFile,
@@ -22,7 +23,7 @@
 	const path = $derived(`/${kind === 'pattern' ? 'patterns' : 'pathways'}/${slug}`);
 	// Field ids the issue forms declare, so the reporter arrives with the entry
 	// already identified.
-	const prefill = $derived({ entry: entryRef(kind, slug, title), page: SITE_URL + path });
+	const prefill = $derived({ entry: entryRef(kind, slug, title), page: canonical(path, getLocale()) });
 
 	const actions = $derived([
 		{ label: m.contribute_dispute(), href: issueUrl(TEMPLATE.dispute, prefill) },
@@ -81,7 +82,7 @@
 		>
 			{m.contribute_history()} ↗
 		</a>
-		<a href="/contribute" class="ms-auto hover:text-[color:var(--color-ink)]">
+		<a href={localizeHref('/contribute')} class="ms-auto hover:text-[color:var(--color-ink)]">
 			{m.contribute_more()} →
 		</a>
 	</div>

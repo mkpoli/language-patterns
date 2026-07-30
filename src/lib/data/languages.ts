@@ -22,7 +22,7 @@ export const languages: Record<string, Language> = {
 	is: { code: 'is', name: 'Icelandic', endonym: 'íslenska', family: 'Indo-European › Germanic', lat: 64.13, lng: -21.82, locationNote: 'Reykjavík' },
 	fo: { code: 'fo', name: 'Faroese', endonym: 'føroyskt', family: 'Indo-European › Germanic', lat: 62.0, lng: -6.78, locationNote: 'Tórshavn' },
 	yi: { code: 'yi', name: 'Yiddish', endonym: 'ייִדיש', family: 'Indo-European › Germanic', lat: 50.1, lng: 20.0, locationNote: 'Central Europe (historical Ashkenazi)' },
-	got: { code: 'got', name: 'Gothic', family: 'Indo-European › Germanic (historical)', lat: 45.0, lng: 35.0, locationNote: 'Crimea (4th-century Wulfila)' },
+	got: { code: 'got', name: 'Gothic', family: 'Indo-European › Germanic (historical)', lat: 43.22, lng: 25.61, locationNote: 'Nicopolis ad Istrum, Moesia (Wulfila’s Bible, 4th c.)' },
 
 	// ─── Indo-European › Romance ───────────────────────────────────────────────
 	fr: { code: 'fr', name: 'French', endonym: 'français', family: 'Indo-European › Romance', lat: 48.85, lng: 2.35, locationNote: 'Paris' },
@@ -134,6 +134,7 @@ export const languages: Record<string, Language> = {
 	bo: { code: 'bo', name: 'Tibetan', endonym: 'བོད་སྐད', family: 'Sino-Tibetan › Bodish', lat: 29.65, lng: 91.11, locationNote: 'Lhasa' },
 	my: { code: 'my', name: 'Burmese', endonym: 'မြန်မာ', family: 'Sino-Tibetan › Burmish', lat: 16.84, lng: 96.17, locationNote: 'Yangon' },
 	ii: { code: 'ii', name: 'Yi (Nuosu)', endonym: 'ꆈꌠꉙ', family: 'Sino-Tibetan › Loloish', lat: 27.91, lng: 102.27, locationNote: 'Liangshan' },
+	bxd: { code: 'bxd', name: 'Pela', endonym: 'pə̆lá 波拉', family: 'Sino-Tibetan › Burmish (endangered)', lat: 24.44, lng: 98.58, locationNote: 'Dehong, western Yunnan' },
 	dz: { code: 'dz', name: 'Dzongkha', endonym: 'རྫོང་ཁ', family: 'Sino-Tibetan › Bodish', lat: 27.47, lng: 89.64, locationNote: 'Thimphu' },
 	new: { code: 'new', name: 'Newar', endonym: 'नेपाल भाषा', family: 'Sino-Tibetan › Newaric', lat: 27.7, lng: 85.32, locationNote: 'Kathmandu valley' },
 	mni: { code: 'mni', name: 'Meitei (Manipuri)', endonym: 'ꯃꯩꯇꯩ ꯂꯣꯟ', family: 'Sino-Tibetan › Kuki-Chin-Naga', lat: 24.82, lng: 93.94, locationNote: 'Imphal' },
@@ -293,7 +294,7 @@ export const languages: Record<string, Language> = {
 	eu: { code: 'eu', name: 'Basque', endonym: 'euskara', family: 'Basque (isolate)', lat: 43.26, lng: -2.92, locationNote: 'Bilbao' },
 
 	// ─── Constructed / a posteriori ───────────────────────────────────────────
-	eo: { code: 'eo', name: 'Esperanto', family: 'Constructed (a posteriori, Indo-European-based)', lat: 52.23, lng: 21.01, locationNote: 'Białystok (Zamenhof birthplace)' },
+	eo: { code: 'eo', name: 'Esperanto', family: 'Constructed (a posteriori, Indo-European-based)', lat: 53.13, lng: 23.16, locationNote: 'Białystok (Zamenhof birthplace)' },
 	ia: { code: 'ia', name: 'Interlingua', family: 'Constructed (a posteriori, Romance)', lat: 48.85, lng: 2.35, locationNote: 'IALA, Paris (committee origin)' },
 	tok: { code: 'tok', name: 'Toki Pona', family: 'Constructed (a priori, minimalist)', lat: 45.42, lng: -75.7, locationNote: 'Ottawa (Sonja Lang)' },
 
@@ -444,10 +445,10 @@ export const languages: Record<string, Language> = {
 
 	// ─── More constructed ─────────────────────────────────────────────────────
 	io: { code: 'io', name: 'Ido', family: 'Constructed (a posteriori, Esperanto offshoot)', lat: 48.85, lng: 2.35, locationNote: 'Paris (Délégation pour l’adoption d’une langue auxiliaire)' },
-	vo: { code: 'vo', name: 'Volapük', family: 'Constructed (a posteriori)', lat: 49.45, lng: 8.85, locationNote: 'Litzelstetten / Konstanz (Schleyer)' },
+	vo: { code: 'vo', name: 'Volapük', family: 'Constructed (a posteriori)', lat: 47.72, lng: 9.17, locationNote: 'Litzelstetten / Konstanz (Schleyer)' },
 	jbo: { code: 'jbo', name: 'Lojban', family: 'Constructed (logical / a priori)', lat: 38.91, lng: -77.0, locationNote: 'LLG (Washington, DC)' },
 	tlh: { code: 'tlh', name: 'Klingon', endonym: 'tlhIngan Hol', family: 'Constructed (fictional)', lat: 34.05, lng: -118.24, locationNote: 'Marc Okrand (Los Angeles)' },
-	qya: { code: 'qya', name: 'Quenya', family: 'Constructed (fictional, Tolkien)', lat: 52.04, lng: -0.76, locationNote: 'Oxford (Tolkien)' },
+	qya: { code: 'qya', name: 'Quenya', family: 'Constructed (fictional, Tolkien)', lat: 51.75, lng: -1.26, locationNote: 'Oxford (Tolkien)' },
 
 	// ─── More South & Mesoamerican ────────────────────────────────────────────
 	chl: { code: 'chl', name: 'Cha’palaa', family: 'Barbacoan', lat: 0.85, lng: -78.93, locationNote: 'northern Ecuadorian coast' },
@@ -516,7 +517,7 @@ export const languages: Record<string, Language> = {
 	jje: { code: 'jje', name: 'Jeju', endonym: '제주말', family: 'Koreanic', lat: 33.49, lng: 126.5, locationNote: 'Jeju Island' },
 	cy_old: { code: 'cy_old', name: 'Old Welsh', family: 'Indo-European › Celtic (historical)', lat: 52.4, lng: -3.5, locationNote: 'medieval Wales' },
 	enm: { code: 'enm', name: 'Middle English', family: 'Indo-European › Germanic (historical)', lat: 51.5, lng: -0.12, locationNote: 'London (Middle English period)' },
-	ang: { code: 'ang', name: 'Old English', endonym: 'Englisċ', family: 'Indo-European › Germanic (historical)', lat: 51.75, lng: -1.26, locationNote: 'Wessex (historical)' },
+	ang: { code: 'ang', name: 'Old English', endonym: 'Englisċ', family: 'Indo-European › Germanic (historical)', lat: 51.06, lng: -1.31, locationNote: 'Winchester (West Saxon literary standard)' },
 	fro: { code: 'fro', name: 'Old French', family: 'Indo-European › Romance (historical)', lat: 48.85, lng: 2.35, locationNote: 'Île-de-France (medieval)' }
 };
 

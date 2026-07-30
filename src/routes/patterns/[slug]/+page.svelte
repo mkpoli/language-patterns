@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import StrategyCard from '$lib/components/StrategyCard.svelte';
 	import ComparisonTable from '$lib/components/ComparisonTable.svelte';
 	import ExampleGloss from '$lib/components/ExampleGloss.svelte';
@@ -11,6 +12,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Corrections from '$lib/components/Corrections.svelte';
 	import TagList from '$lib/components/TagList.svelte';
+	import Toc from '$lib/components/toc/Toc.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
@@ -85,6 +87,8 @@
 		<p class="max-w-3xl text-base">{pattern.summary}</p>
 		<TagList tags={pattern.tags} />
 	</header>
+
+	<Toc />
 
 	<section>
 		<h2 class="mb-4 font-serif text-2xl">{m.section_strategies()}</h2>
@@ -284,7 +288,7 @@
 				{#each pattern.related as rel (rel.slug)}
 					<li>
 						<a
-							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
+							href={localizeHref(`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`)}
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">

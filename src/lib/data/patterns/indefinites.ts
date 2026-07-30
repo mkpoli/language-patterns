@@ -99,32 +99,32 @@ export const indefinites: Pattern = {
 			{ language: 'de', axis: 'everyone', form: 'jeder / alle / jedermann', strategy: 'series' },
 
 			// Russian
-			{ language: 'ru', axis: 'someone', form: 'кто-то kto-to', strategy: 'interrogative-indefinite', note: '-то is the specific indefinite particle' },
-			{ language: 'ru', axis: 'anyone-npi', form: 'кто-нибудь kto-nibud’', strategy: 'interrogative-indefinite', note: '-нибудь for non-specific / questions' },
-			{ language: 'ru', axis: 'anyone-fci', form: 'кто угодно / кто бы то ни был', strategy: 'interrogative-universal' },
-			{ language: 'ru', axis: 'no-one', form: 'никто (+ не)', strategy: 'n-word', sources: [{ source: 'haspelmath-1997' }] },
-			{ language: 'ru', axis: 'everyone', form: 'все / каждый', strategy: 'series' },
+			{ language: 'ru', axis: 'someone', form: 'кто-то', transliteration: 'kto-to', strategy: 'interrogative-indefinite', note: '-то is the specific indefinite particle' },
+			{ language: 'ru', axis: 'anyone-npi', form: 'кто-нибудь', transliteration: 'kto-nibud’', strategy: 'interrogative-indefinite', note: '-нибудь for non-specific / questions' },
+			{ language: 'ru', axis: 'anyone-fci', form: 'кто угодно / кто бы то ни был', transliteration: 'kto ugodno / kto by to ni byl', strategy: 'interrogative-universal' },
+			{ language: 'ru', axis: 'no-one', form: 'никто (+ не)', transliteration: 'nikto (+ ne)', strategy: 'n-word', sources: [{ source: 'haspelmath-1997' }] },
+			{ language: 'ru', axis: 'everyone', form: 'все / каждый', transliteration: 'vse / každyj', strategy: 'series' },
 
 			// Japanese — the textbook 何も / 誰も case
-			{ language: 'ja', axis: 'someone', form: '誰か dare-ka', strategy: 'interrogative-indefinite', note: 'か = indefinite particle', sources: [{ source: 'kratzer-shimoyama-2002' }] },
-			{ language: 'ja', axis: 'anyone-npi', form: '誰か (in questions) / 誰も (in negation)', strategy: 'interrogative-additive', note: '誰も requires sentential negation; with negation it yields “no one”', sources: [{ source: 'kratzer-shimoyama-2002' }, { source: 'haspelmath-1997' }] },
-			{ language: 'ja', axis: 'anyone-fci', form: '誰でも dare-demo', strategy: 'interrogative-universal', note: 'でも = even-if particle; 何でも parallels for things' },
-			{ language: 'ja', axis: 'no-one', form: '誰も + neg', strategy: 'interrogative-additive', note: 'same form as the NPI; the negative reading comes from the clausal negation' },
-			{ language: 'ja', axis: 'everyone', form: '誰もが / 皆 / 全員', strategy: 'interrogative-additive', note: '誰もが (with NOM が) is the affirmative universal; 皆 / 全員 are lexical universals' },
+			{ language: 'ja', axis: 'someone', form: '誰か', transliteration: 'dare-ka', strategy: 'interrogative-indefinite', note: 'か = indefinite particle', sources: [{ source: 'kratzer-shimoyama-2002' }] },
+			{ language: 'ja', axis: 'anyone-npi', form: '誰か / 誰も', transliteration: 'dare-ka / dare-mo', strategy: 'interrogative-additive', note: '誰か carries the reading in questions; 誰も requires sentential negation, where it yields “no one”', sources: [{ source: 'kratzer-shimoyama-2002' }, { source: 'haspelmath-1997' }] },
+			{ language: 'ja', axis: 'anyone-fci', form: '誰でも', transliteration: 'dare-demo', strategy: 'interrogative-universal', note: 'でも = even-if particle; 何でも parallels for things' },
+			{ language: 'ja', axis: 'no-one', form: '誰も + neg', transliteration: 'dare-mo', strategy: 'interrogative-additive', note: 'same form as the NPI; the negative reading comes from the clausal negation' },
+			{ language: 'ja', axis: 'everyone', form: '誰もが / 皆 / 全員', transliteration: 'dare-mo ga / mina / zen’in', strategy: 'interrogative-additive', note: '誰もが (with NOM が) is the affirmative universal; 皆 / 全員 are lexical universals' },
 
 			// Korean
-			{ language: 'ko', axis: 'someone', form: '누군가 nuguinga', strategy: 'interrogative-indefinite' },
-			{ language: 'ko', axis: 'anyone-npi', form: '누구도 nugudo / 아무도 amudo', strategy: 'interrogative-additive', note: '아무 is a dedicated NPI / FCI root' },
-			{ language: 'ko', axis: 'anyone-fci', form: '누구나 nuguna / 누구든지', strategy: 'interrogative-universal' },
-			{ language: 'ko', axis: 'no-one', form: '아무도 + neg', strategy: 'interrogative-additive' },
-			{ language: 'ko', axis: 'everyone', form: '모두 modu / 모든 사람', strategy: 'series' },
+			{ language: 'ko', axis: 'someone', form: '누군가', transliteration: 'nugunga', strategy: 'interrogative-indefinite' },
+			{ language: 'ko', axis: 'anyone-npi', form: '누구도 / 아무도', transliteration: 'nugudo / amudo', strategy: 'interrogative-additive', note: '아무 is a dedicated NPI / FCI root' },
+			{ language: 'ko', axis: 'anyone-fci', form: '누구나 / 누구든지', transliteration: 'nuguna / nugudeunji', strategy: 'interrogative-universal' },
+			{ language: 'ko', axis: 'no-one', form: '아무도 + neg', transliteration: 'amudo', strategy: 'interrogative-additive' },
+			{ language: 'ko', axis: 'everyone', form: '모두 / 모든 사람', transliteration: 'modu / modeun saram', strategy: 'series' },
 
 			// Mandarin Chinese
-			{ language: 'zh', axis: 'someone', form: '有人 yǒu rén / 某人 mǒu rén', strategy: 'series', note: 'lit. “there-is person / a-certain person”' },
-			{ language: 'zh', axis: 'anyone-npi', form: '誰 shéi (in questions) / 任何人', strategy: 'interrogative-indefinite' },
-			{ language: 'zh', axis: 'anyone-fci', form: '誰都 / 任何人', strategy: 'interrogative-universal', note: '都 = universal selector' },
-			{ language: 'zh', axis: 'no-one', form: '沒人 méi rén / 誰也不 / 誰都不', strategy: 'interrogative-additive', note: '誰也不 is the wh-additive NPI under negation' },
-			{ language: 'zh', axis: 'everyone', form: '大家 / 每個人 / 人人', strategy: 'series', note: '大家 lit. “big-family”; 全稱 (universal-term) tradition' },
+			{ language: 'zh', axis: 'someone', form: '有人 / 某人', transliteration: 'yǒu rén / mǒu rén', strategy: 'series', note: 'lit. “there-is person / a-certain person”' },
+			{ language: 'zh', axis: 'anyone-npi', form: '誰 / 任何人', transliteration: 'shéi / rènhé rén', strategy: 'interrogative-indefinite', note: '誰 carries the reading in questions; 任何人 covers the other polarity contexts' },
+			{ language: 'zh', axis: 'anyone-fci', form: '誰都 / 任何人', transliteration: 'shéi dōu / rènhé rén', strategy: 'interrogative-universal', note: '都 = universal selector' },
+			{ language: 'zh', axis: 'no-one', form: '沒人 / 誰也不 / 誰都不', transliteration: 'méi rén / shéi yě bù / shéi dōu bù', strategy: 'interrogative-additive', note: '誰也不 is the wh-additive NPI under negation' },
+			{ language: 'zh', axis: 'everyone', form: '大家 / 每個人 / 人人', transliteration: 'dàjiā / měi gè rén / rénrén', strategy: 'series', note: '大家 lit. “big-family”; 全稱 (universal-term) tradition' },
 
 			// Turkish
 			{ language: 'tr', axis: 'someone', form: 'biri / birisi', strategy: 'one-based', note: 'bir = “one”' },
@@ -134,18 +134,18 @@ export const indefinites: Pattern = {
 			{ language: 'tr', axis: 'everyone', form: 'herkes', strategy: 'series' },
 
 			// Hindi
-			{ language: 'hi', axis: 'someone', form: 'कोई koī', strategy: 'series' },
-			{ language: 'hi', axis: 'anyone-npi', form: 'कोई भी koī bhī', strategy: 'interrogative-additive', note: 'भी = also/even' },
-			{ language: 'hi', axis: 'anyone-fci', form: 'कोई भी', strategy: 'interrogative-additive' },
-			{ language: 'hi', axis: 'no-one', form: 'कोई नहीं / कोई भी नहीं', strategy: 'series' },
-			{ language: 'hi', axis: 'everyone', form: 'सब / सब लोग / हर कोई', strategy: 'series' },
+			{ language: 'hi', axis: 'someone', form: 'कोई', transliteration: 'koī', strategy: 'series' },
+			{ language: 'hi', axis: 'anyone-npi', form: 'कोई भी', transliteration: 'koī bhī', strategy: 'interrogative-additive', note: 'भी = also/even' },
+			{ language: 'hi', axis: 'anyone-fci', form: 'कोई भी', transliteration: 'koī bhī', strategy: 'interrogative-additive' },
+			{ language: 'hi', axis: 'no-one', form: 'कोई नहीं / कोई भी नहीं', transliteration: 'koī nahī̃ / koī bhī nahī̃', strategy: 'series' },
+			{ language: 'hi', axis: 'everyone', form: 'सब / सब लोग / हर कोई', transliteration: 'sab / sab log / har koī', strategy: 'series' },
 
 			// Hebrew
-			{ language: 'he', axis: 'someone', form: 'מישהו mishehu', strategy: 'series' },
-			{ language: 'he', axis: 'anyone-npi', form: 'אף אחד af exad / מישהו (in questions)', strategy: 'n-word', note: 'af exad lit. “even one”' },
-			{ language: 'he', axis: 'anyone-fci', form: 'כל אחד kol exad', strategy: 'series' },
-			{ language: 'he', axis: 'no-one', form: 'אף אחד (+ neg)', strategy: 'n-word' },
-			{ language: 'he', axis: 'everyone', form: 'כולם kulam / כל אחד', strategy: 'series' },
+			{ language: 'he', axis: 'someone', form: 'מישהו', transliteration: 'mishehu', strategy: 'series' },
+			{ language: 'he', axis: 'anyone-npi', form: 'אף אחד / מישהו', transliteration: 'af exad / mishehu', strategy: 'n-word', note: 'af exad lit. “even one”; מישהו carries the reading in questions' },
+			{ language: 'he', axis: 'anyone-fci', form: 'כל אחד', transliteration: 'kol exad', strategy: 'series' },
+			{ language: 'he', axis: 'no-one', form: 'אף אחד (+ neg)', transliteration: 'af exad', strategy: 'n-word' },
+			{ language: 'he', axis: 'everyone', form: 'כולם / כל אחד', transliteration: 'kulam / kol exad', strategy: 'series' },
 
 			// Welsh
 			{ language: 'cy', axis: 'someone', form: 'rhywun', strategy: 'one-based', note: 'rhyw “some” + un “one”' },

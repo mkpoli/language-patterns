@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import StageCard from '$lib/components/StageCard.svelte';
 	import CycleDiagram from '$lib/components/CycleDiagram.svelte';
 	import HistoricalTimeline from '$lib/components/HistoricalTimeline.svelte';
@@ -7,6 +8,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Corrections from '$lib/components/Corrections.svelte';
 	import TagList from '$lib/components/TagList.svelte';
+	import Toc from '$lib/components/toc/Toc.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 	import StageFlow from '$lib/components/StageFlow.svelte';
@@ -165,6 +167,8 @@
 		<TagList tags={pathway.tags} />
 	</header>
 
+	<Toc />
+
 	{#if pathway.kind === 'cycle'}
 		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">
 			<div>
@@ -317,7 +321,7 @@
 				{#each pathway.related as rel (rel.slug)}
 					<li>
 						<a
-							href={`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`}
+							href={localizeHref(`/${rel.kind === 'pattern' ? 'patterns' : 'pathways'}/${rel.slug}`)}
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
