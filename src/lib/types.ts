@@ -1,11 +1,14 @@
 import type { TagId } from './data/tags';
 
-export type LanguageCode = string;
+import type { LanguageCode } from './data/languages';
+
+export type { LanguageCode };
 
 export type Confidence = 'high' | 'medium' | 'low';
 
 export interface Language {
-	code: LanguageCode;
+	/** Same string as the key this entry sits under in the language table. */
+	code: string;
 	name: string;
 	endonym?: string;
 	family: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import type { Attestation, ParadigmSection, Strategy } from '$lib/types';
+	import type { Attestation, ParadigmSection, Strategy, LanguageCode } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
 	import { orderedAxes } from '$lib/colexification';
@@ -8,7 +8,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 
 	export interface MapMarker {
-		code: string;
+		code: LanguageCode;
 		expression?: string;
 		transliteration?: string;
 		note?: string;
@@ -42,7 +42,7 @@
 	);
 
 	interface Point {
-		code: string;
+		code: LanguageCode;
 		lat: number;
 		lng: number;
 		color?: Strategy['color'];

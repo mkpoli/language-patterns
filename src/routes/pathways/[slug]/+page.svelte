@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { LanguageCode } from '$lib/types';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import StageCard from '$lib/components/StageCard.svelte';
 	import CycleDiagram from '$lib/components/CycleDiagram.svelte';
@@ -56,11 +57,11 @@
 
 	const mapMarkers = $derived.by(() => {
 		interface Bucket {
-			code: string;
+			code: LanguageCode;
 			expressions: string[];
 			groups: Set<string>;
 		}
-		const byCode = new Map<string, Bucket>();
+		const byCode = new Map<LanguageCode, Bucket>();
 		for (const e of pathway.examples ?? []) {
 			const lang = getLanguage(e.language);
 			if (lang.lat == null || lang.lng == null) continue;

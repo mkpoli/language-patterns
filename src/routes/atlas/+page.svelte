@@ -6,7 +6,7 @@
 	import PatternMap, { type MapMarker } from '$lib/components/PatternMap.svelte';
 	import { patterns, pathways, getLanguage, facets, localized, sortTags, type TagId } from '$lib/data';
 	import { strategyColor, colorForIndex } from '$lib/strategyColor';
-	import type { Strategy } from '$lib/types';
+	import type { Strategy, LanguageCode } from '$lib/types';
 	import { m } from '$lib/paraglide/messages.js';
 
 	type Color = Strategy['color'];
@@ -25,7 +25,7 @@
 	// One plotted record: a language attested under a color-coded group
 	// (strategy for patterns, example set for pathways, topic in all-mode).
 	interface PlottedRecord {
-		code: string;
+		code: LanguageCode;
 		group: string;
 		color: Color;
 		expression?: string;
@@ -167,7 +167,7 @@
 			}));
 		}
 		if (topicEntry?.kind === 'pathway') {
-			const byCode = new Map<string, { expressions: string[]; groups: Set<string> }>();
+			const byCode = new Map<LanguageCode, { expressions: string[]; groups: Set<string> }>();
 			for (const r of visible) {
 				let b = byCode.get(r.code);
 				if (!b) {
@@ -192,7 +192,7 @@
 			});
 		}
 		// All topics: one neutral marker per language, sized by topic count.
-		const byCode = new Map<string, string[]>();
+		const byCode = new Map<LanguageCode, string[]>();
 		for (const r of visible) {
 			const list = byCode.get(r.code) ?? [];
 			list.push(r.group);
