@@ -206,6 +206,60 @@ export const sources: Record<string, Source> = {
 		publisher: 'University of California Press',
 		type: 'book'
 	},
+	'nichols-1986': {
+		id: 'nichols-1986',
+		authors: ['Nichols, Johanna'],
+		year: 1986,
+		title: 'Head-marking and dependent-marking grammar',
+		container: 'Language',
+		pages: '62(1): 56–119',
+		doi: '10.2307/415601',
+		type: 'article'
+	},
+	'nichols-bickel-2013-locus': {
+		id: 'nichols-bickel-2013-locus',
+		authors: ['Nichols, Johanna', 'Bickel, Balthasar'],
+		year: 2013,
+		title: 'Locus of Marking in Possessive Noun Phrases',
+		container: 'WALS Online (v2020.4), Chapter 24',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/24',
+		type: 'chapter'
+	},
+	'goksel-kerslake-2005': {
+		id: 'goksel-kerslake-2005',
+		authors: ['Göksel, Aslı', 'Kerslake, Celia'],
+		year: 2005,
+		title: 'Turkish: A Comprehensive Grammar',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'weber-1989': {
+		id: 'weber-1989',
+		authors: ['Weber, David John'],
+		year: 1989,
+		title: 'A Grammar of Huallaga (Huánuco) Quechua',
+		publisher: 'University of California Press',
+		type: 'book'
+	},
+	'king-2003': {
+		id: 'king-2003',
+		authors: ['King, Gareth'],
+		year: 2003,
+		title: 'Modern Welsh: A Comprehensive Grammar',
+		container: '2nd edition',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'sneddon-1996': {
+		id: 'sneddon-1996',
+		authors: ['Sneddon, James Neil'],
+		year: 1996,
+		title: 'Indonesian: A Comprehensive Grammar',
+		publisher: 'Routledge',
+		type: 'book'
+	},
 
 	// ─── Negation ───────────────────────────────────────────────────────────────
 	'jespersen-1917': {

@@ -4,6 +4,7 @@ import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
 import { alienability } from './patterns/alienability';
+import { possessiveMarking } from './patterns/possessive-marking';
 import { indefinites } from './patterns/indefinites';
 import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
@@ -21,6 +22,7 @@ export const patterns: Pattern[] = [
 	existence,
 	possession,
 	alienability,
+	possessiveMarking,
 	nonPossession,
 	indefinites,
 	wordOrder,
