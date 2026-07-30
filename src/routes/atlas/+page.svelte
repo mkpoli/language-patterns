@@ -329,7 +329,7 @@
 		>
 			{m.atlas_all_topics()}
 		</button>
-		{#each [{ kind: 'pattern', list: shownPatterns }, { kind: 'pathway', list: shownPathways }] as g (g.kind)}
+		{#each [{ kind: 'pattern', list: shownPatterns }, { kind: 'pathway', list: shownPathways }].filter((g) => g.list.length) as g (g.kind)}
 			<div class="flex flex-col gap-1">
 				<p class="px-3 text-xs text-[color:var(--color-ink-soft)]">
 					{g.kind === 'pattern' ? m.nav_patterns() : m.nav_pathways()}
