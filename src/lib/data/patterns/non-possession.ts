@@ -47,7 +47,8 @@ export const nonPossession: Pattern = {
 		{ language: 'ja', strategy: 'existential-absence', expression: 'お金がない', transliteration: 'okane ga nai', confidence: 'high', note: 'money-NOM not.exist', sources: [{ source: 'veselinova-hamari-2022' }] },
 		{ language: 'tr', strategy: 'possessed-absence', expression: 'Param yok', confidence: 'high', note: 'money.POSS.1SG absent', sources: [{ source: 'stassen-2009' }] },
 		{ language: 'ru', strategy: 'existential-absence', expression: 'У меня нет денег', transliteration: 'U menja net deneg', confidence: 'high', note: 'at me NEG.EXIST money.GEN', sources: [{ source: 'stassen-2009' }, { source: 'veselinova-hamari-2022' }] },
-		{ language: 'ain', strategy: 'existential-absence', expression: 'icen isam', confidence: 'high', note: 'icen “money”; isam is the dedicated negative existential verb (cf. an / oka in Existence)', sources: [{ source: 'tamura-2000' }] }
+		{ language: 'ain', strategy: 'existential-absence', expression: 'icen isam', confidence: 'high', note: 'icen “money”; isam is the dedicated negative existential verb (cf. an / oka in Existence)', sources: [{ source: 'tamura-2000' }] },
+		{ language: 'tl', strategy: 'existential-absence', expression: 'Wala akong pera', confidence: 'high', note: 'wala is the suppletive negative of may and covers non-existence and non-possession with one form; ako is the ang-phrase possessor, linked -ng to pera “money”', sources: [{ source: 'schachter-otanes-1972' }, { source: 'sabbagh-2009' }] }
 	],
 	examples: [
 		{
