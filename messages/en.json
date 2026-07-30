@@ -7,6 +7,7 @@
 	"nav_patterns": "Patterns",
 	"nav_pathways": "Pathways",
 	"nav_atlas": "Atlas",
+	"nav_tags": "Tags",
 
 	"footer_text": "Language Patterns — PoC. Cross-linguistic typology and diachrony. Seed data is illustrative; sources to be added.",
 	"footer_license_html": "Content licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>. Attribute as “Language Patterns (languagepatterns.org)”.",
@@ -22,6 +23,8 @@
 	"section_shared_predicates_hint": "Many languages use one predicate for more than one of these three. Each language sits in the region covering everything its predicate can express.",
 	"section_language_comparison": "Language comparison",
 	"section_paradigm_grid": "Paradigm grid",
+	"section_column_clusters": "How the columns cluster",
+	"section_column_clusters_hint": "Two columns count as close when the same language uses one verb for both. Branches joining further right are the pairs more languages merge; the column order in the grid and on the map follows this tree, so neighbours behave alike.",
 	"section_examples": "Examples",
 	"section_examples_hint": "Toggle between Natural / Literal / Gloss to see how each language conceptualises the same idea.",
 	"section_related_patterns": "Related patterns",
@@ -49,6 +52,11 @@
 	"atlas_filter_topics": "Topics",
 	"atlas_all_topics": "All topics",
 	"atlas_by_family": "Distribution by family",
+
+	"tags_title": "Browse by tag",
+	"tags_subtitle": "Tags fall into four facets: the meaning at issue, the machinery that carries it, the process behind it, and how far it reaches.",
+	"tags_topics_heading": "Topics with this tag",
+	"tags_more_in_facet": "More in this facet",
 
 	"example_natural": "Natural",
 	"example_literal": "Literal",

@@ -1,3 +1,5 @@
+import type { TagId } from './data/tags';
+
 export type LanguageCode = string;
 
 export type Confidence = 'high' | 'medium' | 'low';
@@ -97,6 +99,8 @@ export interface Attestation {
 	language: LanguageCode;
 	strategy: string;
 	expression: string;
+	/** Romanization of `expression`, for languages written in another script. */
+	transliteration?: string;
 	confidence: Confidence;
 	note?: string;
 	sources?: Citation[];
@@ -123,7 +127,9 @@ export type PolarityRelation = 'same-with-negator' | 'suppletive' | 'compound';
 export interface PolarityContrast {
 	language: LanguageCode;
 	affirmative: string;
+	affirmativeTransliteration?: string;
 	negative: string;
+	negativeTransliteration?: string;
 	relation: PolarityRelation;
 	note?: string;
 	sources?: Citation[];
@@ -148,7 +154,15 @@ export interface ParadigmCell {
 	language: LanguageCode;
 	axis: string;
 	form: string;
+	/** Romanization of `form`, for languages written in another script. */
+	transliteration?: string;
 	strategy?: string;
+	/**
+	 * Citation form of the verb inside `form`. Two cells of one language sharing
+	 * a lemma is that language colexifying the two columns, which is what the
+	 * column clustering measures.
+	 */
+	lemma?: string;
 	note?: string;
 	sources?: Citation[];
 }
@@ -167,7 +181,7 @@ export interface Pattern {
 	shortTitle: string;
 	question: string;
 	summary: string;
-	category: string[];
+	tags: TagId[];
 	strategies: Strategy[];
 	attestations?: Attestation[];
 	examples: Example[];
@@ -192,6 +206,8 @@ export type BandStatus = 'dominant' | 'emerging' | 'declining' | 'approximate';
 export interface TimelineBand {
 	language: LanguageCode;
 	form: string;
+	/** Romanization of `form`, for languages written in another script. */
+	transliteration?: string;
 	stageId: string;
 	start: number;
 	end: number;
@@ -217,6 +233,7 @@ export interface Pathway {
 	question: string;
 	kind: 'cycle' | 'pathway' | 'shift';
 	summary: string;
+	tags: TagId[];
 	evidenceNote?: string;
 	stages: Stage[];
 	bands: TimelineBand[];

@@ -2,6 +2,7 @@
 	import type { Strategy, Attestation } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		strategy: Strategy;
@@ -33,11 +34,13 @@
 				{@const lang = getLanguage(att.language)}
 				<span
 					class="inline-flex items-center gap-1 rounded-full border border-[color:var(--color-surface)]/70 bg-[color:var(--color-surface)]/80 px-2 py-0.5 text-xs"
-					title={att.expression}
+					title={att.transliteration
+						? `${att.expression} — ${att.transliteration}`
+						: att.expression}
 				>
 					<span class="font-medium">{lang.name}</span>
 					<span class="text-[color:var(--color-ink-soft)]">·</span>
-					<span class="font-mono">{att.expression}</span>
+					<Expression text={att.expression} transliteration={att.transliteration} />
 				</span>
 			{/each}
 		</div>

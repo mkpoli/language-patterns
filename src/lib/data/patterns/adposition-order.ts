@@ -18,7 +18,7 @@ export const adpositionOrder: Pattern = {
 	question: 'Do adpositions come before or after the noun phrase?',
 	summary:
 		'Adposition order tracks verb–object order as a strong tendency — after the noun in OV languages (Japanese tēburu no ue ni), before it in VO (English on the table). Exceptions recur across families: Persian and Tajik combine OV order with prepositions, while SVO-leaning Finnish keeps its Uralic postpositions.',
-	category: ['Word Order', 'Grammar & Morphosyntax'],
+	tags: ['spatial-relation', 'word-order', 'adposition', 'worldwide'],
 	strategies: [
 		{
 			id: 'pre',
@@ -223,7 +223,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'lkt', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'hop', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{ language: 'chr', strategy: 'post', expression: 'postpositions', confidence: 'medium' },
-		{ language: 'cak', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		// Mande: S-AUX-O-V-X order with postpositions (WALS 85A: Bambara = Postpositions)
 		{
 			language: 'bm',
@@ -351,8 +350,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'ig', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Tok Pisin etc.
 		{ language: 'tpi', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'ht', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'jam', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		// Australian
 		{
 			language: 'wbp',
@@ -393,10 +390,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'csb', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'rue', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'cu', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		{ language: 'bho', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'mai', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'awa', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'mag', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		{
 			language: 'rmn',
 			strategy: 'pre',
@@ -545,10 +538,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'enm', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'fro', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'cy_old', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
-		// More Caucasian
-		{ language: 'ce', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'inh', strategy: 'post', expression: 'postpositions', confidence: 'high' },
-		{ language: 'kbd', strategy: 'post', expression: 'postpositions', confidence: 'high' },
 		// Pacific NW
 		{ language: 'hur', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'squ', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
@@ -569,7 +558,6 @@ export const adpositionOrder: Pattern = {
 		{ language: 'teo', strategy: 'pre', expression: 'prepositions', confidence: 'medium' },
 		{ language: 'zna', strategy: 'post', expression: 'postpositions', confidence: 'low' },
 		// Misc
-		{ language: 'mlt', strategy: 'pre', expression: 'prepositions', confidence: 'high' },
 		{ language: 'wuu', strategy: 'pre', expression: 'prepositions (coverbs)', confidence: 'high' },
 		{ language: 'nan', strategy: 'pre', expression: 'prepositions (coverbs)', confidence: 'high' },
 		{ language: 'hak', strategy: 'pre', expression: 'prepositions (coverbs)', confidence: 'high' },

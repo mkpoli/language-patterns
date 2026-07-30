@@ -1,14 +1,17 @@
 <script lang="ts">
+	import TagList from './TagList.svelte';
+	import type { TagId } from '$lib/data';
+
 	interface Props {
 		question: string;
 		title: string;
 		summary: string;
 		href: string;
-		category: string[];
+		tags?: TagId[];
 		kind: 'pattern' | 'pathway';
 		external?: boolean;
 	}
-	let { question, title, summary, href, category, kind, external = false }: Props = $props();
+	let { question, title, summary, href, tags = [], kind, external = false }: Props = $props();
 </script>
 
 <a
@@ -25,14 +28,14 @@
 		>
 			{kind === 'pattern' ? 'Pattern' : 'Pathway'}
 		</span>
-		{#each category.slice(0, 1) as cat (cat)}
-			<span>{cat}</span>
-		{/each}
 	</div>
 	<h3 class="font-serif text-2xl leading-tight">
 		<span class="text-[color:var(--color-ink-soft)]">{question}</span>
 	</h3>
 	<p class="text-sm text-[color:var(--color-ink-soft)]">{summary}</p>
+	{#if tags.length}
+		<TagList {tags} variant="inline" max={4} />
+	{/if}
 	<div class="mt-auto flex items-center justify-between pt-2 text-sm">
 		<span class="font-medium">{title}</span>
 		<span class="transition" class:group-hover:translate-x-1={!external} class:group-hover:-translate-y-0.5={external}>

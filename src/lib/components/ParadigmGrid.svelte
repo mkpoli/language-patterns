@@ -2,7 +2,9 @@
 	import type { ParadigmSection, Pattern } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
+	import { orderedAxes } from '$lib/colexification';
 	import CitationMark from './CitationMark.svelte';
+	import Expression from './Expression.svelte';
 
 	interface Props {
 		paradigm: ParadigmSection;
@@ -11,6 +13,7 @@
 	let { paradigm, strategies }: Props = $props();
 
 	const strategyById = $derived(new Map(strategies.map((s) => [s.id, s])));
+	const axes = $derived(orderedAxes(paradigm));
 
 	const languages = $derived.by(() => {
 		const order: string[] = [];
@@ -41,7 +44,7 @@
 			<thead class="bg-[color:var(--color-surface-sunken)] text-left text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
 				<tr>
 					<th class="sticky left-0 z-10 bg-[color:var(--color-surface-sunken)] px-4 py-3">Language</th>
-					{#each paradigm.axes as ax (ax.id)}
+					{#each axes as ax (ax.id)}
 						<th class="px-4 py-3">
 							<div class="font-medium text-[color:var(--color-ink)]">{ax.label}</div>
 							{#if ax.description}
@@ -61,13 +64,19 @@
 							<div class="font-medium">{lang.name}</div>
 							<div class="text-xs font-normal text-[color:var(--color-ink-soft)]">{lang.family}</div>
 						</th>
-						{#each paradigm.axes as ax (ax.id)}
+						{#each axes as ax (ax.id)}
 							{@const cell = cellAt.get(`${code}:${ax.id}`)}
 							{@const strategy = cell?.strategy ? strategyById.get(cell.strategy) : undefined}
 							{@const tokens = strategy ? strategyColor(strategy.color) : undefined}
 							<td class="px-4 py-3" style:background={tokens ? tokens.soft : 'transparent'}>
 								{#if cell}
-									<div class="font-mono text-[13px]" style:color={tokens?.textOn}>{cell.form}</div>
+									<div class="text-[13px]" style:color={tokens?.textOn}>
+										<Expression
+											text={cell.form}
+											transliteration={cell.transliteration}
+											stacked
+										/>
+									</div>
 									{#if strategy}
 										<div class="mt-1 text-[10px] font-medium uppercase tracking-wide" style:color={tokens?.textOn} style:opacity={0.7}>
 											{strategy.label}

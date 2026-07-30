@@ -7,7 +7,7 @@ export const nonPossession: Pattern = {
 	question: 'How do languages say “I don’t have X”?',
 	summary:
 		'To express absence of possession, languages either negate a HAVE-verb, add a negative determiner to the object, or reframe the situation as one of non-existence or absence — with the possessor as topic, location, or dative.',
-	category: ['Meaning & Expression', 'Possession & Existence', 'Negation & Polarity'],
+	tags: ['negation', 'possession', 'existence', 'suppletion', 'oblique-marking', 'lexicalization', 'worldwide'],
 	strategies: [
 		{
 			id: 'negated-have',
@@ -44,9 +44,9 @@ export const nonPossession: Pattern = {
 		{ language: 'en', strategy: 'negative-determiner', expression: 'I have no money', confidence: 'high', sources: [{ source: 'haspelmath-1997' }] },
 		{ language: 'es', strategy: 'negated-have', expression: 'No tengo dinero', confidence: 'high', sources: [{ source: 'stassen-2009' }] },
 		{ language: 'de', strategy: 'negative-determiner', expression: 'Ich habe kein Geld', confidence: 'high', sources: [{ source: 'haspelmath-1997' }] },
-		{ language: 'ja', strategy: 'existential-absence', expression: 'お金がない', confidence: 'high', note: 'money-NOM not.exist', sources: [{ source: 'veselinova-hamari-2022' }] },
+		{ language: 'ja', strategy: 'existential-absence', expression: 'お金がない', transliteration: 'okane ga nai', confidence: 'high', note: 'money-NOM not.exist', sources: [{ source: 'veselinova-hamari-2022' }] },
 		{ language: 'tr', strategy: 'possessed-absence', expression: 'Param yok', confidence: 'high', note: 'money.POSS.1SG absent', sources: [{ source: 'stassen-2009' }] },
-		{ language: 'ru', strategy: 'existential-absence', expression: 'У меня нет денег', confidence: 'high', note: 'at me NEG.EXIST money.GEN', sources: [{ source: 'stassen-2009' }, { source: 'veselinova-hamari-2022' }] },
+		{ language: 'ru', strategy: 'existential-absence', expression: 'У меня нет денег', transliteration: 'U menja net deneg', confidence: 'high', note: 'at me NEG.EXIST money.GEN', sources: [{ source: 'stassen-2009' }, { source: 'veselinova-hamari-2022' }] },
 		{ language: 'ain', strategy: 'existential-absence', expression: 'icen isam', confidence: 'high', note: 'icen “money”; isam is the dedicated negative existential verb (cf. an / oka in Existence)', sources: [{ source: 'tamura-2000' }] }
 	],
 	examples: [

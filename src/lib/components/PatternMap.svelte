@@ -3,12 +3,14 @@
 	import type { Attestation, ParadigmSection, Strategy } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { strategyColor } from '$lib/strategyColor';
+	import { orderedAxes } from '$lib/colexification';
 
 	import { m } from '$lib/paraglide/messages.js';
 
 	export interface MapMarker {
 		code: string;
 		expression?: string;
+		transliteration?: string;
 		note?: string;
 		color?: Strategy['color'];
 		size?: number;
@@ -46,6 +48,7 @@
 		color?: Strategy['color'];
 		strategy?: Strategy;
 		expression: string;
+		transliteration?: string;
 		note?: string;
 		size?: number;
 		links?: { href: string; label: string }[];
@@ -56,7 +59,7 @@
 	// one cell per column, so nothing has to be offset.
 	const columns = $derived(
 		paradigm
-			? paradigm.axes.filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
+			? orderedAxes(paradigm).filter((ax) => paradigm.cells.some((c) => c.axis === ax.id))
 			: []
 	);
 
@@ -98,6 +101,7 @@
 					color: strat?.color,
 					strategy: strat,
 					expression: c.form,
+					transliteration: c.transliteration,
 					note: c.note
 				});
 			}
@@ -120,6 +124,7 @@
 					lng: lang.lng + dx,
 					color: mk.color,
 					expression: mk.expression ?? '',
+					transliteration: mk.transliteration,
 					note: mk.note,
 					size: mk.size,
 					links: mk.links
@@ -146,6 +151,7 @@
 				color: strat?.color,
 				strategy: strat,
 				expression: att.expression,
+				transliteration: att.transliteration,
 				note: att.note
 			});
 		}
@@ -210,6 +216,7 @@
 					<div style="font-weight: 600;">${escapeHtml(lang.name)}</div>
 					<div style="font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(lang.family)}</div>
 					<div style="margin-top: 6px; font-family: var(--font-mono); font-size: 13px;">${escapeHtml(p.expression)}</div>
+					${p.transliteration ? `<div style="margin-top: 2px; font-size: 12px; font-style: italic; color: var(--color-ink-soft);">${escapeHtml(p.transliteration)}</div>` : ''}
 					${p.strategy ? `<div style="margin-top: 4px; display: inline-block; padding: 2px 6px; border-radius: 999px; font-size: 10px; background: ${tokens?.soft}; color: ${tokens?.textOn};">${escapeHtml(p.strategy.label)}</div>` : ''}
 					${p.note ? `<div style="margin-top: 4px; font-size: 11px; color: var(--color-ink-soft);">${escapeHtml(p.note)}</div>` : ''}
 					${p.links?.length ? `<div style="margin-top: 6px; display: flex; flex-direction: column; gap: 2px;">${p.links.map((l) => `<a href="${escapeHtml(l.href)}" style="font-size: 12px; color: var(--color-ink); text-decoration: underline;">${escapeHtml(l.label)}</a>`).join('')}</div>` : ''}
