@@ -294,6 +294,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'case-marking',
+		label: {
+			en: 'Case marking',
+			ja: '格標示',
+			zh: '格标记'
+		},
+		facet: 'structure',
+		definition: {
+			en: 'An affix or clitic on a noun phrase signalling its relation to a head or a clause.',
+			ja: '名詞句に付いて、主要部や節との関係を標示する接辞・接語。',
+			zh: '附于名词短语、标示其与中心语或小句关系的词缀或附着词。'
+		}
+	},
+	{
 		id: 'syncretism',
 		label: {
 			en: 'Syncretism',
