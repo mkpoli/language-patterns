@@ -1506,6 +1506,85 @@ export const sources: Record<string, Source> = {
 		title: 'Wiktionary: einschalten',
 		url: 'https://en.wiktionary.org/wiki/einschalten',
 		type: 'url'
+	},
+
+	// ─── Benefactives & applicatives ────────────────────────────────────────────
+	'zuniga-kittila-2010': {
+		id: 'zuniga-kittila-2010',
+		authors: ['Zúñiga, Fernando', 'Kittilä, Seppo'],
+		year: 2010,
+		title: 'Benefactives and Malefactives: Typological Perspectives and Case Studies',
+		container: 'Typological Studies in Language 92',
+		publisher: 'John Benjamins',
+		doi: '10.1075/tsl.92',
+		type: 'book'
+	},
+	'creissels-2010': {
+		id: 'creissels-2010',
+		authors: ['Creissels, Denis'],
+		year: 2010,
+		title: 'Benefactive applicative periphrases: A typological approach',
+		container: 'Benefactives and Malefactives: Typological Perspectives and Case Studies',
+		editors: ['Zúñiga, Fernando', 'Kittilä, Seppo'],
+		publisher: 'John Benjamins',
+		pages: '29–70',
+		doi: '10.1075/tsl.92.02cre',
+		type: 'chapter'
+	},
+	'kittila-2005': {
+		id: 'kittila-2005',
+		authors: ['Kittilä, Seppo'],
+		year: 2005,
+		title: 'Recipient-prominence vs. beneficiary-prominence',
+		container: 'Linguistic Typology',
+		pages: '9(2): 269–297',
+		doi: '10.1515/lity.2005.9.2.269',
+		type: 'article'
+	},
+	'peterson-2007': {
+		id: 'peterson-2007',
+		authors: ['Peterson, David A.'],
+		year: 2007,
+		title: 'Applicative Constructions',
+		container: 'Oxford Studies in Typology and Linguistic Theory',
+		publisher: 'Oxford University Press',
+		type: 'book'
+	},
+	'newman-1996': {
+		id: 'newman-1996',
+		authors: ['Newman, John'],
+		year: 1996,
+		title: 'Give: A Cognitive Linguistic Study',
+		container: 'Cognitive Linguistics Research 7',
+		publisher: 'Mouton de Gruyter',
+		doi: '10.1515/9783110823714',
+		type: 'book'
+	},
+	'shibatani-1994': {
+		id: 'shibatani-1994',
+		authors: ['Shibatani, Masayoshi'],
+		year: 1994,
+		title: 'Benefactive constructions: A Japanese-Korean comparative perspective',
+		container: 'Japanese/Korean Linguistics 4',
+		publisher: 'CSLI Publications',
+		pages: '39–74',
+		type: 'chapter'
+	},
+	'yamada-2004': {
+		id: 'yamada-2004',
+		authors: ['山田敏弘'],
+		year: 2004,
+		title: '日本語のベネファクティブ ——「てやる」「てくれる」「てもらう」の文法',
+		publisher: '明治書院',
+		type: 'book'
+	},
+	'ashton-1944': {
+		id: 'ashton-1944',
+		authors: ['Ashton, E. O.'],
+		year: 1944,
+		title: 'Swahili Grammar (Including Intonation)',
+		publisher: 'Longmans, Green & Co.',
+		type: 'book'
 	}
 };
 

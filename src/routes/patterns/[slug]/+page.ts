@@ -18,6 +18,7 @@ export function entries() {
 		{ slug: 'indefinites' },
 		{ slug: 'word-order' },
 		{ slug: 'adposition-order' },
-		{ slug: 'switching-on' }
+		{ slug: 'switching-on' },
+		{ slug: 'benefaction' }
 	];
 }
