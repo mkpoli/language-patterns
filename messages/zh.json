@@ -44,6 +44,9 @@
 	"section_geographic_distribution_hint_items": "选定一个对象，每个圆点即为该语言的说法，颜色对应动词所用的策略。点击圆点可查看具体形式。",
 	"stage_documented_in": "时间轴收录",
 
+	"toc_title": "本页内容",
+	"toc_close": "关闭",
+
 	"atlas_title": "反复出现的模式之地理分布",
 	"atlas_subtitle": "所有主题汇于一张地图。选择某个模式或路径，语言即按策略或证据集着色；也可以一次查看全部主题，此时标记大小表示该语言见于多少个主题。",
 	"atlas_filter_topics": "主题",

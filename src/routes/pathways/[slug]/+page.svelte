@@ -7,6 +7,7 @@
 	import Bibliography from '$lib/components/Bibliography.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import TagList from '$lib/components/TagList.svelte';
+	import Toc from '$lib/components/toc/Toc.svelte';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
 	import StageFlow from '$lib/components/StageFlow.svelte';
@@ -164,6 +165,8 @@
 		<p class="max-w-3xl text-base">{pathway.summary}</p>
 		<TagList tags={pathway.tags} />
 	</header>
+
+	<Toc />
 
 	{#if pathway.kind === 'cycle'}
 		<section class="grid gap-8 lg:grid-cols-[1fr_minmax(0,400px)] lg:items-start">

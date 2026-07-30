@@ -44,6 +44,9 @@
 	"section_geographic_distribution_hint_items": "Pick one thing, and each dot is how that language says it, coloured by the strategy behind the verb. Click a dot for the form.",
 	"stage_documented_in": "On the timeline",
 
+	"toc_title": "On this page",
+	"toc_close": "Close",
+
 	"atlas_title": "Geographic distribution of recurring patterns",
 	"atlas_subtitle": "Every topic on one map. Pick a pattern or pathway to colour languages by strategy or evidence set, or view all topics at once. In the combined view, marker size shows how many topics attest a language.",
 	"atlas_filter_topics": "Topics",

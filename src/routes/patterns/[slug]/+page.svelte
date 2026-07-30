@@ -11,6 +11,7 @@
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import TagList from '$lib/components/TagList.svelte';
+	import Toc from '$lib/components/toc/Toc.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { SITE_NAME, SITE_URL } from '$lib/seo';
 	import { getSource } from '$lib/data/sources';
@@ -85,6 +86,8 @@
 		<p class="max-w-3xl text-base">{pattern.summary}</p>
 		<TagList tags={pattern.tags} />
 	</header>
+
+	<Toc />
 
 	<section>
 		<h2 class="mb-4 font-serif text-2xl">{m.section_strategies()}</h2>
