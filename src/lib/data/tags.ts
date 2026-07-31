@@ -208,6 +208,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'tense-aspect',
+		label: {
+			en: 'Tense and aspect',
+			ja: 'テンス・アスペクト',
+			zh: '时与体'
+		},
+		facet: 'domain',
+		definition: {
+			en: 'When an event happened, and how it is laid out in time — finished, going on, still bearing on now.',
+			ja: '出来事がいつ起きたか、そして時間のなかでどう広がるか。完了、進行、現在への関わり。',
+			zh: '事件何时发生，以及它在时间中如何展开：完成、进行、与当下相关。'
+		}
+	},
+	{
 		id: 'modality',
 		label: {
 			en: 'Modality',

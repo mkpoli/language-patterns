@@ -14,6 +14,7 @@ export function entries() {
 	return [
 		{ slug: 'jespersens-cycle' },
 		{ slug: 'negative-existential-cycle' },
+		{ slug: 'resultative-to-perfect' },
 		{ slug: 'hear-words-to-obey' },
 		{ slug: 'see-to-try' }
 	];

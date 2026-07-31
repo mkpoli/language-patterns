@@ -15,6 +15,7 @@ import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
 import { negativeExistentialCycle } from './pathways/negative-existential-cycle';
+import { resultativeToPerfect } from './pathways/resultative-to-perfect';
 
 export { languages, getLanguage } from './languages';
 export { facets, tags, getTag, getFacet, groupByFacet, sortTags, localized } from './tags';
@@ -36,6 +37,7 @@ export const patterns: Pattern[] = [
 export const pathways: Pathway[] = [
 	jespersensCycle,
 	negativeExistentialCycle,
+	resultativeToPerfect,
 	hearWordsToObey,
 	seeToTry
 ];

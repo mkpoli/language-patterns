@@ -1990,6 +1990,97 @@ export const sources: Record<string, Source> = {
 		pages: '8(6)',
 		doi: '10.18148/hs/2024.v8i6.219',
 		type: 'article'
+	},
+
+	// ─── Tense, aspect, and the periphrastic perfect ────────────────────────────
+	'bybee-perkins-pagliuca-1994': {
+		id: 'bybee-perkins-pagliuca-1994',
+		authors: ['Bybee, Joan L.', 'Perkins, Revere', 'Pagliuca, William'],
+		year: 1994,
+		title: 'The Evolution of Grammar: Tense, Aspect, and Modality in the Languages of the World',
+		publisher: 'University of Chicago Press',
+		type: 'book'
+	},
+	'bybee-dahl-1989': {
+		id: 'bybee-dahl-1989',
+		authors: ['Bybee, Joan L.', 'Dahl, Östen'],
+		year: 1989,
+		title: 'The creation of tense and aspect systems in the languages of the world',
+		container: 'Studies in Language',
+		pages: '13(1): 51–103',
+		doi: '10.1075/sl.13.1.03byb',
+		type: 'article'
+	},
+	'dahl-1985': {
+		id: 'dahl-1985',
+		authors: ['Dahl, Östen'],
+		year: 1985,
+		title: 'Tense and Aspect Systems',
+		publisher: 'Basil Blackwell',
+		type: 'book'
+	},
+	'dahl-2000': {
+		id: 'dahl-2000',
+		authors: ['Dahl, Östen'],
+		year: 2000,
+		title: 'Tense and Aspect in the Languages of Europe',
+		container: 'Empirical Approaches to Language Typology (EUROTYP) 20-6',
+		publisher: 'Mouton de Gruyter',
+		type: 'book'
+	},
+	'dahl-velupillai-wals-68': {
+		id: 'dahl-velupillai-wals-68',
+		authors: ['Dahl, Östen', 'Velupillai, Viveka'],
+		year: 2013,
+		title: 'The Perfect',
+		container: 'The World Atlas of Language Structures Online, chapter 68',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/68',
+		type: 'dataset'
+	},
+	'drinka-2017': {
+		id: 'drinka-2017',
+		authors: ['Drinka, Bridget'],
+		year: 2017,
+		title: 'Language Contact in Europe: The Periphrastic Perfect through History',
+		container: 'Cambridge Approaches to Language Contact',
+		publisher: 'Cambridge University Press',
+		doi: '10.1017/9781139027694',
+		type: 'book'
+	},
+	'harris-1982': {
+		id: 'harris-1982',
+		authors: ['Harris, Martin B.'],
+		year: 1982,
+		title: 'The “past simple” and the “present perfect” in Romance',
+		container: 'Studies in the Romance Verb',
+		editors: ['Vincent, Nigel', 'Harris, Martin B.'],
+		publisher: 'Croom Helm',
+		pages: '42–70',
+		type: 'chapter'
+	},
+	'carey-1994': {
+		id: 'carey-1994',
+		authors: ['Carey, Kathleen'],
+		year: 1994,
+		title:
+			'The grammaticalization of the perfect in Old English: An account based on pragmatics and metaphor',
+		container: 'Perspectives on Grammaticalization (Current Issues in Linguistic Theory 109)',
+		editors: ['Pagliuca, William'],
+		publisher: 'John Benjamins',
+		type: 'chapter'
+	},
+	'shirai-1998': {
+		id: 'shirai-1998',
+		authors: ['Shirai, Yasuhiro'],
+		year: 1998,
+		title:
+			'Where the progressive and the resultative meet: Imperfective aspect in Japanese, Chinese, Korean and English',
+		container: 'Studies in Language',
+		pages: '22(3): 661–692',
+		doi: '10.1075/sl.22.3.06shi',
+		type: 'article'
 	}
 };
 
