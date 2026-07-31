@@ -14,6 +14,8 @@
 	let paused = $state(false);
 	let held = $state(false);
 	let reduced = $state(false);
+	/** Bumped whenever the dwell timer restarts, so the fill restarts with it. */
+	let cycle = $state(0);
 
 	const frame = $derived(frames[index]);
 
@@ -41,6 +43,17 @@
 		index = i;
 	}
 
+	/** Freeze on the way in; on the way out the timer and the fill start over together. */
+	function hold(value: boolean) {
+		paused = value;
+		if (!value) cycle += 1;
+	}
+
+	function toggleHold() {
+		held = !held;
+		if (!held) cycle += 1;
+	}
+
 	function year(value: number): string {
 		return value < 0 ? m.year_bce({ year: -value }) : String(value);
 	}
@@ -51,24 +64,24 @@
 	<section
 		class="flex flex-col overflow-hidden rounded-3xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]"
 		aria-label={m.home_featured_aria()}
-		onpointerenter={() => (paused = true)}
-		onpointerleave={() => (paused = false)}
-		onfocusin={() => (paused = true)}
-		onfocusout={() => (paused = false)}
+		onpointerenter={() => hold(true)}
+		onpointerleave={() => hold(false)}
+		onfocusin={() => hold(true)}
+		onfocusout={() => hold(false)}
 	>
 		<div class="flex flex-col gap-1.5 px-6 pt-6 pb-4">
-			<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-faint)]">
+			<p class="text-xs tracking-widest text-[color:var(--color-ink-faint)] uppercase">
 				{frame.kind === 'pattern' ? m.nav_patterns() : m.nav_pathways()}
 			</p>
 			<h2 class="font-serif text-xl leading-snug" lang="en">{frame.question}</h2>
 			<p class="text-sm text-[color:var(--color-ink-soft)]" lang="en">{frame.caption}</p>
 		</div>
 
-		<div class="map relative border-t border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)]">
+		<div
+			class="map relative border-t border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)]"
+		>
 			<WorldMap points={frame.map} animateKey={frame.slug} radius={8} />
-			<span
-				class="absolute right-3 bottom-2 text-[0.65rem] text-[color:var(--color-ink-faint)]"
-			>
+			<span class="absolute right-3 bottom-2 text-[0.65rem] text-[color:var(--color-ink-faint)]">
 				{m.home_map_count({ count: frame.map.length })}
 			</span>
 		</div>
@@ -142,7 +155,7 @@
 				</button>
 				<button
 					type="button"
-					onclick={() => (held = !held)}
+					onclick={toggleHold}
 					aria-pressed={held}
 					aria-label={held ? m.home_resume_rotation() : m.home_pause_rotation()}
 					class="flex h-7 w-7 items-center justify-center rounded-full border border-[color:var(--color-rule)] text-xs transition hover:border-[color:var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accent)]"
@@ -175,10 +188,12 @@
 							class:w-1.5={i !== index}
 						>
 							{#if i === index}
-								<span
-									class="tick block h-full rounded-full bg-[color:var(--color-ink)]"
-									class:paused={paused || held || reduced || frames.length < 2}
-								></span>
+								{#key cycle}
+									<span
+										class="tick block h-full rounded-full bg-[color:var(--color-ink)]"
+										class:paused={paused || held || reduced || frames.length < 2}
+									></span>
+								{/key}
 							{/if}
 						</span>
 					</button>
