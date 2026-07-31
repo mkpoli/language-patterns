@@ -1582,6 +1582,46 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/buksan',
 		type: 'url'
 	},
+	'wiktionary-ausschalten': {
+		id: 'wiktionary-ausschalten',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ausschalten',
+		url: 'https://en.wiktionary.org/wiki/ausschalten',
+		type: 'url'
+	},
+	'wiktionary-uitzetten': {
+		id: 'wiktionary-uitzetten',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: uitzetten',
+		url: 'https://en.wiktionary.org/wiki/uitzetten',
+		type: 'url'
+	},
+	'wiktionary-patayin': {
+		id: 'wiktionary-patayin',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: patayin',
+		url: 'https://en.wiktionary.org/wiki/patayin',
+		type: 'url'
+	},
+	'wiktionary-spegnere': {
+		id: 'wiktionary-spegnere',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: spegnere',
+		url: 'https://en.wiktionary.org/wiki/spegnere',
+		type: 'url'
+	},
+	'wiktionary-zgasic': {
+		id: 'wiktionary-zgasic',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: zgasić',
+		url: 'https://en.wiktionary.org/wiki/zgasić',
+		type: 'url'
+	},
 	'tatoeba': {
 		id: 'tatoeba',
 		authors: ['Tatoeba contributors'],

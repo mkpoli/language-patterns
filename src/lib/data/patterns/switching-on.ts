@@ -385,6 +385,31 @@ export const switchingOn: Pattern = {
 			{ source: 'koptjevskaja-tamm-rakhilina-vanhove-2016' }
 		]
 	},
+	switchOff: {
+		title: 'Switching it off again',
+		summary:
+			'The verb that turns something off is not free. Most languages reverse the image they switched on with — open then close, kindle then extinguish — and a few change image halfway, which is where the interesting ones sit.',
+		pairs: [
+			{ language: 'tr', on: 'ışığı açmak', off: 'ışığı kapatmak', offSense: 'close', relation: 'mirrored', note: 'open then close', sources: [{ source: 'wiktionary-acmak' }, { source: 'wiktionary-kapatmak' }] },
+			{ language: 'zh', on: '開燈 kāi dēng', off: '關燈 guān dēng', offSense: 'close', relation: 'mirrored', note: 'open then close', sources: [{ source: 'wiktionary-kai' }, { source: 'wiktionary-guan' }] },
+			{ language: 'th', on: 'เปิดไฟ pə̀ət fai', off: 'ปิดไฟ pìt fai', offSense: 'close', relation: 'mirrored', note: 'open then close, and the two verbs differ by a tone', sources: [{ source: 'wiktionary-poet' }, { source: 'wiktionary-pit' }] },
+			{ language: 'ru', on: 'включить свет', off: 'выключить свет', offSense: 'exclude', relation: 'mirrored', note: 'include then exclude', sources: [{ source: 'wiktionary-vkljuchit' }, { source: 'wiktionary-vykljuchit' }] },
+			{ language: 'ko', on: '불을 켜다 kyeoda', off: '불을 끄다 kkeuda', offSense: 'extinguish', relation: 'mirrored', note: 'kindle then extinguish', sources: [{ source: 'wiktionary-kyeoda' }, { source: 'wiktionary-kkeuda' }] },
+			{ language: 'es', on: 'encender la luz', off: 'apagar la luz', offSense: 'extinguish', relation: 'mirrored', note: 'kindle then extinguish', sources: [{ source: 'wiktionary-encender' }, { source: 'wiktionary-apagar' }] },
+			{ language: 'fr', on: 'allumer la lumière', off: 'éteindre la lumière', offSense: 'extinguish', relation: 'mirrored', note: 'light then extinguish', sources: [{ source: 'wiktionary-allumer' }, { source: 'wiktionary-eteindre' }] },
+			{ language: 'el', on: 'ανάβω το φως anávo', off: 'σβήνω το φως svíno', offSense: 'extinguish', relation: 'mirrored', note: 'kindle then extinguish', sources: [{ source: 'wiktionary-anavo' }, { source: 'wiktionary-svino' }] },
+			{ language: 'sw', on: 'kuwasha taa', off: 'kuzima taa', offSense: 'extinguish', relation: 'mirrored', note: 'set alight then extinguish', sources: [{ source: 'wiktionary-washa' }] },
+			{ language: 'it', on: 'accendere la luce', off: 'spegnere la luce', offSense: 'extinguish', relation: 'mirrored', note: 'kindle then extinguish', sources: [{ source: 'wiktionary-spegnere' }] },
+			{ language: 'pl', on: 'zapalić światło', off: 'zgasić światło', offSense: 'extinguish', relation: 'mirrored', note: 'ignite then extinguish; wyłączyć stands beside it on the joining pattern', sources: [{ source: 'wiktionary-zgasic' }] },
+			{ language: 'ja', on: '電気をつける tsukeru', off: '電気を消す kesu', offSense: 'extinguish, erase', relation: 'domain-switch', note: 'attaches it, then extinguishes it', sources: [{ source: 'wiktionary-tsukeru' }, { source: 'wiktionary-kesu' }] },
+			{ language: 'vi', on: 'bật đèn', off: 'tắt đèn', offSense: 'go out', relation: 'domain-switch', note: 'snaps it on, then lets it go out', sources: [{ source: 'wiktionary-bat' }, { source: 'wiktionary-tat' }] },
+			{ language: 'id', on: 'menyalakan lampu', off: 'mematikan lampu', offSense: 'die', relation: 'domain-switch', note: 'makes it flame, then makes it die', sources: [{ source: 'wiktionary-menghidupkan' }] },
+			{ language: 'tl', on: 'buksan ang ilaw', off: 'patayin ang ilaw', offSense: 'kill', relation: 'domain-switch', note: 'opens it, then kills it', sources: [{ source: 'wiktionary-buksan' }, { source: 'wiktionary-patayin' }] },
+			{ language: 'de', on: 'das Licht einschalten', off: 'das Licht ausschalten', offSense: 'out', relation: 'particle', note: 'ein- and aus- on one schalten', sources: [{ source: 'wiktionary-einschalten' }, { source: 'wiktionary-ausschalten' }] },
+			{ language: 'nl', on: 'het licht aanzetten', off: 'het licht uitzetten', offSense: 'out', relation: 'particle', note: 'aan- and uit- on one zetten', sources: [{ source: 'wiktionary-uitzetten' }] },
+		],
+		sources: [{ source: 'tatoeba' }]
+	},
 	examples: [
 		{
 			language: 'ja',
