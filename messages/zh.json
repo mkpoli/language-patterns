@@ -32,6 +32,8 @@
 	"section_neighboring_shifts": "语义演变目录中的相邻演变",
 	"section_neighboring_shifts_hint": "语义演变数据库（DatSemShift）中收录的相关源—目标配对。未标注者为已接受的条目。",
 	"status_proposed": "拟议",
+	"citation_needed": "[需要来源]",
+	"citation_needed_hint": "此形式尚未记录来源。",
 	"section_references": "参考文献",
 	"patterns_index_heading": "各语言如何表达同一个意思",
 	"pathways_index_heading": "语言如何沿固定方向反复变化",

@@ -123,9 +123,9 @@
 		</div>
 	{/if}
 
-	{#if example.sources?.length}
+	{#if example.sources?.length || example.citationNeeded}
 		<footer class="mt-3 border-t border-[color:var(--color-rule)] pt-2">
-			<CitationMark citations={example.sources} />
+			<CitationMark citations={example.sources} citationNeeded={example.citationNeeded} />
 		</footer>
 	{/if}
 </article>

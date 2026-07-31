@@ -32,6 +32,8 @@
 	"section_neighboring_shifts": "カタログ上の隣接シフト",
 	"section_neighboring_shifts_hint": "意味変化データベース（DatSemShift）に登録された関連するソース→ターゲットの組。注記のないものは承認済みの項目。",
 	"status_proposed": "提案中",
+	"citation_needed": "[要出典]",
+	"citation_needed_hint": "この形式の出典はまだ記録されていない。",
 	"section_references": "参考文献",
 	"patterns_index_heading": "同じ内容を言語ごとにどう言い表すか",
 	"pathways_index_heading": "言語が向きをもって繰り返し変化するしくみ",

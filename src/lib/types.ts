@@ -70,6 +70,8 @@ export interface Example {
 	set?: string;
 	illustration?: ExampleIllustration;
 	sources?: Citation[];
+	/** No source is on record for this form yet; it renders as [citation needed]. */
+	citationNeeded?: boolean;
 }
 
 /**
@@ -107,6 +109,8 @@ export interface Attestation {
 	confidence: Confidence;
 	note?: string;
 	sources?: Citation[];
+	/** No source is on record for this attestation yet; renders as [citation needed]. */
+	citationNeeded?: boolean;
 	/** Lexical origin of the predicate, with how securely it is known. */
 	origin?: { value: PredicateOrigin; evidence: OriginEvidence };
 	/** An expletive or locative element filling the subject slot: there, ci, y. */
