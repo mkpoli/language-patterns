@@ -15,6 +15,7 @@ export const languages = {
 	en: { code: 'en', name: 'English', family: 'Indo-European › Germanic', lat: 51.5, lng: -0.12, locationNote: 'London (historical core)' },
 	de: { code: 'de', name: 'German', endonym: 'Deutsch', family: 'Indo-European › Germanic', lat: 52.52, lng: 13.4, locationNote: 'Berlin' },
 	nl: { code: 'nl', name: 'Dutch', endonym: 'Nederlands', family: 'Indo-European › Germanic', lat: 52.37, lng: 4.9, locationNote: 'Amsterdam' },
+	fy: { code: 'fy', name: 'West Frisian', endonym: 'Frysk', family: 'Indo-European › Germanic', lat: 53.2, lng: 5.79, locationNote: 'Leeuwarden' },
 	af: { code: 'af', name: 'Afrikaans', family: 'Indo-European › Germanic', lat: -33.92, lng: 18.42, locationNote: 'Cape Town' },
 	sv: { code: 'sv', name: 'Swedish', endonym: 'svenska', family: 'Indo-European › Germanic', lat: 59.33, lng: 18.07, locationNote: 'Stockholm' },
 	da: { code: 'da', name: 'Danish', endonym: 'dansk', family: 'Indo-European › Germanic', lat: 55.68, lng: 12.57, locationNote: 'Copenhagen' },
