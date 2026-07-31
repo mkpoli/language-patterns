@@ -41,7 +41,7 @@
 				<div class="text-xs text-[color:var(--color-ink-soft)]">{m.site_tagline()}</div>
 			</div>
 		</a>
-		<nav class="flex items-center gap-4 text-sm">
+		<nav class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
 			<a href={localizeHref("/patterns")} class="hover:underline">{m.nav_patterns()}</a>
 			<a href={localizeHref("/pathways")} class="hover:underline">{m.nav_pathways()}</a>
 			<a href={localizeHref("/atlas")} class="hover:underline">{m.nav_atlas()}</a>
