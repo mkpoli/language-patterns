@@ -336,6 +336,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'nominal-classification',
+		label: {
+			en: 'Nominal classification',
+			ja: '名詞分類',
+			zh: '名词分类'
+		},
+		facet: 'structure',
+		definition: {
+			en: 'Nouns sorted into classes the grammar reacts to: classifiers, genders, noun classes.',
+			ja: '名詞を、文法が反応する類に振り分けるしくみ。類別詞・性・名詞クラス。',
+			zh: '把名词分入语法会作出反应的类别：类别词、性、名词类。'
+		}
+	},
+	{
 		id: 'colexification',
 		label: {
 			en: 'Colexification',

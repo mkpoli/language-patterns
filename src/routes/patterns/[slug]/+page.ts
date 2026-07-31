@@ -21,6 +21,7 @@ export function entries() {
 		{ slug: 'word-order' },
 		{ slug: 'adposition-order' },
 		{ slug: 'switching-on' },
-		{ slug: 'benefaction' }
+		{ slug: 'benefaction' },
+		{ slug: 'numeral-classifiers' }
 	];
 }
