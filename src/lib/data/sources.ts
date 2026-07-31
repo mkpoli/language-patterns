@@ -94,6 +94,32 @@ export const sources: Record<string, Source> = {
 		publisher: 'Oxford University Press',
 		type: 'book'
 	},
+	'hualde-ortizdeurbina-2003': {
+		id: 'hualde-ortizdeurbina-2003',
+		authors: ['Hualde, José Ignacio', 'Ortiz de Urbina, Jon'],
+		year: 2003,
+		title: 'A Grammar of Basque',
+		publisher: 'Mouton de Gruyter',
+		doi: '10.1515/9783110895285',
+		type: 'book'
+	},
+	'king-2015': {
+		id: 'king-2015',
+		authors: ['King, Gareth'],
+		year: 2015,
+		title: 'Modern Welsh: A Comprehensive Grammar, 3rd edn',
+		publisher: 'Routledge',
+		doi: '10.4324/9781315739410',
+		type: 'book'
+	},
+	'holmes-hinchliffe-2003': {
+		id: 'holmes-hinchliffe-2003',
+		authors: ['Holmes, Philip', 'Hinchliffe, Ian'],
+		year: 2003,
+		title: 'Swedish: A Comprehensive Grammar, 2nd edn',
+		publisher: 'Routledge',
+		type: 'book'
+	},
 	'schachter-otanes-1972': {
 		id: 'schachter-otanes-1972',
 		authors: ['Schachter, Paul', 'Otanes, Fe T.'],
