@@ -185,8 +185,8 @@ export const switchingOn: Pattern = {
 			{ id: 'ac', label: 'the air conditioner', description: 'A machine with no pre-electric ancestor to borrow words from.' },
 			{ id: 'tap', label: 'the tap', description: 'Not electric at all — a valve you open, and the source of English “turn on”.' },
 			{ id: 'music', label: 'music', description: 'Putting on a record, a tape, a file.' },
-			{ id: 'alarm', label: 'the alarm clock', description: 'Set rather than switched: it has to be told a time.' },
-			{ id: 'vacuum', label: 'the vacuum cleaner', description: 'A hand tool that has to be pushed across a floor.' },
+			{ id: 'alarm', label: 'the alarm clock', description: 'Told a time rather than simply switched, so the verb often schedules instead of activating — Japanese 目覚ましをかける sets it to sound later.' },
+			{ id: 'vacuum', label: 'the vacuum cleaner', description: 'A hand tool pushed across a floor. Several languages name the chore rather than the switch, so the verb need carry no on-and-off reading at all — Japanese 掃除機をかける is doing the vacuuming.' },
 			{ id: 'washer', label: 'the washing machine', description: 'A drum that turns for an hour unattended.' }
 		],
 		cells: [
