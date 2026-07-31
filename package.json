@@ -14,6 +14,7 @@
 		"format": "prettier --write .",
 		"gen": "rm -rf .svelte-kit/cloudflare && wrangler types",
 		"og": "bun scripts/og/generate.ts",
+		"geo": "bun scripts/geo/build-outline.ts",
 		"deploy": "bun run build && wrangler deploy",
 		"deploy:dry": "wrangler deploy --dry-run",
 		"tail": "wrangler tail",
