@@ -1833,6 +1833,114 @@ export const sources: Record<string, Source> = {
 		title: 'Swahili Grammar (Including Intonation)',
 		publisher: 'Longmans, Green & Co.',
 		type: 'book'
+	},
+
+	// ─── Numeral classifiers & noun categorization ──────────────────────────────
+	'aikhenvald-2000': {
+		id: 'aikhenvald-2000',
+		authors: ['Aikhenvald, Alexandra Y.'],
+		year: 2000,
+		title: 'Classifiers: A Typology of Noun Categorization Devices',
+		container: 'Oxford Studies in Typology and Linguistic Theory',
+		publisher: 'Oxford University Press',
+		type: 'book'
+	},
+	'gil-wals-55': {
+		id: 'gil-wals-55',
+		authors: ['Gil, David'],
+		year: 2013,
+		title: 'Numeral Classifiers',
+		container: 'The World Atlas of Language Structures Online, chapter 55',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/55',
+		type: 'dataset'
+	},
+	'senft-2000': {
+		id: 'senft-2000',
+		authors: ['Senft, Gunter'],
+		year: 2000,
+		title: 'Systems of Nominal Classification',
+		container: 'Language, Culture and Cognition 4',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'grinevald-2000': {
+		id: 'grinevald-2000',
+		authors: ['Grinevald, Colette'],
+		year: 2000,
+		title: 'A morphosyntactic typology of classifiers',
+		container: 'Systems of Nominal Classification',
+		editors: ['Senft, Gunter'],
+		publisher: 'Cambridge University Press',
+		pages: '50–92',
+		type: 'chapter'
+	},
+	'downing-1996': {
+		id: 'downing-1996',
+		authors: ['Downing, Pamela A.'],
+		year: 1996,
+		title: 'Numeral Classifier Systems: The Case of Japanese',
+		container: 'Studies in Discourse and Grammar 4',
+		publisher: 'John Benjamins',
+		doi: '10.1075/sidag.4',
+		type: 'book'
+	},
+	'bisang-1999': {
+		id: 'bisang-1999',
+		authors: ['Bisang, Walter'],
+		year: 1999,
+		title: 'Classifiers in East and Southeast Asian languages: Counting and beyond',
+		container: 'Numeral Types and Changes Worldwide',
+		editors: ['Gvozdanović, Jadranka'],
+		publisher: 'Mouton de Gruyter',
+		pages: '113–185',
+		doi: '10.1515/9783110811193.113',
+		type: 'chapter'
+	},
+	'chao-1968': {
+		id: 'chao-1968',
+		authors: ['Chao, Yuen Ren'],
+		year: 1968,
+		title: 'A Grammar of Spoken Chinese',
+		publisher: 'University of California Press',
+		type: 'book'
+	},
+	'okell-1969': {
+		id: 'okell-1969',
+		authors: ['Okell, John'],
+		year: 1969,
+		title: 'A Reference Grammar of Colloquial Burmese',
+		publisher: 'Oxford University Press',
+		type: 'book'
+	},
+	'nguyen-1957': {
+		id: 'nguyen-1957',
+		authors: ['Nguyễn Đình-Hoà'],
+		year: 1957,
+		title: 'Classifiers in Vietnamese',
+		container: 'Word',
+		pages: '13(1): 124–152',
+		type: 'article'
+	},
+	'lucy-1992': {
+		id: 'lucy-1992',
+		authors: ['Lucy, John A.'],
+		year: 1992,
+		title: 'Grammatical Categories and Cognition: A Case Study of the Linguistic Relativity Hypothesis',
+		container: 'Studies in the Social and Cultural Foundations of Language 13',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'blaha-skopeteas-2024': {
+		id: 'blaha-skopeteas-2024',
+		authors: ['Blaha Pfeiler, Barbara', 'Skopeteas, Stavros'],
+		year: 2024,
+		title: 'Numeral classifiers in Yucatec Maya: Microvariation and syntactic change',
+		container: 'Journal of Historical Syntax',
+		pages: '8(6)',
+		doi: '10.18148/hs/2024.v8i6.219',
+		type: 'article'
 	}
 };
 

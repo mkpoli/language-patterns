@@ -10,6 +10,7 @@ import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
 import { switchingOn } from './patterns/switching-on';
 import { benefaction } from './patterns/benefaction';
+import { numeralClassifiers } from './patterns/numeral-classifiers';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -29,7 +30,8 @@ export const patterns: Pattern[] = [
 	wordOrder,
 	adpositionOrder,
 	switchingOn,
-	benefaction
+	benefaction,
+	numeralClassifiers
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,
