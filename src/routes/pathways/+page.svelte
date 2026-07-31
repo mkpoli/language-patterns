@@ -14,8 +14,8 @@
 />
 
 <section class="pb-8">
-	<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">Pathways</p>
-	<h1 class="font-serif text-3xl">How languages change — directionally and recurrently</h1>
+	<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">{m.nav_pathways()}</p>
+	<h1 class="font-serif text-3xl">{m.pathways_index_heading()}</h1>
 </section>
 
 <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
