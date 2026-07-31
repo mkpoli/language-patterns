@@ -7,6 +7,7 @@
 	import PolarityContrastTable from '$lib/components/PolarityContrastTable.svelte';
 	import ParadigmGrid from '$lib/components/ParadigmGrid.svelte';
 	import ColexificationTree from '$lib/components/ColexificationTree.svelte';
+	import SwitchOffTable from '$lib/components/SwitchOffTable.svelte';
 	import PatternMap from '$lib/components/PatternMap.svelte';
 	import SyncretismVenn from '$lib/components/SyncretismVenn.svelte';
 	import Seo from '$lib/components/Seo.svelte';
@@ -31,7 +32,9 @@
 		...(pattern.polarity?.contrasts ?? []).flatMap((c) => c.sources ?? []),
 		...(pattern.polarity?.examples ?? []).flatMap((e) => e.sources ?? []),
 		...(pattern.paradigm?.sources ?? []),
-		...(pattern.paradigm?.cells ?? []).flatMap((c) => c.sources ?? [])
+		...(pattern.paradigm?.cells ?? []).flatMap((c) => c.sources ?? []),
+		...(pattern.switchOff?.sources ?? []),
+		...(pattern.switchOff?.pairs ?? []).flatMap((p) => p.sources ?? [])
 	]);
 
 	let selectedSet: string | null = $state(null);
@@ -142,6 +145,15 @@
 				{m.section_column_clusters_hint()}
 			</p>
 			<ColexificationTree paradigm={pattern.paradigm} />
+		</section>
+	{/if}
+
+	{#if pattern.switchOff}
+		<section>
+			<h2 class="mb-4 font-serif text-2xl">
+				{pattern.switchOff.title ?? m.section_switch_off()}
+			</h2>
+			<SwitchOffTable section={pattern.switchOff} />
 		</section>
 	{/if}
 

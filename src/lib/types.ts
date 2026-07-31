@@ -182,6 +182,30 @@ export interface ParadigmSection {
 	sources?: Citation[];
 }
 
+/**
+ * How a language's off-verb stands to its on-verb. Separate from PolarityRelation,
+ * which describes clause negation and carries its own vocabulary.
+ */
+export type SwitchOffRelation = 'mirrored' | 'domain-switch' | 'particle';
+
+export interface SwitchPair {
+	language: LanguageCode;
+	on: string;
+	off: string;
+	/** What the off verb means outside this construction. */
+	offSense: string;
+	relation: SwitchOffRelation;
+	note?: string;
+	sources?: Citation[];
+}
+
+export interface SwitchOffSection {
+	title?: string;
+	summary: string;
+	pairs: SwitchPair[];
+	sources?: Citation[];
+}
+
 export interface Pattern {
 	slug: string;
 	title: string;
@@ -195,6 +219,7 @@ export interface Pattern {
 	exampleSets?: ExampleSet[];
 	paradigm?: ParadigmSection;
 	polarity?: PolaritySection;
+	switchOff?: SwitchOffSection;
 	related: { kind: 'pattern' | 'pathway'; slug: string; label: string }[];
 	sources?: Citation[];
 }
