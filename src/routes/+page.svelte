@@ -37,13 +37,7 @@
 	};
 </script>
 
-<Seo
-	title={SITE_NAME}
-	description={SITE_DESCRIPTION}
-	path="/"
-	keywords={SITE_KEYWORDS}
-	{jsonLd}
-/>
+<Seo title={SITE_NAME} description={SITE_DESCRIPTION} path="/" keywords={SITE_KEYWORDS} {jsonLd} />
 
 <section
 	class="relative grid gap-8 overflow-hidden pb-10 lg:grid-cols-[1fr_minmax(0,34rem)] lg:items-start lg:gap-12"
@@ -57,7 +51,7 @@
 		{featured.caption}
 	</p>
 	<div class="flex flex-col gap-4 lg:self-center">
-		<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">
+		<p class="text-xs tracking-widest text-[color:var(--color-ink-soft)] uppercase">
 			{m.home_eyebrow()}
 		</p>
 		<h1 class="font-serif text-4xl leading-tight sm:text-5xl">
@@ -85,7 +79,7 @@
 >
 	{#each figures as figure (figure.label)}
 		<div class="flex flex-col-reverse items-center gap-0.5 text-center">
-			<dt class="text-xs uppercase tracking-wide text-[color:var(--color-ink-faint)]">
+			<dt class="text-xs tracking-wide text-[color:var(--color-ink-faint)] uppercase">
 				{figure.label}
 			</dt>
 			<dd class="font-serif text-3xl leading-tight">{figure.value}</dd>
@@ -96,7 +90,7 @@
 <section class="flex flex-col gap-5 pb-14">
 	<header class="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
 		<div class="flex flex-col gap-1">
-			<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-faint)]">
+			<p class="text-xs tracking-widest text-[color:var(--color-ink-faint)] uppercase">
 				{m.nav_patterns()}
 			</p>
 			<h2 class="font-serif text-2xl leading-snug">{m.home_patterns_heading()}</h2>
@@ -113,7 +107,7 @@
 
 <section class="flex flex-col gap-5 pb-14">
 	<header class="flex flex-col gap-1">
-		<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-faint)]">
+		<p class="text-xs tracking-widest text-[color:var(--color-ink-faint)] uppercase">
 			{m.section_examples()}
 		</p>
 		<h2 class="font-serif text-2xl leading-snug">{m.home_sentences_heading()}</h2>
@@ -125,7 +119,7 @@
 <section class="flex flex-col gap-5 pb-10">
 	<header class="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
 		<div class="flex flex-col gap-1">
-			<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-faint)]">
+			<p class="text-xs tracking-widest text-[color:var(--color-ink-faint)] uppercase">
 				{m.nav_pathways()}
 			</p>
 			<h2 class="font-serif text-2xl leading-snug">{m.home_pathways_heading()}</h2>

@@ -18,7 +18,12 @@
 	const showsForms = $derived(sample.cells.some((c) => c.form));
 
 	function move(event: KeyboardEvent, index: number) {
-		const step = event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 0;
+		const step =
+			event.key === 'ArrowDown' || event.key === 'ArrowRight'
+				? 1
+				: event.key === 'ArrowUp' || event.key === 'ArrowLeft'
+					? -1
+					: 0;
 		if (step === 0) return;
 		event.preventDefault();
 		active = (index + step + patterns.length) % patterns.length;
@@ -46,7 +51,7 @@
 				tabindex={i === active ? 0 : -1}
 				onclick={() => (active = i)}
 				onkeydown={(e) => move(e, i)}
-				class="flex-1 whitespace-nowrap px-5 py-4 text-left text-sm transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[color:var(--color-accent)] lg:whitespace-normal"
+				class="flex-1 px-5 py-4 text-left text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[color:var(--color-accent)] lg:whitespace-normal"
 				class:bg-[color:var(--color-surface)]={i === active}
 				class:bg-[color:var(--color-surface-sunken)]={i !== active}
 			>
@@ -117,7 +122,7 @@
 				class="map mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface-sunken)]"
 			>
 				<WorldMap
-					points={points}
+					{points}
 					animateKey={pattern.slug}
 					radius={7}
 					graticule
@@ -138,7 +143,7 @@
 						title={cell.strategy}
 					>
 						{#if cell.form}
-							<span class="block text-[0.65rem] uppercase tracking-wide opacity-70"
+							<span class="block text-[0.65rem] tracking-wide uppercase opacity-70"
 								>{cell.language}</span
 							>
 							<span class="block font-serif text-lg leading-snug">{cell.form}</span>

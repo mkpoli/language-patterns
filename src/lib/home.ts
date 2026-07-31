@@ -164,7 +164,12 @@ export function markPredicate(
 
 	const alternatives = expression
 		.split(/\s*\/\s*/)
-		.map((alt) => alt.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim())
+		.map((alt) =>
+			alt
+				.replace(/\([^)]*\)/g, ' ')
+				.replace(/\s+/g, ' ')
+				.trim()
+		)
 		.filter(Boolean);
 
 	// Inflected forms are often parenthesised beside the lemma: egon (dago / daude).
@@ -266,7 +271,12 @@ function pathwayPoints(pathway: Pathway): MapPoint[] {
 		if (language?.lat === undefined || language.lng === undefined) continue;
 		seen.add(band.language);
 		const { x, y } = project(language.lng, language.lat);
-		points.push({ key: band.language, x, y, color: colorForIndex(stageIndex.get(band.stageId) ?? 0) });
+		points.push({
+			key: band.language,
+			x,
+			y,
+			color: colorForIndex(stageIndex.get(band.stageId) ?? 0)
+		});
 	}
 	return points;
 }
@@ -658,7 +668,11 @@ export function track(pathway: Pathway): Track | null {
 	let best: { code: string; bands: typeof pathway.bands; stages: number } | null = null;
 	for (const [code, bands] of byLanguage) {
 		const stages = new Set(bands.map((b) => b.stageId)).size;
-		if (!best || stages > best.stages || (stages === best.stages && bands.length > best.bands.length)) {
+		if (
+			!best ||
+			stages > best.stages ||
+			(stages === best.stages && bands.length > best.bands.length)
+		) {
 			best = { code, bands, stages };
 		}
 	}
@@ -666,7 +680,9 @@ export function track(pathway: Pathway): Track | null {
 
 	const steps: TrackStep[] = [];
 	for (const stage of pathway.stages) {
-		const bands = best.bands.filter((b) => b.stageId === stage.id).sort((a, b) => a.start - b.start);
+		const bands = best.bands
+			.filter((b) => b.stageId === stage.id)
+			.sort((a, b) => a.start - b.start);
 		if (bands.length === 0) continue;
 		steps.push({
 			number: stage.number,
@@ -683,4 +699,3 @@ export function track(pathway: Pathway): Track | null {
 		to: Math.max(...best.bands.map((b) => b.end))
 	};
 }
-
