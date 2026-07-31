@@ -94,6 +94,55 @@ export const sources: Record<string, Source> = {
 		publisher: 'Oxford University Press',
 		type: 'book'
 	},
+	'donaldson-1997': {
+		id: 'donaldson-1997',
+		authors: ['Donaldson, Bruce'],
+		year: 1997,
+		title: 'Dutch: A Comprehensive Grammar',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'donaldson-1993': {
+		id: 'donaldson-1993',
+		authors: ['Donaldson, Bruce C.'],
+		year: 1993,
+		title: 'A Grammar of Afrikaans',
+		publisher: 'Mouton de Gruyter',
+		doi: '10.1515/9783110863154',
+		type: 'book'
+	},
+	'allan-holmes-lundskaernielsen-1995': {
+		id: 'allan-holmes-lundskaernielsen-1995',
+		authors: ['Allan, Robin', 'Holmes, Philip', 'Lundskær-Nielsen, Tom'],
+		year: 1995,
+		title: 'Danish: A Comprehensive Grammar',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'faarlund-lie-vannebo-1997': {
+		id: 'faarlund-lie-vannebo-1997',
+		authors: ['Faarlund, Jan Terje', 'Lie, Svein', 'Vannebo, Kjell Ivar'],
+		year: 1997,
+		title: 'Norsk referansegrammatikk',
+		publisher: 'Universitetsforlaget',
+		type: 'book'
+	},
+	'thrainsson-2007': {
+		id: 'thrainsson-2007',
+		authors: ['Thráinsson, Höskuldur'],
+		year: 2007,
+		title: 'The Syntax of Icelandic',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'jacobs-2005': {
+		id: 'jacobs-2005',
+		authors: ['Jacobs, Neil G.'],
+		year: 2005,
+		title: 'Yiddish: A Linguistic Introduction',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
 	'hualde-ortizdeurbina-2003': {
 		id: 'hualde-ortizdeurbina-2003',
 		authors: ['Hualde, José Ignacio', 'Ortiz de Urbina, Jon'],
