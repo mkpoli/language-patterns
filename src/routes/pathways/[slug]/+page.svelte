@@ -326,7 +326,7 @@
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
-								{rel.kind === 'pattern' ? 'Pattern' : 'Pathway'}
+								{rel.kind === 'pattern' ? m.label_pattern() : m.label_pathway()}
 							</span>
 							{rel.label}
 							<span>→</span>

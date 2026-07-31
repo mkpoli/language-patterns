@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/paraglide/messages.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import QuestionCard from '$lib/components/QuestionCard.svelte';
 	import Seo from '$lib/components/Seo.svelte';
@@ -13,8 +14,8 @@
 />
 
 <section class="pb-8">
-	<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">Patterns</p>
-	<h1 class="font-serif text-3xl">How languages express the same idea differently</h1>
+	<p class="text-xs uppercase tracking-widest text-[color:var(--color-ink-soft)]">{m.nav_patterns()}</p>
+	<h1 class="font-serif text-3xl">{m.patterns_index_heading()}</h1>
 </section>
 
 <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
