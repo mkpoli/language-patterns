@@ -1,16 +1,19 @@
 <script lang="ts">
 	import type { Citation } from '$lib/types';
 	import { getSource, formatAuthorYear, formatFullCitation } from '$lib/data/sources';
+	import { m } from '$lib/paraglide/messages.js';
 
 	interface Props {
 		citations: Citation[] | undefined;
+		/** Render a [citation needed] mark alongside whatever sources are on record. */
+		citationNeeded?: boolean;
 	}
-	let { citations }: Props = $props();
+	let { citations, citationNeeded = false }: Props = $props();
 </script>
 
-{#if citations && citations.length}
+{#if (citations && citations.length) || citationNeeded}
 	<span class="inline-flex flex-wrap gap-1 align-baseline">
-		{#each citations as cite, i (i)}
+		{#each citations ?? [] as cite, i (i)}
 			{@const source = getSource(cite.source)}
 			<a
 				href={`#ref-${cite.source}`}
@@ -20,5 +23,13 @@
 				{formatAuthorYear(source)}{cite.locator ? `: ${cite.locator}` : ''}
 			</a>
 		{/each}
+		{#if citationNeeded}
+			<span
+				class="rounded-md border border-dashed border-[color:var(--color-rule)] px-1.5 py-0.5 text-[10px] italic whitespace-nowrap text-[color:var(--color-ink-soft)]"
+				title={m.citation_needed_hint()}
+			>
+				{m.citation_needed()}
+			</span>
+		{/if}
 	</span>
 {/if}

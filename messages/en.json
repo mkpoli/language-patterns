@@ -32,6 +32,8 @@
 	"section_neighboring_shifts": "Neighboring shifts in the catalogue",
 	"section_neighboring_shifts_hint": "Related source–target pairs recorded in the Database of Semantic Shifts (DatSemShift). Unmarked shifts are accepted catalogue entries.",
 	"status_proposed": "proposed",
+	"citation_needed": "[citation needed]",
+	"citation_needed_hint": "No source is on record for this form yet.",
 	"section_references": "References",
 	"section_stages": "Stages",
 	"section_cycle": "The cycle",

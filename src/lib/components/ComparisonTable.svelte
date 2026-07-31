@@ -112,8 +112,10 @@
 					{/if}
 					<td class="px-4 py-3 align-top text-[color:var(--color-ink-soft)]">
 						<div>{att.note ?? ''}</div>
-						{#if att.sources?.length}
-							<div class="mt-1"><CitationMark citations={att.sources} /></div>
+						{#if att.sources?.length || att.citationNeeded}
+							<div class="mt-1">
+								<CitationMark citations={att.sources} citationNeeded={att.citationNeeded} />
+							</div>
 						{/if}
 					</td>
 				</tr>
