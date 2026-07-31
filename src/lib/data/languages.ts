@@ -10,7 +10,7 @@ import type { Language } from '$lib/types';
 // TODO: source provenance — most coordinates here are picked by hand based
 // on commonly-cited cultural centres; a future pass should reconcile against
 // Glottolog or WALS coordinates for consistency.
-export const languages: Record<string, Language> = {
+export const languages = {
 	// ─── Indo-European › Germanic ──────────────────────────────────────────────
 	en: { code: 'en', name: 'English', family: 'Indo-European › Germanic', lat: 51.5, lng: -0.12, locationNote: 'London (historical core)' },
 	de: { code: 'de', name: 'German', endonym: 'Deutsch', family: 'Indo-European › Germanic', lat: 52.52, lng: 13.4, locationNote: 'Berlin' },
@@ -270,7 +270,7 @@ export const languages: Record<string, Language> = {
 
 	// ─── Papuan / Trans-New Guinea / creoles ──────────────────────────────────
 	tpi: { code: 'tpi', name: 'Tok Pisin', family: 'English-based creole (Pacific)', lat: -9.45, lng: 147.18, locationNote: 'Port Moresby' },
-	kal: { code: 'kal', name: 'Kalam', family: 'Trans-New Guinea › Kalam-Kobon', lat: -5.5, lng: 144.5, locationNote: 'PNG highlands' },
+	kmh: { code: 'kmh', name: 'Kalam', family: 'Trans-New Guinea › Kalam-Kobon', lat: -5.5, lng: 144.5, locationNote: 'PNG highlands' },
 	cns: { code: 'cns', name: 'Asmat (Central)', family: 'Trans-New Guinea › Asmat-Kamoro', lat: -5.5, lng: 138.4, locationNote: 'Agats, south Papua' },
 	bbb: { code: 'bbb', name: 'Barai', family: 'Koiarian', lat: -9.0, lng: 148.1, locationNote: 'Oro Province, PNG' },
 	yee: { code: 'yee', name: 'Yimas', family: 'Lower Sepik', lat: -4.67, lng: 143.55, locationNote: 'Yimas village, East Sepik' },
@@ -337,7 +337,7 @@ export const languages: Record<string, Language> = {
 	lhu: { code: 'lhu', name: 'Lahu', family: 'Sino-Tibetan › Loloish', lat: 22.5, lng: 99.9, locationNote: 'southern Yunnan / northern Thailand' },
 	lus: { code: 'lus', name: 'Mizo', endonym: 'Mizo ṭawng', family: 'Sino-Tibetan › Kuki-Chin', lat: 23.73, lng: 92.72, locationNote: 'Aizawl' },
 	njo: { code: 'njo', name: 'Ao (Mongsen)', family: 'Sino-Tibetan › Kuki-Chin-Naga', lat: 26.32, lng: 94.52, locationNote: 'Mokokchung, Nagaland' },
-	naq2: { code: 'naq2', name: 'Naxi', endonym: 'Nakhi', family: 'Sino-Tibetan › Loloish', lat: 26.87, lng: 100.23, locationNote: 'Lijiang' },
+	nxq: { code: 'nxq', name: 'Naxi', endonym: 'Nakhi', family: 'Sino-Tibetan › Loloish', lat: 26.87, lng: 100.23, locationNote: 'Lijiang' },
 
 	// ─── More Austronesian ────────────────────────────────────────────────────
 	mad: { code: 'mad', name: 'Madurese', family: 'Austronesian › Madurese', lat: -7.0, lng: 113.21, locationNote: 'Madura' },
@@ -353,7 +353,7 @@ export const languages: Record<string, Language> = {
 	tkl: { code: 'tkl', name: 'Tokelauan', family: 'Austronesian › Polynesian', lat: -9.2, lng: -171.85, locationNote: 'Tokelau' },
 	tvl: { code: 'tvl', name: 'Tuvaluan', family: 'Austronesian › Polynesian', lat: -8.52, lng: 179.2, locationNote: 'Funafuti' },
 	rar: { code: 'rar', name: 'Rarotongan (Cook Islands Māori)', family: 'Austronesian › Polynesian', lat: -21.21, lng: -159.78, locationNote: 'Avarua' },
-	mri2: { code: 'mri2', name: 'Tetum', family: 'Austronesian › Central Malayo-Polynesian', lat: -8.55, lng: 125.58, locationNote: 'Dili, Timor-Leste' },
+	tet: { code: 'tet', name: 'Tetum', family: 'Austronesian › Central Malayo-Polynesian', lat: -8.55, lng: 125.58, locationNote: 'Dili, Timor-Leste' },
 	tay: { code: 'tay', name: 'Atayal', family: 'Austronesian › Formosan', lat: 24.5, lng: 121.5, locationNote: 'northern Taiwan' },
 	ami: { code: 'ami', name: 'Amis', family: 'Austronesian › Formosan', lat: 23.76, lng: 121.61, locationNote: 'east coast Taiwan' },
 	pwn: { code: 'pwn', name: 'Paiwan', family: 'Austronesian › Formosan', lat: 22.6, lng: 120.7, locationNote: 'southern Taiwan' },
@@ -411,7 +411,7 @@ export const languages: Record<string, Language> = {
 	kek: { code: 'kek', name: 'Qʼeqchiʼ', family: 'Mayan', lat: 15.48, lng: -90.4, locationNote: 'Cobán, Alta Verapaz' },
 	cak: { code: 'cak', name: 'Kaqchikel', family: 'Mayan', lat: 14.55, lng: -90.97, locationNote: 'Chimaltenango' },
 	tzh: { code: 'tzh', name: 'Tzeltal', family: 'Mayan', lat: 16.84, lng: -92.36, locationNote: 'Chiapas highlands' },
-	mam2: { code: 'mam2', name: 'Wastek (Huastec)', family: 'Mayan', lat: 22.0, lng: -99.0, locationNote: 'San Luis Potosí' },
+	hus: { code: 'hus', name: 'Wastek (Huastec)', family: 'Mayan', lat: 22.0, lng: -99.0, locationNote: 'San Luis Potosí' },
 	otq: { code: 'otq', name: 'Querétaro Otomi', family: 'Otomanguean', lat: 20.59, lng: -100.39, locationNote: 'Querétaro' },
 
 	// ─── More Andean / South American ────────────────────────────────────────
@@ -475,7 +475,6 @@ export const languages: Record<string, Language> = {
 	wlk: { code: 'wlk', name: 'Wailaki', family: 'Athabaskan (California)', lat: 40.0, lng: -123.4, locationNote: 'Round Valley, CA' },
 
 	// ─── More Trans-New Guinea / Papua ───────────────────────────────────────
-	yim: { code: 'yim', name: 'Yimas', family: 'Lower Sepik', lat: -4.6, lng: 143.5, locationNote: 'lower Sepik river' },
 	yle: { code: 'yle', name: 'Yelî Dnye', family: 'Yele (isolate)', lat: -11.4, lng: 154.2, locationNote: 'Rossel Island, PNG' },
 
 	// ─── More click / KhoeKhoe ───────────────────────────────────────────────
@@ -499,7 +498,7 @@ export const languages: Record<string, Language> = {
 	dat: { code: 'dat', name: 'Dahalo', family: 'Afro-Asiatic › Cushitic (with clicks)', lat: -2.0, lng: 41.0, locationNote: 'coastal Kenya' },
 
 	// ─── More Nilo-Saharan ────────────────────────────────────────────────────
-	dik: { code: 'dik', name: 'Karamojong', family: 'Nilo-Saharan › Eastern Nilotic', lat: 2.66, lng: 34.57, locationNote: 'Karamoja, Uganda' },
+	kdj: { code: 'kdj', name: 'Karamojong', family: 'Nilo-Saharan › Eastern Nilotic', lat: 2.66, lng: 34.57, locationNote: 'Karamoja, Uganda' },
 	teo: { code: 'teo', name: 'Teso', family: 'Nilo-Saharan › Eastern Nilotic', lat: 1.74, lng: 33.62, locationNote: 'eastern Uganda' },
 	zna: { code: 'zna', name: 'Zaghawa', family: 'Nilo-Saharan › Saharan', lat: 14.78, lng: 22.65, locationNote: 'Ennedi / Darfur' },
 
@@ -510,19 +509,24 @@ export const languages: Record<string, Language> = {
 	sux: { code: 'sux', name: 'Sumerian', family: 'isolate (historical)', lat: 30.96, lng: 46.1, locationNote: 'Ur / Lower Mesopotamia (historical)' },
 	elx: { code: 'elx', name: 'Elamite', family: 'isolate (historical)', lat: 32.16, lng: 48.25, locationNote: 'Susa (historical)' },
 	hit: { code: 'hit', name: 'Hittite', family: 'Indo-European › Anatolian (historical)', lat: 39.95, lng: 33.95, locationNote: 'Hattusa, central Anatolia' },
-	hbo2: { code: 'hbo2', name: 'Old Egyptian', family: 'Afro-Asiatic › Egyptian (historical)', lat: 30.04, lng: 31.24, locationNote: 'Egypt (Old Kingdom)' },
 
 	// ─── Misc additions ───────────────────────────────────────────────────────
-	pa2: { code: 'pa2', name: 'Saraiki', family: 'Indo-European › Indo-Aryan', lat: 30.2, lng: 71.46, locationNote: 'Multan' },
+	skr: { code: 'skr', name: 'Saraiki', family: 'Indo-European › Indo-Aryan', lat: 30.2, lng: 71.46, locationNote: 'Multan' },
 	jje: { code: 'jje', name: 'Jeju', endonym: '제주말', family: 'Koreanic', lat: 33.49, lng: 126.5, locationNote: 'Jeju Island' },
-	cy_old: { code: 'cy_old', name: 'Old Welsh', family: 'Indo-European › Celtic (historical)', lat: 52.4, lng: -3.5, locationNote: 'medieval Wales' },
+	owl: { code: 'owl', name: 'Old Welsh', family: 'Indo-European › Celtic (historical)', lat: 52.4, lng: -3.5, locationNote: 'medieval Wales' },
 	enm: { code: 'enm', name: 'Middle English', family: 'Indo-European › Germanic (historical)', lat: 51.5, lng: -0.12, locationNote: 'London (Middle English period)' },
 	ang: { code: 'ang', name: 'Old English', endonym: 'Englisċ', family: 'Indo-European › Germanic (historical)', lat: 51.06, lng: -1.31, locationNote: 'Winchester (West Saxon literary standard)' },
 	fro: { code: 'fro', name: 'Old French', family: 'Indo-European › Romance (historical)', lat: 48.85, lng: 2.35, locationNote: 'Île-de-France (medieval)' }
-};
+} satisfies Record<string, Language>;
 
-export function getLanguage(code: string): Language {
-	const lang = languages[code];
-	if (!lang) throw new Error(`Unknown language code: ${code}`);
-	return lang;
+/**
+ * Every key of the table above. Attestations, examples, timeline bands and
+ * paradigm cells are all typed against this, so a code that is not in the
+ * table — a typo, or a language removed without its references — is a build
+ * error rather than a marker that silently fails to render.
+ */
+export type LanguageCode = keyof typeof languages;
+
+export function getLanguage(code: LanguageCode): Language {
+	return languages[code];
 }

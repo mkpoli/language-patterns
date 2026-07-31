@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Language, Pathway, Stage } from '$lib/types';
+	import type { Language, Pathway, Stage, LanguageCode } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import { m } from '$lib/paraglide/messages.js';
 	import CitationMark from './CitationMark.svelte';
@@ -11,7 +11,7 @@
 	let { stages, pathway }: Props = $props();
 
 	function languagesAt(stage: Stage): Language[] {
-		const codes = new Set<string>();
+		const codes = new Set<LanguageCode>();
 		for (const band of pathway.bands) {
 			if (band.stageId === stage.id) codes.add(band.language);
 		}

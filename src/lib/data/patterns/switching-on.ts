@@ -136,6 +136,16 @@ export const switchingOn: Pattern = {
 
 		{ language: 'cy', strategy: 'fire', expression: "cynnau'r golau", confidence: 'high', sources: [{ source: 'wiktionary-cynnau' }] },
 
+		// Second strategies found in Tatoeba beside a form the entry already records.
+		// Crowd-written, so these sit at medium confidence until a dictionary or a
+		// speaker confirms them.
+		{ language: 'tr', strategy: 'fire', expression: 'lambayı yakmak', confidence: 'medium', note: 'burn the lamp; açmak stays the general device verb', sources: [{ source: 'wiktionary-yakmak' }, { source: 'tatoeba', locator: 'sentence 4179541' }] },
+		{ language: 'az', strategy: 'opening', expression: 'televizoru açmaq', confidence: 'medium', note: 'the same açmaq / yandırmaq pair as Turkish', sources: [{ source: 'tatoeba', locator: 'sentence 2920487' }] },
+		{ language: 'az', strategy: 'fire', expression: 'televizoru yandırmaq', confidence: 'medium', note: 'burn it, causative of yanmaq', sources: [{ source: 'wiktionary-yandirmaq' }, { source: 'tatoeba', locator: 'sentence 13375030' }] },
+		{ language: 'mk', strategy: 'placing', expression: 'пушти светло pušti svetlo', confidence: 'medium', note: 'let the light go; пушти also plays a recording and opens a tap', sources: [{ source: 'wiktionary-pusti' }, { source: 'tatoeba', locator: 'sentence 4358520' }] },
+		{ language: 'tl', strategy: 'opening', expression: 'buksan ang ilaw', confidence: 'medium', note: 'open the light; paandarin belongs to engines', sources: [{ source: 'wiktionary-buksan' }, { source: 'tatoeba', locator: 'sentence 13887619' }] },
+		{ language: 'ar', strategy: 'fire', expression: 'أشعل الضوء ašʿala ḍ-ḍawʾ', confidence: 'medium', note: 'kindle the light; شغّل is the general device verb and فتح a further variant', sources: [{ source: 'tatoeba', locator: 'sentence 11988130' }] },
+
 		// Verbs for switching a device on generally, from the Wiktionary translation
 		// table; the basic sense of each verb comes from its own entry. These carry no
 		// appliance of their own, so they stay out of the grid and off the map.
@@ -297,7 +307,7 @@ export const switchingOn: Pattern = {
 			{ language: 'el', axis: 'washer', form: 'βάζω πλυντήριο vázo plyntírio', strategy: 'placing', lemma: 'βάζω', note: 'put the washer' },
 
 			// ─── Turkish ───────────────────────────────────────────────────────
-			{ language: 'tr', axis: 'light', form: 'ışığı açmak', strategy: 'opening', lemma: 'açmak', note: 'open the light' },
+			{ language: 'tr', axis: 'light', form: 'ışığı açmak / lambayı yakmak', strategy: 'opening', lemma: 'açmak', note: 'open the light; yakmak, to burn, is the lamp-specific alternative', sources: [{ source: 'tatoeba', locator: 'sentence 4179541' }] },
 			{ language: 'tr', axis: 'ac', form: 'klimayı açmak', strategy: 'opening', lemma: 'açmak' },
 			{ language: 'tr', axis: 'tap', form: 'musluğu açmak', strategy: 'opening', lemma: 'açmak', note: 'open the tap' },
 			{ language: 'tr', axis: 'music', form: 'müzik açmak', strategy: 'opening', lemma: 'açmak' },

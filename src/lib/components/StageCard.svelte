@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Pathway, Stage } from '$lib/types';
+	import type { Pathway, Stage, LanguageCode } from '$lib/types';
 	import { getLanguage } from '$lib/data/languages';
 	import CitationMark from './CitationMark.svelte';
 
@@ -10,7 +10,7 @@
 	let { stage, pathway }: Props = $props();
 
 	const languagesAtStage = $derived.by(() => {
-		const codes = new Set<string>();
+		const codes = new Set<LanguageCode>();
 		for (const band of pathway.bands) {
 			if (band.stageId === stage.id) codes.add(band.language);
 		}

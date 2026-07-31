@@ -299,7 +299,10 @@ export const alienability: Pattern = {
 				'German, French and Spanish move the possessor out of the noun phrase onto the verb as a dative and give the body part a definite article; English keeps the plain possessive.'
 		}
 	],
-	related: [{ kind: 'pattern', slug: 'possession', label: 'Possession' }],
+	related: [
+		{ kind: 'pattern', slug: 'possession', label: 'Possession' },
+		{ kind: 'pattern', slug: 'possessive-marking', label: 'Possessive marking' }
+	],
 	sources: [
 		{ source: 'nichols-1988' },
 		{ source: 'chappell-mcgregor-1996' },

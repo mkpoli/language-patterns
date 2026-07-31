@@ -15,10 +15,12 @@ export function entries() {
 		{ slug: 'existence' },
 		{ slug: 'possession' },
 		{ slug: 'alienability' },
+		{ slug: 'possessive-marking' },
 		{ slug: 'non-possession' },
 		{ slug: 'indefinites' },
 		{ slug: 'word-order' },
 		{ slug: 'adposition-order' },
-		{ slug: 'switching-on' }
+		{ slug: 'switching-on' },
+		{ slug: 'benefaction' }
 	];
 }

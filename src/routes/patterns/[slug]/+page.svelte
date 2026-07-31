@@ -80,7 +80,7 @@
 <article class="flex flex-col gap-10">
 	<header class="flex flex-col gap-3">
 		<div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[color:var(--color-ink-soft)]">
-			<span class="rounded-full bg-[color:var(--color-sky-soft)] px-2 py-0.5">Pattern</span>
+			<span class="rounded-full bg-[color:var(--color-sky-soft)] px-2 py-0.5">{m.label_pattern()}</span>
 		</div>
 		<h1 class="font-serif text-4xl leading-tight">{pattern.title}</h1>
 		<p class="text-lg italic text-[color:var(--color-ink-soft)]">{pattern.question}</p>
@@ -219,12 +219,12 @@
 				<span class="rounded-full bg-[color:var(--color-rose-soft)] px-2 py-0.5 text-xs uppercase tracking-wide text-[color:var(--color-rose-text)]">
 					Polarity
 				</span>
-				<h2 class="font-serif text-2xl">{pattern.polarity.title ?? 'Polarity: positive ↔ negative'}</h2>
+				<h2 class="font-serif text-2xl">{pattern.polarity.title ?? m.section_polarity()}</h2>
 			</header>
 			<p class="mb-6 max-w-3xl text-base">{pattern.polarity.summary}</p>
 
 			<div class="mb-8">
-				<h3 class="mb-3 font-serif text-xl">Affirmative ↔ negative contrasts</h3>
+				<h3 class="mb-3 font-serif text-xl">{m.section_polarity_contrasts()}</h3>
 				<PolarityContrastTable contrasts={pattern.polarity.contrasts} />
 			</div>
 
@@ -232,7 +232,7 @@
 				<div>
 					<div class="mb-4 flex flex-wrap items-end justify-between gap-3">
 						<div>
-							<h3 class="font-serif text-xl">Negative examples</h3>
+							<h3 class="font-serif text-xl">{m.section_polarity_examples()}</h3>
 							{#if activeNegSetMeta?.description}
 								<p class="text-sm text-[color:var(--color-ink-soft)]">{activeNegSetMeta.description}</p>
 							{/if}
@@ -292,7 +292,7 @@
 							class="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-rule)] bg-[color:var(--color-surface)] px-3 py-1.5 text-sm hover:border-[color:var(--color-accent)]"
 						>
 							<span class="text-xs text-[color:var(--color-ink-soft)]">
-								{rel.kind === 'pattern' ? 'Pattern' : 'Pathway'}
+								{rel.kind === 'pattern' ? m.label_pattern() : m.label_pathway()}
 							</span>
 							{rel.label}
 							<span>→</span>

@@ -1,3 +1,4 @@
+import type { LanguageCode } from '$lib/types';
 import type { ParadigmSection } from './types';
 
 /**
@@ -17,7 +18,7 @@ export interface ColexPair {
 	shared: number;
 	rate: number;
 	/** Language codes that colexify the pair, for showing the evidence. */
-	languages: string[];
+	languages: LanguageCode[];
 }
 
 export interface ClusterNode {
@@ -55,7 +56,7 @@ export function analyseColexification(paradigm: ParadigmSection): ColexAnalysis 
 	const axes = paradigm.axes.map((a) => a.id).filter((id) => paradigm.cells.some((c) => c.axis === id));
 
 	// language -> axis -> lemma
-	const byLanguage = new Map<string, Map<string, string>>();
+	const byLanguage = new Map<LanguageCode, Map<string, string>>();
 	for (const cell of paradigm.cells) {
 		if (!cell.lemma) continue;
 		let row = byLanguage.get(cell.language);
@@ -73,7 +74,7 @@ export function analyseColexification(paradigm: ParadigmSection): ColexAnalysis 
 			const a = axes[i];
 			const b = axes[j];
 			let support = 0;
-			const languages: string[] = [];
+			const languages: LanguageCode[] = [];
 			for (const [code, row] of byLanguage) {
 				const la = row.get(a);
 				const lb = row.get(b);

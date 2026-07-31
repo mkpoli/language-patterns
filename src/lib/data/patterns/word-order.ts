@@ -143,7 +143,7 @@ export const wordOrder: Pattern = {
 		{ language: 'niv', strategy: 'sov', expression: 'SOV', confidence: 'high' },
 		{ language: 'bsk', strategy: 'sov', expression: 'SOV', confidence: 'high' },
 		// PNG
-		{ language: 'kal', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'Trans-New Guinea family is strongly verb-final' },
+		{ language: 'kmh', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'Trans-New Guinea family is strongly verb-final' },
 		// Akkadian — SOV (unusual for Semitic; areal contact with Sumerian)
 		{ language: 'akk', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'verb-final unlike other Semitic; convergence with Sumerian' },
 
@@ -330,7 +330,7 @@ export const wordOrder: Pattern = {
 		{ language: 'ang', strategy: 'free', expression: 'free / mixed OV-VO', confidence: 'high', note: 'Old English; OV and VO both attested, V2 features in matrix clauses' },
 		{ language: 'enm', strategy: 'svo', expression: 'SVO', confidence: 'high', note: 'shifts to fixed SVO during the Middle English period' },
 		{ language: 'fro', strategy: 'svo', expression: 'V2 / SVO', confidence: 'high', note: 'Old French is V2; modern French has lost it' },
-		{ language: 'cy_old', strategy: 'vso', expression: 'VSO', confidence: 'high' },
+		{ language: 'owl', strategy: 'vso', expression: 'VSO', confidence: 'high' },
 		// Historical Semitic & Indo-European
 		{ language: 'gez', strategy: 'vso', expression: 'VSO', confidence: 'high' },
 		{ language: 'har', strategy: 'sov', expression: 'SOV', confidence: 'high' },
@@ -341,9 +341,9 @@ export const wordOrder: Pattern = {
 		{ language: 'sux', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'isolate; verb-final' },
 		{ language: 'elx', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
 		{ language: 'hit', strategy: 'sov', expression: 'SOV', confidence: 'high', note: 'Anatolian IE; verb-final' },
-		{ language: 'hbo2', strategy: 'free', expression: 'free / VSO-leaning', confidence: 'medium', note: 'Old Egyptian VSO; later stages drift' },
+		{ language: 'egy', strategy: 'free', expression: 'free / VSO-leaning', confidence: 'medium', note: 'Old Egyptian VSO; later stages drift' },
 		// Indo-Aryan + Koreanic small
-		{ language: 'pa2', strategy: 'sov', expression: 'SOV', confidence: 'high' },
+		{ language: 'skr', strategy: 'sov', expression: 'SOV', confidence: 'high' },
 		{ language: 'jje', strategy: 'sov', expression: 'SOV', confidence: 'high' },
 		// Mesoamerican / Mixe-Zoque / Uto-Aztecan / Chibchan
 		{ language: 'mtv', strategy: 'vos', expression: 'VOS', confidence: 'medium', note: 'Mixe-Zoquean generally V-initial' },
@@ -365,12 +365,12 @@ export const wordOrder: Pattern = {
 		{ language: 'mwf', strategy: 'free', expression: 'free', confidence: 'medium' },
 		{ language: 'tiw', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
 		{ language: 'gup', strategy: 'free', expression: 'free', confidence: 'medium' },
-		{ language: 'yim', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
+		{ language: 'yee', strategy: 'free', expression: 'free / SOV-leaning', confidence: 'medium' },
 		{ language: 'yle', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
 		// Click languages
 		{ language: 'nmn', strategy: 'svo', expression: 'SVO', confidence: 'medium' },
 		// More African
-		{ language: 'dik', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
+		{ language: 'kdj', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
 		{ language: 'teo', strategy: 'vso', expression: 'VSO', confidence: 'medium' },
 		{ language: 'zna', strategy: 'sov', expression: 'SOV', confidence: 'medium' },
 		// Constructed

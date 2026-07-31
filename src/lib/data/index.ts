@@ -4,10 +4,12 @@ import { existence } from './patterns/existence';
 import { nonPossession } from './patterns/non-possession';
 import { possession } from './patterns/possession';
 import { alienability } from './patterns/alienability';
+import { possessiveMarking } from './patterns/possessive-marking';
 import { indefinites } from './patterns/indefinites';
 import { wordOrder } from './patterns/word-order';
 import { adpositionOrder } from './patterns/adposition-order';
 import { switchingOn } from './patterns/switching-on';
+import { benefaction } from './patterns/benefaction';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -21,11 +23,13 @@ export const patterns: Pattern[] = [
 	existence,
 	possession,
 	alienability,
+	possessiveMarking,
 	nonPossession,
 	indefinites,
 	wordOrder,
 	adpositionOrder,
-	switchingOn
+	switchingOn,
+	benefaction
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,

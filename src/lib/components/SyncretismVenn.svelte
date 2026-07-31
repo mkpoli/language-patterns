@@ -15,38 +15,84 @@
 		return ORDER.filter((f) => set.includes(f)).join('+');
 	}
 
-	// Three circles of equal radius whose centres form an equilateral triangle:
-	// every pairwise overlap is the same size, so no region reads as privileged.
-	const R = 140;
-	const CIRCLES = [
-		{ fn: 'location' as const, cx: 230, cy: 190, color: 'var(--color-sky-band)' },
-		{ fn: 'existence' as const, cx: 370, cy: 190, color: 'var(--color-emerald-band)' },
-		{ fn: 'possession' as const, cx: 300, cy: 311, color: 'var(--color-amber-band)' }
-	];
+	const FILL: Record<LocationalFunction, string> = {
+		location: 'var(--color-sky-band)',
+		existence: 'var(--color-emerald-band)',
+		possession: 'var(--color-amber-band)'
+	};
+	const NAME: Record<LocationalFunction, string> = {
+		location: 'Location',
+		existence: 'Existence',
+		possession: 'Possession'
+	};
 
-	// One anchor per region, placed where that region is widest.
-	const REGIONS: { key: string; label: string; x: number; y: number }[] = [
-		{ key: 'location', label: 'Location only', x: 172, y: 160 },
-		{ key: 'existence', label: 'Existence only', x: 428, y: 160 },
-		{ key: 'possession', label: 'Possession only', x: 300, y: 372 },
-		{ key: 'location+existence', label: 'Location + existence', x: 300, y: 145 },
-		{ key: 'location+possession', label: 'Location + possession', x: 212, y: 276 },
-		{ key: 'existence+possession', label: 'Existence + possession', x: 388, y: 276 },
-		{ key: 'location+existence+possession', label: 'All three', x: 300, y: 232 }
-	];
+	const coded = $derived(attestations.filter((a) => a.syncretism?.length));
+
+	/**
+	 * A pattern about existence records nothing whose predicate does not cover
+	 * existence, so that function contains every entry and the regions outside it
+	 * can never fill. Where one function is shared by all, it becomes the outer
+	 * ring and the other two are drawn inside it; otherwise three equal circles.
+	 */
+	const anchor = $derived.by(() => {
+		if (!coded.length) return null;
+		const shared = ORDER.filter((f) => coded.every((a) => a.syncretism!.includes(f)));
+		return shared.length === 1 ? shared[0] : null;
+	});
+
+	const others = $derived(ORDER.filter((f) => f !== anchor));
+
+	type Circle = { fn: LocationalFunction; cx: number; cy: number; r: number };
+	type Region = { key: string; label: string; x: number; y: number };
+
+	const circles = $derived.by<Circle[]>(() => {
+		if (!anchor) {
+			return [
+				{ fn: 'location', cx: 230, cy: 190, r: 140 },
+				{ fn: 'existence', cx: 370, cy: 190, r: 140 },
+				{ fn: 'possession', cx: 300, cy: 311, r: 140 }
+			];
+		}
+		const [a, b] = others;
+		return [
+			{ fn: anchor, cx: 300, cy: 250, r: 220 },
+			{ fn: a, cx: 245, cy: 265, r: 110 },
+			{ fn: b, cx: 355, cy: 265, r: 110 }
+		];
+	});
+
+	const regions = $derived.by<Region[]>(() => {
+		if (!anchor) {
+			return [
+				{ key: 'location', label: 'Location only', x: 172, y: 160 },
+				{ key: 'existence', label: 'Existence only', x: 428, y: 160 },
+				{ key: 'possession', label: 'Possession only', x: 300, y: 372 },
+				{ key: 'location+existence', label: 'Location + existence', x: 300, y: 145 },
+				{ key: 'location+possession', label: 'Location + possession', x: 212, y: 276 },
+				{ key: 'existence+possession', label: 'Existence + possession', x: 388, y: 276 },
+				{ key: 'location+existence+possession', label: 'All three', x: 300, y: 232 }
+			];
+		}
+		const [a, b] = others;
+		return [
+			{ key: keyOf([anchor]), label: `${NAME[anchor]} alone`, x: 300, y: 92 },
+			{ key: keyOf([anchor, a]), label: `Also ${NAME[a].toLowerCase()}`, x: 212, y: 265 },
+			{ key: keyOf([anchor, b]), label: `Also ${NAME[b].toLowerCase()}`, x: 388, y: 265 },
+			{ key: keyOf([anchor, a, b]), label: 'All three', x: 300, y: 265 }
+		];
+	});
 
 	const byRegion = $derived.by(() => {
 		const map = new Map<string, Attestation[]>();
-		for (const att of attestations) {
-			if (!att.syncretism?.length) continue;
-			const k = keyOf(att.syncretism);
+		for (const att of coded) {
+			const k = keyOf(att.syncretism!);
 			if (!map.has(k)) map.set(k, []);
 			map.get(k)!.push(att);
 		}
 		return map;
 	});
 
-	const populated = $derived(REGIONS.filter((r) => byRegion.get(r.key)?.length));
+	const populated = $derived(regions.filter((r) => byRegion.get(r.key)?.length));
 	const uncoded = $derived(attestations.filter((a) => !a.syncretism?.length));
 
 	let active = $state<string | null>(null);
@@ -62,26 +108,41 @@
 			viewBox="0 0 600 500"
 			class="mx-auto block h-auto w-full max-w-[600px] min-w-[420px]"
 			role="img"
-			aria-label="Venn diagram of which languages use one predicate for location, existence and possession"
+			aria-label={anchor
+				? `Diagram: every language here uses one predicate for ${NAME[anchor].toLowerCase()}, and the inner circles show which of them also use it for ${NAME[others[0]].toLowerCase()} or ${NAME[others[1]].toLowerCase()}`
+				: 'Venn diagram of which languages use one predicate for location, existence and possession'}
 		>
-			{#each CIRCLES as c (c.fn)}
-				<circle cx={c.cx} cy={c.cy} r={R} fill={c.color} fill-opacity="0.38" />
+			{#each circles as c (c.fn)}
+				<circle cx={c.cx} cy={c.cy} r={c.r} fill={FILL[c.fn]} fill-opacity="0.38" />
 			{/each}
-			{#each CIRCLES as c (c.fn)}
+			{#each circles as c (c.fn)}
 				<circle
 					cx={c.cx}
 					cy={c.cy}
-					r={R}
+					r={c.r}
 					fill="none"
 					stroke="var(--color-rule)"
 					stroke-width="1"
 				/>
 			{/each}
 
-			<!-- Circle names sit outside the shape so they never collide with counts. -->
-			<text x="150" y="34" class="venn-title" text-anchor="middle">LOCATION</text>
-			<text x="450" y="34" class="venn-title" text-anchor="middle">EXISTENCE</text>
-			<text x="300" y="482" class="venn-title" text-anchor="middle">POSSESSION</text>
+			<!-- Names sit clear of the counts: the outer ring above, the inner pair
+			     just over their own circles. -->
+			{#if anchor}
+				<text x="300" y="22" class="venn-title" text-anchor="middle">
+					{NAME[anchor].toUpperCase()}
+				</text>
+				<text x="245" y="140" class="venn-title" text-anchor="middle">
+					{NAME[others[0]].toUpperCase()}
+				</text>
+				<text x="355" y="140" class="venn-title" text-anchor="middle">
+					{NAME[others[1]].toUpperCase()}
+				</text>
+			{:else}
+				<text x="150" y="34" class="venn-title" text-anchor="middle">LOCATION</text>
+				<text x="450" y="34" class="venn-title" text-anchor="middle">EXISTENCE</text>
+				<text x="300" y="482" class="venn-title" text-anchor="middle">POSSESSION</text>
+			{/if}
 
 			{#each populated as r (r.key)}
 				{@const items = byRegion.get(r.key) ?? []}

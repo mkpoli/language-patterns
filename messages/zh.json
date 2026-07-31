@@ -11,11 +11,11 @@
 	"nav_contribute": "订正",
 
 	"footer_text": "Language Patterns — 概念验证版。跨语言类型学与历时语言学。各条目均附出处，但覆盖仍不均衡。",
-	"footer_license_html": "内容采用 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> 协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
+	"footer_license_html": "内容采用<a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.zh\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>协议。署名时请注明「Language Patterns (languagepatterns.org)」。",
 
 	"home_eyebrow": "类型学与历时语言学数据库",
 	"home_title": "看世界各语言如何共享、差异、变化。",
-	"home_subtitle": "Language Patterns 记录世界各语言反复出现的策略、路径与循环——从互不相关的语言如何表达「有」，到否定词如何在数百年间不断重建。",
+	"home_subtitle": "Language Patterns记录世界各语言反复出现的策略、路径与循环——从互不相关的语言如何表达「有」，到否定词如何在数百年间不断重建。",
 
 	"section_strategies": "策略",
 	"section_geographic_distribution": "地理分布",
@@ -33,6 +33,11 @@
 	"section_neighboring_shifts_hint": "语义演变数据库（DatSemShift）中收录的相关源—目标配对。未标注者为已接受的条目。",
 	"status_proposed": "拟议",
 	"section_references": "参考文献",
+	"patterns_index_heading": "各语言如何表达同一个意思",
+	"pathways_index_heading": "语言如何沿固定方向反复变化",
+	"section_polarity": "肯定与否定",
+	"section_polarity_contrasts": "肯定式与否定式的对应",
+	"section_polarity_examples": "否定例句",
 	"section_stages": "阶段",
 	"section_cycle": "循环",
 	"section_comparative_timeline": "历史比较时间轴",
@@ -110,9 +115,9 @@
 	"contribute_more": "订正的流程",
 
 	"sister_sites_heading": "姊妹站点",
-	"p_graveyard_title": "/p/ 之墓",
+	"p_graveyard_title": "/p/之墓",
 	"p_graveyard_topic": "音变",
-	"p_graveyard_description": "记录辅音 /p/ 在世界各语言中消失与演化的音变路径合集。",
+	"p_graveyard_description": "记录辅音/p/在世界各语言中消失与演化的音变路径合集。",
 	"p_graveyard_cta": "p.languagepatterns.org →",
 	"word_order_illustrator_label": "Word Order Illustrator（语序对照图工具）",
 

@@ -11,11 +11,11 @@
 	"nav_contribute": "訂正",
 
 	"footer_text": "Language Patterns — 試作版。通言語的類型論と歴史言語学。各項目に出典を付しているが、網羅の度合いにはまだ差がある。",
-	"footer_license_html": "コンテンツは <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.ja\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a> の下で利用可能です。出典は「Language Patterns (languagepatterns.org)」と表記してください。",
+	"footer_license_html": "コンテンツは<a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.ja\" rel=\"license noopener\" target=\"_blank\" class=\"underline\">CC BY-SA 4.0</a>の下で利用可能です。出典は「Language Patterns (languagepatterns.org)」と表記してください。",
 
 	"home_eyebrow": "類型論・通時的データベース",
 	"home_title": "言語がどう共有し、異なり、変化するかを探る。",
-	"home_subtitle": "Language Patterns は、世界の諸言語に繰り返し現れる方略・経路・循環を記録する。互いに無関係な言語がどう「ある」を表すか、否定が何世紀をかけてどう作り直されるか、まで。",
+	"home_subtitle": "Language Patternsは、世界の諸言語に繰り返し現れる方略・経路・循環を記録する。互いに無関係な言語がどう「ある」を表すか、否定が何世紀をかけてどう作り直されるか、まで。",
 
 	"section_strategies": "方略",
 	"section_geographic_distribution": "地理的分布",
@@ -33,6 +33,11 @@
 	"section_neighboring_shifts_hint": "意味変化データベース（DatSemShift）に登録された関連するソース→ターゲットの組。注記のないものは承認済みの項目。",
 	"status_proposed": "提案中",
 	"section_references": "参考文献",
+	"patterns_index_heading": "同じ内容を言語ごとにどう言い表すか",
+	"pathways_index_heading": "言語が向きをもって繰り返し変化するしくみ",
+	"section_polarity": "肯定と否定",
+	"section_polarity_contrasts": "肯定形と否定形の対応",
+	"section_polarity_examples": "否定の例文",
 	"section_stages": "段階",
 	"section_cycle": "循環",
 	"section_comparative_timeline": "比較歴史タイムライン",
@@ -110,9 +115,9 @@
 	"contribute_more": "訂正の手続きについて",
 
 	"sister_sites_heading": "姉妹サイト",
-	"p_graveyard_title": "/p/ の墓場",
+	"p_graveyard_title": "/p/の墓場",
 	"p_graveyard_topic": "音変化",
-	"p_graveyard_description": "世界の諸言語における /p/ の消失と変遷を追う音変化経路カタログ。",
+	"p_graveyard_description": "世界の諸言語における/p/の消失と変遷を追う音変化経路カタログ。",
 	"p_graveyard_cta": "p.languagepatterns.org →",
 	"word_order_illustrator_label": "Word Order Illustrator（語順対照図メーカー）",
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TagList from './TagList.svelte';
 	import type { TagId } from '$lib/data';
+	import { m } from '$lib/paraglide/messages.js';
 
 	interface Props {
 		question: string;
@@ -28,7 +29,7 @@
 			class:bg-[color:var(--color-sky-soft)]={kind === 'pattern'}
 			class:bg-[color:var(--color-violet-soft)]={kind === 'pathway'}
 		>
-			{kind === 'pattern' ? 'Pattern' : 'Pathway'}
+			{kind === 'pattern' ? m.label_pattern() : m.label_pathway()}
 		</span>
 		{#if note}
 			<span>{note}</span>
