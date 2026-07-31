@@ -102,7 +102,7 @@
 		</div>
 	</section>
 
-	{#if pattern.attestations?.length}
+	{#if pattern.attestations?.length || pattern.paradigm}
 		<section>
 			<h2 class="mb-1 font-serif text-2xl">{m.section_geographic_distribution()}</h2>
 			<p class="mb-4 text-sm text-[color:var(--color-ink-soft)]">
@@ -116,7 +116,9 @@
 				paradigm={pattern.paradigm}
 			/>
 		</section>
+	{/if}
 
+	{#if pattern.attestations?.length}
 		{#if pattern.attestations.some((a) => a.syncretism?.length)}
 			<section>
 				<h2 class="mb-1 font-serif text-2xl">{m.section_shared_predicates()}</h2>
