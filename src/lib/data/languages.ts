@@ -56,6 +56,7 @@ export const languages = {
 	bg: { code: 'bg', name: 'Bulgarian', endonym: 'български', family: 'Indo-European › Slavic', lat: 42.7, lng: 23.32, locationNote: 'Sofia' },
 	mk: { code: 'mk', name: 'Macedonian', endonym: 'македонски', family: 'Indo-European › Slavic', lat: 41.99, lng: 21.43, locationNote: 'Skopje' },
 	sr: { code: 'sr', name: 'Serbian', endonym: 'српски', family: 'Indo-European › Slavic', lat: 44.79, lng: 20.45, locationNote: 'Belgrade' },
+	bs: { code: 'bs', name: 'Bosnian', endonym: 'bosanski', family: 'Indo-European › Slavic', lat: 43.86, lng: 18.41, locationNote: 'Sarajevo' },
 	hr: { code: 'hr', name: 'Croatian', endonym: 'hrvatski', family: 'Indo-European › Slavic', lat: 45.81, lng: 15.98, locationNote: 'Zagreb' },
 	sl: { code: 'sl', name: 'Slovenian', endonym: 'slovenščina', family: 'Indo-European › Slavic', lat: 46.05, lng: 14.51, locationNote: 'Ljubljana' },
 	cu: { code: 'cu', name: 'Old Church Slavonic', family: 'Indo-European › Slavic (historical)', lat: 41.34, lng: 22.4, locationNote: '9th-c. Macedonia / Cyril & Methodius' },
