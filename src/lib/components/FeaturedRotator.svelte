@@ -11,12 +11,16 @@
 	const DWELL = 7000;
 
 	let index = $state(0);
-	let paused = $state(false);
+	let hovered = $state(false);
+	let focused = $state(false);
 	let held = $state(false);
 	let reduced = $state(false);
 	/** Bumped whenever the dwell timer restarts, so the fill restarts with it. */
 	let cycle = $state(0);
 
+	let panel = $state<HTMLElement | null>(null);
+
+	const paused = $derived(hovered || focused);
 	const frame = $derived(frames[index]);
 
 	$effect(() => {
@@ -32,7 +36,8 @@
 	});
 
 	$effect(() => {
-		if (reduced || paused || held || frames.length < 2) return;
+		// `cycle` is read so a jump or a resume re-arms the timer with a full dwell.
+		if (cycle < 0 || reduced || paused || held || frames.length < 2) return;
 		const timer = setInterval(() => {
 			index = (index + 1) % frames.length;
 		}, DWELL);
@@ -41,12 +46,26 @@
 
 	function select(i: number) {
 		index = i;
+		// Restart the dwell, so a chosen entry gets its full turn.
+		cycle += 1;
 	}
 
-	/** Freeze on the way in; on the way out the timer and the fill start over together. */
-	function hold(value: boolean) {
-		paused = value;
-		if (!value) cycle += 1;
+	/**
+	 * Hover and focus each hold the panel on their own, so leaving with the
+	 * pointer cannot resume a panel the keyboard is still inside. On the last
+	 * one to leave, the timer and the fill start over together.
+	 */
+	function setHovered(value: boolean) {
+		hovered = value;
+		if (!value && !focused) cycle += 1;
+	}
+
+	function releaseFocus(event: FocusEvent) {
+		// focusout also fires when focus moves between the panel's own controls.
+		const next = event.relatedTarget;
+		if (next instanceof Node && panel?.contains(next)) return;
+		focused = false;
+		if (!hovered) cycle += 1;
 	}
 
 	function toggleHold() {
@@ -63,10 +82,12 @@
 	<section
 		class="flex flex-col overflow-hidden rounded-3xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]"
 		aria-label={m.home_featured_aria()}
-		onpointerenter={() => hold(true)}
-		onpointerleave={() => hold(false)}
-		onfocusin={() => hold(true)}
-		onfocusout={() => hold(false)}
+		bind:this={panel}
+		style:--dwell={`${DWELL}ms`}
+		onpointerenter={() => setHovered(true)}
+		onpointerleave={() => setHovered(false)}
+		onfocusin={() => (focused = true)}
+		onfocusout={releaseFocus}
 	>
 		<div class="flex flex-col gap-1.5 px-6 pt-6 pb-4">
 			<p class="text-xs tracking-widest text-[color:var(--color-ink-faint)] uppercase">
@@ -212,7 +233,7 @@
 <style>
 	.tick {
 		width: 100%;
-		animation: dwell 7000ms linear forwards;
+		animation: dwell var(--dwell, 7000ms) linear forwards;
 	}
 
 	.tick.paused {

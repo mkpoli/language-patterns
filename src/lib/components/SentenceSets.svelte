@@ -84,18 +84,18 @@
 										{row.transliteration}
 									</span>
 								{/if}
-								<span
-									class="grid grid-rows-[0fr] overflow-hidden text-xs text-[color:var(--color-ink-soft)] transition-all duration-200 group-hover:grid-rows-[1fr] group-hover:pt-1 group-focus-visible:grid-rows-[1fr] group-focus-visible:pt-1"
-								>
-									<span class="min-h-0">
-										{#if row.gloss}
-											<span class="block font-mono text-[0.7rem]">{row.gloss}</span>
-										{/if}
-										<span class="block" lang="en">{row.literal}</span>
-									</span>
+								<span class="mt-0.5 block text-xs text-[color:var(--color-ink-soft)]" lang="en">
+									{row.literal}
 								</span>
-							</span>
-						</a>
+								{#if row.gloss}
+									<span
+										class="grid grid-rows-[0fr] overflow-hidden font-mono text-[0.7rem] text-[color:var(--color-ink-soft)] transition-all duration-200 group-hover:grid-rows-[1fr] group-hover:pt-1 group-focus-visible:grid-rows-[1fr] group-focus-visible:pt-1"
+									>
+										<span class="min-h-0">{row.gloss}</span>
+									</span>
+								{/if}
+							</span></a
+						>
 					</li>
 				{/each}
 			</ul>
