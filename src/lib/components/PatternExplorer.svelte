@@ -84,24 +84,24 @@
 		</div>
 
 		<div class="flex flex-col gap-2">
-			<div
+			<ul
 				class="flex h-10 overflow-hidden rounded-xl border border-[color:var(--color-rule)]"
-				role="img"
 				aria-label={m.section_strategies()}
 			>
 				{#each split as s (s.id)}
 					{@const tone = strategyColor(s.color)}
-					<div
+					<li
 						class="flex min-w-9 items-center justify-center border-[color:var(--color-paper)] not-last:border-r"
 						style:width={`${(s.count / total) * 100}%`}
 						style:background={tone.band}
 						style:color={tone.textOn}
 						title={`${s.label} · ${s.count}`}
 					>
+						<span class="sr-only">{s.label}:</span>
 						<span class="text-sm font-semibold">{s.count}</span>
-					</div>
+					</li>
 				{/each}
-			</div>
+			</ul>
 			<ul class="flex flex-wrap gap-1.5">
 				{#each split as s (s.id)}
 					{@const tone = strategyColor(s.color)}

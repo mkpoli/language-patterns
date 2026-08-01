@@ -14,7 +14,9 @@
 	const at = $derived(scrubbed ?? bars?.to ?? 0);
 
 	function year(value: number): string {
-		return value < 0 ? m.year_bce({ year: -value }) : String(value);
+		if (value < 0) return m.year_bce({ year: -value });
+		// A span reaching back before the era needs its other end marked too.
+		return bars && bars.from < 0 ? m.year_ce({ year: value }) : String(value);
 	}
 
 	/** Bands are positioned in percent of the span, so the head is too. */
@@ -108,23 +110,19 @@
 			<label class="grid grid-cols-[5rem_1fr] items-center gap-x-2">
 				<span class="sr-only">{m.home_scrub_label()}</span>
 				<span
-					class="text-right text-[0.6rem] text-[color:var(--color-ink-faint)]"
-					aria-hidden="true">{year(bars.from)}</span
+					class="truncate text-right text-[0.6rem] text-[color:var(--color-ink-faint)]"
+					aria-hidden="true">{year(at)}</span
 				>
-				<span class="flex items-center gap-2">
-					<input
-						type="range"
-						min={bars.from}
-						max={bars.to}
-						step="10"
-						value={at}
-						oninput={(e) => (scrubbed = Number(e.currentTarget.value))}
-						class="scrub h-1 flex-1 cursor-ew-resize appearance-none rounded-full bg-[color:var(--color-rule)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accent)]"
-					/>
-					<span class="w-10 text-[0.6rem] text-[color:var(--color-ink-faint)]" aria-hidden="true">
-						{scrubbed === null ? year(bars.to) : year(at)}
-					</span>
-				</span>
+				<input
+					type="range"
+					min={bars.from}
+					max={bars.to}
+					step="10"
+					value={at}
+					aria-valuetext={year(at)}
+					oninput={(e) => (scrubbed = Number(e.currentTarget.value))}
+					class="scrub h-1 w-full cursor-ew-resize appearance-none rounded-full bg-[color:var(--color-rule)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accent)]"
+				/>
 			</label>
 		</div>
 	{/if}

@@ -30,7 +30,7 @@
 	"home_patterns_heading": "系統の異なる言語が同じ問いをどう扱うか。",
 	"home_wall_hint_forms": "各マスは項目に記録された形式。{count}言語。",
 	"home_wall_hint_types": "1マスが1言語、色は採用している方略を表す。{count}言語を収録。",
-	"home_wall_more": "ほか{count}件",
+	"home_wall_more": "ほか{count}件の形式",
 	"home_map_count": "{count}言語",
 	"home_map_label": "このページの言語が話される地域",
 	"home_sentences_heading": "同じ1文を、記録のあるすべての言語で",
@@ -41,6 +41,7 @@
 	"home_all_pathways": "経路一覧",
 	"home_atlas_cta": "世界地図で言語を見る",
 	"year_bce": "紀元前{year}年",
+	"year_ce": "西暦{year}年",
 	"home_scrub_label": "年代を動かす",
 
 	"section_strategies": "方略",

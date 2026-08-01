@@ -197,15 +197,17 @@ export function markPredicate(
 		.filter((form) => form.length > 1 && form !== form.toUpperCase());
 
 	const nonLatin = /[^\p{Script=Latin}\p{P}\p{N}\s]/u;
-	const tokens: string[] = [];
+
+	// A recorded form is matched whole. Matching its individual words instead
+	// lands on whatever else the sentence contains — for "turn the light on"
+	// that is the word for "light", which carries no strategy at all.
+	// The one split allowed is dropping a romanisation written beside another
+	// script: "電気をつける denki o tsukeru" also tries "電気をつける".
+	const runs: string[] = [];
 	for (const alt of alternatives) {
 		if (!nonLatin.test(alt)) continue;
-		// The Latin run beside another script is a romanisation, not the form.
-		tokens.push(...alt.split(' ').filter((t) => nonLatin.test(t)));
-	}
-	for (const alt of alternatives) {
-		if (nonLatin.test(alt)) continue;
-		tokens.push(...alt.split(' ').filter((t) => t.length > 1));
+		const kept = alt.split(' ').filter((token) => nonLatin.test(token));
+		if (kept.length) runs.push(kept.join(' '));
 	}
 
 	const tryFind = (candidate: string, wholeWord: boolean) => {
@@ -236,8 +238,8 @@ export function markPredicate(
 		const found = tryFind(alt, !nonLatin.test(alt));
 		if (found) return found;
 	}
-	for (const token of tokens.sort((a, b) => b.length - a.length)) {
-		const found = tryFind(token, !nonLatin.test(token));
+	for (const run of runs.sort((a, b) => b.length - a.length)) {
+		const found = tryFind(run, false);
 		if (found) return found;
 	}
 	for (const form of parenthesised.sort((a, b) => b.length - a.length)) {
