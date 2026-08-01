@@ -1,7 +1,7 @@
 import { patterns, pathways, languages } from '$lib/data';
 import { colorForIndex } from '$lib/strategyColor';
 import { project } from '$lib/worldMap';
-import type { Example, Language, Pattern, Pathway, Strategy } from '$lib/types';
+import type { Attestation, Example, Language, Pattern, Pathway, Strategy } from '$lib/types';
 
 /**
  * Data files carry plain language codes; the table is keyed by the ones it
@@ -80,6 +80,15 @@ export function shares(pattern: Pattern): StrategyShare[] {
 	for (const a of pattern.attestations ?? []) {
 		counts.set(a.strategy, (counts.get(a.strategy) ?? 0) + 1);
 	}
+	// Some patterns record their forms in the paradigm grid instead.
+	if (counts.size === 0) {
+		const seen = new Set<string>();
+		for (const cell of pattern.paradigm?.cells ?? []) {
+			if (!cell.strategy || seen.has(`${cell.language}-${cell.strategy}`)) continue;
+			seen.add(`${cell.language}-${cell.strategy}`);
+			counts.set(cell.strategy, (counts.get(cell.strategy) ?? 0) + 1);
+		}
+	}
 	return pattern.strategies
 		.map((s) => ({ id: s.id, label: s.label, color: s.color, count: counts.get(s.id) ?? 0 }))
 		.filter((s) => s.count > 0)
@@ -107,7 +116,16 @@ export interface Wall {
  * carries the cell alone.
  */
 export function wall(pattern: Pattern, limit = 44): Wall {
-	const attestations = pattern.attestations ?? [];
+	const attestations: Attestation[] = pattern.attestations?.length
+		? pattern.attestations
+		: (pattern.paradigm?.cells ?? [])
+				.filter((cell) => cell.strategy)
+				.map((cell) => ({
+					language: cell.language,
+					strategy: cell.strategy!,
+					expression: cell.form,
+					confidence: 'medium' as const
+				}));
 	const distinct = new Set(attestations.map((a) => a.expression)).size;
 	const withForms = distinct >= attestations.length * 0.6;
 	const colors = new Map(pattern.strategies.map((s) => [s.id, s.color]));
@@ -229,6 +247,24 @@ export function markPredicate(
 	return null;
 }
 
+/**
+ * A language may attest several strategies for one pattern — Welsh existence
+ * records both `mae` and `oes`. Pick the one whose form appears in this
+ * sentence, so the chip describes the sentence rather than file order.
+ */
+function attestationFor(
+	attestations: Attestation[],
+	example: Example
+): { attestation: Attestation; mark: ReturnType<typeof markPredicate> } | null {
+	const forLanguage = attestations.filter((a) => a.language === example.language);
+	if (forLanguage.length === 0) return null;
+	for (const attestation of forLanguage) {
+		const mark = markPredicate(example.original, attestation.expression);
+		if (mark) return { attestation, mark };
+	}
+	return { attestation: forLanguage[0], mark: null };
+}
+
 export interface SlideRow {
 	key: string;
 	label: string;
@@ -254,7 +290,12 @@ export function patternPoints(pattern: Pattern): MapPoint[] {
 	const colors = new Map(pattern.strategies.map((s) => [s.id, s.color]));
 	const seen = new Set<string>();
 	const points: MapPoint[] = [];
-	for (const a of pattern.attestations ?? []) {
+	const placed = pattern.attestations?.length
+		? pattern.attestations
+		: (pattern.paradigm?.cells ?? [])
+				.filter((cell) => cell.strategy)
+				.map((cell) => ({ language: cell.language, strategy: cell.strategy! }));
+	for (const a of placed) {
 		if (seen.has(a.language)) continue;
 		const language = getLanguage(a.language);
 		if (language?.lat === undefined || language.lng === undefined) continue;
@@ -314,7 +355,6 @@ function roundRobin<T>(queues: Map<string, T[]>, limit: number): T[] {
 function patternSlide(pattern: Pattern, limit: number): Slide | null {
 	const colors = new Map(pattern.strategies.map((s) => [s.id, s.color]));
 	const labels = new Map(pattern.strategies.map((s) => [s.id, s.label]));
-	const attestationOf = new Map((pattern.attestations ?? []).map((a) => [a.language, a]));
 	const strategyOf = new Map((pattern.attestations ?? []).map((a) => [a.language, a.strategy]));
 
 	// A test sentence carried across languages reads best; fall back to the
@@ -333,16 +373,21 @@ function patternSlide(pattern: Pattern, limit: number): Slide | null {
 
 	if (biggest && biggest.examples.length >= 4) {
 		const queues = new Map<string, SlideRow[]>();
+		const seen = new Set<string>();
 		for (const example of biggest.examples) {
-			const attestation = attestationOf.get(example.language)!;
-			const strategy = attestation.strategy;
+			// One row per language: a set may hold several sentences for one of them.
+			if (seen.has(example.language)) continue;
+			const picked = attestationFor(pattern.attestations ?? [], example);
+			if (!picked) continue;
+			seen.add(example.language);
+			const strategy = picked.attestation.strategy;
 			const language = getLanguage(example.language);
 			const row: SlideRow = {
 				key: `${pattern.slug}-${example.language}`,
 				label: language?.name ?? example.language,
 				sub: language?.endonym,
 				primary: example.original,
-				mark: markPredicate(example.original, attestation.expression) ?? undefined,
+				mark: picked.mark ?? undefined,
 				secondary: example.literal,
 				chip: labels.get(strategy) ?? strategy,
 				color: colors.get(strategy) ?? 'slate'
@@ -552,17 +597,20 @@ export function sentenceSets(minimum = 6): SentenceSet[] {
 	const sets: SentenceSet[] = [];
 	for (const pattern of patterns) {
 		if (!pattern.exampleSets) continue;
-		const attestationOf = new Map((pattern.attestations ?? []).map((a) => [a.language, a]));
 		const colors = new Map(pattern.strategies.map((s) => [s.id, s.color]));
 		const labels = new Map(pattern.strategies.map((s) => [s.id, s.label]));
 
 		for (const meta of pattern.exampleSets) {
 			const rows: SentenceRow[] = [];
 			const seen = new Map<string, Strategy['color']>();
+			const listed = new Set<string>();
 			for (const example of pattern.examples) {
 				if (example.set !== meta.id) continue;
-				const attestation = attestationOf.get(example.language);
-				if (!attestation) continue;
+				if (listed.has(example.language)) continue;
+				const picked = attestationFor(pattern.attestations ?? [], example);
+				if (!picked) continue;
+				listed.add(example.language);
+				const attestation = picked.attestation;
 				const language = getLanguage(example.language);
 				const color = colors.get(attestation.strategy) ?? 'slate';
 				const label = labels.get(attestation.strategy) ?? attestation.strategy;
@@ -572,7 +620,7 @@ export function sentenceSets(minimum = 6): SentenceSet[] {
 					language: language?.name ?? example.language,
 					endonym: language?.endonym,
 					original: example.original,
-					mark: markPredicate(example.original, attestation.expression) ?? undefined,
+					mark: picked.mark ?? undefined,
 					transliteration: example.transliteration,
 					gloss: example.gloss,
 					literal: example.literal,
@@ -591,72 +639,6 @@ export function sentenceSets(minimum = 6): SentenceSet[] {
 		}
 	}
 	return sets.sort((a, b) => b.rows.length - a.rows.length);
-}
-
-export interface Glossed {
-	key: string;
-	language: string;
-	endonym?: string;
-	original: string;
-	transliteration?: string;
-	pairs: { word: string; gloss: string }[];
-	gloss?: string;
-	natural: string;
-	slug: string;
-}
-
-/** Word-by-word alignment, only where the gloss matches the line word for word. */
-function align(example: Example): { word: string; gloss: string }[] {
-	const line = example.transliteration ?? example.original;
-	if (!example.gloss) return [];
-	const words = line.trim().split(/\s+/);
-	const glosses = example.gloss.trim().split(/\s+/);
-	if (words.length !== glosses.length) return [];
-	return words.map((word, i) => ({ word, gloss: glosses[i] }));
-}
-
-/**
- * Glossed sentences for the interlinear strip: a different question and a
- * different language family in each card.
- */
-export function glossed(limit = 3): Glossed[] {
-	const queues = new Map<string, { family: string; card: Glossed }[]>();
-	for (const pattern of patterns) {
-		for (const example of pattern.examples) {
-			// The strip shows clauses, so skip the phrase-level entries.
-			if (!/[.。．!?！？।]$/.test(example.original.trim())) continue;
-			const pairs = align(example);
-			if (pairs.length < 3 || pairs.length > 9) continue;
-			const language = getLanguage(example.language);
-			const family = language?.family.split('›')[0].trim() ?? example.language;
-			const card: Glossed = {
-				key: `${pattern.slug}-${example.language}`,
-				language: language?.name ?? example.language,
-				endonym: language?.endonym,
-				original: example.original,
-				transliteration: example.transliteration,
-				pairs,
-				gloss: example.gloss,
-				natural: example.natural,
-				slug: pattern.slug
-			};
-			const queue = queues.get(pattern.slug);
-			if (queue) queue.push({ family, card });
-			else queues.set(pattern.slug, [{ family, card }]);
-		}
-	}
-
-	// One card per question, and no two from the same family.
-	const chosen: Glossed[] = [];
-	const usedFamilies = new Set<string>();
-	for (const queue of queues.values()) {
-		const pick = queue.find((entry) => !usedFamilies.has(entry.family));
-		if (!pick) continue;
-		usedFamilies.add(pick.family);
-		chosen.push(pick.card);
-		if (chosen.length >= limit) break;
-	}
-	return chosen;
 }
 
 /**
