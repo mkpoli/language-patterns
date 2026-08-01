@@ -40,7 +40,7 @@
 		class="flex gap-px overflow-x-auto bg-[color:var(--color-rule)] lg:flex-col lg:overflow-visible"
 	>
 		{#each patterns as p, i (p.slug)}
-			{@const tag = localized(sortTags(p.tags)[0].label)}
+			{@const tag = sortTags(p.tags).map((t) => localized(t.label))[0]}
 			<button
 				bind:this={tabs[i]}
 				role="tab"

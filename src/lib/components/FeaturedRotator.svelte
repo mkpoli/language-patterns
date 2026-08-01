@@ -60,7 +60,6 @@
 </script>
 
 {#if frame}
-	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<section
 		class="flex flex-col overflow-hidden rounded-3xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]"
 		aria-label={m.home_featured_aria()}

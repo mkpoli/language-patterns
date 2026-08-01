@@ -193,19 +193,24 @@ export function markPredicate(
 	const tryFind = (candidate: string, wholeWord: boolean) => {
 		const needle = fold(candidate);
 		if (needle.length < 1) return null;
-		let index = -1;
+
+		// `hay` is index-aligned with `sentence` by the guard above, so offsets
+		// found in the folded text slice the original directly. The span is cut
+		// to the folded needle, which is what was actually matched.
+		let index: number;
 		if (wholeWord) {
 			const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-			index = hay.search(new RegExp(`(^|[^\\p{L}])${escaped}([^\\p{L}]|$)`, 'u'));
-			if (index >= 0 && !hay.startsWith(needle, index)) index += 1;
+			const match = new RegExp(`(^|[^\\p{L}])(${escaped})([^\\p{L}]|$)`, 'u').exec(hay);
+			if (!match) return null;
+			index = match.index + match[1].length;
 		} else {
 			index = hay.indexOf(needle);
 		}
 		if (index < 0) return null;
 		return {
 			before: sentence.slice(0, index),
-			hit: sentence.slice(index, index + candidate.length),
-			after: sentence.slice(index + candidate.length)
+			hit: sentence.slice(index, index + needle.length),
+			after: sentence.slice(index + needle.length)
 		};
 	};
 
@@ -346,7 +351,8 @@ function patternSlide(pattern: Pattern, limit: number): Slide | null {
 			if (queue) queue.push(row);
 			else queues.set(strategy, [row]);
 		}
-		const meta = pattern.exampleSets?.find((s) => s.id === biggest.id);
+		const chosen = biggest;
+		const meta = pattern.exampleSets?.find((s) => s.id === chosen.id);
 		return {
 			kind: 'pattern',
 			slug: pattern.slug,
