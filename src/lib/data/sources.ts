@@ -1883,6 +1883,14 @@ export const sources: Record<string, Source> = {
 		publisher: 'Longmans, Green & Co.',
 		type: 'book'
 	},
+	'poulos-msimang-1998': {
+		id: 'poulos-msimang-1998',
+		authors: ['Poulos, George', 'Msimang, Christian T.'],
+		year: 1998,
+		title: 'A Linguistic Analysis of Zulu',
+		publisher: 'Via Afrika',
+		type: 'book'
+	},
 
 	// ─── Numeral classifiers & noun categorization ──────────────────────────────
 	'aikhenvald-2000': {
