@@ -168,29 +168,29 @@ export const numeralClassifiers: Pattern = {
 			{ language: 'sw', axis: 'person', form: 'watu watatu', strategy: 'noun-class', lemma: 'wa-', note: 'class 2' },
 
 			// ─── English ───────────────────────────────────────────────────────
-			{ language: 'en', axis: 'book', form: 'three books', strategy: 'bare', lemma: '—' },
+			{ language: 'en', axis: 'book', form: 'three books', strategy: 'bare' },
 			{ language: 'en', axis: 'paper', form: 'three sheets of paper', strategy: 'mensural', lemma: 'sheet', note: 'paper cannot be counted directly' },
-			{ language: 'en', axis: 'pencil', form: 'three pencils', strategy: 'bare', lemma: '—' },
-			{ language: 'en', axis: 'dog', form: 'three dogs', strategy: 'bare', lemma: '—' },
-			{ language: 'en', axis: 'car', form: 'three cars', strategy: 'bare', lemma: '—' },
-			{ language: 'en', axis: 'person', form: 'three people', strategy: 'bare', lemma: '—' },
-			{ language: 'en', axis: 'house', form: 'three houses', strategy: 'bare', lemma: '—' },
+			{ language: 'en', axis: 'pencil', form: 'three pencils', strategy: 'bare' },
+			{ language: 'en', axis: 'dog', form: 'three dogs', strategy: 'bare' },
+			{ language: 'en', axis: 'car', form: 'three cars', strategy: 'bare' },
+			{ language: 'en', axis: 'person', form: 'three people', strategy: 'bare' },
+			{ language: 'en', axis: 'house', form: 'three houses', strategy: 'bare' },
 
 			// ─── German ────────────────────────────────────────────────────────
-			{ language: 'de', axis: 'book', form: 'drei Bücher', strategy: 'bare', lemma: '—' },
+			{ language: 'de', axis: 'book', form: 'drei Bücher', strategy: 'bare' },
 			{ language: 'de', axis: 'paper', form: 'drei Blatt Papier', strategy: 'mensural', lemma: 'Blatt', note: 'Blatt keeps its singular form after a numeral' },
-			{ language: 'de', axis: 'pencil', form: 'drei Bleistifte', strategy: 'bare', lemma: '—' },
-			{ language: 'de', axis: 'dog', form: 'drei Hunde', strategy: 'bare', lemma: '—' },
-			{ language: 'de', axis: 'person', form: 'drei Menschen', strategy: 'bare', lemma: '—' },
+			{ language: 'de', axis: 'pencil', form: 'drei Bleistifte', strategy: 'bare' },
+			{ language: 'de', axis: 'dog', form: 'drei Hunde', strategy: 'bare' },
+			{ language: 'de', axis: 'person', form: 'drei Menschen', strategy: 'bare' },
 
 			// ─── Russian ───────────────────────────────────────────────────────
-			{ language: 'ru', axis: 'book', form: 'три книги', transliteration: 'tri knigi', strategy: 'bare', lemma: '—', note: 'the numeral puts the noun in a particular case, but adds no word' },
-			{ language: 'ru', axis: 'person', form: 'три человека', transliteration: 'tri cheloveka', strategy: 'bare', lemma: '—' },
+			{ language: 'ru', axis: 'book', form: 'три книги', transliteration: 'tri knigi', strategy: 'bare', note: 'the numeral puts the noun in a particular case, but adds no word' },
+			{ language: 'ru', axis: 'person', form: 'три человека', transliteration: 'tri cheloveka', strategy: 'bare' },
 
 			// ─── French ────────────────────────────────────────────────────────
-			{ language: 'fr', axis: 'book', form: 'trois livres', strategy: 'bare', lemma: '—' },
+			{ language: 'fr', axis: 'book', form: 'trois livres', strategy: 'bare' },
 			{ language: 'fr', axis: 'paper', form: 'trois feuilles de papier', strategy: 'mensural', lemma: 'feuille' },
-			{ language: 'fr', axis: 'person', form: 'trois personnes', strategy: 'bare', lemma: '—' }
+			{ language: 'fr', axis: 'person', form: 'trois personnes', strategy: 'bare' }
 		],
 		sources: [{ source: 'aikhenvald-2000' }, { source: 'downing-1996' }, { source: 'chao-1968' }]
 	},

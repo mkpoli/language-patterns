@@ -165,9 +165,11 @@ export interface ParadigmCell {
 	transliteration?: string;
 	strategy?: string;
 	/**
-	 * Citation form of the verb inside `form`. Two cells of one language sharing
-	 * a lemma is that language colexifying the two columns, which is what the
-	 * column clustering measures.
+	 * Citation form of the word inside `form` that the column turns on. Two cells
+	 * of one language sharing a lemma is that language colexifying the two
+	 * columns, which is what the column clustering measures. Leave it off where
+	 * the language supplies no such word: a placeholder would match every other
+	 * placeholder and register as colexification that nothing supports.
 	 */
 	lemma?: string;
 	note?: string;
