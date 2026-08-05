@@ -4,9 +4,9 @@ export const numeralClassifiers: Pattern = {
 	slug: 'numeral-classifiers',
 	title: 'Counting Things',
 	shortTitle: 'three books, three sheets of paper',
-	question: 'What has to stand between a number and the thing counted?',
+	question: 'What goes with a number to count a thing?',
 	summary:
-		'English puts a number straight in front of most nouns — three books, three dogs — and only reaches for an extra word when the noun resists counting: three sheets of paper, two head of cattle. Across East and Southeast Asia that extra word is required for ordinary countable things, and which one you pick depends on what the thing is. Japanese counts books with 冊, sheets with 枚 and pencils with 本. Bantu languages get at a comparable job from the other end, making the numeral agree with the class the noun already belongs to.',
+		'English puts a number straight in front of most nouns — three books, three dogs — and only reaches for an extra word when the noun resists counting: three sheets of paper, two head of cattle. Across East and Southeast Asia that extra word is required for ordinary countable things, and which one you pick depends on what the thing is. Japanese counts books with 冊, sheets with 枚 and pencils with 本. Bantu languages do a comparable job from the other end, making the numeral agree with the class the noun already belongs to. Most of these counting words are nouns caught partway through a change: Indonesian ekor is a tail, Vietnamese cây a tree, Thai khon a person.',
 	tags: ['quantification', 'nominal-classification', 'grammaticalization'],
 	strategies: [
 		{
@@ -14,7 +14,7 @@ export const numeralClassifiers: Pattern = {
 			label: 'A classifier picked by the thing',
 			schematic: 'NUM + CLF + N  /  N + NUM + CLF',
 			description:
-				'A counting word joins the numeral, and which word it is depends on the thing counted — its shape, whether it is alive, what it is for. Japanese, Korean, Mandarin, Thai, Vietnamese, Burmese and Yucatec Maya all work this way. Mandarin and Vietnamese put the numeral and classifier before the noun; Thai and Burmese put them after it. Counting ordinary things, the classifier is required; units of time, money and measure are counted without one, as in Japanese 三年 san-nen “three years”.',
+				'A counting word joins the numeral, and which word it is depends on the thing counted — its shape, whether it is alive, what it is for. Japanese, Korean, Mandarin, Thai, Vietnamese, Burmese and Yucatec Maya all work this way. Mandarin, Vietnamese and Yucatec Maya put the numeral and classifier before the noun; Thai, Burmese and Korean put them after it; Japanese does both, 三冊の本 before and 本を三冊 after. Where the noun already names a unit — a year, a baht, a cupful — no sortal classifier joins it, since the noun is doing that work itself.',
 			color: 'sky'
 		},
 		{
@@ -22,7 +22,7 @@ export const numeralClassifiers: Pattern = {
 			label: 'The noun as its own classifier',
 			schematic: 'N + NUM + N',
 			description:
-				'When no dedicated classifier covers a noun, the noun itself fills the slot. Burmese does this readily, and Thai and Vietnamese allow it for some nouns. The construction shows how firmly the slot is held: something has to go there, so the noun goes there twice.',
+				'When no dedicated classifier covers a noun, the noun itself fills the slot, so it appears twice in one phrase. Burmese does this readily. Something has to go in the slot, and where the inventory has no word for this kind of thing, the noun serves.',
 			color: 'amber'
 		},
 		{
@@ -30,7 +30,7 @@ export const numeralClassifiers: Pattern = {
 			label: 'Classifiers you may drop',
 			schematic: 'NUM (+ CLF) + N',
 			description:
-				'The language has a set of counting words but does not require them. Indonesian and Malay have orang for people, ekor for animals and buah for things, and everyday speech often leaves them out where a formal register keeps them.',
+				'The counting words are picked by the kind of thing, exactly as in the languages above, but the grammar does not require them. Indonesian has orang for people, ekor for animals and buah for things, and everyday speech often leaves them out where a formal register keeps them. Obligatoriness runs as a scale rather than a line, and this is a point along it.',
 			color: 'rose'
 		},
 		{
@@ -38,15 +38,15 @@ export const numeralClassifiers: Pattern = {
 			label: 'A unit word only where needed',
 			schematic: 'NUM + UNIT of N',
 			description:
-				'No classifier for ordinary countable nouns, but a measure word for anything that comes without natural units. English needs sheets of paper, loaves of bread, head of cattle; German has drei Blatt Papier. The word names a portion or a unit, and is not chosen by the kind of thing.',
+				'A word that cuts a countable unit out of something that comes in no natural pieces. English needs sheets of paper, loaves of bread, head of cattle; German has drei Blatt Papier. The choice still follows the substance — a loaf of paper is nothing — but the word supplies the unit rather than sorting a thing that already had one. Languages with sortal classifiers use measure words too: 三杯の水, 三杯水, tiga gelas air.',
 			color: 'emerald'
 		},
 		{
 			id: 'noun-class',
 			label: 'Agreement instead',
-			schematic: 'N-CLASS + NUM-CLASS',
+			schematic: 'CLASS-N + CLASS-NUM',
 			description:
-				'The noun already belongs to a class marked on the noun itself, and the numeral picks up that class as agreement. Swahili vitabu vitatu “three books” and watu watatu “three people” carry the class on both words. Typologists keep noun class and numeral classifiers apart, since a noun class runs as concord through the whole clause while a classifier is a word chosen for one counting phrase. It sits here because it answers the same question about counting from the other direction: nothing is inserted, because the sorting is in the nouns to begin with.',
+				'The noun already belongs to a class marked on the noun itself, and the numeral picks up that class as agreement. Swahili vitabu vitatu “three books” and watu watatu “three people” carry the prefix on both words. Nothing is inserted, because the sorting is already in the noun. A noun class differs from a classifier in reach: it runs as concord through the whole clause, where a classifier is a word chosen for one counting phrase.',
 			color: 'violet'
 		},
 		{
@@ -64,7 +64,7 @@ export const numeralClassifiers: Pattern = {
 		{ language: 'zh', strategy: 'sortal', expression: '三本書', transliteration: 'sān běn shū', confidence: 'high', sources: [{ source: 'chao-1968' }, { source: 'aikhenvald-2000' }] },
 		{ language: 'th', strategy: 'sortal', expression: 'หนังสือสามเล่ม', transliteration: 'nǎngsɯ̌ɯ sǎam lêm', confidence: 'high', note: 'the noun comes first, then the numeral, then the classifier', sources: [{ source: 'aikhenvald-2000' }] },
 		{ language: 'vi', strategy: 'sortal', expression: 'ba quyển sách', confidence: 'high', sources: [{ source: 'nguyen-1957' }, { source: 'aikhenvald-2000' }] },
-		{ language: 'my', strategy: 'sortal', expression: 'စာအုပ် သုံး အုပ်', transliteration: 'sa-ouʔ thóuñ ouʔ', confidence: 'medium', note: 'noun, numeral, classifier — and here the classifier is the second half of the noun itself', sources: [{ source: 'okell-1969' }] },
+		{ language: 'my', strategy: 'sortal', expression: 'လူ သုံး ယောက်', transliteration: 'lù thóuñ yauʔ', confidence: 'medium', note: 'noun, then numeral, then classifier. Books take အုပ်, which is also the second half of the word for book, so this row uses people instead', sources: [{ source: 'okell-1969' }] },
 		{ language: 'yua', strategy: 'sortal', expression: 'óox-túul / óox-p’éel', confidence: 'medium', note: 'the classifier attaches to the numeral and splits animate from inanimate', sources: [{ source: 'lucy-1992' }, { source: 'blaha-skopeteas-2024' }, { source: 'aikhenvald-2000' }] },
 		{ language: 'bn', strategy: 'sortal', expression: 'তিনটি বই', transliteration: 'tinṭi boi', confidence: 'medium', note: '-ṭi and -ṭa are enclitics on the numeral rather than separate words, and on a noun they mark it as definite: boi-ṭi “the book”. South Asian classifiers work this way generally', sources: [{ source: 'aikhenvald-2000' }] },
 
@@ -72,26 +72,26 @@ export const numeralClassifiers: Pattern = {
 
 		{ language: 'id', strategy: 'optional', expression: 'tiga (buah) buku', confidence: 'high', note: 'orang for people, ekor for animals, buah for things; casual speech drops them', sources: [{ source: 'aikhenvald-2000' }] },
 
-		{ language: 'en', strategy: 'mensural', expression: 'three sheets of paper', confidence: 'high', note: 'and two head of cattle, where the unit word survives in an old invariant form' },
+		{ language: 'en', strategy: 'mensural', expression: 'three sheets of paper', confidence: 'high', note: 'and two head of cattle, where the unit word survives in an old invariant form', citationNeeded: true },
 		{ language: 'en', strategy: 'bare', expression: 'three books', confidence: 'high' },
-		{ language: 'de', strategy: 'mensural', expression: 'drei Blatt Papier', confidence: 'high', note: 'Blatt stays singular after a numeral, as do Stück and Mann in the same use' },
+		{ language: 'de', strategy: 'mensural', expression: 'drei Blatt Papier', confidence: 'high', note: 'Blatt stays singular after a numeral, as do Stück and Mann in the same use; drei Blätter Papier also occurs', citationNeeded: true },
 		{ language: 'de', strategy: 'bare', expression: 'drei Bücher', confidence: 'high' },
-		{ language: 'ru', strategy: 'bare', expression: 'три книги', transliteration: 'tri knigi', confidence: 'high', note: 'the numeral governs the case of the noun, but nothing stands between them' },
+		{ language: 'ru', strategy: 'bare', expression: 'три книги', transliteration: 'tri knigi', confidence: 'high', note: 'the numeral governs the case of the noun, but adds no word', citationNeeded: true },
 		{ language: 'fr', strategy: 'bare', expression: 'trois livres', confidence: 'high' },
 
-		{ language: 'sw', strategy: 'noun-class', expression: 'vitabu vitatu', confidence: 'high', note: 'class 8 vi- on both the noun and the numeral', sources: [{ source: 'ashton-1944' }] },
-		{ language: 'zu', strategy: 'noun-class', expression: 'izincwadi ezintathu', confidence: 'medium', note: 'class 10 agreement on the numeral' }
+		{ language: 'sw', strategy: 'noun-class', expression: 'vitabu vitatu', confidence: 'high', note: 'class 8 vi- on both the noun and the numeral; animals take class 2 agreement whatever prefix they carry themselves', sources: [{ source: 'ashton-1944' }] },
+		{ language: 'zu', strategy: 'noun-class', expression: 'izincwadi ezintathu', confidence: 'medium', note: 'class 10 agreement on the numeral', sources: [{ source: 'poulos-msimang-1998' }] }
 	],
 	paradigm: {
 		title: 'Which counting word for which thing',
 		summary:
-			'Read across a row for one language counting seven things; read down a column for one thing across languages. The classifier languages split the row into several different words, while English and German leave almost every cell empty and Swahili fills them with agreement rather than a separate word. Where one language reuses a word down several rows, the run of a single colour shows it.',
+			'Read across a row for one language counting seven things; read down a column for one thing across languages. A classifier language uses several different words down its row, while English, German, French and Russian use the numeral alone and Swahili marks the numeral to agree with the noun. Cells in the classifier languages give the numeral and its classifier without the noun; elsewhere the whole phrase is short enough to show. A blank cell means no form is recorded here yet, not that the language lacks one.',
 		axes: [
-			{ id: 'book', label: 'books', description: 'Bound volumes — often their own class. Cells show the numeral and classifier only; Thai and Burmese put that pair after the noun, the others before it.' },
+			{ id: 'book', label: 'books', description: 'Bound volumes — often their own class.' },
 			{ id: 'paper', label: 'sheets of paper', description: 'Flat, thin things. The one English also has to mark.' },
 			{ id: 'pencil', label: 'pencils', description: 'Long and thin, the commonest shape category.' },
 			{ id: 'dog', label: 'dogs', description: 'An animal, where animacy usually decides.' },
-			{ id: 'car', label: 'cars', description: 'A machine, and a recent arrival to every system here.' },
+			{ id: 'car', label: 'cars', description: 'A machine, and a late arrival to every system here.' },
 			{ id: 'person', label: 'people', description: 'Humans, almost always set apart from everything else.' },
 			{ id: 'house', label: 'houses', description: 'Buildings, counted by their own word in most of these languages.' }
 		],
@@ -143,7 +143,7 @@ export const numeralClassifiers: Pattern = {
 
 			// ─── Burmese ───────────────────────────────────────────────────────
 			{ language: 'my', axis: 'book', form: 'သုံး အုပ်', transliteration: 'thóuñ ouʔ', strategy: 'sortal', lemma: 'အုပ်' },
-			{ language: 'my', axis: 'dog', form: 'သုံး ကောင်', transliteration: 'thóuñ kaung', strategy: 'sortal', lemma: 'ကောင်', note: 'animals' },
+			{ language: 'my', axis: 'dog', form: 'သုံး ကောင်', transliteration: 'thóuñ kaùñ', strategy: 'sortal', lemma: 'ကောင်', note: 'animals' },
 			{ language: 'my', axis: 'person', form: 'သုံး ယောက်', transliteration: 'thóuñ yauʔ', strategy: 'sortal', lemma: 'ယောက်' },
 
 			// ─── Indonesian ────────────────────────────────────────────────────
@@ -158,9 +158,9 @@ export const numeralClassifiers: Pattern = {
 			{ language: 'bn', axis: 'person', form: 'তিনজন', transliteration: 'tinjon', strategy: 'sortal', lemma: '-জন' },
 
 			// ─── Yucatec Maya ──────────────────────────────────────────────────
-			{ language: 'yua', axis: 'book', form: 'óoxp’éel', strategy: 'sortal', lemma: '-p’éel', note: 'the inanimate classifier' },
-			{ language: 'yua', axis: 'dog', form: 'óoxtúul', strategy: 'sortal', lemma: '-túul', note: 'the animate classifier' },
-			{ language: 'yua', axis: 'person', form: 'óoxtúul', strategy: 'sortal', lemma: '-túul' },
+			{ language: 'yua', axis: 'book', form: 'óox-p’éel', strategy: 'sortal', lemma: '-p’éel', note: 'the inanimate classifier' },
+			{ language: 'yua', axis: 'dog', form: 'óox-túul', strategy: 'sortal', lemma: '-túul', note: 'the animate classifier' },
+			{ language: 'yua', axis: 'person', form: 'óox-túul', strategy: 'sortal', lemma: '-túul' },
 
 			// ─── Swahili ───────────────────────────────────────────────────────
 			{ language: 'sw', axis: 'book', form: 'vitabu vitatu', strategy: 'noun-class', lemma: 'vi-', note: 'class 8 on the noun and on the numeral' },
@@ -192,7 +192,17 @@ export const numeralClassifiers: Pattern = {
 			{ language: 'fr', axis: 'paper', form: 'trois feuilles de papier', strategy: 'mensural', lemma: 'feuille' },
 			{ language: 'fr', axis: 'person', form: 'trois personnes', strategy: 'bare', lemma: '—' }
 		],
-		sources: [{ source: 'aikhenvald-2000' }, { source: 'downing-1996' }, { source: 'chao-1968' }]
+		sources: [
+			{ source: 'aikhenvald-2000' },
+			{ source: 'downing-1996', note: 'the Japanese rows' },
+			{ source: 'chao-1968', note: 'the Mandarin rows' },
+			{ source: 'okell-1969', note: 'the Burmese rows' },
+			{ source: 'nguyen-1957', note: 'the Vietnamese rows' },
+			{ source: 'lucy-1992', note: 'the Yucatec Maya rows' },
+			{ source: 'blaha-skopeteas-2024', note: 'the Yucatec Maya rows' },
+			{ source: 'ashton-1944', note: 'the Swahili rows' },
+			{ source: 'poulos-msimang-1998', note: 'the Zulu forms' }
+		]
 	},
 	examples: [
 		{
@@ -236,7 +246,7 @@ export const numeralClassifiers: Pattern = {
 		{
 			language: 'en',
 			original: 'three books',
-			gloss: 'three book.PL',
+			gloss: 'three book-PL',
 			literal: 'Three books.',
 			natural: 'Three books.',
 			set: 'three-books'
@@ -276,26 +286,26 @@ export const numeralClassifiers: Pattern = {
 		{
 			language: 'en',
 			original: 'two head of cattle',
-			gloss: 'two CLF.head of cattle',
+			gloss: 'two UNIT.head of cattle',
 			literal: 'Two head of cattle.',
-			natural: 'Two cows.',
-			set: 'english-units'
+			natural: 'Two cattle.',
+			set: 'unit-words'
 		},
 		{
 			language: 'en',
 			original: 'three sheets of paper',
-			gloss: 'three CLF.sheet of paper',
+			gloss: 'three UNIT.sheet of paper',
 			literal: 'Three sheets of paper.',
 			natural: 'Three sheets of paper.',
-			set: 'english-units'
+			set: 'unit-words'
 		},
 		{
 			language: 'de',
 			original: 'drei Blatt Papier',
-			gloss: 'three CLF.sheet.SG paper',
+			gloss: 'three UNIT.sheet paper',
 			literal: 'Three sheet paper.',
 			natural: 'Three sheets of paper.',
-			set: 'english-units'
+			set: 'unit-words'
 		}
 	],
 	exampleSets: [
@@ -311,18 +321,18 @@ export const numeralClassifiers: Pattern = {
 			label: 'what counts as long and thin',
 			title: 'Japanese 本 hon',
 			description:
-				'本 counts long thin things, and then keeps going: phone calls, film reels, judo throws, home runs. The category starts from a shape and ends somewhere a shape alone will not take you.'
+				'本 counts long thin things, and then keeps going: phone calls, film reels, judo throws, home runs. The category begins with a physical shape and reaches events, calls and scores, where no shape is involved.'
 		},
 		{
-			id: 'english-units',
-			label: 'English and German units',
+			id: 'unit-words',
+			label: 'unit words',
 			title: 'Where a counting word is required anyway',
 			description:
 				'Languages with no classifier system still need a unit for things that come in no natural pieces — and keep a few frozen forms, like head of cattle and Blatt Papier, that behave much as a classifier does.'
 		}
 	],
 	related: [
-		{ kind: 'pattern', slug: 'possession', label: 'Possession' },
+		{ kind: 'pattern', slug: 'alienability', label: 'Alienability' },
 		{ kind: 'pattern', slug: 'indefinites', label: 'Indefinite pronouns' }
 	],
 	sources: [
