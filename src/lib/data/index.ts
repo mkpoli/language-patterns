@@ -11,6 +11,7 @@ import { adpositionOrder } from './patterns/adposition-order';
 import { switchingOn } from './patterns/switching-on';
 import { benefaction } from './patterns/benefaction';
 import { numeralClassifiers } from './patterns/numeral-classifiers';
+import { equatives } from './patterns/equatives';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -32,7 +33,8 @@ export const patterns: Pattern[] = [
 	adpositionOrder,
 	switchingOn,
 	benefaction,
-	numeralClassifiers
+	numeralClassifiers,
+	equatives
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,
@@ -93,21 +95,23 @@ export function topicsWithTag(id: TagId): TopicEntry[] {
 }
 
 /** Every tag carried by at least one entry, with how many carry it. */
-export const tagIndex: { facet: (typeof facets)[number]; entries: { tag: Tag; count: number }[] }[] =
-	(() => {
-		const counts = new Map<TagId, number>();
-		for (const topic of topics) {
-			for (const id of topic.tags) counts.set(id, (counts.get(id) ?? 0) + 1);
-		}
-		const used = sortTags([...counts.keys()]);
-		return facets
-			.map((facet) => ({
-				facet,
-				entries: used
-					.filter((tag) => tag.facet === facet.id)
-					.map((tag) => ({ tag, count: counts.get(tag.id as TagId)! }))
-			}))
-			.filter((group) => group.entries.length > 0);
-	})();
+export const tagIndex: {
+	facet: (typeof facets)[number];
+	entries: { tag: Tag; count: number }[];
+}[] = (() => {
+	const counts = new Map<TagId, number>();
+	for (const topic of topics) {
+		for (const id of topic.tags) counts.set(id, (counts.get(id) ?? 0) + 1);
+	}
+	const used = sortTags([...counts.keys()]);
+	return facets
+		.map((facet) => ({
+			facet,
+			entries: used
+				.filter((tag) => tag.facet === facet.id)
+				.map((tag) => ({ tag, count: counts.get(tag.id as TagId)! }))
+		}))
+		.filter((group) => group.entries.length > 0);
+})();
 
 export const usedTagIds: TagId[] = tagIndex.flatMap((g) => g.entries.map((e) => e.tag.id as TagId));

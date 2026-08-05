@@ -180,6 +180,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'comparison',
+		label: {
+			en: 'Comparison',
+			ja: '比較',
+			zh: '比较'
+		},
+		facet: 'domain',
+		definition: {
+			en: 'Setting one thing against another for degree: taller than, as tall as, the tallest.',
+			ja: '程度をめぐって物と物を比べること。〜より高い、〜と同じくらい高い、いちばん高い。',
+			zh: '就程度将一物与另一物相比：更高、一样高、最高。'
+		}
+	},
+	{
 		id: 'perception',
 		label: {
 			en: 'Perception',

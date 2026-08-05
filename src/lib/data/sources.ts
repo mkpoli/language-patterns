@@ -202,7 +202,8 @@ export const sources: Record<string, Source> = {
 		authors: ['Nichols, Johanna'],
 		year: 1988,
 		title: 'On alienable and inalienable possession',
-		container: 'In Honor of Mary Haas: From the Haas Festival Conference on Native American Linguistics',
+		container:
+			'In Honor of Mary Haas: From the Haas Festival Conference on Native American Linguistics',
 		editors: ['Shipley, William'],
 		publisher: 'Mouton de Gruyter',
 		pages: '557–609',
@@ -212,7 +213,8 @@ export const sources: Record<string, Source> = {
 		id: 'chappell-mcgregor-1996',
 		authors: ['Chappell, Hilary', 'McGregor, William'],
 		year: 1996,
-		title: 'The Grammar of Inalienability: A Typological Perspective on Body Part Terms and the Part-Whole Relation',
+		title:
+			'The Grammar of Inalienability: A Typological Perspective on Body Part Terms and the Part-Whole Relation',
 		publisher: 'Mouton de Gruyter',
 		type: 'book'
 	},
@@ -231,7 +233,8 @@ export const sources: Record<string, Source> = {
 		id: 'haspelmath-2017',
 		authors: ['Haspelmath, Martin'],
 		year: 2017,
-		title: 'Explaining alienability contrasts in adpossessive constructions: Predictability vs. iconicity',
+		title:
+			'Explaining alienability contrasts in adpossessive constructions: Predictability vs. iconicity',
 		container: 'Zeitschrift für Sprachwissenschaft',
 		pages: '36(2): 193–231',
 		doi: '10.1515/zfs-2017-0009',
@@ -1099,7 +1102,8 @@ export const sources: Record<string, Source> = {
 		id: 'vanhove-bisang-2021',
 		authors: ['Vanhove, Martine', 'Bisang, Walter'],
 		year: 2021,
-		title: 'Complex Predicates in Languages: Emergence, Typology, Evolution (ComPLETE) — project description',
+		title:
+			'Complex Predicates in Languages: Emergence, Typology, Evolution (ComPLETE) — project description',
 		url: 'https://complete.huma-num.fr/data/ANR-DFG_2021_ComPLETE_Project_Main.pdf',
 		type: 'url'
 	},
@@ -1183,8 +1187,10 @@ export const sources: Record<string, Source> = {
 		id: 'francois-2008',
 		authors: ['François, Alexandre'],
 		year: 2008,
-		title: 'Semantic maps and the typology of colexification: Intertwining polysemous networks across languages',
-		container: 'From Polysemy to Semantic Change: Towards a Typology of Lexical Semantic Associations',
+		title:
+			'Semantic maps and the typology of colexification: Intertwining polysemous networks across languages',
+		container:
+			'From Polysemy to Semantic Change: Towards a Typology of Lexical Semantic Associations',
 		editors: ['Vanhove, Martine'],
 		publisher: 'John Benjamins (Studies in Language Companion Series 106)',
 		pages: '163–215',
@@ -1209,7 +1215,8 @@ export const sources: Record<string, Source> = {
 		authors: ['ゆうき 유욱희 (@yuki7979seoul)'],
 		year: 2022,
 		title: '日韓家電製品系コロケーション [Japanese–Korean household-appliance collocations]',
-		container: 'X (Twitter), 8 October 2022. Japanese–Korean grid of five appliances; a language teacher’s own judgements, without corpus counts',
+		container:
+			'X (Twitter), 8 October 2022. Japanese–Korean grid of five appliances; a language teacher’s own judgements, without corpus counts',
 		url: 'https://x.com/yuki7979seoul/status/1578561594753441793',
 		type: 'url'
 	},
@@ -1217,7 +1224,8 @@ export const sources: Record<string, Source> = {
 		id: 'mkpoli-2022-collocations',
 		authors: ['@mkpoli'],
 		year: 2022,
-		title: '英中日韓の家電製品系共起表現 [English–Chinese–Japanese–Korean household-appliance collocations]',
+		title:
+			'英中日韓の家電製品系共起表現 [English–Chinese–Japanese–Korean household-appliance collocations]',
 		container:
 			'X (Twitter), 8 October 2022. Extends the Japanese–Korean grid to English and Chinese and adds a literal gloss under each verb; speaker judgements, without corpus counts',
 		url: 'https://x.com/mkpoli/status/1578603868413624320',
@@ -1697,7 +1705,7 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/zgasić',
 		type: 'url'
 	},
-	'tatoeba': {
+	tatoeba: {
 		id: 'tatoeba',
 		authors: ['Tatoeba contributors'],
 		year: 2026,
@@ -1712,7 +1720,8 @@ export const sources: Record<string, Source> = {
 		authors: ['Wiktionary contributors'],
 		year: 2026,
 		title: 'Wiktionary: turn on',
-		container: 'Translation table for the sense “to activate an appliance, light, mechanism, functionality”',
+		container:
+			'Translation table for the sense “to activate an appliance, light, mechanism, functionality”',
 		url: 'https://en.wiktionary.org/wiki/turn_on',
 		type: 'url'
 	},
@@ -1984,7 +1993,8 @@ export const sources: Record<string, Source> = {
 		id: 'lucy-1992',
 		authors: ['Lucy, John A.'],
 		year: 1992,
-		title: 'Grammatical Categories and Cognition: A Case Study of the Linguistic Relativity Hypothesis',
+		title:
+			'Grammatical Categories and Cognition: A Case Study of the Linguistic Relativity Hypothesis',
 		container: 'Studies in the Social and Cultural Foundations of Language 13',
 		publisher: 'Cambridge University Press',
 		type: 'book'
@@ -2089,6 +2099,69 @@ export const sources: Record<string, Source> = {
 		pages: '22(3): 661–692',
 		doi: '10.1075/sl.22.3.06shi',
 		type: 'article'
+	},
+
+	// ─── Equative & similative constructions ────────────────────────────────────
+	'haspelmath-equative-2017': {
+		id: 'haspelmath-equative-2017',
+		authors: ['Haspelmath, Martin', 'the Leipzig Equative Constructions Team'],
+		year: 2017,
+		title: 'Equative constructions in world-wide perspective',
+		container: 'Similative and Equative Constructions: A cross-linguistic perspective',
+		editors: ['Treis, Yvonne', 'Vanhove, Martine'],
+		publisher: 'John Benjamins',
+		pages: '9–32',
+		doi: '10.1075/tsl.117.02has',
+		type: 'chapter'
+	},
+	'haspelmath-buchholz-1998': {
+		id: 'haspelmath-buchholz-1998',
+		authors: ['Haspelmath, Martin', 'Buchholz, Oda'],
+		year: 1998,
+		title: 'Equative and similative constructions in the languages of Europe',
+		container: 'Adverbial Constructions in the Languages of Europe',
+		editors: ['van der Auwera, Johan'],
+		publisher: 'Mouton de Gruyter',
+		pages: '277–334',
+		doi: '10.1515/9783110802610.277',
+		type: 'chapter'
+	},
+	'treis-vanhove-2017': {
+		id: 'treis-vanhove-2017',
+		authors: ['Treis, Yvonne', 'Vanhove, Martine'],
+		year: 2017,
+		title: 'Similative and Equative Constructions: A cross-linguistic perspective',
+		publisher: 'John Benjamins',
+		type: 'book'
+	},
+	'henkelmann-2006': {
+		id: 'henkelmann-2006',
+		authors: ['Henkelmann, Peter'],
+		year: 2006,
+		title: 'Constructions of equative comparison',
+		container: 'STUF – Sprachtypologie und Universalienforschung',
+		pages: '59(4): 370–398',
+		doi: '10.1524/stuf.2006.59.4.370',
+		type: 'article'
+	},
+	'stassen-wals-121': {
+		id: 'stassen-wals-121',
+		authors: ['Stassen, Leon'],
+		year: 2013,
+		title: 'Comparative Constructions',
+		container: 'The World Atlas of Language Structures Online, chapter 121',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/121',
+		type: 'dataset'
+	},
+	'makino-tsutsui-1986': {
+		id: 'makino-tsutsui-1986',
+		authors: ['Makino, Seiichi', 'Tsutsui, Michio'],
+		year: 1986,
+		title: 'A Dictionary of Basic Japanese Grammar',
+		publisher: 'The Japan Times',
+		type: 'book'
 	}
 };
 
