@@ -741,7 +741,7 @@ export const existence: Pattern = {
 			label: 'Cat in the room',
 			title: '“There is a cat in the room.”',
 			description:
-				'The widest sample on the site: one sentence collected across sixty languages, so the strategies can be compared on identical content rather than on whatever example each grammar happened to give.'
+				'The widest sample on the site: one sentence collected across fifty-eight languages, so the strategies can be compared on identical content rather than on whatever example each grammar happened to give.'
 		},
 		{
 			id: 'plural',
