@@ -616,7 +616,8 @@ export const adpositionOrder: Pattern = {
 	],
 	related: [
 		{ kind: 'pattern', slug: 'word-order', label: 'Basic word order' },
-		{ kind: 'pattern', slug: 'existence', label: 'Existence' }
+		{ kind: 'pattern', slug: 'existence', label: 'Existence' },
+		{ kind: 'pattern', slug: 'equatives', label: 'Equal Comparison' }
 	],
 	sources: [
 		{ source: 'dryer-2013-adposition' },

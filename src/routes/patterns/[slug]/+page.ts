@@ -22,6 +22,7 @@ export function entries() {
 		{ slug: 'adposition-order' },
 		{ slug: 'switching-on' },
 		{ slug: 'benefaction' },
-		{ slug: 'numeral-classifiers' }
+		{ slug: 'numeral-classifiers' },
+		{ slug: 'equatives' }
 	];
 }
