@@ -165,7 +165,7 @@ export const equatives: Pattern = {
 		{
 			language: 'bav',
 			strategy: 'standard-only',
-			expression: 'wě yaa Làmbi',
+			expression: "we' yaa Làmbi",
 			confidence: 'medium',
 			note: '“strong like Lambi” — the ordinary similative yaa doing equative work',
 			sources: [{ source: 'haspelmath-equative-2017', locator: 'ex. 9, after Schaub 1985: 116' }]
@@ -181,7 +181,7 @@ export const equatives: Pattern = {
 		{
 			language: 'ram',
 			strategy: 'unified',
-			expression: 'cati pîpen',
+			expression: 'capi me kryt cati pipẽn',
 			confidence: 'medium',
 			note: '“Capi and Kryt big equal” — the two compared stand as one subject',
 			sources: [
@@ -201,7 +201,7 @@ export const equatives: Pattern = {
 		{
 			language: 'deg',
 			strategy: 'reach',
-			expression: 'túl mẽ',
+			expression: 'túl mé=ēn',
 			confidence: 'medium',
 			note: '“this child is tall, reaches me” — the reach verb follows an ordinary adjective',
 			sources: [{ source: 'haspelmath-equative-2017', locator: 'ex. 24, after Kari 2004: 156' }]
