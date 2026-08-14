@@ -3,14 +3,19 @@
 	import { strategyColor } from '$lib/strategyColor';
 	import { m } from '$lib/paraglide/messages.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { swipe } from '$lib/swipe';
 
 	const sets = sentenceSets();
 	let active = $state(0);
 	const set = $derived(sets[active]);
+
+	function step(delta: number) {
+		active = (active + delta + sets.length) % sets.length;
+	}
 </script>
 
 {#if set}
-	<div class="flex flex-col gap-5">
+	<div class="flex flex-col gap-5" use:swipe={{ next: () => step(1), prev: () => step(-1) }}>
 		<div class="flex flex-wrap gap-2">
 			{#each sets as option, i (option.key)}
 				<button
