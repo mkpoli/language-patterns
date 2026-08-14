@@ -166,87 +166,152 @@ export function wall(pattern: Pattern, limit = 44): Wall {
 	};
 }
 
+/** A sentence cut into plain and marked runs, in order. */
+export type Segment = { text: string; hit: boolean };
+
+const NON_LATIN = /[^\p{Script=Latin}\p{P}\p{N}\s]/u;
+/** The slot an attestation leaves for what is possessed, existing, counted. */
+const SLOT = /^[XYZ](?:[-=]\p{L}+)?$/u;
+
+const fold = (value: string) => value.toLowerCase().replace(/[‘’]/g, "'");
+
 /**
- * Locate the attested predicate inside a sentence, so the form that carries
- * the strategy can be marked. Conservative: a whole recorded alternative
- * first, then a single token of one, and nothing at all when neither is found
- * — a wrong mark would be a wrong claim.
+ * Cut a recorded expression into the literal material around its slots.
+ * `benim X-im var` carries the strategy in `benim` and `var`; `X` stands for
+ * the thing possessed, which the sentence supplies and which marking would
+ * misattribute. Neighbouring literal words stay in one chunk, so they are
+ * looked for as a phrase rather than separately.
  */
-export function markPredicate(
-	sentence: string,
-	expression: string
-): { before: string; hit: string; after: string } | null {
-	const fold = (value: string) => value.toLowerCase().replace(/[\u2018\u2019]/g, "'");
+function chunksOf(expression: string): string[] {
+	const chunks: string[] = [];
+	let run: string[] = [];
+	const close = () => {
+		if (run.length) chunks.push(run.join(' '));
+		run = [];
+	};
+	for (const token of expression.split(' ')) {
+		// A suffix written on the slot (X-im) belongs to the word that fills it,
+		// where vowel harmony or case has usually reshaped it.
+		if (SLOT.test(token)) close();
+		else run.push(token);
+	}
+	close();
+	return chunks;
+}
+
+/** Where a chunk sits in the folded sentence, at or after `from`. */
+function locate(hay: string, chunk: string, from: number): { start: number; end: number } | null {
+	const needle = fold(chunk);
+	if (!needle) return null;
+	if (NON_LATIN.test(needle)) {
+		const index = hay.indexOf(needle, from);
+		return index < 0 ? null : { start: index, end: index + needle.length };
+	}
+	const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${escaped})(?![\\p{L}\\p{N}])`, 'gu');
+	pattern.lastIndex = Math.max(0, from - 1);
+	const found = pattern.exec(hay);
+	if (!found) return null;
+	const start = found.index + found[1].length;
+	return start < from ? null : { start, end: start + needle.length };
+}
+
+/**
+ * Mark the material an attestation records inside a sentence that shows it, so
+ * the strategy label has something to point at. Conservative at both ends:
+ * material that cannot be found stays unmarked, and a sentence whose every
+ * letter would be marked is left plain, a mark over the whole line
+ * distinguishing nothing.
+ */
+export function markExpression(sentence: string, expression: string): Segment[] | null {
 	if (fold(sentence).length !== sentence.length) return null;
 	const hay = fold(sentence);
 
-	const alternatives = expression
-		.split(/\s*\/\s*/)
-		.map((alt) =>
-			alt
-				.replace(/\([^)]*\)/g, ' ')
-				.replace(/\s+/g, ' ')
-				.trim()
-		)
-		.filter(Boolean);
-
-	// Inflected forms are often parenthesised beside the lemma: egon (dago / daude).
-	const parenthesised = [...expression.matchAll(/\(([^)]*)\)/g)]
-		.flatMap((match) => match[1].split(/\s*\/\s*/))
-		.map((form) => form.trim())
-		.filter((form) => form.length > 1 && form !== form.toUpperCase());
-
-	const nonLatin = /[^\p{Script=Latin}\p{P}\p{N}\s]/u;
-
-	// A recorded form is matched whole. Matching its individual words instead
-	// lands on whatever else the sentence contains — for "turn the light on"
-	// that is the word for "light", which carries no strategy at all.
-	// The one split allowed is dropping a romanisation written beside another
-	// script: "電気をつける denki o tsukeru" also tries "電気をつける".
-	const runs: string[] = [];
-	for (const alt of alternatives) {
-		if (!nonLatin.test(alt)) continue;
-		const kept = alt.split(' ').filter((token) => nonLatin.test(token));
-		if (kept.length) runs.push(kept.join(' '));
-	}
-
-	const tryFind = (candidate: string, wholeWord: boolean) => {
-		const needle = fold(candidate);
-		if (needle.length < 1) return null;
-
-		// `hay` is index-aligned with `sentence` by the guard above, so offsets
-		// found in the folded text slice the original directly. The span is cut
-		// to the folded needle, which is what was actually matched.
-		let index: number;
-		if (wholeWord) {
-			const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-			const match = new RegExp(`(^|[^\\p{L}])(${escaped})([^\\p{L}]|$)`, 'u').exec(hay);
-			if (!match) return null;
-			index = match.index + match[1].length;
-		} else {
-			index = hay.indexOf(needle);
+	const candidates: string[] = [];
+	for (const raw of expression.split(/\s*\/\s*/)) {
+		const alt = raw
+			.replace(/\([^)]*\)/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim();
+		if (!alt) continue;
+		candidates.push(alt);
+		// A romanization written beside another script is not in the sentence:
+		// "\u96fb\u6c17\u3092\u3064\u3051\u308b denki o tsukeru" is also tried without it.
+		if (NON_LATIN.test(alt)) {
+			const kept = alt.split(' ').filter((token) => NON_LATIN.test(token));
+			if (kept.length) candidates.push(kept.join(' '));
 		}
-		if (index < 0) return null;
-		return {
-			before: sentence.slice(0, index),
-			hit: sentence.slice(index, index + needle.length),
-			after: sentence.slice(index + needle.length)
-		};
-	};
+		// Morpheme boundaries are an editorial mark: Swahili ni-na is written
+		// nina, Ainu ku=kor is written ku=kor. Both spellings get a try.
+		const joined = alt.replace(/(\p{L})[-=](\p{L})/gu, '$1$2');
+		if (joined !== alt) candidates.push(joined);
+	}
 
-	for (const alt of alternatives.slice().sort((a, b) => b.length - a.length)) {
-		const found = tryFind(alt, !nonLatin.test(alt));
-		if (found) return found;
+	// Inflected forms often sit in parentheses beside the citation form:
+	// egon (dago / daude).
+	for (const inside of expression.matchAll(/\(([^)]*)\)/g)) {
+		for (const form of inside[1].split(/\s*\/\s*/)) {
+			const trimmed = form.trim();
+			if (trimmed.length > 1 && trimmed !== trimmed.toUpperCase()) candidates.push(trimmed);
+		}
 	}
-	for (const run of runs.sort((a, b) => b.length - a.length)) {
-		const found = tryFind(run, false);
-		if (found) return found;
+
+	let best: { start: number; end: number }[] = [];
+	let bestLength = 0;
+	for (const candidate of candidates) {
+		const spans: { start: number; end: number }[] = [];
+		let cursor = 0;
+		for (const chunk of chunksOf(candidate)) {
+			const span = locate(hay, chunk, cursor);
+			if (!span) continue;
+			spans.push(span);
+			cursor = span.end;
+		}
+		const length = spans.reduce((sum, s) => sum + (s.end - s.start), 0);
+		if (length > bestLength) {
+			best = spans;
+			bestLength = length;
+		}
 	}
-	for (const form of parenthesised.sort((a, b) => b.length - a.length)) {
-		const found = tryFind(form, !nonLatin.test(form));
-		if (found) return found;
+	if (!best.length) return null;
+
+	const letters = (value: string) => value.replace(/[\p{P}\p{Z}\s]/gu, '').length;
+	if (best.reduce((sum, s) => sum + letters(sentence.slice(s.start, s.end)), 0) >= letters(sentence))
+		return null;
+
+	const segments: Segment[] = [];
+	let at = 0;
+	for (const span of best) {
+		if (span.start > at) segments.push({ text: sentence.slice(at, span.start), hit: false });
+		segments.push({ text: sentence.slice(span.start, span.end), hit: true });
+		at = span.end;
 	}
-	return null;
+	if (at < sentence.length) segments.push({ text: sentence.slice(at), hit: false });
+	return segments;
+}
+
+/**
+ * Read an example's bracketed annotation: `adam[ın] baş[ı]` becomes the phrase
+ * with its two suffixes marked. A phrase that marks nothing is written without
+ * brackets and comes back plain.
+ */
+export function markAnnotation(example: Example): Segment[] | null {
+	if (!example.marked) return null;
+	const segments: Segment[] = [];
+	let plain = '';
+	for (const part of example.marked.split(/(\[[^\]]*\])/)) {
+		if (!part) continue;
+		const hit = part.startsWith('[') && part.endsWith(']');
+		const text = hit ? part.slice(1, -1) : part;
+		plain += text;
+		if (text) segments.push({ text, hit });
+	}
+	if (plain !== example.original) {
+		throw new Error(
+			`marked annotation does not match the example: ${example.marked} vs ${example.original}`
+		);
+	}
+	return segments.some((segment) => segment.hit) ? segments : null;
 }
 
 /**
@@ -257,14 +322,15 @@ export function markPredicate(
 function attestationFor(
 	attestations: Attestation[],
 	example: Example
-): { attestation: Attestation; mark: ReturnType<typeof markPredicate> } | null {
+): { attestation: Attestation; marks: Segment[] | null } | null {
 	const forLanguage = attestations.filter((a) => a.language === example.language);
 	if (forLanguage.length === 0) return null;
+	const annotated = markAnnotation(example);
 	for (const attestation of forLanguage) {
-		const mark = markPredicate(example.original, attestation.expression);
-		if (mark) return { attestation, mark };
+		const marks = markExpression(example.original, attestation.expression);
+		if (marks) return { attestation, marks: annotated ?? marks };
 	}
-	return { attestation: forLanguage[0], mark: null };
+	return { attestation: forLanguage[0], marks: annotated };
 }
 
 export interface SlideRow {
@@ -273,7 +339,7 @@ export interface SlideRow {
 	sub?: string;
 	primary: string;
 	/** The primary split around the attested predicate, when it can be found. */
-	mark?: { before: string; hit: string; after: string };
+	marks?: Segment[];
 	secondary?: string;
 	chip?: string;
 	year?: number;
@@ -389,7 +455,7 @@ function patternSlide(pattern: Pattern, limit: number): Slide | null {
 				label: language?.name ?? example.language,
 				sub: language?.endonym,
 				primary: example.original,
-				mark: picked.mark ?? undefined,
+				marks: picked.marks ?? undefined,
 				secondary: example.literal,
 				chip: labels.get(strategy) ?? strategy,
 				color: colors.get(strategy) ?? 'slate'
@@ -575,7 +641,7 @@ export interface SentenceRow {
 	language: string;
 	endonym?: string;
 	original: string;
-	mark?: { before: string; hit: string; after: string };
+	marks?: Segment[];
 	transliteration?: string;
 	gloss?: string;
 	literal: string;
@@ -622,7 +688,7 @@ export function sentenceSets(minimum = 6): SentenceSet[] {
 					language: language?.name ?? example.language,
 					endonym: language?.endonym,
 					original: example.original,
-					mark: picked.mark ?? undefined,
+					marks: picked.marks ?? undefined,
 					transliteration: example.transliteration,
 					gloss: example.gloss,
 					literal: example.literal,

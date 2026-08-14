@@ -126,16 +126,12 @@
 						</div>
 						<div class="min-w-0 flex-1">
 							<p class="font-serif text-lg leading-snug" dir="auto">
-								{#if row.mark}
-									{row.mark.before}<mark
-										style:background={tone.soft}
-										style:color={tone.textOn}
-										class="rounded px-0.5"
-										title={row.chip}>{row.mark.hit}</mark
-									>{row.mark.after}
-								{:else}
-									{row.primary}
-								{/if}
+								{#if row.marks}{#each row.marks as segment, s (s)}{#if segment.hit}<mark
+												style:background={tone.soft}
+												style:color={tone.textOn}
+												class="rounded px-0.5"
+												title={row.chip}>{segment.text}</mark
+											>{:else}{segment.text}{/if}{/each}{:else}{row.primary}{/if}
 							</p>
 							{#if row.secondary}
 								<p class="text-xs text-[color:var(--color-ink-soft)]" lang="en">{row.secondary}</p>
