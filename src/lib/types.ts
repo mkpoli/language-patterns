@@ -68,6 +68,13 @@ export interface Example {
 	literal: string;
 	natural: string;
 	set?: string;
+	/**
+	 * `original` with the material that carries the strategy in square brackets:
+	 * `adam[ın] baş[ı]`, `男[の]頭`. Where a language marks nothing, the field
+	 * holds `original` unchanged. Removing the brackets must give `original`
+	 * back, and the build fails when it does not.
+	 */
+	marked?: string;
 	illustration?: ExampleIllustration;
 	sources?: Citation[];
 	/** No source is on record for this form yet; it renders as [citation needed]. */

@@ -69,15 +69,11 @@
 							</span>
 							<span class="col-start-2 min-w-0 sm:col-start-3">
 								<span class="block font-serif text-lg leading-snug" dir="auto">
-									{#if row.mark}
-										{row.mark.before}<mark
-											style:background={tone.soft}
-											style:color={tone.textOn}
-											class="rounded px-0.5">{row.mark.hit}</mark
-										>{row.mark.after}
-									{:else}
-										{row.original}
-									{/if}
+									{#if row.marks}{#each row.marks as segment, s (s)}{#if segment.hit}<mark
+													style:background={tone.soft}
+													style:color={tone.textOn}
+													class="rounded px-0.5">{segment.text}</mark
+												>{:else}{segment.text}{/if}{/each}{:else}{row.original}{/if}
 								</span>
 								{#if row.transliteration}
 									<span class="block text-xs text-[color:var(--color-ink-faint)] italic">
