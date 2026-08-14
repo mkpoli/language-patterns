@@ -80,6 +80,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'en',
 			original: 'the man’s head',
+			marked: 'the man[’s] head',
 			gloss: 'the man-GEN head',
 			literal: 'the man’s head',
 			natural: 'the man’s head',
@@ -88,6 +89,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'ru',
 			original: 'голова человека',
+			marked: 'голова человек[а]',
 			transliteration: 'golova čeloveka',
 			gloss: 'head.NOM man.GEN',
 			literal: 'head of-man',
@@ -97,6 +99,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'la',
 			original: 'caput virī',
+			marked: 'caput vir[ī]',
 			gloss: 'head.NOM man.GEN',
 			literal: 'head of-man',
 			natural: 'the man’s head',
@@ -105,6 +108,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'de',
 			original: 'der Kopf des Mannes',
+			marked: 'der Kopf [des] Mann[es]',
 			gloss: 'the.NOM head the.GEN man.GEN',
 			literal: 'the head of-the man',
 			natural: 'the man’s head',
@@ -113,6 +117,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'hu',
 			original: 'a férfi feje',
+			marked: 'a férfi fej[e]',
 			gloss: 'the man head-POSS.3SG',
 			literal: 'the man head-his',
 			natural: 'the man’s head',
@@ -122,6 +127,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'ain',
 			original: 'okkayo sapaha',
+			marked: 'okkayo sapa[ha]',
 			transliteration: 'オッカヨ サパハ',
 			gloss: 'man head-POSS',
 			literal: 'man head-his',
@@ -132,6 +138,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'nv',
 			original: 'hastiin bitsiitsʼiin',
+			marked: 'hastiin [bi]tsiitsʼiin',
 			gloss: 'man 3SG-head',
 			literal: 'man his-head',
 			natural: 'the man’s head',
@@ -141,6 +148,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'tr',
 			original: 'adamın başı',
+			marked: 'adam[ın] baş[ı]',
 			gloss: 'man-GEN head-POSS.3SG',
 			literal: 'man-of head-his',
 			natural: 'the man’s head',
@@ -150,6 +158,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'qu',
 			original: 'runapa uman',
+			marked: 'runa[pa] uma[n]',
 			gloss: 'man-GEN head-3SG',
 			literal: 'man-of head-his',
 			natural: 'the man’s head',
@@ -159,6 +168,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'ja',
 			original: '男の頭',
+			marked: '男[の]頭',
 			transliteration: 'otoko no atama',
 			gloss: 'man GEN head',
 			literal: 'man-of head',
@@ -168,6 +178,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'zh',
 			original: '男人的头',
+			marked: '男人[的]头',
 			transliteration: 'nánrén de tóu',
 			gloss: 'man GEN head',
 			literal: 'man-of head',
@@ -177,6 +188,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'fr',
 			original: 'la tête de l’homme',
+			marked: 'la tête [de] l’homme',
 			gloss: 'the head of the.man',
 			literal: 'the head of the-man',
 			natural: 'the man’s head',
@@ -185,6 +197,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'cy',
 			original: 'pen y dyn',
+			marked: 'pen y dyn',
 			gloss: 'head the man',
 			literal: 'head the man',
 			natural: 'the man’s head',
@@ -194,6 +207,7 @@ export const possessiveMarking: Pattern = {
 		{
 			language: 'id',
 			original: 'kepala laki-laki itu',
+			marked: 'kepala laki-laki itu',
 			gloss: 'head man that',
 			literal: 'head man that',
 			natural: 'that man’s head',
