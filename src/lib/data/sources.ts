@@ -704,6 +704,112 @@ export const sources: Record<string, Source> = {
 		url: 'https://bosworthtoller.com/search?q=hyrsumian',
 		type: 'book'
 	},
+	'wiktionary-stevel': {
+		id: 'wiktionary-stevel',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: stevel',
+		url: 'https://en.wiktionary.org/wiki/stevel',
+		type: 'url'
+	},
+	'wiktionary-yma': {
+		id: 'wiktionary-yma',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: yma',
+		url: 'https://en.wiktionary.org/wiki/yma',
+		type: 'url'
+	},
+	'wiktionary-kayt': {
+		id: 'wiktionary-kayt',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kayt',
+		url: 'https://en.wiktionary.org/wiki/kayt',
+		type: 'url'
+	},
+	'wiktionary-shamyr': {
+		id: 'wiktionary-shamyr',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: shamyr',
+		url: 'https://en.wiktionary.org/wiki/shamyr',
+		type: 'url'
+	},
+	'wiktionary-kottur': {
+		id: 'wiktionary-kottur',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: køttur',
+		url: 'https://en.wiktionary.org/wiki/køttur',
+		type: 'url'
+	},
+	'wiktionary-kettlingur': {
+		id: 'wiktionary-kettlingur',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kettlingur',
+		url: 'https://en.wiktionary.org/wiki/kettlingur',
+		type: 'url'
+	},
+	'wiktionary-stova': {
+		id: 'wiktionary-stova',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: stova',
+		url: 'https://en.wiktionary.org/wiki/stova',
+		type: 'url'
+	},
+	'wiktionary-tsimer': {
+		id: 'wiktionary-tsimer',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: צימער',
+		url: 'https://en.wiktionary.org/wiki/צימער',
+		type: 'url'
+	},
+	'wiktionary-gata': {
+		id: 'wiktionary-gata',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: γάτα',
+		url: 'https://en.wiktionary.org/wiki/γάτα',
+		type: 'url'
+	},
+	'wiktionary-ailouros': {
+		id: 'wiktionary-ailouros',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: αἴλουρος',
+		url: 'https://en.wiktionary.org/wiki/αἴλουρος',
+		type: 'url'
+	},
+	'wiktionary-oy': {
+		id: 'wiktionary-oy',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: öy',
+		url: 'https://en.wiktionary.org/wiki/öy',
+		type: 'url'
+	},
+	'dutchgrammar-er': {
+		id: 'dutchgrammar-er',
+		authors: ['Bieneke Berendsen'],
+		year: 2026,
+		title: 'Dutch Grammar: Er, hier and daar',
+		container: 'dutchgrammar.com',
+		url: 'https://www.dutchgrammar.com/en/?n=WordOrder.09',
+		type: 'url'
+	},
+	'learngaelic-an-t': {
+		id: 'learngaelic-an-t',
+		authors: ['LearnGaelic'],
+		year: 2026,
+		title: 'Grammar Hacks: how to use an t- in Scottish Gaelic',
+		container: 'learngaelic.scot',
+		url: 'https://learngaelic.scot/grammar_hacks/an_t.jsp',
+		type: 'url'
+	},
 	'wiktionary-hieran': {
 		id: 'wiktionary-hieran',
 		authors: ['Wiktionary contributors'],
