@@ -744,14 +744,6 @@ export const sources: Record<string, Source> = {
 		url: 'https://en.wiktionary.org/wiki/køttur',
 		type: 'url'
 	},
-	'wiktionary-kettlingur': {
-		id: 'wiktionary-kettlingur',
-		authors: ['Wiktionary contributors'],
-		year: 2026,
-		title: 'Wiktionary: kettlingur',
-		url: 'https://en.wiktionary.org/wiki/kettlingur',
-		type: 'url'
-	},
 	'wiktionary-stova': {
 		id: 'wiktionary-stova',
 		authors: ['Wiktionary contributors'],
@@ -782,14 +774,6 @@ export const sources: Record<string, Source> = {
 		year: 2026,
 		title: 'Wiktionary: αἴλουρος',
 		url: 'https://en.wiktionary.org/wiki/αἴλουρος',
-		type: 'url'
-	},
-	'wiktionary-oy': {
-		id: 'wiktionary-oy',
-		authors: ['Wiktionary contributors'],
-		year: 2026,
-		title: 'Wiktionary: öy',
-		url: 'https://en.wiktionary.org/wiki/öy',
 		type: 'url'
 	},
 	'dutchgrammar-er': {
