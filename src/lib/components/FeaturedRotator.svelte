@@ -6,6 +6,7 @@
 	import { strategyColor } from '$lib/strategyColor';
 	import { m } from '$lib/paraglide/messages.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { swipe } from '$lib/swipe';
 
 	const frames = slides();
 	const DWELL = 7000;
@@ -83,6 +84,10 @@
 		class="flex flex-col overflow-hidden rounded-3xl border border-[color:var(--color-rule)] bg-[color:var(--color-surface)]"
 		aria-label={m.home_featured_aria()}
 		bind:this={panel}
+		use:swipe={{
+			next: () => select((index + 1) % frames.length),
+			prev: () => select((index - 1 + frames.length) % frames.length)
+		}}
 		style:--dwell={`${DWELL}ms`}
 		onpointerenter={() => setHovered(true)}
 		onpointerleave={() => setHovered(false)}

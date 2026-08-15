@@ -6,6 +6,7 @@
 	import { m } from '$lib/paraglide/messages.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { localized, sortTags } from '$lib/data/tags';
+	import { swipe } from '$lib/swipe';
 
 	let active = $state(0);
 	let tabs: HTMLButtonElement[] = $state([]);
@@ -28,6 +29,11 @@
 		event.preventDefault();
 		active = (index + step + patterns.length) % patterns.length;
 		tabs[active]?.focus();
+	}
+
+	function step(delta: number) {
+		active = (active + delta + patterns.length) % patterns.length;
+		tabs[active]?.scrollIntoView({ block: 'nearest', inline: 'center' });
 	}
 </script>
 
@@ -74,6 +80,7 @@
 		role="tabpanel"
 		aria-labelledby={`tab-${pattern.slug}`}
 		tabindex="-1"
+		use:swipe={{ next: () => step(1), prev: () => step(-1) }}
 		class="flex flex-col gap-5 bg-[color:var(--color-surface)] p-6 sm:p-8"
 	>
 		<div class="flex flex-col gap-2">
