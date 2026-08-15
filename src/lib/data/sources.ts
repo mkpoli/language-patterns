@@ -795,7 +795,7 @@ export const sources: Record<string, Source> = {
 	'dutchgrammar-er': {
 		id: 'dutchgrammar-er',
 		authors: ['Bieneke Berendsen'],
-		year: 2026,
+		year: 2007,
 		title: 'Dutch Grammar: Er, hier and daar',
 		container: 'dutchgrammar.com',
 		url: 'https://www.dutchgrammar.com/en/?n=WordOrder.09',
