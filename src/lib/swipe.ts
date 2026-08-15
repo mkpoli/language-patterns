@@ -29,11 +29,15 @@ export function swipe(node: HTMLElement, handlers: SwipeHandlers) {
 	let pointer: number | null = null;
 	let startX = 0;
 	let startY = 0;
+	const priorTouchAction = node.style.touchAction;
 
 	function down(event: PointerEvent) {
 		if (event.pointerType !== 'touch') return;
 		if (insideSideScroller(event.target, node)) return;
 		pointer = event.pointerId;
+		// Held on the strip rather than the touch target, so a mid-drag
+		// re-render of the panel keeps delivering the gesture to this node.
+		node.setPointerCapture(event.pointerId);
 		startX = event.clientX;
 		startY = event.clientY;
 	}
@@ -57,11 +61,17 @@ export function swipe(node: HTMLElement, handlers: SwipeHandlers) {
 	node.addEventListener('pointerup', up, { passive: true });
 	node.addEventListener('pointercancel', cancel, { passive: true });
 
+	// At the default, the browser takes any pan as a scroll and cancels the
+	// pointer events this action reads. pan-y hands the vertical axis to the
+	// page and leaves the horizontal drag to the action.
+	node.style.touchAction = 'pan-y';
+
 	return {
 		update(next: SwipeHandlers) {
 			current = next;
 		},
 		destroy() {
+			node.style.touchAction = priorTouchAction;
 			node.removeEventListener('pointerdown', down);
 			node.removeEventListener('pointerup', up);
 			node.removeEventListener('pointercancel', cancel);
