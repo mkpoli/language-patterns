@@ -23,6 +23,7 @@ export function entries() {
 		{ slug: 'switching-on' },
 		{ slug: 'benefaction' },
 		{ slug: 'numeral-classifiers' },
-		{ slug: 'equatives' }
+		{ slug: 'equatives' },
+		{ slug: 'coordination' }
 	];
 }

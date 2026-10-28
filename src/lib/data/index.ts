@@ -12,6 +12,7 @@ import { switchingOn } from './patterns/switching-on';
 import { benefaction } from './patterns/benefaction';
 import { numeralClassifiers } from './patterns/numeral-classifiers';
 import { equatives } from './patterns/equatives';
+import { coordination } from './patterns/coordination';
 import { jespersensCycle } from './pathways/jespersens-cycle';
 import { hearWordsToObey } from './pathways/hear-words-to-obey';
 import { seeToTry } from './pathways/see-to-try';
@@ -34,7 +35,8 @@ export const patterns: Pattern[] = [
 	switchingOn,
 	benefaction,
 	numeralClassifiers,
-	equatives
+	equatives,
+	coordination
 ];
 export const pathways: Pathway[] = [
 	jespersensCycle,

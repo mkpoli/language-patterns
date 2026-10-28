@@ -336,6 +336,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'coordination',
+		label: {
+			en: 'Coordination',
+			ja: '並列',
+			zh: '并列'
+		},
+		facet: 'structure',
+		definition: {
+			en: 'Joining words or phrases of the same kind into one phrase or list.',
+			ja: '同じ種類の語や句を一つの句や列にまとめること。',
+			zh: '把同类词语或短语连接成一个短语或列表。'
+		}
+	},
+	{
 		id: 'case-marking',
 		label: {
 			en: 'Case marking',
