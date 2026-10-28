@@ -26,7 +26,7 @@ export const coordination: Pattern = {
 		},
 		{
 			id: 'each-before',
-			label: 'A word before every item',
+			label: 'A word before each later item',
 			schematic: 'A wa-B wa-C',
 			description:
 				'Arabic puts wa- before every item after the first: خبز ولبن وبيض, bread, milk and eggs. The first item stands bare, and each later one carries the word.',
@@ -34,7 +34,7 @@ export const coordination: Pattern = {
 		},
 		{
 			id: 'each-after',
-			label: 'A word after every item',
+			label: 'A word after each item but the last',
 			schematic: 'AとBとC（と）',
 			description:
 				'Japanese and Korean use a particle that follows each item but the last: パンと牛乳と卵, 빵과 우유와 달걀. Japanese speech often adds a final と as well — パンと牛乳と卵と — and Korean lists frequently drop the particle and rely on commas.',
