@@ -2252,6 +2252,142 @@ export const sources: Record<string, Source> = {
 		title: 'A Dictionary of Basic Japanese Grammar',
 		publisher: 'The Japan Times',
 		type: 'book'
+	},
+
+	// ─── Coordination ───────────────────────────────────────────────────────────
+	'haspelmath-2004-coordination': {
+		id: 'haspelmath-2004-coordination',
+		authors: ['Haspelmath, Martin'],
+		year: 2004,
+		title: 'Coordinating constructions: An overview',
+		container: 'Coordinating Constructions',
+		editors: ['Haspelmath, Martin'],
+		publisher: 'John Benjamins',
+		pages: '3–39',
+		type: 'chapter'
+	},
+	'huddleston-pullum-2002': {
+		id: 'huddleston-pullum-2002',
+		authors: ['Huddleston, Rodney', 'Pullum, Geoffrey K.'],
+		year: 2002,
+		title: 'The Cambridge Grammar of the English Language',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'shibatani-1990': {
+		id: 'shibatani-1990',
+		authors: ['Shibatani, Masayoshi'],
+		year: 1990,
+		title: 'The Languages of Japan',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'sohn-1999': {
+		id: 'sohn-1999',
+		authors: ['Sohn, Ho-Min'],
+		year: 1999,
+		title: 'The Korean Language',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'ryding-2005': {
+		id: 'ryding-2005',
+		authors: ['Ryding, Karin C.'],
+		year: 2005,
+		title: 'A Reference Grammar of Modern Standard Arabic',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'glinert-1989': {
+		id: 'glinert-1989',
+		authors: ['Glinert, Lewis'],
+		year: 1989,
+		title: 'The Grammar of Modern Hebrew',
+		publisher: 'Cambridge University Press',
+		type: 'book'
+	},
+	'allen-greenough-1903': {
+		id: 'allen-greenough-1903',
+		authors: ['Allen, Joseph Henry', 'Greenough, James Bradstreet'],
+		year: 1903,
+		title: 'Allen and Greenough’s New Latin Grammar',
+		publisher: 'Ginn and Company',
+		type: 'book'
+	},
+	'durrell-2002': {
+		id: 'durrell-2002',
+		authors: ['Durrell, Martin'],
+		year: 2002,
+		title: 'Hammer’s German Grammar and Usage',
+		container: '4th edition',
+		publisher: 'Arnold',
+		type: 'book'
+	},
+	'grevisse-goosse-2016': {
+		id: 'grevisse-goosse-2016',
+		authors: ['Grevisse, Maurice', 'Goosse, André'],
+		year: 2016,
+		title: 'Le bon usage: grammaire française',
+		container: '16e édition',
+		publisher: 'De Boeck Supérieur',
+		type: 'book'
+	},
+	'rae-2009': {
+		id: 'rae-2009',
+		authors: ['Real Academia Española', 'Asociación de Academias de la Lengua Española'],
+		year: 2009,
+		title: 'Nueva gramática de la lengua española',
+		publisher: 'Espasa',
+		type: 'book'
+	},
+	'wade-2011': {
+		id: 'wade-2011',
+		authors: ['Wade, Terence', 'Gillespie, David'],
+		year: 2011,
+		title: 'A Comprehensive Russian Grammar',
+		container: '3rd edition',
+		publisher: 'Wiley-Blackwell',
+		type: 'book'
+	},
+	'kachru-2006': {
+		id: 'kachru-2006',
+		authors: ['Kachru, Yamuna'],
+		year: 2006,
+		title: 'Hindi',
+		publisher: 'John Benjamins',
+		type: 'book'
+	},
+	'mahootian-1997': {
+		id: 'mahootian-1997',
+		authors: ['Mahootian, Shahrzad'],
+		year: 1997,
+		title: 'Persian',
+		publisher: 'Routledge',
+		type: 'book'
+	},
+	'weblio-oyobi': {
+		id: 'weblio-oyobi',
+		authors: ['Weblio 辞書'],
+		year: 'n.d.',
+		title: 'デジタル大辞泉: 及び（および）',
+		url: 'https://www.weblio.jp/content/及び',
+		type: 'url'
+	},
+	'thompson-1965-vietnamese': {
+		id: 'thompson-1965-vietnamese',
+		authors: ['Thompson, Laurence C.'],
+		year: 1965,
+		title: 'A Vietnamese Grammar',
+		publisher: 'University of Washington Press',
+		type: 'book'
+	},
+	'iwasaki-ingkaphirom-2005': {
+		id: 'iwasaki-ingkaphirom-2005',
+		authors: ['Iwasaki, Shoichi', 'Ingkaphirom, Preeya'],
+		year: 2005,
+		title: 'A Reference Grammar of Thai',
+		publisher: 'Cambridge University Press',
+		type: 'book'
 	}
 };
 
