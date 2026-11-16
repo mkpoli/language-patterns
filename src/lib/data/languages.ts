@@ -3495,6 +3495,703 @@ export const languages = {
 		lat: 48.85,
 		lng: 2.35,
 		locationNote: 'Île-de-France (medieval)'
+	},
+
+	// ─── Languages that ask by saying the predicate twice ────────────────────
+	// Names, classification and coordinates follow Glottolog, as distributed
+	// with Grambank v1.0; a language without an ISO 639-3 code is keyed by its
+	// Glottocode.
+	pqa: {
+		code: 'pqa',
+		name: 'Pa’a',
+		family: 'Afro-Asiatic › Chadic',
+		lat: 11.02,
+		lng: 9.3
+	},
+	bji: {
+		code: 'bji',
+		name: 'Burji',
+		family: 'Afro-Asiatic › Cushitic',
+		lat: 4.45,
+		lng: 38.46
+	},
+	ruf: {
+		code: 'ruf',
+		name: 'Luguru',
+		family: 'Atlantic-Congo › Bantu',
+		lat: -6.87,
+		lng: 37.56
+	},
+	dag: {
+		code: 'dag',
+		name: 'Dagbani',
+		family: 'Atlantic-Congo › Gur',
+		lat: 9.65,
+		lng: -0.43
+	},
+	mfq: {
+		code: 'mfq',
+		name: 'Moba',
+		family: 'Atlantic-Congo › Gur',
+		lat: 10.95,
+		lng: 0.16
+	},
+	pbv: {
+		code: 'pbv',
+		name: 'Pnar',
+		family: 'Austroasiatic › Khasic',
+		lat: 24.82,
+		lng: 92.26
+	},
+	ply: {
+		code: 'ply',
+		name: 'Bolyu (Lai)',
+		family: 'Austroasiatic › Mangic',
+		lat: 24.7,
+		lng: 104.95
+	},
+	bbh: {
+		code: 'bbh',
+		name: 'Bugan',
+		family: 'Austroasiatic › Mangic',
+		lat: 23.61,
+		lng: 104.96
+	},
+	zng: {
+		code: 'zng',
+		name: 'Mang',
+		family: 'Austroasiatic › Mangic',
+		lat: 22.37,
+		lng: 102.88
+	},
+	cbn: {
+		code: 'cbn',
+		name: 'Nyahkur',
+		family: 'Austroasiatic › Monic',
+		lat: 15.89,
+		lng: 101.52
+	},
+	bgk: {
+		code: 'bgk',
+		name: 'Bit (Buxing)',
+		family: 'Austroasiatic › Palaungic',
+		lat: 21.35,
+		lng: 101.92
+	},
+	lwl: {
+		code: 'lwl',
+		name: 'Eastern Lawa',
+		family: 'Austroasiatic › Palaungic',
+		lat: 19.01,
+		lng: 98.76
+	},
+	huo: {
+		code: 'huo',
+		name: 'Hu',
+		family: 'Austroasiatic › Palaungic',
+		lat: 22.02,
+		lng: 100.88
+	},
+	kjm: {
+		code: 'kjm',
+		name: 'Kháng (Bumang)',
+		family: 'Austroasiatic › Palaungic',
+		lat: 21.66,
+		lng: 103.74
+	},
+	mml: {
+		code: 'mml',
+		name: 'Man Met (Kemie)',
+		family: 'Austroasiatic › Palaungic',
+		lat: 22.07,
+		lng: 100.84
+	},
+	pce: {
+		code: 'pce',
+		name: 'Ruching Palaung (De’ang)',
+		family: 'Austroasiatic › Palaungic',
+		lat: 21.62,
+		lng: 98.09
+	},
+	rbb: {
+		code: 'rbb',
+		name: 'Rumai Palaung',
+		family: 'Austroasiatic › Palaungic',
+		lat: 23.64,
+		lng: 97.32
+	},
+	huq: {
+		code: 'huq',
+		name: 'Tsat (Hainan Cham)',
+		family: 'Austronesian › Chamic',
+		lat: 18.32,
+		lng: 109.34
+	},
+	nxa: {
+		code: 'nxa',
+		name: 'Nauete',
+		family: 'Austronesian › Kawaimina',
+		lat: -8.71,
+		lng: 126.74
+	},
+	mbf: {
+		code: 'mbf',
+		name: 'Baba Malay',
+		family: 'Austronesian › Malayic',
+		lat: 1.75,
+		lng: 103.08
+	},
+	pma: {
+		code: 'pma',
+		name: 'Paamese',
+		family: 'Austronesian › Oceanic',
+		lat: -16.48,
+		lng: 168.24
+	},
+	waw: {
+		code: 'waw',
+		name: 'Waiwai',
+		family: 'Cariban',
+		lat: 1.51,
+		lng: -59.14
+	},
+	xua: {
+		code: 'xua',
+		name: 'Alu Kurumba',
+		family: 'Dravidian › Southern',
+		lat: 11.35,
+		lng: 76.8
+	},
+	hea: {
+		code: 'hea',
+		name: 'Hmu (Northern Qiandong Miao)',
+		family: 'Hmong-Mien › Hmongic',
+		lat: 26.63,
+		lng: 108.16
+	},
+	pha: {
+		code: 'pha',
+		name: 'Pa-Hng',
+		family: 'Hmong-Mien › Hmongic',
+		lat: 22.8,
+		lng: 105.17
+	},
+	shx: {
+		code: 'shx',
+		name: 'She',
+		family: 'Hmong-Mien › Hmongic',
+		lat: 23.04,
+		lng: 114.81
+	},
+	mmr: {
+		code: 'mmr',
+		name: 'Xong (Western Xiangxi Miao)',
+		family: 'Hmong-Mien › Hmongic',
+		lat: 28.33,
+		lng: 109.67
+	},
+	buh: {
+		code: 'buh',
+		name: 'Younuo Bunu',
+		family: 'Hmong-Mien › Hmongic',
+		lat: 25.76,
+		lng: 110.47
+	},
+	bmt: {
+		code: 'bmt',
+		name: 'Biao Mon',
+		family: 'Hmong-Mien › Mienic',
+		lat: 24.65,
+		lng: 113.47
+	},
+	bje: {
+		code: 'bje',
+		name: 'Biao-Jiao Mien',
+		family: 'Hmong-Mien › Mienic',
+		lat: 25.53,
+		lng: 111.34
+	},
+	bpn: {
+		code: 'bpn',
+		name: 'Dzao Min',
+		family: 'Hmong-Mien › Mienic',
+		lat: 24.98,
+		lng: 112.33
+	},
+	mji: {
+		code: 'mji',
+		name: 'Kim Mun',
+		family: 'Hmong-Mien › Mienic',
+		lat: 22.99,
+		lng: 105.02
+	},
+	tsix1234: {
+		code: 'tsix1234',
+		name: 'Ts’ixa',
+		family: 'Khoe-Kwadi › Khoe',
+		lat: -19.18,
+		lng: 24.0
+	},
+	bxl: {
+		code: 'bxl',
+		name: 'Jalkunan',
+		family: 'Mande',
+		lat: 10.54,
+		lng: -5.22
+	},
+	tmd: {
+		code: 'tmd',
+		name: 'Haruai',
+		family: 'Piawi',
+		lat: -5.1,
+		lng: 144.34
+	},
+	qud: {
+		code: 'qud',
+		name: 'Ecuadorian Quichua (Calderón)',
+		family: 'Quechuan',
+		lat: -0.36,
+		lng: -78.26
+	},
+	bca: {
+		code: 'bca',
+		name: 'Bai (Central)',
+		family: 'Sino-Tibetan › Bai',
+		lat: 26.17,
+		lng: 99.71
+	},
+	aot: {
+		code: 'aot',
+		name: 'Atong',
+		family: 'Sino-Tibetan › Bodo-Garo',
+		lat: 25.35,
+		lng: 90.66
+	},
+	acn: {
+		code: 'acn',
+		name: 'Achang (Longchuan)',
+		family: 'Sino-Tibetan › Burmish',
+		lat: 24.35,
+		lng: 97.74
+	},
+	chas1234: {
+		code: 'chas1234',
+		name: 'Chashan',
+		family: 'Sino-Tibetan › Burmish',
+		lat: 26.1,
+		lng: 98.75
+	},
+	lsi: {
+		code: 'lsi',
+		name: 'Lashi (Leqi)',
+		family: 'Sino-Tibetan › Burmish',
+		lat: 26.1,
+		lng: 98.55
+	},
+	mhx: {
+		code: 'mhx',
+		name: 'Maru (Langsu)',
+		family: 'Sino-Tibetan › Burmish',
+		lat: 24.94,
+		lng: 99.83
+	},
+	dhi: {
+		code: 'dhi',
+		name: 'Dhimal',
+		family: 'Sino-Tibetan › Dhimalish',
+		lat: 26.63,
+		lng: 88.38
+	},
+	pdu: {
+		code: 'pdu',
+		name: 'Kayan',
+		family: 'Sino-Tibetan › Karenic',
+		lat: 19.52,
+		lng: 97.41
+	},
+	cdm: {
+		code: 'cdm',
+		name: 'Chepang',
+		family: 'Sino-Tibetan › Kham-Magar-Chepang',
+		lat: 27.72,
+		lng: 84.9
+	},
+	drq: {
+		code: 'drq',
+		name: 'Dura',
+		family: 'Sino-Tibetan › Kham-Magar-Chepang',
+		lat: 28.17,
+		lng: 84.44
+	},
+	mrd: {
+		code: 'mrd',
+		name: 'Magar (Western)',
+		family: 'Sino-Tibetan › Kham-Magar-Chepang',
+		lat: 28.25,
+		lng: 83.51
+	},
+	kle: {
+		code: 'kle',
+		name: 'Kulung',
+		family: 'Sino-Tibetan › Kiranti',
+		lat: 27.16,
+		lng: 87.57
+	},
+	wme: {
+		code: 'wme',
+		name: 'Wambule',
+		family: 'Sino-Tibetan › Kiranti',
+		lat: 27.15,
+		lng: 86.48
+	},
+	mxj: {
+		code: 'mxj',
+		name: 'Kman (Geman)',
+		family: 'Sino-Tibetan › Kman-Meyor',
+		lat: 28.47,
+		lng: 97.04
+	},
+	nct: {
+		code: 'nct',
+		name: 'Chothe',
+		family: 'Sino-Tibetan › Kuki-Chin',
+		lat: 24.37,
+		lng: 94.24
+	},
+	dao: {
+		code: 'dao',
+		name: 'Daai Chin',
+		family: 'Sino-Tibetan › Kuki-Chin',
+		lat: 20.73,
+		lng: 93.79
+	},
+	tro: {
+		code: 'tro',
+		name: 'Tarao',
+		family: 'Sino-Tibetan › Kuki-Chin',
+		lat: 24.4,
+		lng: 94.17
+	},
+	mjw: {
+		code: 'mjw',
+		name: 'Karbi',
+		family: 'Sino-Tibetan › Kuki-Chin-Naga',
+		lat: 25.73,
+		lng: 93.05
+	},
+	nng: {
+		code: 'nng',
+		name: 'Maring Naga',
+		family: 'Sino-Tibetan › Kuki-Chin-Naga',
+		lat: 24.29,
+		lng: 94.07
+	},
+	yix: {
+		code: 'yix',
+		name: 'Axi',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 24.6,
+		lng: 103.71
+	},
+	aza: {
+		code: 'aza',
+		name: 'Azha',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 23.9,
+		lng: 104.15
+	},
+	cosa1234: {
+		code: 'cosa1234',
+		name: 'Cosao',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 21.62,
+		lng: 101.57
+	},
+	enu: {
+		code: 'enu',
+		name: 'Enu (Ximoluo)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 22.95,
+		lng: 101.85
+	},
+	hni: {
+		code: 'hni',
+		name: 'Hani',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 22.68,
+		lng: 102.85
+	},
+	how: {
+		code: 'how',
+		name: 'Honi (Woni)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 23.21,
+		lng: 101.89
+	},
+	jiu: {
+		code: 'jiu',
+		name: 'Jino (Youle)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 22.05,
+		lng: 101.06
+	},
+	lhi: {
+		code: 'lhi',
+		name: 'Lahu Shi',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 21.21,
+		lng: 100.97
+	},
+	ywt: {
+		code: 'ywt',
+		name: 'Lalo (Xishanba)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 24.87,
+		lng: 100.71
+	},
+	ywq: {
+		code: 'ywq',
+		name: 'Nasu (Wuding-Luquan)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 25.48,
+		lng: 102.48
+	},
+	yig: {
+		code: 'yig',
+		name: 'Nasu (Wusa)',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 25.77,
+		lng: 102.37
+	},
+	nuf: {
+		code: 'nuf',
+		name: 'Nusu',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 26.73,
+		lng: 98.88
+	},
+	ysn: {
+		code: 'ysn',
+		name: 'Sani',
+		family: 'Sino-Tibetan › Loloish',
+		lat: 24.28,
+		lng: 103.76
+	},
+	ckh: {
+		code: 'ckh',
+		name: 'Chak',
+		family: 'Sino-Tibetan › Luish',
+		lat: 21.41,
+		lng: 92.6
+	},
+	kdv: {
+		code: 'kdv',
+		name: 'Kado',
+		family: 'Sino-Tibetan › Luish',
+		lat: 24.4,
+		lng: 95.86,
+		locationNote: 'Banmauk, Sagaing'
+	},
+	bang1369: {
+		code: 'bang1369',
+		name: 'Bangru',
+		family: 'Sino-Tibetan › Miji',
+		lat: 27.95,
+		lng: 93.16
+	},
+	nru: {
+		code: 'nru',
+		name: 'Yongning Na',
+		family: 'Sino-Tibetan › Naic',
+		lat: 27.8,
+		lng: 100.9
+	},
+	east2773: {
+		code: 'east2773',
+		name: 'Dolakha Newar',
+		family: 'Sino-Tibetan › Newaric',
+		lat: 27.58,
+		lng: 86.03
+	},
+	nun: {
+		code: 'nun',
+		name: 'Anong',
+		family: 'Sino-Tibetan › Nungish',
+		lat: 27.29,
+		lng: 98.73
+	},
+	cng: {
+		code: 'cng',
+		name: 'Northern Qiang',
+		family: 'Sino-Tibetan › Qiangic',
+		lat: 32.28,
+		lng: 103.19
+	},
+	qxs: {
+		code: 'qxs',
+		name: 'Southern Qiang',
+		family: 'Sino-Tibetan › Qiangic',
+		lat: 31.54,
+		lng: 103.38
+	},
+	tang1373: {
+		code: 'tang1373',
+		name: 'Tangwang',
+		family: 'Sino-Tibetan › Sinitic',
+		lat: 35.8,
+		lng: 103.54
+	},
+	chao1238: {
+		code: 'chao1238',
+		name: 'Teochew (Chaozhou)',
+		family: 'Sino-Tibetan › Sinitic',
+		lat: 23.67,
+		lng: 116.63
+	},
+	wuh: {
+		code: 'wuh',
+		name: 'Wutun',
+		family: 'Sino-Tibetan › Sinitic',
+		lat: 35.27,
+		lng: 101.96
+	},
+	tji: {
+		code: 'tji',
+		name: 'Tujia (Northern)',
+		family: 'Sino-Tibetan › Tujia',
+		lat: 29.3,
+		lng: 109.76
+	},
+	bfu: {
+		code: 'bfu',
+		name: 'Bunan',
+		family: 'Sino-Tibetan › West Himalayish',
+		lat: 32.22,
+		lng: 77.96
+	},
+	cov: {
+		code: 'cov',
+		name: 'Cao Miao (Sanjiang Kam)',
+		family: 'Tai-Kadai › Kam-Sui',
+		lat: 26.22,
+		lng: 109.55
+	},
+	mkg: {
+		code: 'mkg',
+		name: 'Mak',
+		family: 'Tai-Kadai › Kam-Sui',
+		lat: 25.59,
+		lng: 107.73
+	},
+	aou: {
+		code: 'aou',
+		name: 'A’ou (Zoulei Gelao)',
+		family: 'Tai-Kadai › Kra',
+		lat: 26.8,
+		lng: 105.85
+	},
+	byk: {
+		code: 'byk',
+		name: 'Biao (Shidong)',
+		family: 'Tai-Kadai › Lakkia-Biao',
+		lat: 23.66,
+		lng: 113.39
+	},
+	aho: {
+		code: 'aho',
+		name: 'Ahom',
+		family: 'Tai-Kadai › Tai',
+		lat: 27.04,
+		lng: 94.33
+	},
+	auu: {
+		code: 'auu',
+		name: 'Auye',
+		family: 'Trans-New Guinea › Paniai Lakes',
+		lat: -3.44,
+		lng: 136.1
+	},
+	voro1241: {
+		code: 'voro1241',
+		name: 'Võro',
+		family: 'Uralic › Finnic',
+		lat: 57.85,
+		lng: 27.0
+	},
+	ure: {
+		code: 'ure',
+		name: 'Uru (Uchumataqu)',
+		family: 'Uru-Chipaya',
+		lat: -16.73,
+		lng: -68.97
+	},
+	ute: {
+		code: 'ute',
+		name: 'Ute',
+		family: 'Uto-Aztecan',
+		lat: 40.1,
+		lng: -110.31
+	},
+	tci: {
+		code: 'tci',
+		name: 'Komnzo',
+		family: 'Yam',
+		lat: -8.65,
+		lng: 141.52
+	},
+
+	// ─── Further languages of the polar-question survey ──────────────────────
+	lbj: {
+		code: 'lbj',
+		name: 'Ladakhi',
+		family: 'Sino-Tibetan › Bodish',
+		lat: 34.15,
+		lng: 77.56,
+		locationNote: 'Leh'
+	},
+	scp: {
+		code: 'scp',
+		name: 'Yolmo',
+		family: 'Sino-Tibetan › Bodish',
+		lat: 27.92,
+		lng: 85.63
+	},
+	xct: {
+		code: 'xct',
+		name: 'Classical Tibetan',
+		family: 'Sino-Tibetan › Bodish (historical)',
+		lat: 29.24,
+		lng: 92.01
+	},
+	sms: {
+		code: 'sms',
+		name: 'Skolt Saami',
+		family: 'Uralic › Sami',
+		lat: 68.83,
+		lng: 29.72
+	},
+	kpw: {
+		code: 'kpw',
+		name: 'Kobon',
+		family: 'Trans-New Guinea › Kalam-Kobon',
+		lat: -5.16,
+		lng: 144.46
+	},
+	cpi: {
+		code: 'cpi',
+		name: 'Chinese Pidgin English',
+		family: 'English-based pidgin',
+		lat: 22.2,
+		lng: 113.55,
+		locationNote: 'Macau and the Pearl River ports'
+	},
+	kjac1234: {
+		code: 'kjac1234',
+		name: 'Chinese Pidgin Russian',
+		family: 'Russian-based pidgin',
+		lat: 50.35,
+		lng: 106.45,
+		locationNote: 'Kyakhta'
 	}
 } satisfies Record<string, Language>;
 

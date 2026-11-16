@@ -152,6 +152,20 @@ const tagList = [
 		}
 	},
 	{
+		id: 'interrogation',
+		label: {
+			en: 'Interrogation',
+			ja: '疑問',
+			zh: '疑问'
+		},
+		facet: 'domain',
+		definition: {
+			en: 'Asking for an answer, together with the elements that mark a clause as a question.',
+			ja: '聞き手に答えを求めること、および節を疑問節として標示する要素。',
+			zh: '发问以寻求回答，以及将小句标示为疑问句的成分。'
+		}
+	},
+	{
 		id: 'indefiniteness',
 		label: {
 			en: 'Indefiniteness',
