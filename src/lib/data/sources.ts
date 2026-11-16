@@ -2388,6 +2388,459 @@ export const sources: Record<string, Source> = {
 		title: 'A Reference Grammar of Thai',
 		publisher: 'Cambridge University Press',
 		type: 'book'
+	},
+
+	// ─── Polar questions ────────────────────────────────────────────────────────
+	'wada-2026': {
+		id: 'wada-2026',
+		authors: ['Wada, Yugo'],
+		year: 2026,
+		title: 'A-not-A疑問は漢語起源の特徴か？：チベット系諸語の事例を通した考察 [Are A-not-A questions a feature of Sinitic origin? Insights from Tibetic languages]',
+		container: 'Slides for talk G-4, 173rd Meeting of the Linguistic Society of Japan, Nagasaki University, 14 November 2026',
+		url: 'https://ls-japan.org/taikai/program/pg173/',
+		type: 'article'
+	},
+	'luo-2013': {
+		id: 'luo-2013',
+		authors: ['Luo, Tianhua'],
+		year: 2013,
+		title: 'Interrogative Strategies: An Areal Typology of the Languages of China',
+		publisher: 'PhD dissertation, Universität Konstanz',
+		url: 'https://kops.uni-konstanz.de/handle/123456789/27654',
+		type: 'book'
+	},
+	'dryer-2013-polar': {
+		id: 'dryer-2013-polar',
+		authors: ['Dryer, Matthew S.'],
+		year: 2013,
+		title: 'Polar Questions',
+		container: 'WALS Online, Chapter 116',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/116',
+		type: 'chapter'
+	},
+	'dryer-2013-question-particle': {
+		id: 'dryer-2013-question-particle',
+		authors: ['Dryer, Matthew S.'],
+		year: 2013,
+		title: 'Position of Polar Question Particles',
+		container: 'WALS Online, Chapter 92',
+		editors: ['Dryer, Matthew S.', 'Haspelmath, Martin'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://wals.info/chapter/92',
+		type: 'chapter'
+	},
+	'grambank-2023': {
+		id: 'grambank-2023',
+		authors: ['Skirgård, Hedvig', 'Haynie, Hannah J.', 'Blasi, Damián E.', 'Hammarström, Harald', 'et al.'],
+		year: 2023,
+		title: 'Grambank v1.0',
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		doi: '10.5281/zenodo.7740140',
+		url: 'https://grambank.clld.org/parameters/GB297',
+		type: 'dataset'
+	},
+	'haspelmath-2013-apics-polar': {
+		id: 'haspelmath-2013-apics-polar',
+		authors: ['Haspelmath, Martin', 'APiCS Consortium'],
+		year: 2013,
+		title: 'Polar questions',
+		container: 'The Atlas of Pidgin and Creole Language Structures Online, Chapter 103',
+		editors: ['Michaelis, Susanne Maria', 'Maurer, Philippe', 'Haspelmath, Martin', 'Huber, Magnus'],
+		publisher: 'Max Planck Institute for Evolutionary Anthropology',
+		url: 'https://apics-online.info/parameters/103',
+		type: 'chapter'
+	},
+	'clark-1985': {
+		id: 'clark-1985',
+		authors: ['Clark, Marybeth'],
+		year: 1985,
+		title: 'Asking Questions in Hmong and Other Southeast Asian Languages',
+		container: 'Linguistics of the Tibeto-Burman Area',
+		pages: '8(2): 60–67',
+		url: 'https://studyhmong.com/wp-content/uploads/2012/09/Asking-Questions-in-Hmong.pdf',
+		type: 'article'
+	},
+	'miestamo-2011': {
+		id: 'miestamo-2011',
+		authors: ['Miestamo, Matti'],
+		year: 2011,
+		title: 'Polar interrogatives in Uralic languages: A typological perspective',
+		container: 'Linguistica Uralica',
+		pages: '47(1): 1–21',
+		url: 'http://www.kirj.ee/public/Linguistica_Uralica/2011/issue_1/ling-2011-1-1-21.pdf',
+		type: 'article'
+	},
+	'gawne-2016': {
+		id: 'gawne-2016',
+		authors: ['Gawne, Lauren'],
+		year: 2016,
+		title: 'A Sketch Grammar of Lamjung Yolmo',
+		publisher: 'Asia-Pacific Linguistics',
+		url: 'https://openresearch-repository.anu.edu.au/handle/1885/110258',
+		type: 'book'
+	},
+	'shaikh-2019': {
+		id: 'shaikh-2019',
+		authors: ['Shaikh, Maaz'],
+		year: 2019,
+		title: 'Interrogation in Ladakhi',
+		publisher: 'MA thesis, University of Delhi',
+		url: 'https://zenodo.org/records/5841251',
+		type: 'book'
+	},
+	'sandberg-1894': {
+		id: 'sandberg-1894',
+		authors: ['Sandberg, Graham'],
+		year: 1894,
+		title: 'Hand-book of Colloquial Tibetan: A Practical Guide to the Language of Central Tibet',
+		publisher: 'Thacker, Spink and Co.',
+		url: 'https://archive.org/details/handbookofcolloq00grah',
+		type: 'book'
+	},
+	'crowley-1982': {
+		id: 'crowley-1982',
+		authors: ['Crowley, Terry'],
+		year: 1982,
+		title: 'The Paamese Language of Vanuatu',
+		publisher: 'Pacific Linguistics (B-87), Australian National University',
+		url: 'https://openresearch-repository.anu.edu.au/handle/1885/145173',
+		type: 'book'
+	},
+	'konnerth-2014': {
+		id: 'konnerth-2014',
+		authors: ['Konnerth, Linda'],
+		year: 2014,
+		title: 'A Grammar of Karbi',
+		publisher: 'PhD dissertation, University of Oregon',
+		url: 'https://scholarsbank.uoregon.edu/xmlui/handle/1794/17928',
+		type: 'book'
+	},
+	'dohler-2018': {
+		id: 'dohler-2018',
+		authors: ['Döhler, Christian'],
+		year: 2018,
+		title: 'A grammar of Komnzo',
+		publisher: 'Language Science Press',
+		url: 'https://langsci-press.org/catalog/book/212',
+		type: 'book'
+	},
+	'walkden-li-weisshaar-2025': {
+		id: 'walkden-li-weisshaar-2025',
+		authors: ['Walkden, George', 'Li, Tian', 'Weisshaar, Laura'],
+		year: 2025,
+		title: 'Sources for question particles',
+		container: 'Journal of Historical Syntax',
+		pages: '9(10): 1–39',
+		doi: '10.18148/hs/2025.v9i2-10.185',
+		type: 'article'
+	},
+	'aldridge-2011': {
+		id: 'aldridge-2011',
+		authors: ['Aldridge, Edith'],
+		year: 2011,
+		title: 'Neg-to-Q: The historical origin and development of question particles in Chinese',
+		container: 'The Linguistic Review',
+		pages: '28(4): 411–447',
+		type: 'article'
+	},
+	'morita-2018': {
+		id: 'morita-2018',
+		authors: ['Morita, Hisashi'],
+		year: 2018,
+		title: 'A study of the disjunction particles and wh-elements in Malayalam, Sinhala, and Japanese',
+		container: 'Abstract, 34th South Asian Languages Analysis Roundtable (SALA-34), Universität Konstanz',
+		url: 'https://typo.uni-konstanz.de/sala-34/morita.pdf',
+		type: 'article'
+	},
+	'wiktionary-est-ce-que': {
+		id: 'wiktionary-est-ce-que',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: est-ce que (French)',
+		url: 'https://en.wiktionary.org/wiki/est-ce_que#French',
+		type: 'url'
+	},
+	'wiktionary-an-irish': {
+		id: 'wiktionary-an-irish',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: an (Irish)',
+		url: 'https://en.wiktionary.org/wiki/an#Irish',
+		type: 'url'
+	},
+	'wiktionary-li-russian': {
+		id: 'wiktionary-li-russian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ли (Russian)',
+		url: 'https://en.wiktionary.org/wiki/ли#Russian',
+		type: 'url'
+	},
+	'wiktionary-li-bulgarian': {
+		id: 'wiktionary-li-bulgarian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ли (Bulgarian)',
+		url: 'https://en.wiktionary.org/wiki/ли#Bulgarian',
+		type: 'url'
+	},
+	'wiktionary-kya-hindi': {
+		id: 'wiktionary-kya-hindi',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: क्या (Hindi)',
+		url: 'https://en.wiktionary.org/wiki/क्या#Hindi',
+		type: 'url'
+	},
+	'wiktionary-kya-urdu': {
+		id: 'wiktionary-kya-urdu',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: کیا (Urdu)',
+		url: 'https://en.wiktionary.org/wiki/کیا#Urdu',
+		type: 'url'
+	},
+	'wiktionary-aya-persian': {
+		id: 'wiktionary-aya-persian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: آیا (Persian)',
+		url: 'https://en.wiktionary.org/wiki/آیا#Persian',
+		type: 'url'
+	},
+	'wiktionary-ko-finnish': {
+		id: 'wiktionary-ko-finnish',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: -ko (Finnish)',
+		url: 'https://en.wiktionary.org/wiki/-ko#Finnish',
+		type: 'url'
+	},
+	'wiktionary-kas-estonian': {
+		id: 'wiktionary-kas-estonian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: kas (Estonian)',
+		url: 'https://en.wiktionary.org/wiki/kas#Estonian',
+		type: 'url'
+	},
+	'wiktionary-voi-estonian': {
+		id: 'wiktionary-voi-estonian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: või (Estonian)',
+		url: 'https://en.wiktionary.org/wiki/või#Estonian',
+		type: 'url'
+	},
+	'wiktionary-mi-turkish': {
+		id: 'wiktionary-mi-turkish',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: mi (Turkish)',
+		url: 'https://en.wiktionary.org/wiki/mi#Turkish',
+		type: 'url'
+	},
+	'wiktionary-uu-mongolian': {
+		id: 'wiktionary-uu-mongolian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: уу (Mongolian)',
+		url: 'https://en.wiktionary.org/wiki/уу#Mongolian',
+		type: 'url'
+	},
+	'wiktionary-ma-chinese': {
+		id: 'wiktionary-ma-chinese',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 嗎 (Chinese)',
+		url: 'https://en.wiktionary.org/wiki/嗎#Chinese',
+		type: 'url'
+	},
+	'wiktionary-ka-japanese': {
+		id: 'wiktionary-ka-japanese',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: か (Japanese)',
+		url: 'https://en.wiktionary.org/wiki/か#Japanese',
+		type: 'url'
+	},
+	'wiktionary-o-malayalam': {
+		id: 'wiktionary-o-malayalam',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: -ഓ (Malayalam)',
+		url: 'https://en.wiktionary.org/wiki/-ഓ#Malayalam',
+		type: 'url'
+	},
+	'wiktionary-ba-tagalog': {
+		id: 'wiktionary-ba-tagalog',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ba (Tagalog)',
+		url: 'https://en.wiktionary.org/wiki/ba#Tagalog',
+		type: 'url'
+	},
+	'wiktionary-hal-arabic': {
+		id: 'wiktionary-hal-arabic',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: هل (Arabic)',
+		url: 'https://en.wiktionary.org/wiki/هل#Arabic',
+		type: 'url'
+	},
+	'wiktionary-haim-hebrew': {
+		id: 'wiktionary-haim-hebrew',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: האם (Hebrew)',
+		url: 'https://en.wiktionary.org/wiki/האם#Hebrew',
+		type: 'url'
+	},
+	'wiktionary-na-zulu': {
+		id: 'wiktionary-na-zulu',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: na (Zulu)',
+		url: 'https://en.wiktionary.org/wiki/na#Zulu',
+		type: 'url'
+	},
+	'wiktionary-al-basque': {
+		id: 'wiktionary-al-basque',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: al (Basque)',
+		url: 'https://en.wiktionary.org/wiki/al#Basque',
+		type: 'url'
+	},
+	'wiktionary-ni-korean': {
+		id: 'wiktionary-ni-korean',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: -니 (Korean)',
+		url: 'https://en.wiktionary.org/wiki/-니#Korean',
+		type: 'url'
+	},
+	'wiktionary-chy-ukrainian': {
+		id: 'wiktionary-chy-ukrainian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: чи (Ukrainian)',
+		url: 'https://en.wiktionary.org/wiki/чи#Ukrainian',
+		type: 'url'
+	},
+	'wiktionary-ci-belarusian': {
+		id: 'wiktionary-ci-belarusian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ці (Belarusian)',
+		url: 'https://en.wiktionary.org/wiki/ці#Belarusian',
+		type: 'url'
+	},
+	'wiktionary-czy-polish': {
+		id: 'wiktionary-czy-polish',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: czy (Polish)',
+		url: 'https://en.wiktionary.org/wiki/czy#Polish',
+		type: 'url'
+	},
+	'wiktionary-ar-lithuanian': {
+		id: 'wiktionary-ar-lithuanian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ar (Lithuanian)',
+		url: 'https://en.wiktionary.org/wiki/ar#Lithuanian',
+		type: 'url'
+	},
+	'wiktionary-ali-slovene': {
+		id: 'wiktionary-ali-slovene',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ali (Slovene)',
+		url: 'https://en.wiktionary.org/wiki/ali#Slovene',
+		type: 'url'
+	},
+	'wiktionary-ka-marathi': {
+		id: 'wiktionary-ka-marathi',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: का (Marathi)',
+		url: 'https://en.wiktionary.org/wiki/का#Marathi',
+		type: 'url'
+	},
+	'wiktionary-khong-vietnamese': {
+		id: 'wiktionary-khong-vietnamese',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: không (Vietnamese)',
+		url: 'https://en.wiktionary.org/wiki/không#Vietnamese',
+		type: 'url'
+	},
+	'wiktionary-te-khmer': {
+		id: 'wiktionary-te-khmer',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ទេ (Khmer)',
+		url: 'https://en.wiktionary.org/wiki/ទេ#Khmer',
+		type: 'url'
+	},
+	'wiktionary-vai-latvian': {
+		id: 'wiktionary-vai-latvian',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: vai (Latvian)',
+		url: 'https://en.wiktionary.org/wiki/vai#Latvian',
+		type: 'url'
+	},
+	'wiktionary-rue-thai': {
+		id: 'wiktionary-rue-thai',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: หรือ (Thai)',
+		url: 'https://en.wiktionary.org/wiki/หรือ#Thai',
+		type: 'url'
+	},
+	'wiktionary-mai-thai': {
+		id: 'wiktionary-mai-thai',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: ไหม (Thai)',
+		url: 'https://en.wiktionary.org/wiki/ไหม#Thai',
+		type: 'url'
+	},
+	'wiktionary-chu-quechua': {
+		id: 'wiktionary-chu-quechua',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: -chu (Quechua)',
+		url: 'https://en.wiktionary.org/wiki/-chu#Quechua',
+		type: 'url'
+	},
+	'wiktionary-wu-chinese': {
+		id: 'wiktionary-wu-chinese',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 無 (Chinese)',
+		url: 'https://en.wiktionary.org/wiki/無#Chinese',
+		type: 'url'
+	},
+	'wiktionary-wei-chinese': {
+		id: 'wiktionary-wei-chinese',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: 未 (Chinese)',
+		url: 'https://en.wiktionary.org/wiki/未#Chinese',
+		type: 'url'
+	},
+	'wiktionary-ne-latin': {
+		id: 'wiktionary-ne-latin',
+		authors: ['Wiktionary contributors'],
+		year: 2026,
+		title: 'Wiktionary: -ne (Latin)',
+		url: 'https://en.wiktionary.org/wiki/-ne#Latin',
+		type: 'url'
 	}
 };
 

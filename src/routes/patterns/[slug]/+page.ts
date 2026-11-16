@@ -24,6 +24,7 @@ export function entries() {
 		{ slug: 'benefaction' },
 		{ slug: 'numeral-classifiers' },
 		{ slug: 'equatives' },
-		{ slug: 'coordination' }
+		{ slug: 'coordination' },
+		{ slug: 'polar-questions' }
 	];
 }
