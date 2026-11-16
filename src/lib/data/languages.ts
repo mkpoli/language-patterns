@@ -3988,8 +3988,9 @@ export const languages = {
 		code: 'kdv',
 		name: 'Kado',
 		family: 'Sino-Tibetan › Luish',
-		lat: 21.53,
-		lng: 100.09
+		lat: 24.4,
+		lng: 95.86,
+		locationNote: 'Banmauk, Sagaing'
 	},
 	bang1369: {
 		code: 'bang1369',
